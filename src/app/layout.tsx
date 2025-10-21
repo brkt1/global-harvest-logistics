@@ -1,6 +1,7 @@
 import Footer from "@/components/ui/Footer";
 import Header from "@/components/ui/Header";
 import LoadingOverlay from "@/components/ui/LoadingOverlay";
+import NavigationLoading from "@/components/ui/NavigationLoading";
 import { LoadingProvider } from "@/contexts/LoadingContext";
 import type { Metadata } from "next";
 import "./globals.css";
@@ -32,6 +33,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="antialiased">
         <LoadingProvider>
+          <NavigationLoading />
           <Header />
           <main>{children}</main>
           <Footer />
