@@ -13,6 +13,16 @@
   --neutral-light: #f8f9fa;
 }
 
+.dark {
+  --background: #0a0a0a;
+  --foreground: #f8f9fa;
+  --primary: #4CAF50;
+  --primary-light: #6ab04c;
+  --secondary: #1e5631;
+  --secondary-light: #2d5a27;
+  --neutral-light: #1a1a1a;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -30,6 +40,7 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -45,6 +56,10 @@ h1, h2, h3, h4, h5, h6 {
 
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #1a1a1a;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -125,6 +140,11 @@ h1, h2, h3, h4, h5, h6 {
   --bg: #1e5631; /* Primary brand green */
   --fg: #4CAF50; /* Secondary brand green */
   --trans-dur: 0.3s;
+}
+
+.dark .truck-loading {
+  --bg: #4CAF50; /* Inverted for dark mode */
+  --fg: #1e5631; /* Inverted for dark mode */
 }
 
 .truck-loading .truck {

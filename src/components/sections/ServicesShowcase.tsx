@@ -75,14 +75,14 @@ export default function ServicesShowcase() {
   ]
 
   return (
-    <section className="section-padding bg-ghl-neutral-50">
+    <section className="section-padding bg-ghl-neutral-50 dark:bg-gray-800">
       <div className="container-custom">
         {/* Section Header */}
         <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-bold text-ghl-neutral-900 mb-4 sm:mb-6">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-bold text-ghl-neutral-900 dark:text-gray-100 mb-4 sm:mb-6">
             Specialized Logistics Solutions
           </h2>
-          <p className="text-lg sm:text-xl text-ghl-neutral-600 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-ghl-neutral-600 dark:text-gray-300 max-w-3xl mx-auto">
             From coffee beans to olive oil, we understand the unique requirements 
             of temperature-sensitive commodities and deliver excellence every step of the way.
           </p>
@@ -93,7 +93,7 @@ export default function ServicesShowcase() {
           {services.map((service) => (
             <div 
               key={service.title}
-              className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
+              className="group bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-ghl-neutral-200 dark:border-gray-700/30"
             >
               {/* Image Placeholder */}
               <div className="aspect-video bg-gradient-to-br from-ghl-neutral-100 to-ghl-neutral-200 relative overflow-hidden">
@@ -114,18 +114,18 @@ export default function ServicesShowcase() {
                   <service.icon className={`h-5 w-5 sm:h-6 sm:w-6 text-ghl-${service.color.replace('ghl-', '').replace('-', '-')}`} />
                 </div>
 
-                <h3 className="text-xl sm:text-2xl font-heading font-bold text-ghl-neutral-900 mb-3 sm:mb-4">
+                <h3 className="text-xl sm:text-2xl font-heading font-bold text-ghl-neutral-900 dark:text-gray-100 mb-3 sm:mb-4">
                   {service.title}
                 </h3>
                 
-                <p className="text-ghl-neutral-600 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
+                <p className="text-ghl-neutral-600 dark:text-gray-300 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
                   {service.description}
                 </p>
 
                 {/* Features */}
                 <ul className="space-y-1.5 sm:space-y-2 mb-4 sm:mb-6">
                   {service.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center text-xs sm:text-sm text-ghl-neutral-600">
+                    <li key={featureIndex} className="flex items-center text-xs sm:text-sm text-ghl-neutral-600 dark:text-gray-300">
                       <div className={`w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-ghl-${service.color.replace('ghl-', '').replace('-', '-')} mr-2 sm:mr-3 flex-shrink-0`} />
                       {feature}
                     </li>
@@ -145,7 +145,7 @@ export default function ServicesShowcase() {
         </div>
 
         {/* Process Section */}
-        <div className="bg-white rounded-2xl p-6 sm:p-8 lg:p-12 shadow-lg">
+        <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 sm:p-8 lg:p-12 shadow-lg border border-ghl-neutral-200 dark:border-gray-700/30">
           <div className="text-center mb-8 sm:mb-12">
             <h3 className="text-xl sm:text-2xl lg:text-3xl font-heading font-bold text-ghl-neutral-900 mb-3 sm:mb-4">
               Our Proven Process

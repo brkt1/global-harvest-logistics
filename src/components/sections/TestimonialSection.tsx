@@ -59,7 +59,7 @@ export default function TestimonialSection() {
   }
 
   return (
-    <section className="section-padding bg-gradient-to-br from-ghl-neutral-50 via-white to-ghl-primary-50 relative overflow-hidden">
+    <section className="section-padding bg-gradient-to-br from-ghl-neutral-50 via-white to-ghl-primary-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
@@ -70,19 +70,19 @@ export default function TestimonialSection() {
       <div className="container-custom relative">
         {/* Section Header */}
         <div className="text-center mb-12 sm:mb-16">
-          <div className="inline-flex items-center px-6 py-3 bg-white/80 backdrop-blur-sm border border-ghl-primary-200/50 text-ghl-primary-700 rounded-full text-sm font-medium mb-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+          <div className="inline-flex items-center px-6 py-3 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-ghl-primary-200/50 dark:border-ghl-primary-600/50 text-ghl-primary-700 dark:text-ghl-primary-300 rounded-full text-sm font-medium mb-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
           </div>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-bold text-ghl-neutral-900 mb-4 sm:mb-6">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-bold text-ghl-neutral-900 dark:text-gray-100 mb-4 sm:mb-6">
             Don&apos;t just take our word for it
           </h2>
-          <p className="text-lg sm:text-xl text-ghl-neutral-600 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-ghl-neutral-600 dark:text-gray-300 max-w-3xl mx-auto">
             Here&apos;s what our partners say about working with Global Harvest Logistics.
           </p>
         </div>
 
         {/* Modern Testimonial Card */}
         <div className="relative max-w-5xl mx-auto mb-12 sm:mb-16">
-          <div className="bg-white/80 backdrop-blur-xl rounded-3xl p-6 sm:p-8 lg:p-12 shadow-2xl shadow-ghl-primary-600/10 border border-white/50">
+          <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-xl rounded-3xl p-6 sm:p-8 lg:p-12 shadow-2xl shadow-ghl-primary-600/10 dark:shadow-gray-900/20 border border-white/50 dark:border-gray-700/30">
             {/* Quote Icon */}
             <div className="flex justify-center mb-6 sm:mb-8">
               <div className="bg-gradient-to-br from-ghl-primary-600 to-ghl-secondary-400 p-4 rounded-2xl shadow-lg">
@@ -99,7 +99,7 @@ export default function TestimonialSection() {
                 ))}
               </div>
               
-              <blockquote className="text-lg sm:text-xl lg:text-2xl leading-relaxed text-ghl-neutral-800 font-medium mb-6 sm:mb-8 max-w-4xl mx-auto">
+              <blockquote className="text-lg sm:text-xl lg:text-2xl leading-relaxed text-ghl-neutral-800 dark:text-gray-200 font-medium mb-6 sm:mb-8 max-w-4xl mx-auto">
                 &ldquo;{testimonials[currentTestimonial].quote}&rdquo;
               </blockquote>
 
@@ -111,16 +111,16 @@ export default function TestimonialSection() {
                   </span>
                 </div>
                 <div className="text-center sm:text-left">
-                  <div className="font-bold text-lg sm:text-xl text-ghl-neutral-900">
+                  <div className="font-bold text-lg sm:text-xl text-ghl-neutral-900 dark:text-gray-100">
                     {testimonials[currentTestimonial].name}
                   </div>
-                  <div className="text-ghl-neutral-600 font-medium">
+                  <div className="text-ghl-neutral-600 dark:text-gray-300 font-medium">
                     {testimonials[currentTestimonial].title}
                   </div>
-                  <div className="text-ghl-primary-600 font-semibold">
+                  <div className="text-ghl-primary-600 dark:text-ghl-primary-400 font-semibold">
                     {testimonials[currentTestimonial].company}
                   </div>
-                  <div className="text-ghl-neutral-500 text-sm">
+                  <div className="text-ghl-neutral-500 dark:text-gray-400 text-sm">
                     {testimonials[currentTestimonial].location}
                   </div>
                 </div>
@@ -131,7 +131,7 @@ export default function TestimonialSection() {
             <div className="flex items-center justify-center space-x-4">
               <button
                 onClick={prevTestimonial}
-                className="bg-ghl-primary-100 hover:bg-ghl-primary-200 text-ghl-primary-600 rounded-full p-3 transition-all duration-300 hover:scale-110"
+                className="bg-ghl-primary-100 dark:bg-ghl-primary-900/30 hover:bg-ghl-primary-200 dark:hover:bg-ghl-primary-800/50 text-ghl-primary-600 dark:text-ghl-primary-400 rounded-full p-3 transition-all duration-300 hover:scale-110"
               >
                 <ChevronLeft className="h-5 w-5" />
               </button>

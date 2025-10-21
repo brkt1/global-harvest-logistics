@@ -3,6 +3,7 @@
 import { Mail, Menu, Phone, Sparkles, Truck, X } from 'lucide-react';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
+import ThemeToggle from './ThemeToggle';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -48,8 +49,8 @@ const Header: React.FC = () => {
       {/* Glassmorphism Header */}
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled 
-          ? 'backdrop-blur-xl bg-white/90 shadow-2xl shadow-ghl-primary-600/10' 
-          : 'backdrop-blur-md bg-white/80'
+          ? 'backdrop-blur-xl bg-white/90 dark:bg-gray-900/90 shadow-2xl shadow-ghl-primary-600/10 dark:shadow-gray-900/20' 
+          : 'backdrop-blur-md bg-white/80 dark:bg-gray-900/80'
       }`}>
         {/* Gradient overlay for glass effect */}
         <div className="absolute inset-0 bg-gradient-to-r from-ghl-primary-600/5 via-transparent to-ghl-secondary-400/5 pointer-events-none" />
@@ -99,38 +100,47 @@ const Header: React.FC = () => {
 
             {/* Desktop Navigation with glass effect */}
             <div className="hidden md:flex items-center space-x-2">
-              <div className="flex items-center space-x-1 bg-white/40 backdrop-blur-sm rounded-full px-4 py-2 border border-white/50 shadow-lg">
+              <div className="flex items-center space-x-1 bg-white/40 dark:bg-gray-800/40 backdrop-blur-sm rounded-full px-4 py-2 border border-white/50 dark:border-gray-700/50 shadow-lg">
                 {navigation.map((item) => (
                   <Link
                     key={item.name}
                     href={item.href}
-                    className="px-4 py-2 text-ghl-neutral-800 hover:text-ghl-primary-600 font-semibold transition-all duration-300 rounded-full hover:bg-white/50 relative group"
+                    className="px-4 py-2 text-ghl-neutral-800 dark:text-gray-200 hover:text-ghl-primary-600 dark:hover:text-ghl-primary-400 font-semibold transition-all duration-300 rounded-full hover:bg-white/50 dark:hover:bg-gray-700/50 relative group"
                   >
                     {item.name}
                     <span className="absolute inset-0 bg-gradient-to-r from-ghl-primary-600/30 to-ghl-secondary-400/30 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </Link>
                 ))}
               </div>
+              
+              {/* Theme Toggle */}
+              <ThemeToggle size="md" />
             </div>
 
-            {/* Mobile menu button with glass effect */}
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden relative group"
-              aria-label="Toggle menu"
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-ghl-primary-600/20 to-ghl-secondary-400/20 rounded-xl blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="relative bg-white/20 backdrop-blur-sm p-2.5 sm:p-3 rounded-xl border border-white/30 hover:bg-white/30 transition-all duration-300">
-                <div className="relative w-5 h-5 sm:w-6 sm:h-6">
-                  <Menu className={`h-5 w-5 sm:h-6 sm:w-6 absolute transition-all duration-300 text-ghl-neutral-700 ${
-                    isMenuOpen ? 'opacity-0 rotate-90' : 'opacity-100 rotate-0'
-                  }`} />
-                  <X className={`h-5 w-5 sm:h-6 sm:w-6 absolute transition-all duration-300 text-ghl-neutral-700 ${
-                    isMenuOpen ? 'opacity-100 rotate-0' : 'opacity-0 -rotate-90'
-                  }`} />
+            {/* Mobile controls */}
+            <div className="md:hidden flex items-center space-x-2">
+              {/* Theme Toggle for mobile */}
+              <ThemeToggle size="sm" />
+              
+              {/* Mobile menu button with glass effect */}
+              <button
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="relative group"
+                aria-label="Toggle menu"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-ghl-primary-600/20 to-ghl-secondary-400/20 rounded-xl blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="relative bg-white/20 dark:bg-gray-800/20 backdrop-blur-sm p-2.5 sm:p-3 rounded-xl border border-white/30 dark:border-gray-700/30 hover:bg-white/30 dark:hover:bg-gray-700/30 transition-all duration-300">
+                  <div className="relative w-5 h-5 sm:w-6 sm:h-6">
+                    <Menu className={`h-5 w-5 sm:h-6 sm:w-6 absolute transition-all duration-300 text-ghl-neutral-700 dark:text-gray-300 ${
+                      isMenuOpen ? 'opacity-0 rotate-90' : 'opacity-100 rotate-0'
+                    }`} />
+                    <X className={`h-5 w-5 sm:h-6 sm:w-6 absolute transition-all duration-300 text-ghl-neutral-700 dark:text-gray-300 ${
+                      isMenuOpen ? 'opacity-100 rotate-0' : 'opacity-0 -rotate-90'
+                    }`} />
+                  </div>
                 </div>
-              </div>
-            </button>
+              </button>
+            </div>
           </div>
 
           {/* Mobile Navigation with glassmorphism */}
@@ -139,13 +149,13 @@ const Header: React.FC = () => {
               ? 'max-h-96 opacity-100' 
               : 'max-h-0 opacity-0 overflow-hidden'
           }`}>
-            <div className="bg-white/40 backdrop-blur-xl rounded-2xl border border-white/50 shadow-2xl shadow-ghl-primary-600/10 p-4 sm:p-6 mb-4">
+            <div className="bg-white/40 dark:bg-gray-800/40 backdrop-blur-xl rounded-2xl border border-white/50 dark:border-gray-700/50 shadow-2xl shadow-ghl-primary-600/10 dark:shadow-gray-900/20 p-4 sm:p-6 mb-4">
               <div className="space-y-1 sm:space-y-2">
                 {navigation.map((item, index) => (
                   <Link
                     key={item.name}
                     href={item.href}
-                    className="block px-3 py-2.5 sm:px-4 sm:py-3 text-ghl-neutral-800 hover:text-ghl-primary-600 font-semibold transition-all duration-300 rounded-xl hover:bg-white/50 relative group text-sm sm:text-base"
+                    className="block px-3 py-2.5 sm:px-4 sm:py-3 text-ghl-neutral-800 dark:text-gray-200 hover:text-ghl-primary-600 dark:hover:text-ghl-primary-400 font-semibold transition-all duration-300 rounded-xl hover:bg-white/50 dark:hover:bg-gray-700/50 relative group text-sm sm:text-base"
                     onClick={() => setIsMenuOpen(false)}
                     style={{
                       animationDelay: `${index * 100}ms`,
@@ -158,17 +168,17 @@ const Header: React.FC = () => {
                 ))}
                 
                 {/* Mobile contact info with glass effect */}
-                <div className="mt-4 sm:mt-6 p-3 sm:p-4 bg-white/30 backdrop-blur-sm rounded-xl border border-white/40 shadow-lg">
+                <div className="mt-4 sm:mt-6 p-3 sm:p-4 bg-white/30 dark:bg-gray-700/30 backdrop-blur-sm rounded-xl border border-white/40 dark:border-gray-600/40 shadow-lg">
                   <div className="space-y-2 sm:space-y-3 text-xs sm:text-sm">
-                    <div className="flex items-center space-x-2 sm:space-x-3 text-ghl-neutral-700">
-                      <Phone className="h-3 w-3 sm:h-4 sm:w-4 text-ghl-primary-600 flex-shrink-0" />
-                      <a href="tel:+15551234567" className="hover:text-ghl-primary-600 transition-colors font-medium">
+                    <div className="flex items-center space-x-2 sm:space-x-3 text-ghl-neutral-700 dark:text-gray-300">
+                      <Phone className="h-3 w-3 sm:h-4 sm:w-4 text-ghl-primary-600 dark:text-ghl-primary-400 flex-shrink-0" />
+                      <a href="tel:+15551234567" className="hover:text-ghl-primary-600 dark:hover:text-ghl-primary-400 transition-colors font-medium">
                         +1 (555) 123-4567
                       </a>
                     </div>
-                    <div className="flex items-center space-x-2 sm:space-x-3 text-ghl-neutral-700">
-                      <Mail className="h-3 w-3 sm:h-4 sm:w-4 text-ghl-primary-600 flex-shrink-0" />
-                      <a href="mailto:info@globalharvestlogistics.com" className="hover:text-ghl-primary-600 transition-colors break-all font-medium">
+                    <div className="flex items-center space-x-2 sm:space-x-3 text-ghl-neutral-700 dark:text-gray-300">
+                      <Mail className="h-3 w-3 sm:h-4 sm:w-4 text-ghl-primary-600 dark:text-ghl-primary-400 flex-shrink-0" />
+                      <a href="mailto:info@globalharvestlogistics.com" className="hover:text-ghl-primary-600 dark:hover:text-ghl-primary-400 transition-colors break-all font-medium">
                         info@globalharvestlogistics.com
                       </a>
                     </div>

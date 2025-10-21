@@ -103,7 +103,7 @@ export default function QuotePage() {
                   Tell Us About Your Shipment
                 </h2>
                 <p className="text-white/90">
-                  Fill out the form below and we'll get back to you with a detailed quote
+                  Fill out the form below and we&apos;ll get back to you with a detailed quote
                 </p>
               </div>
               

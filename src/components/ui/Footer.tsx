@@ -39,11 +39,11 @@ export default function Footer() {
   return (
     <footer className="relative overflow-hidden">
       {/* Glassy background with gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"></div>
-      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent dark:from-gray-900/20"></div>
       
       {/* Glassy overlay */}
-      <div className="relative backdrop-blur-xl bg-white/5 border-t border-white/10">
+      <div className="relative backdrop-blur-xl bg-white/5 dark:bg-gray-900/5 border-t border-white/10 dark:border-gray-800/10">
         <div className="container-custom">
           {/* Main footer content */}
           <div className="py-16 md:py-20">
@@ -86,8 +86,8 @@ export default function Footer() {
                   onClick={() => toggleSection('services')}
                   className="flex items-center justify-between w-full lg:justify-start lg:mb-8 mb-6 group"
                 >
-                  <h4 className="text-lg font-heading font-semibold text-white group-hover:text-ghl-secondary-400 transition-colors">Services</h4>
-                  <ChevronDown className={`h-5 w-5 lg:hidden transition-transform duration-300 ${
+                  <h4 className="text-lg font-heading font-semibold text-white dark:text-gray-100 group-hover:text-ghl-secondary-400 dark:group-hover:text-ghl-secondary-300 transition-colors">Services</h4>
+                  <ChevronDown className={`h-5 w-5 lg:hidden transition-transform duration-300 text-white dark:text-gray-300 ${
                     expandedSections.services ? 'rotate-180' : ''
                   }`} />
                 </button>
@@ -98,7 +98,7 @@ export default function Footer() {
                     <li key={service.name}>
                       <Link 
                         href={service.href}
-                        className="text-white/70 hover:text-white hover:bg-white/5 transition-all duration-300 text-sm md:text-base block py-2 px-3 rounded-lg hover:backdrop-blur-sm hover:border hover:border-white/10"
+                        className="text-white/70 dark:text-gray-300 hover:text-white dark:hover:text-gray-100 hover:bg-white/5 dark:hover:bg-gray-800/20 transition-all duration-300 text-sm md:text-base block py-2 px-3 rounded-lg hover:backdrop-blur-sm hover:border hover:border-white/10 dark:hover:border-gray-700/20"
                       >
                         {service.name}
                       </Link>
@@ -113,8 +113,8 @@ export default function Footer() {
                   onClick={() => toggleSection('company')}
                   className="flex items-center justify-between w-full lg:justify-start lg:mb-8 mb-6 group"
                 >
-                  <h4 className="text-lg font-heading font-semibold text-white group-hover:text-ghl-secondary-400 transition-colors">Company</h4>
-                  <ChevronDown className={`h-5 w-5 lg:hidden transition-transform duration-300 ${
+                  <h4 className="text-lg font-heading font-semibold text-white dark:text-gray-100 group-hover:text-ghl-secondary-400 dark:group-hover:text-ghl-secondary-300 transition-colors">Company</h4>
+                  <ChevronDown className={`h-5 w-5 lg:hidden transition-transform duration-300 text-white dark:text-gray-300 ${
                     expandedSections.company ? 'rotate-180' : ''
                   }`} />
                 </button>
@@ -125,7 +125,7 @@ export default function Footer() {
                     <li key={item.name}>
                       <Link 
                         href={item.href}
-                        className="text-white/70 hover:text-white hover:bg-white/5 transition-all duration-300 text-sm md:text-base block py-2 px-3 rounded-lg hover:backdrop-blur-sm hover:border hover:border-white/10"
+                        className="text-white/70 dark:text-gray-300 hover:text-white dark:hover:text-gray-100 hover:bg-white/5 dark:hover:bg-gray-800/20 transition-all duration-300 text-sm md:text-base block py-2 px-3 rounded-lg hover:backdrop-blur-sm hover:border hover:border-white/10 dark:hover:border-gray-700/20"
                       >
                         {item.name}
                       </Link>
@@ -136,14 +136,14 @@ export default function Footer() {
 
               {/* Contact Info - Always visible, optimized for mobile */}
               <div className="sm:col-span-2 lg:col-span-1">
-                <h4 className="text-lg font-heading font-semibold mb-6 md:mb-8 text-white">Contact</h4>
+                <h4 className="text-lg font-heading font-semibold mb-6 md:mb-8 text-white dark:text-gray-100">Contact</h4>
                 <div className="space-y-6">
                   <div className="flex items-start space-x-4">
-                    <div className="bg-white/10 backdrop-blur-sm border border-white/20 p-2 rounded-lg">
-                      <MapPin className="h-5 w-5 text-ghl-secondary-400" />
+                    <div className="bg-white/10 dark:bg-gray-800/20 backdrop-blur-sm border border-white/20 dark:border-gray-700/20 p-2 rounded-lg">
+                      <MapPin className="h-5 w-5 text-ghl-secondary-400 dark:text-ghl-secondary-300" />
                     </div>
                     <div>
-                      <p className="text-white/80 text-sm md:text-base leading-relaxed">
+                      <p className="text-white/80 dark:text-gray-300 text-sm md:text-base leading-relaxed">
                         123 Logistics Drive<br />
                         Port City, PC 12345<br />
                         United States
@@ -151,23 +151,23 @@ export default function Footer() {
                     </div>
                   </div>
                   <div className="flex items-center space-x-4">
-                    <div className="bg-white/10 backdrop-blur-sm border border-white/20 p-2 rounded-lg">
-                      <Phone className="h-5 w-5 text-ghl-secondary-400" />
+                    <div className="bg-white/10 dark:bg-gray-800/20 backdrop-blur-sm border border-white/20 dark:border-gray-700/20 p-2 rounded-lg">
+                      <Phone className="h-5 w-5 text-ghl-secondary-400 dark:text-ghl-secondary-300" />
                     </div>
                     <a 
                       href="tel:+15551234567"
-                      className="text-white/80 hover:text-white transition-colors text-sm md:text-base"
+                      className="text-white/80 dark:text-gray-300 hover:text-white dark:hover:text-gray-100 transition-colors text-sm md:text-base"
                     >
                       +1 (555) 123-4567
                     </a>
                   </div>
                   <div className="flex items-center space-x-4">
-                    <div className="bg-white/10 backdrop-blur-sm border border-white/20 p-2 rounded-lg">
-                      <Mail className="h-5 w-5 text-ghl-secondary-400" />
+                    <div className="bg-white/10 dark:bg-gray-800/20 backdrop-blur-sm border border-white/20 dark:border-gray-700/20 p-2 rounded-lg">
+                      <Mail className="h-5 w-5 text-ghl-secondary-400 dark:text-ghl-secondary-300" />
                     </div>
                     <a 
                       href="mailto:info@globalharvestlogistics.com"
-                      className="text-white/80 hover:text-white transition-colors text-sm md:text-base break-all"
+                      className="text-white/80 dark:text-gray-300 hover:text-white dark:hover:text-gray-100 transition-colors text-sm md:text-base break-all"
                     >
                       info@globalharvestlogistics.com
                     </a>
@@ -178,32 +178,32 @@ export default function Footer() {
           </div>
 
           {/* Trust badges - Enhanced glassy design */}
-          <div className="border-t border-white/10 py-8 md:py-12">
+          <div className="border-t border-white/10 dark:border-gray-800/20 py-8 md:py-12">
             <div className="text-center">
-              <h5 className="text-sm font-medium text-white/60 mb-8">Trusted & Certified</h5>
+              <h5 className="text-sm font-medium text-white/60 dark:text-gray-400 mb-8">Trusted & Certified</h5>
               <div className="grid grid-cols-2 md:flex md:flex-wrap justify-center items-center gap-4 md:gap-6">
-                <div className="bg-white/10 backdrop-blur-md border border-white/20 px-6 py-3 rounded-xl text-white font-medium text-sm hover:bg-white/20 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">ISO 9001</div>
-                <div className="bg-white/10 backdrop-blur-md border border-white/20 px-6 py-3 rounded-xl text-white font-medium text-sm hover:bg-white/20 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">HACCP</div>
-                <div className="bg-white/10 backdrop-blur-md border border-white/20 px-6 py-3 rounded-xl text-white font-medium text-sm hover:bg-white/20 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">Organic Certified</div>
-                <div className="bg-white/10 backdrop-blur-md border border-white/20 px-6 py-3 rounded-xl text-white font-medium text-sm hover:bg-white/20 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">FDA Approved</div>
+                <div className="bg-white/10 dark:bg-gray-800/20 backdrop-blur-md border border-white/20 dark:border-gray-700/20 px-6 py-3 rounded-xl text-white dark:text-gray-100 font-medium text-sm hover:bg-white/20 dark:hover:bg-gray-700/30 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">ISO 9001</div>
+                <div className="bg-white/10 dark:bg-gray-800/20 backdrop-blur-md border border-white/20 dark:border-gray-700/20 px-6 py-3 rounded-xl text-white dark:text-gray-100 font-medium text-sm hover:bg-white/20 dark:hover:bg-gray-700/30 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">HACCP</div>
+                <div className="bg-white/10 dark:bg-gray-800/20 backdrop-blur-md border border-white/20 dark:border-gray-700/20 px-6 py-3 rounded-xl text-white dark:text-gray-100 font-medium text-sm hover:bg-white/20 dark:hover:bg-gray-700/30 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">Organic Certified</div>
+                <div className="bg-white/10 dark:bg-gray-800/20 backdrop-blur-md border border-white/20 dark:border-gray-700/20 px-6 py-3 rounded-xl text-white dark:text-gray-100 font-medium text-sm hover:bg-white/20 dark:hover:bg-gray-700/30 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">FDA Approved</div>
               </div>
             </div>
           </div>
 
           {/* Bottom bar - Enhanced glassy design */}
-          <div className="border-t border-white/10 py-6 md:py-8">
+          <div className="border-t border-white/10 dark:border-gray-800/20 py-6 md:py-8">
             <div className="flex flex-col space-y-4 md:space-y-0 md:flex-row md:justify-between md:items-center">
-              <p className="text-white/60 text-xs md:text-sm text-center md:text-left">
+              <p className="text-white/60 dark:text-gray-400 text-xs md:text-sm text-center md:text-left">
                 © {currentYear} Global Harvest Logistics. All rights reserved.
               </p>
               <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-8 text-xs md:text-sm">
-                <Link href="/privacy" className="text-white/60 hover:text-white transition-colors text-center sm:text-left hover:underline">
+                <Link href="/privacy" className="text-white/60 dark:text-gray-400 hover:text-white dark:hover:text-gray-100 transition-colors text-center sm:text-left hover:underline">
                   Privacy Policy
                 </Link>
-                <Link href="/terms" className="text-white/60 hover:text-white transition-colors text-center sm:text-left hover:underline">
+                <Link href="/terms" className="text-white/60 dark:text-gray-400 hover:text-white dark:hover:text-gray-100 transition-colors text-center sm:text-left hover:underline">
                   Terms of Service
                 </Link>
-                <Link href="/cookies" className="text-white/60 hover:text-white transition-colors text-center sm:text-left hover:underline">
+                <Link href="/cookies" className="text-white/60 dark:text-gray-400 hover:text-white dark:hover:text-gray-100 transition-colors text-center sm:text-left hover:underline">
                   Cookie Policy
                 </Link>
               </div>

@@ -22,7 +22,7 @@ export default function TrustedBySection() {
   return (
     <section className="relative py-20 overflow-hidden">
       {/* Background with gradient and glassmorphism */}
-      <div className="absolute inset-0 bg-gradient-to-br from-ghl-primary-50 via-white to-ghl-secondary-50"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-ghl-primary-50 via-white to-ghl-secondary-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"></div>
       
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
@@ -33,13 +33,13 @@ export default function TrustedBySection() {
       <div className="container-custom relative">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center px-6 py-3 bg-white/80 backdrop-blur-sm border border-white/20 rounded-full text-ghl-primary-700 text-sm font-medium mb-6 shadow-lg">
+          <div className="inline-flex items-center px-6 py-3 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-white/20 dark:border-gray-700/30 rounded-full text-ghl-primary-700 dark:text-ghl-primary-300 text-sm font-medium mb-6 shadow-lg">
             <Shield className="h-4 w-4 mr-2" />
           </div>
           
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-ghl-neutral-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-heading font-bold text-ghl-neutral-900 dark:text-gray-100 mb-4">
           </h2>
-          <p className="text-lg text-ghl-neutral-600 max-w-2xl mx-auto">
+          <p className="text-lg text-ghl-neutral-600 dark:text-gray-300 max-w-2xl mx-auto">
             Join hundreds of companies worldwide who trust us with their most valuable shipments
           </p>
         </div>

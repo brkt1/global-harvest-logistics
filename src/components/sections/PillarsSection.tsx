@@ -48,14 +48,14 @@ export default function PillarsSection() {
   ]
 
   return (
-    <section className="section-padding bg-white">
+    <section className="section-padding bg-white dark:bg-gray-900">
       <div className="container-custom">
         {/* Section Header */}
         <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-bold text-ghl-neutral-900 mb-4 sm:mb-6">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-bold text-ghl-neutral-900 dark:text-gray-100 mb-4 sm:mb-6">
             Built on Three Pillars of Excellence
           </h2>
-          <p className="text-lg sm:text-xl text-ghl-neutral-600 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-ghl-neutral-600 dark:text-gray-300 max-w-3xl mx-auto">
             Our commitment to expertise, reliability, and sustainability ensures your 
             temperature-sensitive commodities reach their destination in perfect condition.
           </p>
@@ -66,7 +66,7 @@ export default function PillarsSection() {
           {pillars.map((pillar) => (
             <div 
               key={pillar.title}
-              className="group relative bg-white rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-ghl-neutral-100 hover:border-ghl-primary-200"
+              className="group relative bg-white dark:bg-gray-800 rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-ghl-neutral-100 dark:border-gray-700/30 hover:border-ghl-primary-200 dark:hover:border-ghl-primary-600/50"
             >
               {/* Icon */}
               <div className={`inline-flex p-3 sm:p-4 rounded-xl bg-ghl-${pillar.color.replace('ghl-', '').replace('-', '-')} bg-opacity-10 mb-4 sm:mb-6`}>
@@ -74,18 +74,18 @@ export default function PillarsSection() {
               </div>
 
               {/* Content */}
-              <h3 className="text-xl sm:text-2xl font-heading font-bold text-ghl-neutral-900 mb-3 sm:mb-4">
+              <h3 className="text-xl sm:text-2xl font-heading font-bold text-ghl-neutral-900 dark:text-gray-100 mb-3 sm:mb-4">
                 {pillar.title}
               </h3>
               
-              <p className="text-ghl-neutral-600 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
+              <p className="text-ghl-neutral-600 dark:text-gray-300 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
                 {pillar.description}
               </p>
 
               {/* Features List */}
               <ul className="space-y-2 sm:space-y-3">
                 {pillar.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="flex items-center text-xs sm:text-sm text-ghl-neutral-600">
+                  <li key={featureIndex} className="flex items-center text-xs sm:text-sm text-ghl-neutral-600 dark:text-gray-300">
                     <div className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-ghl-${pillar.color.replace('ghl-', '').replace('-', '-')} mr-2 sm:mr-3 flex-shrink-0`} />
                     {feature}
                   </li>

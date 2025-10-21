@@ -8,7 +8,7 @@ export default function HeroSection() {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false)
 
   return (
-    <section className="relative bg-gradient-to-br from-ghl-neutral-50 to-white overflow-hidden">
+    <section className="relative bg-gradient-to-br from-ghl-neutral-50 to-white dark:from-gray-900 dark:to-gray-800 overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
@@ -21,7 +21,7 @@ export default function HeroSection() {
           {/* Left Content */}
           <div className="space-y-6 sm:space-y-8">
             <div className="space-y-4 sm:space-y-6">
-              <div className="inline-flex items-center px-4 py-2 bg-white/80 backdrop-blur-sm border border-ghl-primary-200/50 text-ghl-primary-700 rounded-full text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+              <div className="inline-flex items-center px-4 py-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-ghl-primary-200/50 dark:border-ghl-primary-600/50 text-ghl-primary-700 dark:text-ghl-primary-300 rounded-full text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
                 <div className="flex -space-x-1 mr-3">
                   <div className="w-5 h-5 bg-ghl-primary-600 rounded-full border-2 border-white flex items-center justify-center">
                     <span className="text-xs text-white font-bold">G</span>
@@ -37,14 +37,14 @@ export default function HeroSection() {
               </div>
               
               <h1 className="text-3xl sm:text-4xl lg:text-6xl font-heading font-bold leading-tight">
-                <span className="text-ghl-neutral-900">Delivering</span>
+                <span className="text-ghl-neutral-900 dark:text-gray-100">Delivering</span>
                 <br />
                 <span className="text-gradient">Taste, Preserving</span>
                 <br />
-                <span className="text-ghl-primary-600">Nature</span>
+                <span className="text-ghl-primary-600 dark:text-ghl-primary-400">Nature</span>
               </h1>
               
-              <p className="text-lg sm:text-xl text-ghl-neutral-600 leading-relaxed max-w-2xl">
+              <p className="text-lg sm:text-xl text-ghl-neutral-600 dark:text-gray-300 leading-relaxed max-w-2xl">
                 Your trusted partner in temperature-sensitive commodity logistics. 
                 We specialize in coffee, olive oil, and specialty food exports with 
                 unmatched expertise, reliability, and sustainability.
@@ -73,19 +73,19 @@ export default function HeroSection() {
             </div>
 
             {/* Trust Indicators */}
-            <div className="pt-6 sm:pt-8 border-t border-ghl-neutral-200">
+            <div className="pt-6 sm:pt-8 border-t border-ghl-neutral-200 dark:border-gray-700">
               <div className="flex flex-wrap items-center justify-between gap-4 sm:gap-6">
                 <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-ghl-primary-600 rounded-full"></div>
-                  <span className="text-sm text-ghl-neutral-600">500+ Global Partners</span>
+                  <div className="w-2 h-2 bg-ghl-primary-600 dark:bg-ghl-primary-400 rounded-full"></div>
+                  <span className="text-sm text-ghl-neutral-600 dark:text-gray-300">500+ Global Partners</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-ghl-secondary-400 rounded-full"></div>
-                  <span className="text-sm text-ghl-neutral-600">99.8% On-Time Delivery</span>
+                  <div className="w-2 h-2 bg-ghl-secondary-400 dark:bg-ghl-secondary-300 rounded-full"></div>
+                  <span className="text-sm text-ghl-neutral-600 dark:text-gray-300">99.8% On-Time Delivery</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-ghl-primary-500 rounded-full"></div>
-                  <span className="text-sm text-ghl-neutral-600">24/7 Support</span>
+                  <div className="w-2 h-2 bg-ghl-primary-500 dark:bg-ghl-primary-400 rounded-full"></div>
+                  <span className="text-sm text-ghl-neutral-600 dark:text-gray-300">24/7 Support</span>
                 </div>
               </div>
             </div>
