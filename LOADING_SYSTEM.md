@@ -141,7 +141,7 @@ export default function MyComponent() {
 
 ## Demo Page
 
-Visit `/loading-demo` to see all loading variations in action.
+The loading system is integrated throughout the application. You can see the loading animations in action when using forms, navigation, and other interactive elements.
 
 ## Brand Integration
 

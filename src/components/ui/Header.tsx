@@ -13,7 +13,6 @@ const Header: React.FC = () => {
     { name: 'Services', href: '/services' },
     { name: 'About', href: '/about' },
     { name: 'Contact', href: '/contact' },
-    { name: 'Loading Demo', href: '/loading-demo' },
   ];
 
   // Handle scroll effect for glass morphism
