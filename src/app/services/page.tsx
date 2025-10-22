@@ -155,17 +155,17 @@ export default function ServicesPage() {
         
         <div className="container-custom relative z-10">
           <div className="max-w-6xl mx-auto">
-            {/* Mobile-first layout */}
-            <div className="pt-16 pb-20 sm:pt-20 sm:pb-24 lg:pt-24 lg:pb-32">
+            {/* Mobile-first layout - Enhanced */}
+            <div className="pt-12 pb-16 sm:pt-16 sm:pb-20 lg:pt-20 lg:pb-24 xl:pt-24 xl:pb-32">
               <div className="text-center">
                 {/* Badge */}
-                <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium mb-6 animate-fade-in">
-                  <Star className="w-4 h-4 mr-2" />
+                <div className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 bg-white/10 backdrop-blur-sm rounded-full text-xs sm:text-sm font-medium mb-4 sm:mb-6 animate-fade-in">
+                  <Star className="w-3 h-3 sm:w-4 sm:h-4 mr-1.5 sm:mr-2" />
                   Trusted by 500+ Companies
                 </div>
                 
                 {/* Main Heading */}
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-bold mb-6 leading-tight">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-heading font-bold mb-4 sm:mb-6 leading-tight">
                   <span className="block">Specialized</span>
                   <span className="block bg-gradient-to-r from-white to-ghl-secondary-200 bg-clip-text text-transparent">
                     Logistics Solutions
@@ -173,37 +173,37 @@ export default function ServicesPage() {
                 </h1>
                 
                 {/* Subtitle */}
-                <p className="text-lg sm:text-xl lg:text-2xl opacity-90 mb-8 max-w-4xl mx-auto leading-relaxed">
+                <p className="text-base sm:text-lg lg:text-xl xl:text-2xl opacity-90 mb-6 sm:mb-8 max-w-4xl mx-auto leading-relaxed">
                   Expert temperature-controlled logistics for coffee, oils, and specialty commodities. 
                   <span className="block sm:inline"> Delivering quality with unmatched reliability.</span>
                 </p>
                 
                 {/* CTA Buttons - Mobile Optimized */}
-                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-8 sm:mb-12">
                   <Link 
                     href="/quote" 
-                    className="w-full sm:w-auto btn bg-white text-ghl-primary-600 hover:bg-ghl-neutral-50 hover:scale-105 transition-all duration-300 text-lg px-8 py-4 rounded-xl font-semibold shadow-lg"
+                    className="w-full sm:w-auto btn bg-white text-ghl-primary-600 hover:bg-ghl-neutral-50 hover:scale-105 transition-all duration-300 text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold shadow-lg"
                   >
                     Get Custom Quote
-                    <ArrowRight className="ml-2 h-5 w-5" />
+                    <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
                   </Link>
                   <Link 
                     href="/track" 
-                    className="w-full sm:w-auto btn border-2 border-white/30 text-white hover:bg-white hover:text-ghl-primary-600 backdrop-blur-sm text-lg px-8 py-4 rounded-xl font-semibold transition-all duration-300"
+                    className="w-full sm:w-auto btn border-2 border-white/30 text-white hover:bg-white hover:text-ghl-primary-600 backdrop-blur-sm text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold transition-all duration-300"
                   >
                     Track Shipment
                   </Link>
                 </div>
                 
                 {/* Stats - Mobile Responsive */}
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 max-w-4xl mx-auto">
                   {stats.map((stat, index) => (
                     <div key={index} className="text-center animate-slide-up" style={{ animationDelay: `${index * 0.1}s` }}>
-                      <div className="inline-flex items-center justify-center w-12 h-12 bg-white/10 backdrop-blur-sm rounded-xl mb-3">
-                        <stat.icon className="w-6 h-6" />
+                      <div className="inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-white/10 backdrop-blur-sm rounded-lg sm:rounded-xl mb-2 sm:mb-3">
+                        <stat.icon className="w-5 h-5 sm:w-6 sm:h-6" />
                       </div>
-                      <div className="text-2xl lg:text-3xl font-bold mb-1">{stat.number}</div>
-                      <div className="text-sm opacity-80">{stat.label}</div>
+                      <div className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold mb-1">{stat.number}</div>
+                      <div className="text-xs sm:text-sm opacity-80">{stat.label}</div>
                     </div>
                   ))}
                 </div>
@@ -218,57 +218,57 @@ export default function ServicesPage() {
       </section>
 
       {/* Modern Services Section - Mobile First */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-white dark:bg-gray-800">
+      <section className="py-12 sm:py-16 lg:py-20 xl:py-24 bg-white dark:bg-gray-800">
         <div className="container-custom">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center px-4 py-2 bg-ghl-primary-50 dark:bg-ghl-primary-900/20 text-ghl-primary-600 dark:text-ghl-primary-400 rounded-full text-sm font-medium mb-6">
-              <Package className="w-4 h-4 mr-2" />
+          <div className="text-center mb-12 sm:mb-16">
+            <div className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 bg-ghl-primary-50 dark:bg-ghl-primary-900/20 text-ghl-primary-600 dark:text-ghl-primary-400 rounded-full text-xs sm:text-sm font-medium mb-4 sm:mb-6">
+              <Package className="w-3 h-3 sm:w-4 sm:h-4 mr-1.5 sm:mr-2" />
               Our Services
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-ghl-neutral-900 dark:text-gray-100 mb-6">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-heading font-bold text-ghl-neutral-900 dark:text-gray-100 mb-4 sm:mb-6">
               Specialized Solutions for Every Need
             </h2>
-            <p className="text-lg sm:text-xl text-ghl-neutral-600 dark:text-gray-300 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg lg:text-xl text-ghl-neutral-600 dark:text-gray-300 max-w-3xl mx-auto">
               From coffee beans to specialty oils, we provide tailored logistics solutions 
               that preserve quality and ensure timely delivery.
             </p>
           </div>
 
           {/* Services Grid - Mobile First */}
-          <div className="space-y-16 lg:space-y-24">
+          <div className="space-y-12 sm:space-y-16 lg:space-y-20 xl:space-y-24">
             {services.map((service, index) => (
               <div key={service.id} className="group">
-                <div className={`grid lg:grid-cols-2 gap-8 lg:gap-16 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
+                <div className={`grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 xl:gap-16 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
                   {/* Content - Mobile First */}
-                  <div className={`space-y-8 ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
+                  <div className={`space-y-6 sm:space-y-8 ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
                     {/* Service Badge */}
-                    <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-ghl-primary-50 to-ghl-secondary-50 dark:from-ghl-primary-900/20 dark:to-ghl-secondary-900/20 text-ghl-primary-600 dark:text-ghl-primary-400 rounded-full text-sm font-medium">
-                      <service.icon className="h-4 w-4 mr-2" />
+                    <div className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 bg-gradient-to-r from-ghl-primary-50 to-ghl-secondary-50 dark:from-ghl-primary-900/20 dark:to-ghl-secondary-900/20 text-ghl-primary-600 dark:text-ghl-primary-400 rounded-full text-xs sm:text-sm font-medium">
+                      <service.icon className="h-3 w-3 sm:h-4 sm:w-4 mr-1.5 sm:mr-2" />
                       {service.subtitle}
                     </div>
                     
                     {/* Title */}
-                    <h3 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-bold text-ghl-neutral-900 dark:text-gray-100 leading-tight">
+                    <h3 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-heading font-bold text-ghl-neutral-900 dark:text-gray-100 leading-tight">
                       {service.title}
                     </h3>
                     
                     {/* Description */}
-                    <p className="text-lg text-ghl-neutral-600 dark:text-gray-300 leading-relaxed">
+                    <p className="text-base sm:text-lg text-ghl-neutral-600 dark:text-gray-300 leading-relaxed">
                       {service.description}
                     </p>
 
                     {/* Features & Process - Mobile Optimized */}
-                    <div className="grid sm:grid-cols-2 gap-8">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
                       {/* Key Features */}
-                      <div className="space-y-4">
-                        <h4 className="text-lg font-semibold text-ghl-neutral-900 dark:text-gray-100 flex items-center">
-                          <CheckCircle className="h-5 w-5 text-ghl-secondary-400 mr-2" />
+                      <div className="space-y-3 sm:space-y-4">
+                        <h4 className="text-base sm:text-lg font-semibold text-ghl-neutral-900 dark:text-gray-100 flex items-center">
+                          <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-ghl-secondary-400 mr-2" />
                           Key Features
                         </h4>
-                        <ul className="space-y-3">
+                        <ul className="space-y-2 sm:space-y-3">
                           {service.features.slice(0, 3).map((feature, featureIndex) => (
-                            <li key={featureIndex} className="flex items-start text-sm text-ghl-neutral-600 dark:text-gray-300">
-                              <div className="w-1.5 h-1.5 bg-ghl-secondary-400 rounded-full mr-3 mt-2 flex-shrink-0" />
+                            <li key={featureIndex} className="flex items-start text-xs sm:text-sm text-ghl-neutral-600 dark:text-gray-300">
+                              <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 bg-ghl-secondary-400 rounded-full mr-2 sm:mr-3 mt-1.5 sm:mt-2 flex-shrink-0" />
                               {feature}
                             </li>
                           ))}
@@ -276,15 +276,15 @@ export default function ServicesPage() {
                       </div>
                       
                       {/* Our Process */}
-                      <div className="space-y-4">
-                        <h4 className="text-lg font-semibold text-ghl-neutral-900 dark:text-gray-100 flex items-center">
-                          <Clock className="h-5 w-5 text-ghl-primary-600 mr-2" />
+                      <div className="space-y-3 sm:space-y-4">
+                        <h4 className="text-base sm:text-lg font-semibold text-ghl-neutral-900 dark:text-gray-100 flex items-center">
+                          <Clock className="h-4 w-4 sm:h-5 sm:w-5 text-ghl-primary-600 mr-2" />
                           Our Process
                         </h4>
-                        <ul className="space-y-3">
+                        <ul className="space-y-2 sm:space-y-3">
                           {service.process.slice(0, 3).map((step, stepIndex) => (
-                            <li key={stepIndex} className="flex items-start text-sm text-ghl-neutral-600 dark:text-gray-300">
-                              <div className="w-6 h-6 bg-gradient-to-r from-ghl-primary-500 to-ghl-secondary-400 text-white rounded-full flex items-center justify-center text-xs font-bold mr-3 mt-0.5 flex-shrink-0">
+                            <li key={stepIndex} className="flex items-start text-xs sm:text-sm text-ghl-neutral-600 dark:text-gray-300">
+                              <div className="w-5 h-5 sm:w-6 sm:h-6 bg-gradient-to-r from-ghl-primary-500 to-ghl-secondary-400 text-white rounded-full flex items-center justify-center text-xs font-bold mr-2 sm:mr-3 mt-0.5 flex-shrink-0">
                                 {stepIndex + 1}
                               </div>
                               {step}
@@ -294,61 +294,61 @@ export default function ServicesPage() {
                       </div>
                     </div>
 
-                    {/* Benefits - Modern Card */}
-                    <div className="bg-gradient-to-r from-ghl-neutral-50 to-ghl-primary-50 dark:from-gray-700/50 dark:to-ghl-primary-900/20 rounded-2xl p-6 border border-ghl-neutral-200 dark:border-gray-600/30">
-                      <h4 className="text-lg font-semibold text-ghl-neutral-900 dark:text-gray-100 mb-4 flex items-center">
-                        <Star className="h-5 w-5 text-ghl-secondary-400 mr-2" />
+                    {/* Benefits - Modern Card - Mobile optimized */}
+                    <div className="bg-gradient-to-r from-ghl-neutral-50 to-ghl-primary-50 dark:from-gray-700/50 dark:to-ghl-primary-900/20 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-ghl-neutral-200 dark:border-gray-600/30">
+                      <h4 className="text-base sm:text-lg font-semibold text-ghl-neutral-900 dark:text-gray-100 mb-3 sm:mb-4 flex items-center">
+                        <Star className="h-4 w-4 sm:h-5 sm:w-5 text-ghl-secondary-400 mr-2" />
                         Key Benefits
                       </h4>
-                      <div className="grid sm:grid-cols-2 gap-3">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
                         {service.benefits.map((benefit, benefitIndex) => (
-                          <div key={benefitIndex} className="flex items-center text-sm text-ghl-neutral-600 dark:text-gray-300">
-                            <div className="w-2 h-2 bg-gradient-to-r from-ghl-secondary-400 to-ghl-primary-500 rounded-full mr-3 flex-shrink-0" />
+                          <div key={benefitIndex} className="flex items-center text-xs sm:text-sm text-ghl-neutral-600 dark:text-gray-300">
+                            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-gradient-to-r from-ghl-secondary-400 to-ghl-primary-500 rounded-full mr-2 sm:mr-3 flex-shrink-0" />
                             {benefit}
                           </div>
                         ))}
                       </div>
                     </div>
 
-                    {/* CTA Button */}
+                    {/* CTA Button - Mobile optimized */}
                     <Link 
                       href="/quote"
-                      className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-ghl-primary-600 to-ghl-secondary-400 text-white rounded-xl font-semibold hover:from-ghl-primary-700 hover:to-ghl-secondary-500 transition-all duration-300 hover:scale-105 shadow-lg group"
+                      className="inline-flex items-center px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-ghl-primary-600 to-ghl-secondary-400 text-white rounded-lg sm:rounded-xl font-semibold hover:from-ghl-primary-700 hover:to-ghl-secondary-500 transition-all duration-300 hover:scale-105 shadow-lg group text-sm sm:text-base"
                     >
                       Get Quote for {service.title}
-                      <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                      <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
                     </Link>
                   </div>
 
-                  {/* Visual - Modern Design */}
+                  {/* Visual - Modern Design - Mobile optimized */}
                   <div className={`${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
                     <div className="relative group-hover:scale-105 transition-transform duration-500">
                       {/* Main Visual Card */}
-                      <div className="relative bg-gradient-to-br from-ghl-neutral-100 to-ghl-neutral-200 dark:from-gray-700 dark:to-gray-600 rounded-3xl p-8 sm:p-12 aspect-square flex items-center justify-center overflow-hidden">
+                      <div className="relative bg-gradient-to-br from-ghl-neutral-100 to-ghl-neutral-200 dark:from-gray-700 dark:to-gray-600 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 aspect-square flex items-center justify-center overflow-hidden">
                         {/* Background Pattern */}
                         <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent"></div>
                         
                         {/* Service Icon */}
                         <div className="relative z-10 text-center">
-                          <div className="inline-flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 bg-gradient-to-r from-ghl-primary-500 to-ghl-secondary-400 rounded-2xl mb-6 shadow-lg">
-                            <service.icon className="h-10 w-10 sm:h-12 sm:w-12 text-white" />
+                          <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 bg-gradient-to-r from-ghl-primary-500 to-ghl-secondary-400 rounded-xl sm:rounded-2xl mb-4 sm:mb-6 shadow-lg">
+                            <service.icon className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 text-white" />
                           </div>
-                          <p className="text-ghl-neutral-500 dark:text-gray-400 font-medium">Service Visualization</p>
+                          <p className="text-xs sm:text-sm text-ghl-neutral-500 dark:text-gray-400 font-medium">Service Visualization</p>
                         </div>
                         
                         {/* Floating Elements */}
-                        <div className="absolute top-4 right-4 bg-white dark:bg-gray-800 text-ghl-primary-600 dark:text-ghl-primary-400 px-3 py-2 rounded-lg shadow-lg text-sm font-medium">
+                        <div className="absolute top-2 right-2 sm:top-4 sm:right-4 bg-white dark:bg-gray-800 text-ghl-primary-600 dark:text-ghl-primary-400 px-2 py-1 sm:px-3 sm:py-2 rounded-md sm:rounded-lg shadow-lg text-xs sm:text-sm font-medium">
                           Specialized
                         </div>
                         
-                        <div className="absolute bottom-4 left-4 bg-gradient-to-r from-ghl-secondary-400 to-ghl-primary-500 text-white px-3 py-2 rounded-lg shadow-lg text-sm font-medium">
+                        <div className="absolute bottom-2 left-2 sm:bottom-4 sm:left-4 bg-gradient-to-r from-ghl-secondary-400 to-ghl-primary-500 text-white px-2 py-1 sm:px-3 sm:py-2 rounded-md sm:rounded-lg shadow-lg text-xs sm:text-sm font-medium">
                           Expert Handling
                         </div>
                       </div>
                       
                       {/* Decorative Elements */}
-                      <div className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r from-ghl-secondary-400 to-ghl-primary-500 rounded-full animate-pulse"></div>
-                      <div className="absolute -bottom-2 -left-2 w-4 h-4 bg-gradient-to-r from-ghl-primary-500 to-ghl-secondary-400 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+                      <div className="absolute -top-1 -right-1 sm:-top-2 sm:-right-2 w-4 h-4 sm:w-6 sm:h-6 bg-gradient-to-r from-ghl-secondary-400 to-ghl-primary-500 rounded-full animate-pulse"></div>
+                      <div className="absolute -bottom-1 -left-1 sm:-bottom-2 sm:-left-2 w-3 h-3 sm:w-4 sm:h-4 bg-gradient-to-r from-ghl-primary-500 to-ghl-secondary-400 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
                     </div>
                   </div>
                 </div>

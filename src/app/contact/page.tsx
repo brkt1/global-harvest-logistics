@@ -2,11 +2,13 @@
 
 import TruckLoading from '@/components/ui/TruckLoading'
 import { useLoading } from '@/contexts/LoadingContext'
+import { useTheme } from '@/contexts/ThemeContext'
 import { CheckCircle, Clock, Mail, MapPin, Phone, Send } from 'lucide-react'
 import { useState } from 'react'
 
 export default function Contact() {
   const { showLoading, hideLoading } = useLoading()
+  const { resolvedTheme } = useTheme()
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -46,13 +48,19 @@ export default function Contact() {
 
   if (isSubmitted) {
     return (
-      <div className="min-h-screen bg-ghl-neutral-50 flex items-center justify-center">
+      <div className={`min-h-screen flex items-center justify-center ${
+        resolvedTheme === 'dark' ? 'bg-gray-900' : 'bg-ghl-neutral-50'
+      }`}>
         <div className="max-w-md mx-auto text-center">
           <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-6" />
-          <h1 className="text-3xl font-heading font-bold text-ghl-neutral-900 mb-4">
+          <h1 className={`text-3xl font-heading font-bold mb-4 ${
+            resolvedTheme === 'dark' ? 'text-white' : 'text-ghl-neutral-900'
+          }`}>
             Message Sent!
           </h1>
-          <p className="text-lg text-ghl-neutral-600 mb-8">
+          <p className={`text-lg mb-8 ${
+            resolvedTheme === 'dark' ? 'text-gray-300' : 'text-ghl-neutral-600'
+          }`}>
             Thank you for contacting us. We&apos;ll get back to you within 24 hours.
           </p>
           <button 
@@ -67,61 +75,93 @@ export default function Contact() {
   }
 
   return (
-    <div className="min-h-screen bg-ghl-neutral-50">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-ghl-primary-600 to-ghl-secondary-400 text-white py-20">
+    <div className={`min-h-screen ${
+      resolvedTheme === 'dark' ? 'bg-gray-900' : 'bg-ghl-neutral-50'
+    }`}>
+      {/* Hero Section - Mobile optimized */}
+      <section className="bg-gradient-to-r from-ghl-primary-600 to-ghl-secondary-400 text-white py-12 sm:py-16 lg:py-20">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-heading font-bold mb-6">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4 sm:mb-6">
               Contact Us
             </h1>
-            <p className="text-xl text-ghl-neutral-100 mb-8">
+            <p className="text-base sm:text-lg lg:text-xl text-ghl-neutral-100 mb-6 sm:mb-8">
               Get in touch with our logistics experts. We&apos;re here to help with your shipping needs.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Contact Information & Form */}
-      <section className="py-20">
+      {/* Contact Information & Form - Mobile optimized */}
+      <section className="py-12 sm:py-16 lg:py-20">
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12">
             {/* Contact Information */}
             <div>
-              <h2 className="text-3xl font-heading font-bold text-ghl-neutral-900 mb-8">
+              <h2 className={`text-2xl sm:text-3xl font-heading font-bold mb-6 sm:mb-8 ${
+                resolvedTheme === 'dark' ? 'text-white' : 'text-ghl-neutral-900'
+              }`}>
                 Get in Touch
               </h2>
               
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-ghl-primary-100 rounded-full flex items-center justify-center flex-shrink-0">
-                    <Phone className="h-6 w-6 text-ghl-primary-600" />
+              <div className="space-y-4 sm:space-y-6">
+                <div className="flex items-start space-x-3 sm:space-x-4">
+                  <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center flex-shrink-0 ${
+                    resolvedTheme === 'dark' ? 'bg-ghl-primary-900' : 'bg-ghl-primary-100'
+                  }`}>
+                    <Phone className={`h-5 w-5 sm:h-6 sm:w-6 ${
+                      resolvedTheme === 'dark' ? 'text-ghl-primary-300' : 'text-ghl-primary-600'
+                    }`} />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-ghl-neutral-900 mb-1">Phone</h3>
-                    <p className="text-ghl-neutral-600 mb-1">+1 (555) 123-4567</p>
-                    <p className="text-sm text-ghl-neutral-500">24/7 Emergency Support</p>
+                    <h3 className={`text-base sm:text-lg font-semibold mb-1 ${
+                      resolvedTheme === 'dark' ? 'text-white' : 'text-ghl-neutral-900'
+                    }`}>Phone</h3>
+                    <p className={`text-sm sm:text-base mb-1 ${
+                      resolvedTheme === 'dark' ? 'text-gray-300' : 'text-ghl-neutral-600'
+                    }`}>+1 (555) 123-4567</p>
+                    <p className={`text-xs sm:text-sm ${
+                      resolvedTheme === 'dark' ? 'text-gray-400' : 'text-ghl-neutral-500'
+                    }`}>24/7 Emergency Support</p>
                   </div>
                 </div>
                 
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-ghl-primary-100 rounded-full flex items-center justify-center flex-shrink-0">
-                    <Mail className="h-6 w-6 text-ghl-primary-600" />
+                <div className="flex items-start space-x-3 sm:space-x-4">
+                  <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center flex-shrink-0 ${
+                    resolvedTheme === 'dark' ? 'bg-ghl-primary-900' : 'bg-ghl-primary-100'
+                  }`}>
+                    <Mail className={`h-5 w-5 sm:h-6 sm:w-6 ${
+                      resolvedTheme === 'dark' ? 'text-ghl-primary-300' : 'text-ghl-primary-600'
+                    }`} />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-ghl-neutral-900 mb-1">Email</h3>
-                    <p className="text-ghl-neutral-600 mb-1">info@globalharvestlogistics.com</p>
-                    <p className="text-sm text-ghl-neutral-500">General inquiries</p>
+                    <h3 className={`text-base sm:text-lg font-semibold mb-1 ${
+                      resolvedTheme === 'dark' ? 'text-white' : 'text-ghl-neutral-900'
+                    }`}>Email</h3>
+                    <p className={`text-sm sm:text-base mb-1 ${
+                      resolvedTheme === 'dark' ? 'text-gray-300' : 'text-ghl-neutral-600'
+                    }`}>info@globalharvestlogistics.com</p>
+                    <p className={`text-xs sm:text-sm ${
+                      resolvedTheme === 'dark' ? 'text-gray-400' : 'text-ghl-neutral-500'
+                    }`}>General inquiries</p>
                   </div>
                 </div>
                 
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-ghl-primary-100 rounded-full flex items-center justify-center flex-shrink-0">
-                    <MapPin className="h-6 w-6 text-ghl-primary-600" />
+                <div className="flex items-start space-x-3 sm:space-x-4">
+                  <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center flex-shrink-0 ${
+                    resolvedTheme === 'dark' ? 'bg-ghl-primary-900' : 'bg-ghl-primary-100'
+                  }`}>
+                    <MapPin className={`h-5 w-5 sm:h-6 sm:w-6 ${
+                      resolvedTheme === 'dark' ? 'text-ghl-primary-300' : 'text-ghl-primary-600'
+                    }`} />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-ghl-neutral-900 mb-1">Address</h3>
-                    <p className="text-ghl-neutral-600">
+                    <h3 className={`text-base sm:text-lg font-semibold mb-1 ${
+                      resolvedTheme === 'dark' ? 'text-white' : 'text-ghl-neutral-900'
+                    }`}>Address</h3>
+                    <p className={`text-sm sm:text-base ${
+                      resolvedTheme === 'dark' ? 'text-gray-300' : 'text-ghl-neutral-600'
+                    }`}>
                       123 Logistics Drive<br />
                       Port City, PC 12345<br />
                       United States
@@ -129,13 +169,21 @@ export default function Contact() {
                   </div>
                 </div>
                 
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-ghl-primary-100 rounded-full flex items-center justify-center flex-shrink-0">
-                    <Clock className="h-6 w-6 text-ghl-primary-600" />
+                <div className="flex items-start space-x-3 sm:space-x-4">
+                  <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center flex-shrink-0 ${
+                    resolvedTheme === 'dark' ? 'bg-ghl-primary-900' : 'bg-ghl-primary-100'
+                  }`}>
+                    <Clock className={`h-5 w-5 sm:h-6 sm:w-6 ${
+                      resolvedTheme === 'dark' ? 'text-ghl-primary-300' : 'text-ghl-primary-600'
+                    }`} />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-ghl-neutral-900 mb-1">Business Hours</h3>
-                    <p className="text-ghl-neutral-600">
+                    <h3 className={`text-base sm:text-lg font-semibold mb-1 ${
+                      resolvedTheme === 'dark' ? 'text-white' : 'text-ghl-neutral-900'
+                    }`}>Business Hours</h3>
+                    <p className={`text-sm sm:text-base ${
+                      resolvedTheme === 'dark' ? 'text-gray-300' : 'text-ghl-neutral-600'
+                    }`}>
                       Monday - Friday: 8:00 AM - 6:00 PM<br />
                       Saturday: 9:00 AM - 2:00 PM<br />
                       Sunday: Emergency Support Only
@@ -145,16 +193,22 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Contact Form */}
-            <div className="bg-white rounded-2xl shadow-lg p-8">
-              <h2 className="text-2xl font-heading font-bold text-ghl-neutral-900 mb-6">
+            {/* Contact Form - Mobile optimized */}
+            <div className={`rounded-xl sm:rounded-2xl shadow-lg p-6 sm:p-8 ${
+              resolvedTheme === 'dark' ? 'bg-gray-800' : 'bg-white'
+            }`}>
+              <h2 className={`text-xl sm:text-2xl font-heading font-bold mb-4 sm:mb-6 ${
+                resolvedTheme === 'dark' ? 'text-white' : 'text-ghl-neutral-900'
+              }`}>
                 Send us a Message
               </h2>
               
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-ghl-neutral-700 mb-2">
+                    <label htmlFor="name" className={`block text-xs sm:text-sm font-medium mb-1 sm:mb-2 ${
+                      resolvedTheme === 'dark' ? 'text-gray-300' : 'text-ghl-neutral-700'
+                    }`}>
                       Full Name *
                     </label>
                     <input
@@ -164,12 +218,18 @@ export default function Contact() {
                       required
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-ghl-neutral-300 rounded-lg focus:ring-2 focus:ring-ghl-primary-500 focus:border-transparent"
+                      className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 border rounded-lg focus:ring-2 focus:ring-ghl-primary-500 focus:border-transparent text-sm sm:text-base ${
+                        resolvedTheme === 'dark' 
+                          ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400' 
+                          : 'border-ghl-neutral-300 bg-white text-gray-900'
+                      }`}
                       placeholder="Your full name"
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-ghl-neutral-700 mb-2">
+                    <label htmlFor="email" className={`block text-xs sm:text-sm font-medium mb-1 sm:mb-2 ${
+                      resolvedTheme === 'dark' ? 'text-gray-300' : 'text-ghl-neutral-700'
+                    }`}>
                       Email Address *
                     </label>
                     <input
@@ -179,15 +239,21 @@ export default function Contact() {
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-ghl-neutral-300 rounded-lg focus:ring-2 focus:ring-ghl-primary-500 focus:border-transparent"
+                      className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 border rounded-lg focus:ring-2 focus:ring-ghl-primary-500 focus:border-transparent text-sm sm:text-base ${
+                        resolvedTheme === 'dark' 
+                          ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400' 
+                          : 'border-ghl-neutral-300 bg-white text-gray-900'
+                      }`}
                       placeholder="your@email.com"
                     />
                   </div>
                 </div>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label htmlFor="company" className="block text-sm font-medium text-ghl-neutral-700 mb-2">
+                    <label htmlFor="company" className={`block text-xs sm:text-sm font-medium mb-1 sm:mb-2 ${
+                      resolvedTheme === 'dark' ? 'text-gray-300' : 'text-ghl-neutral-700'
+                    }`}>
                       Company
                     </label>
                     <input
@@ -196,12 +262,18 @@ export default function Contact() {
                       name="company"
                       value={formData.company}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-ghl-neutral-300 rounded-lg focus:ring-2 focus:ring-ghl-primary-500 focus:border-transparent"
+                      className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 border rounded-lg focus:ring-2 focus:ring-ghl-primary-500 focus:border-transparent text-sm sm:text-base ${
+                        resolvedTheme === 'dark' 
+                          ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400' 
+                          : 'border-ghl-neutral-300 bg-white text-gray-900'
+                      }`}
                       placeholder="Your company name"
                     />
                   </div>
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-ghl-neutral-700 mb-2">
+                    <label htmlFor="phone" className={`block text-xs sm:text-sm font-medium mb-1 sm:mb-2 ${
+                      resolvedTheme === 'dark' ? 'text-gray-300' : 'text-ghl-neutral-700'
+                    }`}>
                       Phone Number
                     </label>
                     <input
@@ -210,14 +282,20 @@ export default function Contact() {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-ghl-neutral-300 rounded-lg focus:ring-2 focus:ring-ghl-primary-500 focus:border-transparent"
+                      className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 border rounded-lg focus:ring-2 focus:ring-ghl-primary-500 focus:border-transparent text-sm sm:text-base ${
+                        resolvedTheme === 'dark' 
+                          ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400' 
+                          : 'border-ghl-neutral-300 bg-white text-gray-900'
+                      }`}
                       placeholder="+1 (555) 123-4567"
                     />
                   </div>
                 </div>
                 
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-ghl-neutral-700 mb-2">
+                  <label htmlFor="subject" className={`block text-xs sm:text-sm font-medium mb-1 sm:mb-2 ${
+                    resolvedTheme === 'dark' ? 'text-gray-300' : 'text-ghl-neutral-700'
+                  }`}>
                     Subject *
                   </label>
                   <select
@@ -226,7 +304,11 @@ export default function Contact() {
                     required
                     value={formData.subject}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-ghl-neutral-300 rounded-lg focus:ring-2 focus:ring-ghl-primary-500 focus:border-transparent"
+                    className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 border rounded-lg focus:ring-2 focus:ring-ghl-primary-500 focus:border-transparent text-sm sm:text-base ${
+                      resolvedTheme === 'dark' 
+                        ? 'bg-gray-700 border-gray-600 text-white' 
+                        : 'border-ghl-neutral-300 bg-white text-gray-900'
+                    }`}
                   >
                     <option value="">Select a subject</option>
                     <option value="quote">Request Quote</option>
@@ -238,17 +320,23 @@ export default function Contact() {
                 </div>
                 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-ghl-neutral-700 mb-2">
+                  <label htmlFor="message" className={`block text-xs sm:text-sm font-medium mb-1 sm:mb-2 ${
+                    resolvedTheme === 'dark' ? 'text-gray-300' : 'text-ghl-neutral-700'
+                  }`}>
                     Message *
                   </label>
                   <textarea
                     id="message"
                     name="message"
-                    rows={5}
+                    rows={4}
                     required
                     value={formData.message}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-ghl-neutral-300 rounded-lg focus:ring-2 focus:ring-ghl-primary-500 focus:border-transparent"
+                    className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 border rounded-lg focus:ring-2 focus:ring-ghl-primary-500 focus:border-transparent text-sm sm:text-base ${
+                      resolvedTheme === 'dark' 
+                        ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400' 
+                        : 'border-ghl-neutral-300 bg-white text-gray-900'
+                    }`}
                     placeholder="Tell us how we can help you..."
                   />
                 </div>
@@ -256,7 +344,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="btn btn-primary w-full flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="btn btn-primary w-full flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base py-2.5 sm:py-3"
                 >
                   {isSubmitting ? (
                     <>
@@ -276,21 +364,21 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Emergency Contact */}
-      <section className="py-20 bg-ghl-primary-600 text-white">
+      {/* Emergency Contact - Mobile optimized */}
+      <section className="py-12 sm:py-16 lg:py-20 bg-ghl-primary-600 text-white">
         <div className="container-custom">
           <div className="text-center">
-            <h2 className="text-3xl font-heading font-bold mb-4">
+            <h2 className="text-2xl sm:text-3xl font-heading font-bold mb-3 sm:mb-4">
               Need Immediate Assistance?
             </h2>
-            <p className="text-xl text-ghl-neutral-100 mb-8">
+            <p className="text-base sm:text-lg lg:text-xl text-ghl-neutral-100 mb-6 sm:mb-8">
               For urgent shipping issues or emergencies, call our 24/7 support line.
             </p>
             <a 
               href="tel:+15551234567"
-              className="btn btn-secondary btn-lg"
+              className="btn btn-secondary text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 sm:py-4"
             >
-              <Phone className="h-5 w-5 mr-2" />
+              <Phone className="h-4 w-4 sm:h-5 sm:w-5 mr-2" />
               Call Emergency Line: +1 (555) 123-4567
             </a>
           </div>

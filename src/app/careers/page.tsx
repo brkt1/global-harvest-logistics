@@ -43,14 +43,14 @@ export default function Careers() {
 
   return (
     <div className="min-h-screen bg-ghl-neutral-50">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-ghl-primary-600 to-ghl-secondary-400 text-white py-20">
+      {/* Hero Section - Mobile optimized */}
+      <section className="bg-gradient-to-r from-ghl-primary-600 to-ghl-secondary-400 text-white py-12 sm:py-16 lg:py-20">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-heading font-bold mb-6">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4 sm:mb-6">
               Join Our Team
             </h1>
-            <p className="text-xl text-ghl-neutral-100 mb-8">
+            <p className="text-base sm:text-lg lg:text-xl text-ghl-neutral-100 mb-6 sm:mb-8">
               Be part of a company that&apos;s revolutionizing sustainable logistics. 
               We&apos;re looking for passionate individuals to help us deliver excellence.
             </p>

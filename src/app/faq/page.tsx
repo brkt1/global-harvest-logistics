@@ -46,36 +46,36 @@ export default function FAQ() {
 
   return (
     <div className="min-h-screen bg-ghl-neutral-50">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-ghl-primary-600 to-ghl-secondary-400 text-white py-20">
+      {/* Hero Section - Mobile optimized */}
+      <section className="bg-gradient-to-r from-ghl-primary-600 to-ghl-secondary-400 text-white py-12 sm:py-16 lg:py-20">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-heading font-bold mb-6">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4 sm:mb-6">
               Frequently Asked Questions
             </h1>
-            <p className="text-xl text-ghl-neutral-100 mb-8">
+            <p className="text-base sm:text-lg lg:text-xl text-ghl-neutral-100 mb-6 sm:mb-8">
               Find answers to common questions about our logistics services and shipping processes.
             </p>
           </div>
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-20">
+      {/* FAQ Section - Mobile optimized */}
+      <section className="py-12 sm:py-16 lg:py-20">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
-            <div className="space-y-6">
+            <div className="space-y-4 sm:space-y-6">
               {faqs.map((faq, index) => (
-                <div key={index} className="bg-white rounded-xl shadow-sm border border-ghl-neutral-200">
+                <div key={index} className="bg-white rounded-lg sm:rounded-xl shadow-sm border border-ghl-neutral-200">
                   <details className="group">
-                    <summary className="flex items-center justify-between p-6 cursor-pointer hover:bg-ghl-neutral-50 transition-colors">
-                      <h3 className="text-lg font-semibold text-ghl-neutral-900 pr-4">
+                    <summary className="flex items-center justify-between p-4 sm:p-6 cursor-pointer hover:bg-ghl-neutral-50 transition-colors">
+                      <h3 className="text-base sm:text-lg font-semibold text-ghl-neutral-900 pr-3 sm:pr-4">
                         {faq.question}
                       </h3>
-                      <ChevronDown className="h-5 w-5 text-ghl-neutral-500 group-open:rotate-180 transition-transform flex-shrink-0" />
+                      <ChevronDown className="h-4 w-4 sm:h-5 sm:w-5 text-ghl-neutral-500 group-open:rotate-180 transition-transform flex-shrink-0" />
                     </summary>
-                    <div className="px-6 pb-6">
-                      <p className="text-ghl-neutral-600 leading-relaxed">
+                    <div className="px-4 sm:px-6 pb-4 sm:pb-6">
+                      <p className="text-sm sm:text-base text-ghl-neutral-600 leading-relaxed">
                         {faq.answer}
                       </p>
                     </div>
@@ -87,21 +87,21 @@ export default function FAQ() {
         </div>
       </section>
 
-      {/* Contact CTA */}
-      <section className="py-20 bg-white">
+      {/* Contact CTA - Mobile optimized */}
+      <section className="py-12 sm:py-16 lg:py-20 bg-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-heading font-bold text-ghl-neutral-900 mb-4">
+            <h2 className="text-2xl sm:text-3xl font-heading font-bold text-ghl-neutral-900 mb-3 sm:mb-4">
               Still Have Questions?
             </h2>
-            <p className="text-lg text-ghl-neutral-600 mb-8">
+            <p className="text-base sm:text-lg text-ghl-neutral-600 mb-6 sm:mb-8">
               Our logistics experts are here to help. Contact us for personalized assistance with your shipping needs.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="/contact" className="btn btn-primary">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+              <a href="/contact" className="btn btn-primary text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4">
                 Contact Us
               </a>
-              <a href="/quote" className="btn btn-secondary">
+              <a href="/quote" className="btn btn-secondary text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4">
                 Get Quote
               </a>
             </div>

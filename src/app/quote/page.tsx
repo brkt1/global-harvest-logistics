@@ -1,10 +1,12 @@
 'use client'
 
+import { useTheme } from '@/contexts/ThemeContext'
 import { ArrowLeft, Calculator, CheckCircle, Clock, Mail, Phone, Truck } from 'lucide-react'
 import Link from 'next/link'
 import { useState } from 'react'
 
 export default function QuotePage() {
+  const { resolvedTheme } = useTheme()
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -43,25 +45,35 @@ export default function QuotePage() {
 
   if (isSubmitted) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-ghl-primary-50 via-white to-ghl-secondary-50">
-        <div className="container-custom py-16">
+      <div className={`min-h-screen ${
+        resolvedTheme === 'dark' 
+          ? 'bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900' 
+          : 'bg-gradient-to-br from-ghl-primary-50 via-white to-ghl-secondary-50'
+      }`}>
+        <div className="container-custom py-12 sm:py-16">
           <div className="max-w-2xl mx-auto text-center">
-            <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12">
-              <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <CheckCircle className="h-10 w-10 text-green-600" />
+            <div className={`rounded-2xl sm:rounded-3xl shadow-2xl p-6 sm:p-8 md:p-10 lg:p-12 ${
+              resolvedTheme === 'dark' ? 'bg-gray-800' : 'bg-white'
+            }`}>
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                <CheckCircle className="h-8 w-8 sm:h-10 sm:w-10 text-green-600" />
               </div>
-              <h1 className="text-3xl md:text-4xl font-heading font-bold text-ghl-neutral-800 mb-4">
+              <h1 className={`text-2xl sm:text-3xl md:text-4xl font-heading font-bold mb-3 sm:mb-4 ${
+                resolvedTheme === 'dark' ? 'text-gray-100' : 'text-ghl-neutral-800'
+              }`}>
                 Quote Request Submitted!
               </h1>
-              <p className="text-lg text-ghl-neutral-600 mb-8">
+              <p className={`text-base sm:text-lg mb-6 sm:mb-8 ${
+                resolvedTheme === 'dark' ? 'text-gray-300' : 'text-ghl-neutral-600'
+              }`}>
                 Thank you for your interest in our logistics services. Our team will review your requirements and get back to you within 24 hours with a detailed quote.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/" className="btn btn-primary">
-                  <ArrowLeft className="h-5 w-5 mr-2" />
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+                <Link href="/" className="btn btn-primary text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4">
+                  <ArrowLeft className="h-4 w-4 sm:h-5 sm:w-5 mr-2" />
                   Back to Home
                 </Link>
-                <Link href="/contact" className="btn btn-secondary">
+                <Link href="/contact" className="btn btn-secondary text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4">
                   Contact Us
                 </Link>
               </div>
@@ -73,52 +85,70 @@ export default function QuotePage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-ghl-primary-50 via-white to-ghl-secondary-50">
-      {/* Hero Section */}
+    <div className={`min-h-screen ${
+      resolvedTheme === 'dark' 
+        ? 'bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900' 
+        : 'bg-gradient-to-br from-ghl-primary-50 via-white to-ghl-secondary-50'
+    }`}>
+      {/* Hero Section - Mobile optimized */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-ghl-primary-600/10 via-ghl-secondary-400/10 to-ghl-primary-600/10"></div>
-        <div className="container-custom py-16 md:py-24 relative">
+        <div className="container-custom py-12 sm:py-16 md:py-20 lg:py-24 relative">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm rounded-full px-4 py-2 mb-6 border border-ghl-primary-200">
-              <Calculator className="h-5 w-5 text-ghl-primary-600" />
-              <span className="text-sm font-medium text-ghl-primary-600">Get Your Quote</span>
+            <div className={`inline-flex items-center space-x-2 backdrop-blur-sm rounded-full px-3 py-1.5 sm:px-4 sm:py-2 mb-4 sm:mb-6 ${
+              resolvedTheme === 'dark' 
+                ? 'bg-gray-800/80 border-ghl-primary-600/50' 
+                : 'bg-white/80 border-ghl-primary-200'
+            }`}>
+              <Calculator className="h-4 w-4 sm:h-5 sm:w-5 text-ghl-primary-600" />
+              <span className="text-xs sm:text-sm font-medium text-ghl-primary-600">Get Your Quote</span>
             </div>
-            <h1 className="text-4xl md:text-6xl font-heading font-bold text-ghl-neutral-800 mb-6">
+            <h1 className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-heading font-bold mb-4 sm:mb-6 ${
+              resolvedTheme === 'dark' ? 'text-gray-100' : 'text-ghl-neutral-800'
+            }`}>
               Request a <span className="bg-gradient-to-r from-ghl-primary-600 to-ghl-secondary-400 bg-clip-text text-transparent">Custom Quote</span>
             </h1>
-            <p className="text-xl text-ghl-neutral-600 mb-8 max-w-2xl mx-auto">
+            <p className={`text-base sm:text-lg lg:text-xl mb-6 sm:mb-8 max-w-2xl mx-auto ${
+              resolvedTheme === 'dark' ? 'text-gray-300' : 'text-ghl-neutral-600'
+            }`}>
               Get a personalized quote for your logistics needs. Our experts will provide you with competitive pricing and tailored solutions.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Quote Form */}
-      <section className="py-16 md:py-24">
+      {/* Quote Form - Mobile optimized */}
+      <section className="py-12 sm:py-16 md:py-20 lg:py-24">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-3xl shadow-2xl overflow-hidden">
-              <div className="bg-gradient-to-r from-ghl-primary-600 to-ghl-secondary-400 p-8 text-center">
-                <h2 className="text-2xl md:text-3xl font-heading font-bold text-white mb-4">
+            <div className={`rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden ${
+              resolvedTheme === 'dark' ? 'bg-gray-800' : 'bg-white'
+            }`}>
+              <div className="bg-gradient-to-r from-ghl-primary-600 to-ghl-secondary-400 p-6 sm:p-8 text-center">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-heading font-bold text-white mb-3 sm:mb-4">
                   Tell Us About Your Shipment
                 </h2>
-                <p className="text-white/90">
+                <p className="text-sm sm:text-base text-white/90">
                   Fill out the form below and we&apos;ll get back to you with a detailed quote
                 </p>
               </div>
               
-              <form onSubmit={handleSubmit} className="p-8 md:p-12">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              <form onSubmit={handleSubmit} className="p-6 sm:p-8 md:p-10 lg:p-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
                   {/* Contact Information */}
                   <div className="md:col-span-2">
-                    <h3 className="text-xl font-heading font-semibold text-ghl-neutral-800 mb-4 flex items-center">
-                      <Mail className="h-5 w-5 text-ghl-primary-600 mr-2" />
+                    <h3 className={`text-lg sm:text-xl font-heading font-semibold mb-3 sm:mb-4 flex items-center ${
+                      resolvedTheme === 'dark' ? 'text-gray-100' : 'text-ghl-neutral-800'
+                    }`}>
+                      <Mail className="h-4 w-4 sm:h-5 sm:w-5 text-ghl-primary-600 mr-2" />
                       Contact Information
                     </h3>
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-ghl-neutral-700 mb-2">
+                    <label className={`block text-xs sm:text-sm font-medium mb-1 sm:mb-2 ${
+                      resolvedTheme === 'dark' ? 'text-gray-300' : 'text-ghl-neutral-700'
+                    }`}>
                       Full Name *
                     </label>
                     <input
@@ -127,13 +157,19 @@ export default function QuotePage() {
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border border-ghl-neutral-300 rounded-xl focus:ring-2 focus:ring-ghl-primary-500 focus:border-transparent transition-all duration-300"
+                      className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 border rounded-lg sm:rounded-xl focus:ring-2 focus:ring-ghl-primary-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base ${
+                        resolvedTheme === 'dark' 
+                          ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400' 
+                          : 'border-ghl-neutral-300 bg-white text-gray-900'
+                      }`}
                       placeholder="Your full name"
                     />
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-ghl-neutral-700 mb-2">
+                    <label className={`block text-xs sm:text-sm font-medium mb-1 sm:mb-2 ${
+                      resolvedTheme === 'dark' ? 'text-gray-300' : 'text-ghl-neutral-700'
+                    }`}>
                       Email Address *
                     </label>
                     <input
@@ -142,13 +178,19 @@ export default function QuotePage() {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border border-ghl-neutral-300 rounded-xl focus:ring-2 focus:ring-ghl-primary-500 focus:border-transparent transition-all duration-300"
+                      className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 border rounded-lg sm:rounded-xl focus:ring-2 focus:ring-ghl-primary-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base ${
+                        resolvedTheme === 'dark' 
+                          ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400' 
+                          : 'border-ghl-neutral-300 bg-white text-gray-900'
+                      }`}
                       placeholder="your@email.com"
                     />
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-ghl-neutral-700 mb-2">
+                    <label className={`block text-xs sm:text-sm font-medium mb-1 sm:mb-2 ${
+                      resolvedTheme === 'dark' ? 'text-gray-300' : 'text-ghl-neutral-700'
+                    }`}>
                       Phone Number
                     </label>
                     <input
@@ -156,13 +198,19 @@ export default function QuotePage() {
                       name="phone"
                       value={formData.phone}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-ghl-neutral-300 rounded-xl focus:ring-2 focus:ring-ghl-primary-500 focus:border-transparent transition-all duration-300"
+                      className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 border rounded-lg sm:rounded-xl focus:ring-2 focus:ring-ghl-primary-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base ${
+                        resolvedTheme === 'dark' 
+                          ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400' 
+                          : 'border-ghl-neutral-300 bg-white text-gray-900'
+                      }`}
                       placeholder="+1 (555) 123-4567"
                     />
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-ghl-neutral-700 mb-2">
+                    <label className={`block text-xs sm:text-sm font-medium mb-1 sm:mb-2 ${
+                      resolvedTheme === 'dark' ? 'text-gray-300' : 'text-ghl-neutral-700'
+                    }`}>
                       Company Name
                     </label>
                     <input
@@ -170,23 +218,31 @@ export default function QuotePage() {
                       name="company"
                       value={formData.company}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-ghl-neutral-300 rounded-xl focus:ring-2 focus:ring-ghl-primary-500 focus:border-transparent transition-all duration-300"
+                      className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 border rounded-lg sm:rounded-xl focus:ring-2 focus:ring-ghl-primary-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base ${
+                        resolvedTheme === 'dark' 
+                          ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400' 
+                          : 'border-ghl-neutral-300 bg-white text-gray-900'
+                      }`}
                       placeholder="Your company name"
                     />
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
                   {/* Shipment Details */}
                   <div className="md:col-span-2">
-                    <h3 className="text-xl font-heading font-semibold text-ghl-neutral-800 mb-4 flex items-center">
-                      <Truck className="h-5 w-5 text-ghl-primary-600 mr-2" />
+                    <h3 className={`text-lg sm:text-xl font-heading font-semibold mb-3 sm:mb-4 flex items-center ${
+                      resolvedTheme === 'dark' ? 'text-gray-100' : 'text-ghl-neutral-800'
+                    }`}>
+                      <Truck className="h-4 w-4 sm:h-5 sm:w-5 text-ghl-primary-600 mr-2" />
                       Shipment Details
                     </h3>
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-ghl-neutral-700 mb-2">
+                    <label className={`block text-xs sm:text-sm font-medium mb-1 sm:mb-2 ${
+                      resolvedTheme === 'dark' ? 'text-gray-300' : 'text-ghl-neutral-700'
+                    }`}>
                       Origin *
                     </label>
                     <input
@@ -195,13 +251,19 @@ export default function QuotePage() {
                       value={formData.origin}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border border-ghl-neutral-300 rounded-xl focus:ring-2 focus:ring-ghl-primary-500 focus:border-transparent transition-all duration-300"
+                      className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 border rounded-lg sm:rounded-xl focus:ring-2 focus:ring-ghl-primary-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base ${
+                        resolvedTheme === 'dark' 
+                          ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400' 
+                          : 'border-ghl-neutral-300 bg-white text-gray-900'
+                      }`}
                       placeholder="City, Country"
                     />
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-ghl-neutral-700 mb-2">
+                    <label className={`block text-xs sm:text-sm font-medium mb-1 sm:mb-2 ${
+                      resolvedTheme === 'dark' ? 'text-gray-300' : 'text-ghl-neutral-700'
+                    }`}>
                       Destination *
                     </label>
                     <input
@@ -210,13 +272,19 @@ export default function QuotePage() {
                       value={formData.destination}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border border-ghl-neutral-300 rounded-xl focus:ring-2 focus:ring-ghl-primary-500 focus:border-transparent transition-all duration-300"
+                      className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 border rounded-lg sm:rounded-xl focus:ring-2 focus:ring-ghl-primary-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base ${
+                        resolvedTheme === 'dark' 
+                          ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400' 
+                          : 'border-ghl-neutral-300 bg-white text-gray-900'
+                      }`}
                       placeholder="City, Country"
                     />
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-ghl-neutral-700 mb-2">
+                    <label className={`block text-xs sm:text-sm font-medium mb-1 sm:mb-2 ${
+                      resolvedTheme === 'dark' ? 'text-gray-300' : 'text-ghl-neutral-700'
+                    }`}>
                       Cargo Type *
                     </label>
                     <select
@@ -224,7 +292,11 @@ export default function QuotePage() {
                       value={formData.cargoType}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border border-ghl-neutral-300 rounded-xl focus:ring-2 focus:ring-ghl-primary-500 focus:border-transparent transition-all duration-300"
+                      className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 border rounded-lg sm:rounded-xl focus:ring-2 focus:ring-ghl-primary-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base ${
+                        resolvedTheme === 'dark' 
+                          ? 'bg-gray-700 border-gray-600 text-white' 
+                          : 'border-ghl-neutral-300 bg-white text-gray-900'
+                      }`}
                     >
                       <option value="">Select cargo type</option>
                       <option value="coffee">Coffee Beans</option>
@@ -236,7 +308,9 @@ export default function QuotePage() {
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-ghl-neutral-700 mb-2">
+                    <label className={`block text-xs sm:text-sm font-medium mb-1 sm:mb-2 ${
+                      resolvedTheme === 'dark' ? 'text-gray-300' : 'text-ghl-neutral-700'
+                    }`}>
                       Weight/Volume *
                     </label>
                     <input
@@ -245,13 +319,19 @@ export default function QuotePage() {
                       value={formData.weight}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border border-ghl-neutral-300 rounded-xl focus:ring-2 focus:ring-ghl-primary-500 focus:border-transparent transition-all duration-300"
+                      className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 border rounded-lg sm:rounded-xl focus:ring-2 focus:ring-ghl-primary-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base ${
+                        resolvedTheme === 'dark' 
+                          ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400' 
+                          : 'border-ghl-neutral-300 bg-white text-gray-900'
+                      }`}
                       placeholder="e.g., 1000 kg, 20 containers"
                     />
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-ghl-neutral-700 mb-2">
+                    <label className={`block text-xs sm:text-sm font-medium mb-1 sm:mb-2 ${
+                      resolvedTheme === 'dark' ? 'text-gray-300' : 'text-ghl-neutral-700'
+                    }`}>
                       Temperature Requirements
                     </label>
                     <input
@@ -259,13 +339,19 @@ export default function QuotePage() {
                       name="temperature"
                       value={formData.temperature}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-ghl-neutral-300 rounded-xl focus:ring-2 focus:ring-ghl-primary-500 focus:border-transparent transition-all duration-300"
+                      className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 border rounded-lg sm:rounded-xl focus:ring-2 focus:ring-ghl-primary-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base ${
+                        resolvedTheme === 'dark' 
+                          ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400' 
+                          : 'border-ghl-neutral-300 bg-white text-gray-900'
+                      }`}
                       placeholder="e.g., 2-8°C, Ambient"
                     />
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-ghl-neutral-700 mb-2">
+                    <label className={`block text-xs sm:text-sm font-medium mb-1 sm:mb-2 ${
+                      resolvedTheme === 'dark' ? 'text-gray-300' : 'text-ghl-neutral-700'
+                    }`}>
                       Timeline *
                     </label>
                     <select
@@ -273,7 +359,11 @@ export default function QuotePage() {
                       value={formData.timeline}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border border-ghl-neutral-300 rounded-xl focus:ring-2 focus:ring-ghl-primary-500 focus:border-transparent transition-all duration-300"
+                      className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 border rounded-lg sm:rounded-xl focus:ring-2 focus:ring-ghl-primary-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base ${
+                        resolvedTheme === 'dark' 
+                          ? 'bg-gray-700 border-gray-600 text-white' 
+                          : 'border-ghl-neutral-300 bg-white text-gray-900'
+                      }`}
                     >
                       <option value="">Select timeline</option>
                       <option value="urgent">Urgent (1-3 days)</option>
@@ -284,40 +374,46 @@ export default function QuotePage() {
                   </div>
                 </div>
 
-                <div className="mb-8">
-                  <label className="block text-sm font-medium text-ghl-neutral-700 mb-2">
+                <div className="mb-6 sm:mb-8">
+                  <label className={`block text-xs sm:text-sm font-medium mb-1 sm:mb-2 ${
+                    resolvedTheme === 'dark' ? 'text-gray-300' : 'text-ghl-neutral-700'
+                  }`}>
                     Special Requirements
                   </label>
                   <textarea
                     name="specialRequirements"
                     value={formData.specialRequirements}
                     onChange={handleInputChange}
-                    rows={4}
-                    className="w-full px-4 py-3 border border-ghl-neutral-300 rounded-xl focus:ring-2 focus:ring-ghl-primary-500 focus:border-transparent transition-all duration-300"
+                    rows={3}
+                    className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 border rounded-lg sm:rounded-xl focus:ring-2 focus:ring-ghl-primary-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base ${
+                      resolvedTheme === 'dark' 
+                        ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400' 
+                        : 'border-ghl-neutral-300 bg-white text-gray-900'
+                    }`}
                     placeholder="Any special handling, documentation, or other requirements..."
                   />
                 </div>
 
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="btn btn-primary text-lg px-8 py-4 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="btn btn-primary text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 sm:py-4 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {isSubmitting ? (
                       <>
-                        <Clock className="h-5 w-5 mr-2 animate-spin" />
+                        <Clock className="h-4 w-4 sm:h-5 sm:w-5 mr-2 animate-spin" />
                         Processing...
                       </>
                     ) : (
                       <>
-                        <Calculator className="h-5 w-5 mr-2" />
+                        <Calculator className="h-4 w-4 sm:h-5 sm:w-5 mr-2" />
                         Get My Quote
                       </>
                     )}
                   </button>
-                  <Link href="/contact" className="btn btn-secondary text-lg px-8 py-4">
-                    <Phone className="h-5 w-5 mr-2" />
+                  <Link href="/contact" className="btn btn-secondary text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 sm:py-4">
+                    <Phone className="h-4 w-4 sm:h-5 sm:w-5 mr-2" />
                     Contact Us Instead
                   </Link>
                 </div>
