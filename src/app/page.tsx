@@ -1,6 +1,6 @@
 import HeroSection from '@/components/sections/HeroSection'
 import PillarsSection from '@/components/sections/PillarsSection'
-import ServicesShowcase from '@/components/sections/ServicesShowcase'
+import ProvenProcessSection from '@/components/sections/ProvenProcessSection'
 import TestimonialSection from '@/components/sections/TestimonialSection'
 
 export default function Home() {
@@ -8,7 +8,7 @@ export default function Home() {
     <>
       <HeroSection />
       <PillarsSection />
-      <ServicesShowcase />
+      <ProvenProcessSection />
       <TestimonialSection />
     </>
   )

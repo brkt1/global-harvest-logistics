@@ -3,7 +3,6 @@ import Header from "@/components/ui/Header";
 import LoadingOverlay from "@/components/ui/LoadingOverlay";
 import NavigationLoading from "@/components/ui/NavigationLoading";
 import { LoadingProvider } from "@/contexts/LoadingContext";
-import { ThemeProvider } from "@/contexts/ThemeContext";
 import type { Metadata } from "next";
 import "./globals.css";
 
@@ -33,15 +32,13 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className="antialiased">
-        <ThemeProvider>
-          <LoadingProvider>
-            <NavigationLoading />
-            <Header />
-            <main>{children}</main>
-            <Footer />
-            <LoadingOverlay />
-          </LoadingProvider>
-        </ThemeProvider>
+        <LoadingProvider>
+          <NavigationLoading />
+          <Header />
+          <main>{children}</main>
+          <Footer />
+          <LoadingOverlay />
+        </LoadingProvider>
       </body>
     </html>
   );

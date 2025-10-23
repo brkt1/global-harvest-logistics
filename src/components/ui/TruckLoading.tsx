@@ -48,7 +48,7 @@ const TruckLoading: React.FC<TruckLoadingProps> = ({
         </svg>
       </div>
       {text && (
-        <p className="text-ghl-primary-600 font-medium text-sm animate-pulse">
+        <p className="text-ghl-primary-600 font-medium text-sm">
           {text}
         </p>
       )}

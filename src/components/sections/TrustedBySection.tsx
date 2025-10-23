@@ -1,6 +1,7 @@
 'use client'
 
-import { Award, CheckCircle, Globe, Shield, Star, Users } from 'lucide-react'
+import StatsDisplay from '@/components/ui/StatsDisplay'
+import { Shield, Star } from 'lucide-react'
 
 export default function TrustedBySection() {
   const trustedCompanies = [
@@ -12,61 +13,35 @@ export default function TrustedBySection() {
     { name: 'Sustainable Foods Ltd.', logo: '♻️', location: 'Canada' }
   ]
 
-  const trustStats = [
-    { value: '500+', label: 'Global Partners', icon: Users },
-    { value: '99.8%', label: 'Success Rate', icon: CheckCircle },
-    { value: '50+', label: 'Countries', icon: Globe },
-    { value: '15+', label: 'Years Experience', icon: Award }
-  ]
 
   return (
-    <section className="relative py-20 overflow-hidden">
+    <section className="relative py-20 overflow-hidden bg-white">
       {/* Background with gradient and glassmorphism */}
-      <div className="absolute inset-0 bg-gradient-to-br from-ghl-primary-50 via-white to-ghl-secondary-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"></div>
+      <div className="absolute inset-0 bg-white"></div>
       
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-ghl-primary-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-ghl-secondary-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-1000"></div>
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-ghl-primary-200 rounded-full mix-blend-multiply filter blur-xl opacity-20"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-ghl-secondary-200 rounded-full mix-blend-multiply filter blur-xl opacity-20"></div>
       </div>
 
       <div className="container-custom relative">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center px-6 py-3 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-white/20 dark:border-gray-700/30 rounded-full text-ghl-primary-700 dark:text-ghl-primary-300 text-sm font-medium mb-6 shadow-lg">
+          <div className="inline-flex items-center px-6 py-3 bg-white/80 backdrop-blur-sm border border-white/20 rounded-full text-ghl-primary-700 text-sm font-medium mb-6 shadow-lg">
             <Shield className="h-4 w-4 mr-2" />
           </div>
           
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-ghl-neutral-900 dark:text-gray-100 mb-4">
+          <h2 className="text-3xl md:text-4xl font-heading font-bold text-ghl-neutral-900 mb-4">
           </h2>
-          <p className="text-lg text-ghl-neutral-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <p className="text-lg text-ghl-neutral-600 max-w-2xl mx-auto">
             Join hundreds of companies worldwide who trust us with their most valuable shipments
           </p>
         </div>
 
         {/* Glassmorphism Stats Cards */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          {trustStats.map((stat, index) => (
-            <div 
-              key={index}
-              className="group relative"
-            >
-              {/* Glassmorphism card */}
-              <div className="relative bg-white/20 backdrop-blur-md border border-white/30 rounded-2xl p-6 text-center shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
-                {/* Subtle gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent rounded-2xl"></div>
-                
-                {/* Content */}
-                <div className="relative z-10">
-                  <div className="inline-flex p-3 bg-white/30 rounded-xl mb-4 group-hover:bg-white/40 transition-colors duration-300">
-                    <stat.icon className="h-6 w-6 text-ghl-primary-600" />
-                  </div>
-                  <div className="text-3xl font-bold text-ghl-neutral-900 mb-2">{stat.value}</div>
-                  <div className="text-sm text-ghl-neutral-600 font-medium">{stat.label}</div>
-                </div>
-              </div>
-            </div>
-          ))}
+        <div className="mb-16">
+          <StatsDisplay variant="compact" className="grid-cols-2 lg:grid-cols-4 gap-6" />
         </div>
 
         {/* Trusted Companies Grid */}

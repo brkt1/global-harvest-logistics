@@ -1,12 +1,10 @@
 'use client'
 
-import { useTheme } from '@/contexts/ThemeContext'
 import { ArrowLeft, Calculator, CheckCircle, Clock, Mail, Phone, Truck } from 'lucide-react'
 import Link from 'next/link'
 import { useState } from 'react'
 
 export default function QuotePage() {
-  const { resolvedTheme } = useTheme()
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -45,27 +43,17 @@ export default function QuotePage() {
 
   if (isSubmitted) {
     return (
-      <div className={`min-h-screen ${
-        resolvedTheme === 'dark' 
-          ? 'bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900' 
-          : 'bg-gradient-to-br from-ghl-primary-50 via-white to-ghl-secondary-50'
-      }`}>
+      <div className="min-h-screen bg-gradient-to-br from-ghl-primary-50 via-white to-ghl-secondary-50">
         <div className="container-custom py-12 sm:py-16">
           <div className="max-w-2xl mx-auto text-center">
-            <div className={`rounded-2xl sm:rounded-3xl shadow-2xl p-6 sm:p-8 md:p-10 lg:p-12 ${
-              resolvedTheme === 'dark' ? 'bg-gray-800' : 'bg-white'
-            }`}>
+            <div className="rounded-2xl sm:rounded-3xl shadow-2xl p-6 sm:p-8 md:p-10 lg:p-12 bg-white">
               <div className="w-16 h-16 sm:w-20 sm:h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
                 <CheckCircle className="h-8 w-8 sm:h-10 sm:w-10 text-green-600" />
               </div>
-              <h1 className={`text-2xl sm:text-3xl md:text-4xl font-heading font-bold mb-3 sm:mb-4 ${
-                resolvedTheme === 'dark' ? 'text-gray-100' : 'text-ghl-neutral-800'
-              }`}>
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold mb-3 sm:mb-4 text-ghl-neutral-800">
                 Quote Request Submitted!
               </h1>
-              <p className={`text-base sm:text-lg mb-6 sm:mb-8 ${
-                resolvedTheme === 'dark' ? 'text-gray-300' : 'text-ghl-neutral-600'
-              }`}>
+              <p className="text-base sm:text-lg mb-6 sm:mb-8 text-ghl-neutral-600">
                 Thank you for your interest in our logistics services. Our team will review your requirements and get back to you within 24 hours with a detailed quote.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
@@ -85,32 +73,20 @@ export default function QuotePage() {
   }
 
   return (
-    <div className={`min-h-screen ${
-      resolvedTheme === 'dark' 
-        ? 'bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900' 
-        : 'bg-gradient-to-br from-ghl-primary-50 via-white to-ghl-secondary-50'
-    }`}>
+    <div className="min-h-screen bg-gradient-to-br from-ghl-primary-50 via-white to-ghl-secondary-50">
       {/* Hero Section - Mobile optimized */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-ghl-primary-600/10 via-ghl-secondary-400/10 to-ghl-primary-600/10"></div>
         <div className="container-custom py-12 sm:py-16 md:py-20 lg:py-24 relative">
           <div className="max-w-4xl mx-auto text-center">
-            <div className={`inline-flex items-center space-x-2 backdrop-blur-sm rounded-full px-3 py-1.5 sm:px-4 sm:py-2 mb-4 sm:mb-6 ${
-              resolvedTheme === 'dark' 
-                ? 'bg-gray-800/80 border-ghl-primary-600/50' 
-                : 'bg-white/80 border-ghl-primary-200'
-            }`}>
+            <div className="inline-flex items-center space-x-2 backdrop-blur-sm rounded-full px-3 py-1.5 sm:px-4 sm:py-2 mb-4 sm:mb-6 bg-white/80 border-ghl-primary-200">
               <Calculator className="h-4 w-4 sm:h-5 sm:w-5 text-ghl-primary-600" />
               <span className="text-xs sm:text-sm font-medium text-ghl-primary-600">Get Your Quote</span>
             </div>
-            <h1 className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-heading font-bold mb-4 sm:mb-6 ${
-              resolvedTheme === 'dark' ? 'text-gray-100' : 'text-ghl-neutral-800'
-            }`}>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-heading font-bold mb-4 sm:mb-6 text-ghl-neutral-800">
               Request a <span className="bg-gradient-to-r from-ghl-primary-600 to-ghl-secondary-400 bg-clip-text text-transparent">Custom Quote</span>
             </h1>
-            <p className={`text-base sm:text-lg lg:text-xl mb-6 sm:mb-8 max-w-2xl mx-auto ${
-              resolvedTheme === 'dark' ? 'text-gray-300' : 'text-ghl-neutral-600'
-            }`}>
+            <p className="text-base sm:text-lg lg:text-xl mb-6 sm:mb-8 max-w-2xl mx-auto text-ghl-neutral-600">
               Get a personalized quote for your logistics needs. Our experts will provide you with competitive pricing and tailored solutions.
             </p>
           </div>
@@ -121,9 +97,7 @@ export default function QuotePage() {
       <section className="py-12 sm:py-16 md:py-20 lg:py-24">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
-            <div className={`rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden ${
-              resolvedTheme === 'dark' ? 'bg-gray-800' : 'bg-white'
-            }`}>
+            <div className="rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden bg-white">
               <div className="bg-gradient-to-r from-ghl-primary-600 to-ghl-secondary-400 p-6 sm:p-8 text-center">
                 <h2 className="text-xl sm:text-2xl md:text-3xl font-heading font-bold text-white mb-3 sm:mb-4">
                   Tell Us About Your Shipment
@@ -138,7 +112,7 @@ export default function QuotePage() {
                   {/* Contact Information */}
                   <div className="md:col-span-2">
                     <h3 className={`text-lg sm:text-xl font-heading font-semibold mb-3 sm:mb-4 flex items-center ${
-                      resolvedTheme === 'dark' ? 'text-gray-100' : 'text-ghl-neutral-800'
+                      text-ghl-neutral-800
                     }`}>
                       <Mail className="h-4 w-4 sm:h-5 sm:w-5 text-ghl-primary-600 mr-2" />
                       Contact Information
@@ -147,7 +121,7 @@ export default function QuotePage() {
                   
                   <div>
                     <label className={`block text-xs sm:text-sm font-medium mb-1 sm:mb-2 ${
-                      resolvedTheme === 'dark' ? 'text-gray-300' : 'text-ghl-neutral-700'
+                      text-ghl-neutral-700
                     }`}>
                       Full Name *
                     </label>
@@ -158,9 +132,7 @@ export default function QuotePage() {
                       onChange={handleInputChange}
                       required
                       className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 border rounded-lg sm:rounded-xl focus:ring-2 focus:ring-ghl-primary-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base ${
-                        resolvedTheme === 'dark' 
-                          ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400' 
-                          : 'border-ghl-neutral-300 bg-white text-gray-900'
+border-ghl-neutral-300 bg-white text-gray-900
                       }`}
                       placeholder="Your full name"
                     />
@@ -168,7 +140,7 @@ export default function QuotePage() {
                   
                   <div>
                     <label className={`block text-xs sm:text-sm font-medium mb-1 sm:mb-2 ${
-                      resolvedTheme === 'dark' ? 'text-gray-300' : 'text-ghl-neutral-700'
+                      text-ghl-neutral-700
                     }`}>
                       Email Address *
                     </label>
@@ -179,9 +151,7 @@ export default function QuotePage() {
                       onChange={handleInputChange}
                       required
                       className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 border rounded-lg sm:rounded-xl focus:ring-2 focus:ring-ghl-primary-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base ${
-                        resolvedTheme === 'dark' 
-                          ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400' 
-                          : 'border-ghl-neutral-300 bg-white text-gray-900'
+border-ghl-neutral-300 bg-white text-gray-900
                       }`}
                       placeholder="your@email.com"
                     />
@@ -189,7 +159,7 @@ export default function QuotePage() {
                   
                   <div>
                     <label className={`block text-xs sm:text-sm font-medium mb-1 sm:mb-2 ${
-                      resolvedTheme === 'dark' ? 'text-gray-300' : 'text-ghl-neutral-700'
+                      text-ghl-neutral-700
                     }`}>
                       Phone Number
                     </label>
@@ -199,9 +169,7 @@ export default function QuotePage() {
                       value={formData.phone}
                       onChange={handleInputChange}
                       className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 border rounded-lg sm:rounded-xl focus:ring-2 focus:ring-ghl-primary-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base ${
-                        resolvedTheme === 'dark' 
-                          ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400' 
-                          : 'border-ghl-neutral-300 bg-white text-gray-900'
+border-ghl-neutral-300 bg-white text-gray-900
                       }`}
                       placeholder="+1 (555) 123-4567"
                     />
@@ -209,7 +177,7 @@ export default function QuotePage() {
                   
                   <div>
                     <label className={`block text-xs sm:text-sm font-medium mb-1 sm:mb-2 ${
-                      resolvedTheme === 'dark' ? 'text-gray-300' : 'text-ghl-neutral-700'
+                      text-ghl-neutral-700
                     }`}>
                       Company Name
                     </label>
@@ -219,9 +187,7 @@ export default function QuotePage() {
                       value={formData.company}
                       onChange={handleInputChange}
                       className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 border rounded-lg sm:rounded-xl focus:ring-2 focus:ring-ghl-primary-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base ${
-                        resolvedTheme === 'dark' 
-                          ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400' 
-                          : 'border-ghl-neutral-300 bg-white text-gray-900'
+border-ghl-neutral-300 bg-white text-gray-900
                       }`}
                       placeholder="Your company name"
                     />
@@ -232,7 +198,7 @@ export default function QuotePage() {
                   {/* Shipment Details */}
                   <div className="md:col-span-2">
                     <h3 className={`text-lg sm:text-xl font-heading font-semibold mb-3 sm:mb-4 flex items-center ${
-                      resolvedTheme === 'dark' ? 'text-gray-100' : 'text-ghl-neutral-800'
+                      text-ghl-neutral-800
                     }`}>
                       <Truck className="h-4 w-4 sm:h-5 sm:w-5 text-ghl-primary-600 mr-2" />
                       Shipment Details
@@ -241,7 +207,7 @@ export default function QuotePage() {
                   
                   <div>
                     <label className={`block text-xs sm:text-sm font-medium mb-1 sm:mb-2 ${
-                      resolvedTheme === 'dark' ? 'text-gray-300' : 'text-ghl-neutral-700'
+                      text-ghl-neutral-700
                     }`}>
                       Origin *
                     </label>
@@ -252,9 +218,7 @@ export default function QuotePage() {
                       onChange={handleInputChange}
                       required
                       className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 border rounded-lg sm:rounded-xl focus:ring-2 focus:ring-ghl-primary-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base ${
-                        resolvedTheme === 'dark' 
-                          ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400' 
-                          : 'border-ghl-neutral-300 bg-white text-gray-900'
+border-ghl-neutral-300 bg-white text-gray-900
                       }`}
                       placeholder="City, Country"
                     />
@@ -262,7 +226,7 @@ export default function QuotePage() {
                   
                   <div>
                     <label className={`block text-xs sm:text-sm font-medium mb-1 sm:mb-2 ${
-                      resolvedTheme === 'dark' ? 'text-gray-300' : 'text-ghl-neutral-700'
+                      text-ghl-neutral-700
                     }`}>
                       Destination *
                     </label>
@@ -273,9 +237,7 @@ export default function QuotePage() {
                       onChange={handleInputChange}
                       required
                       className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 border rounded-lg sm:rounded-xl focus:ring-2 focus:ring-ghl-primary-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base ${
-                        resolvedTheme === 'dark' 
-                          ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400' 
-                          : 'border-ghl-neutral-300 bg-white text-gray-900'
+border-ghl-neutral-300 bg-white text-gray-900
                       }`}
                       placeholder="City, Country"
                     />
@@ -283,7 +245,7 @@ export default function QuotePage() {
                   
                   <div>
                     <label className={`block text-xs sm:text-sm font-medium mb-1 sm:mb-2 ${
-                      resolvedTheme === 'dark' ? 'text-gray-300' : 'text-ghl-neutral-700'
+                      text-ghl-neutral-700
                     }`}>
                       Cargo Type *
                     </label>
@@ -293,9 +255,7 @@ export default function QuotePage() {
                       onChange={handleInputChange}
                       required
                       className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 border rounded-lg sm:rounded-xl focus:ring-2 focus:ring-ghl-primary-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base ${
-                        resolvedTheme === 'dark' 
-                          ? 'bg-gray-700 border-gray-600 text-white' 
-                          : 'border-ghl-neutral-300 bg-white text-gray-900'
+border-ghl-neutral-300 bg-white text-gray-900
                       }`}
                     >
                       <option value="">Select cargo type</option>
@@ -309,7 +269,7 @@ export default function QuotePage() {
                   
                   <div>
                     <label className={`block text-xs sm:text-sm font-medium mb-1 sm:mb-2 ${
-                      resolvedTheme === 'dark' ? 'text-gray-300' : 'text-ghl-neutral-700'
+                      text-ghl-neutral-700
                     }`}>
                       Weight/Volume *
                     </label>
@@ -320,9 +280,7 @@ export default function QuotePage() {
                       onChange={handleInputChange}
                       required
                       className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 border rounded-lg sm:rounded-xl focus:ring-2 focus:ring-ghl-primary-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base ${
-                        resolvedTheme === 'dark' 
-                          ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400' 
-                          : 'border-ghl-neutral-300 bg-white text-gray-900'
+border-ghl-neutral-300 bg-white text-gray-900
                       }`}
                       placeholder="e.g., 1000 kg, 20 containers"
                     />
@@ -330,7 +288,7 @@ export default function QuotePage() {
                   
                   <div>
                     <label className={`block text-xs sm:text-sm font-medium mb-1 sm:mb-2 ${
-                      resolvedTheme === 'dark' ? 'text-gray-300' : 'text-ghl-neutral-700'
+                      text-ghl-neutral-700
                     }`}>
                       Temperature Requirements
                     </label>
@@ -340,9 +298,7 @@ export default function QuotePage() {
                       value={formData.temperature}
                       onChange={handleInputChange}
                       className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 border rounded-lg sm:rounded-xl focus:ring-2 focus:ring-ghl-primary-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base ${
-                        resolvedTheme === 'dark' 
-                          ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400' 
-                          : 'border-ghl-neutral-300 bg-white text-gray-900'
+border-ghl-neutral-300 bg-white text-gray-900
                       }`}
                       placeholder="e.g., 2-8°C, Ambient"
                     />
@@ -350,7 +306,7 @@ export default function QuotePage() {
                   
                   <div>
                     <label className={`block text-xs sm:text-sm font-medium mb-1 sm:mb-2 ${
-                      resolvedTheme === 'dark' ? 'text-gray-300' : 'text-ghl-neutral-700'
+                      text-ghl-neutral-700
                     }`}>
                       Timeline *
                     </label>
@@ -360,9 +316,7 @@ export default function QuotePage() {
                       onChange={handleInputChange}
                       required
                       className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 border rounded-lg sm:rounded-xl focus:ring-2 focus:ring-ghl-primary-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base ${
-                        resolvedTheme === 'dark' 
-                          ? 'bg-gray-700 border-gray-600 text-white' 
-                          : 'border-ghl-neutral-300 bg-white text-gray-900'
+border-ghl-neutral-300 bg-white text-gray-900
                       }`}
                     >
                       <option value="">Select timeline</option>
@@ -376,7 +330,7 @@ export default function QuotePage() {
 
                 <div className="mb-6 sm:mb-8">
                   <label className={`block text-xs sm:text-sm font-medium mb-1 sm:mb-2 ${
-                    resolvedTheme === 'dark' ? 'text-gray-300' : 'text-ghl-neutral-700'
+                    text-ghl-neutral-700
                   }`}>
                     Special Requirements
                   </label>
@@ -385,11 +339,7 @@ export default function QuotePage() {
                     value={formData.specialRequirements}
                     onChange={handleInputChange}
                     rows={3}
-                    className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 border rounded-lg sm:rounded-xl focus:ring-2 focus:ring-ghl-primary-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base ${
-                      resolvedTheme === 'dark' 
-                        ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400' 
-                        : 'border-ghl-neutral-300 bg-white text-gray-900'
-                    }`}
+                    className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border rounded-lg sm:rounded-xl focus:ring-2 focus:ring-ghl-primary-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base border-ghl-neutral-300 bg-white text-gray-900"
                     placeholder="Any special handling, documentation, or other requirements..."
                   />
                 </div>
@@ -402,7 +352,7 @@ export default function QuotePage() {
                   >
                     {isSubmitting ? (
                       <>
-                        <Clock className="h-4 w-4 sm:h-5 sm:w-5 mr-2 animate-spin" />
+                        <Clock className="h-4 w-4 sm:h-5 sm:w-5 mr-2" />
                         Processing...
                       </>
                     ) : (

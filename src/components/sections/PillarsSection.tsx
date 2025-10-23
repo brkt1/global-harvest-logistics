@@ -1,10 +1,8 @@
 'use client'
 
-import { useTheme } from '@/contexts/ThemeContext'
 import { Award, Globe, Leaf, Shield, TrendingUp, Users } from 'lucide-react'
 
 export default function PillarsSection() {
-  const { resolvedTheme } = useTheme()
   const pillars = [
     {
       icon: Award,
@@ -52,101 +50,113 @@ export default function PillarsSection() {
   ]
 
   return (
-    <section className={`section-padding ${
-      resolvedTheme === 'dark' ? 'bg-gray-900' : 'bg-white'
-    }`}>
-      <div className="container-custom">
-        {/* Section Header */}
-        <div className="text-center mb-12 sm:mb-16">
-          <h2 className={`text-2xl sm:text-3xl lg:text-4xl font-heading font-bold mb-4 sm:mb-6 ${
-            resolvedTheme === 'dark' ? 'text-gray-100' : 'text-ghl-neutral-900'
-          }`}>
+    <section className="py-12 sm:py-16 bg-gradient-to-br from-gray-50 via-white to-gray-100 relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-30" style={{backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M30 30c0-8.3-6.7-15-15-15s-15 6.7-15 15 6.7 15 15 15 15-6.7 15-15zm15 0c0-8.3-6.7-15-15-15s-15 6.7-15 15 6.7 15 15 15 15-6.7 15-15z'/%3E%3Cpath d='M30 15l-3 6h6l-3-6zm0 30l-3-6h6l-3 6zm15-15l-6-3v6l6-3zm-30 0l6-3v6l-6-3z'/%3E%3Cpath d='M30 7.5c-3.4 0-6.2 2.8-6.2 6.2s2.8 6.2 6.2 6.2 6.2-2.8 6.2-6.2-2.8-6.2-6.2-6.2zm0 12.5c-3.4 0-6.2 2.8-6.2 6.2s2.8 6.2 6.2 6.2 6.2-2.8 6.2-6.2-2.8-6.2-6.2-6.2z'/%3E%3Cpath d='M30 30c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3zm0-6c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`}}></div>
+      
+      {/* Decorative Background Elements */}
+      <div className="absolute top-10 left-10 w-20 h-20 bg-gradient-to-r from-ghl-primary-600/10 to-ghl-secondary-400/10 rounded-full blur-xl"></div>
+      <div className="absolute bottom-10 right-10 w-32 h-32 bg-gradient-to-r from-ghl-secondary-400/10 to-ghl-primary-600/10 rounded-full blur-2xl"></div>
+      <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-gradient-to-r from-ghl-primary-600/5 to-ghl-secondary-400/5 rounded-full blur-lg"></div>
+      
+      <div className="container-custom relative z-10">
+        {/* Compact Section Header */}
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-ghl-primary-600 to-ghl-secondary-400 text-white rounded-full text-sm font-semibold mb-6 shadow-lg">
+            <Award className="w-4 h-4 mr-2" />
+            Our Foundation
+          </div>
+          <h2 className="text-2xl sm:text-3xl font-heading font-bold text-gray-900 mb-4">
             Built on Three Pillars of Excellence
           </h2>
-          <p className={`text-lg sm:text-xl max-w-3xl mx-auto ${
-            resolvedTheme === 'dark' ? 'text-gray-300' : 'text-ghl-neutral-600'
-          }`}>
+          <p className="text-gray-600 max-w-3xl mx-auto">
             Our commitment to expertise, reliability, and sustainability ensures your 
             temperature-sensitive commodities reach their destination in perfect condition.
           </p>
         </div>
 
-        {/* Pillars Grid - Mobile-first with compact cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-12 sm:mb-16">
-          {pillars.map((pillar) => (
-            <div 
-              key={pillar.title}
-              className={`group relative rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 shadow-md hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 ${
-                resolvedTheme === 'dark' 
-                  ? 'bg-gray-800 border-gray-700/30 hover:border-ghl-primary-600/50' 
-                  : 'bg-white border-ghl-neutral-100 hover:border-ghl-primary-200'
-              }`}
-            >
-              {/* Icon */}
-              <div className={`inline-flex p-2 sm:p-3 lg:p-4 rounded-lg sm:rounded-xl bg-ghl-${pillar.color.replace('ghl-', '').replace('-', '-')} bg-opacity-10 mb-3 sm:mb-4 lg:mb-6`}>
-                <pillar.icon className={`h-5 w-5 sm:h-6 sm:w-6 lg:h-8 lg:w-8 text-ghl-${pillar.color.replace('ghl-', '').replace('-', '-')}`} />
+        {/* Compact Pillars Grid with Background Images */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
+          {pillars.map((pillar, index) => {
+            // Define background images for each pillar
+            const backgroundImages = [
+              'https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80', // Expertise - Business/Professional
+              'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80', // Reliability - Quality Control
+              'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80'  // Sustainability - Eco-friendly
+            ];
+
+            return (
+            <div key={pillar.title} className="group relative">
+              {/* Pillar Card with Background Image */}
+              <div className="relative bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 overflow-hidden h-80">
+                {/* Background Image */}
+                <div 
+                  className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                  style={{ backgroundImage: `url(${backgroundImages[index]})` }}
+                ></div>
+                {/* Dark overlay for better text readability */}
+                <div className="absolute inset-0 bg-black/50"></div>
+                
+                {/* Pillar Number */}
+                <div className="relative z-10 mb-4">
+                  <span className="inline-flex items-center justify-center w-8 h-8 bg-gradient-to-r from-ghl-primary-600 to-ghl-secondary-400 text-white rounded-full text-sm font-bold">
+                    {index + 1}
+                  </span>
+                </div>
+                
+                {/* Title & Description */}
+                <div className="relative z-10 mb-4">
+                  <h3 className="text-lg font-bold text-white mb-2 group-hover:text-gray-100 transition-colors">
+                    {pillar.title}
+                  </h3>
+                  <p className="text-gray-200 text-sm leading-relaxed">
+                    {pillar.description}
+                  </p>
+                </div>
+                
+                {/* Key Features */}
+                <div className="relative z-10">
+                  <h4 className="text-sm font-semibold text-white mb-2 flex items-center">
+                    <div className="w-2 h-2 bg-gradient-to-r from-white to-gray-300 rounded-full mr-2"></div>
+                    Key Features
+                  </h4>
+                  <ul className="space-y-1">
+                    {pillar.features.slice(0, 3).map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-start text-xs text-gray-200">
+                        <div className="w-1.5 h-1.5 bg-gradient-to-r from-white to-gray-300 rounded-full mr-2 mt-1.5 flex-shrink-0" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                
+                {/* Hover Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-r from-ghl-primary-500/10 to-ghl-secondary-400/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
               </div>
-
-              {/* Content */}
-              <h3 className={`text-lg sm:text-xl lg:text-2xl font-heading font-bold mb-2 sm:mb-3 lg:mb-4 ${
-                resolvedTheme === 'dark' ? 'text-gray-100' : 'text-ghl-neutral-900'
-              }`}>
-                {pillar.title}
-              </h3>
-              
-              <p className={`mb-3 sm:mb-4 lg:mb-6 leading-relaxed text-sm sm:text-base ${
-                resolvedTheme === 'dark' ? 'text-gray-300' : 'text-ghl-neutral-600'
-              }`}>
-                {pillar.description}
-              </p>
-
-              {/* Features List - Compact on mobile */}
-              <ul className="space-y-1.5 sm:space-y-2 lg:space-y-3">
-                {pillar.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className={`flex items-center text-xs sm:text-sm ${
-                    resolvedTheme === 'dark' ? 'text-gray-300' : 'text-ghl-neutral-600'
-                  }`}>
-                    <div className={`w-1 h-1 sm:w-1.5 sm:h-1.5 lg:w-2 lg:h-2 rounded-full bg-ghl-${pillar.color.replace('ghl-', '').replace('-', '-')} mr-2 sm:mr-3 flex-shrink-0`} />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-
-              {/* Hover Effect */}
-              <div className="absolute inset-0 rounded-xl sm:rounded-2xl border-2 border-transparent group-hover:border-ghl-primary-200 transition-all duration-300 pointer-events-none" />
             </div>
-          ))}
+            );
+          })}
         </div>
 
-        {/* Stats Section - Mobile optimized glassy design */}
-        <div className="relative bg-gradient-to-br from-ghl-primary-600/90 to-ghl-secondary-400/90 backdrop-blur-sm border border-white/20 rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 xl:p-12 text-white shadow-2xl">
-          {/* Glassmorphism overlay */}
-          <div className="absolute inset-0 bg-white/5 rounded-xl sm:rounded-2xl"></div>
+        {/* Compact Stats Section */}
+        <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl p-6 shadow-lg border border-gray-200">
+          <div className="text-center mb-6">
+            <h3 className="text-xl font-bold text-gray-900 mb-2">Our Track Record</h3>
+            <p className="text-gray-600 text-sm">
+              Delivering excellence across the globe with proven results.
+            </p>
+          </div>
           
-          <div className="relative z-10">
-            <div className="text-center mb-4 sm:mb-6 lg:mb-8">
-              <div className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 bg-white/20 backdrop-blur-sm border border-white/30 rounded-full text-xs sm:text-sm font-medium mb-3 sm:mb-4">
-                Trusted Worldwide
-              </div>
-              <h3 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-heading font-bold mb-2 sm:mb-3 lg:mb-4">
-                Our track record speaks for itself
-              </h3>
-              <p className="text-sm sm:text-base lg:text-lg opacity-90">
-                Delivering excellence across the globe
-              </p>
-            </div>
-
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-8">
-              {stats.map((stat, index) => (
-                <div key={index} className="text-center group">
-                  <div className="inline-flex p-2 sm:p-3 lg:p-4 bg-white/20 backdrop-blur-sm border border-white/30 rounded-lg sm:rounded-xl mb-2 sm:mb-3 lg:mb-4 group-hover:bg-white/30 transition-all duration-300 group-hover:scale-110">
-                    <stat.icon className="h-3 w-3 sm:h-4 sm:w-4 lg:h-6 lg:w-6" />
-                  </div>
-                  <div className="text-lg sm:text-2xl lg:text-3xl xl:text-4xl font-bold mb-1 sm:mb-2 group-hover:scale-105 transition-transform duration-300">{stat.value}</div>
-                  <div className="text-xs sm:text-sm opacity-90 font-medium">{stat.label}</div>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            {stats.map((stat, index) => (
+              <div key={index} className="text-center group">
+                <div className="inline-flex items-center justify-center w-10 h-10 bg-gradient-to-r from-ghl-primary-600 to-ghl-secondary-400 rounded-lg mb-3 shadow-md group-hover:scale-110 transition-transform duration-300">
+                  <stat.icon className="h-5 w-5 text-white" />
                 </div>
-              ))}
-            </div>
+                <div className="text-lg font-bold text-gray-900 mb-1 group-hover:scale-105 transition-transform duration-300">{stat.value}</div>
+                <div className="text-xs text-gray-600 font-medium">{stat.label}</div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

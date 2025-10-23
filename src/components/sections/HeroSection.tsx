@@ -1,37 +1,30 @@
 'use client'
 
-import { useTheme } from '@/contexts/ThemeContext'
 import { ArrowRight, Play } from 'lucide-react'
 import Link from 'next/link'
 import { useState } from 'react'
 
 export default function HeroSection() {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false)
-  const { resolvedTheme } = useTheme()
 
   return (
-    <section className={`relative bg-gradient-to-br overflow-hidden ${
-      resolvedTheme === 'dark' 
-        ? 'from-gray-900 to-gray-800' 
-        : 'from-ghl-neutral-50 to-white'
-    }`}>
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231e5631' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-        }} />
-      </div>
+    <section className="relative overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `url('/hero.jpg')`,
+        }}
+      />
+      {/* Dark overlay for better text readability */}
+      <div className="absolute inset-0 bg-black/60"></div>
 
       <div className="container-custom relative">
         <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center min-h-[60vh] sm:min-h-[70vh] lg:min-h-[80vh] py-8 sm:py-12 lg:py-16">
           {/* Left Content - Mobile optimized */}
           <div className="space-y-4 sm:space-y-6 lg:space-y-8">
             <div className="space-y-3 sm:space-y-4 lg:space-y-6">
-              <div className={`inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 backdrop-blur-sm rounded-full text-xs sm:text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 ${
-                resolvedTheme === 'dark' 
-                  ? 'bg-gray-800/80 border-ghl-primary-600/50 text-ghl-primary-300' 
-                  : 'bg-white/80 border-ghl-primary-200/50 text-ghl-primary-700'
-              }`}>
+              <div className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 backdrop-blur-sm rounded-full text-xs sm:text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 bg-white/80 border-ghl-primary-200/50 text-ghl-primary-700">
                 <div className="flex -space-x-1 mr-2 sm:mr-3">
                   <div className="w-4 h-4 sm:w-5 sm:h-5 bg-ghl-primary-600 rounded-full border-2 border-white flex items-center justify-center">
                     <span className="text-xs text-white font-bold">G</span>
@@ -47,19 +40,17 @@ export default function HeroSection() {
               </div>
               
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-heading font-bold leading-tight">
-                <span className={resolvedTheme === 'dark' ? 'text-gray-100' : 'text-ghl-neutral-900'}>Delivering</span>
+                <span className="text-white drop-shadow-lg">Welcome to</span>
                 <br />
-                <span className="text-gradient">Taste, Preserving</span>
+                <span className="text-gradient bg-gradient-to-r from-ghl-primary-600 to-ghl-secondary-400 bg-clip-text text-transparent drop-shadow-lg">Excellence in</span>
                 <br />
-                <span className={resolvedTheme === 'dark' ? 'text-ghl-primary-400' : 'text-ghl-primary-600'}>Nature</span>
+                <span className="text-ghl-primary-300 drop-shadow-lg">Global Logistics</span>
               </h1>
               
-              <p className={`text-base sm:text-lg lg:text-xl leading-relaxed max-w-2xl ${
-                resolvedTheme === 'dark' ? 'text-gray-300' : 'text-ghl-neutral-600'
-              }`}>
-                Your trusted partner in temperature-sensitive commodity logistics. 
-                We specialize in coffee, olive oil, and specialty food exports with 
-                unmatched expertise, reliability, and sustainability.
+              <p className="text-base sm:text-lg lg:text-xl leading-relaxed max-w-2xl text-white drop-shadow-lg">
+                We're delighted to have you here! As your trusted partner in temperature-sensitive commodity logistics, 
+                we specialize in coffee, olive oil, and specialty food exports with unmatched expertise, 
+                reliability, and sustainability.
               </p>
             </div>
 
@@ -69,8 +60,8 @@ export default function HeroSection() {
                 href="/quote" 
                 className="btn btn-primary text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-4 inline-flex items-center justify-center group"
               >
-                <span className="hidden sm:inline">Request a Custom Quote</span>
-                <span className="sm:hidden">Get Quote</span>
+                <span className="hidden sm:inline">Let's Start Your Journey</span>
+                <span className="sm:hidden">Start Journey</span>
                 <ArrowRight className="ml-2 h-3 w-3 sm:h-4 sm:w-4 lg:h-5 lg:w-5 group-hover:translate-x-1 transition-transform" />
               </Link>
               
@@ -79,39 +70,32 @@ export default function HeroSection() {
                 className="btn btn-outline text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-4 inline-flex items-center justify-center group"
               >
                 <Play className="mr-2 h-3 w-3 sm:h-4 sm:w-4 lg:h-5 lg:w-5 group-hover:scale-110 transition-transform" />
-                <span className="hidden sm:inline">Watch Our Story</span>
-                <span className="sm:hidden">Watch Video</span>
+                <span className="hidden sm:inline">Discover Our Story</span>
+                <span className="sm:hidden">Our Story</span>
               </button>
+            </div>
+            
+            {/* Subtle Welcome Message */}
+            <div className="bg-black/20 backdrop-blur-sm rounded-lg p-4 border border-white/30">
+              <p className="text-sm text-white text-center drop-shadow-lg">
+                💚 Every shipment tells a story. Let us help you write yours with care and precision.
+              </p>
             </div>
 
             {/* Trust Indicators - Mobile compact */}
-            <div className={`pt-4 sm:pt-6 lg:pt-8 border-t ${
-              resolvedTheme === 'dark' ? 'border-gray-700' : 'border-ghl-neutral-200'
-            }`}>
+            <div className="pt-4 sm:pt-6 lg:pt-8 border-t border-white/30">
               <div className="flex flex-wrap items-center justify-between gap-2 sm:gap-4 lg:gap-6">
                 <div className="flex items-center space-x-2 sm:space-x-3">
-                  <div className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full ${
-                    resolvedTheme === 'dark' ? 'bg-ghl-primary-400' : 'bg-ghl-primary-600'
-                  }`}></div>
-                  <span className={`text-xs sm:text-sm ${
-                    resolvedTheme === 'dark' ? 'text-gray-300' : 'text-ghl-neutral-600'
-                  }`}>500+ Partners</span>
+                  <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-ghl-primary-400"></div>
+                  <span className="text-xs sm:text-sm text-white drop-shadow-lg">500+ Partners</span>
                 </div>
                 <div className="flex items-center space-x-2 sm:space-x-3">
-                  <div className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full ${
-                    resolvedTheme === 'dark' ? 'bg-ghl-secondary-300' : 'bg-ghl-secondary-400'
-                  }`}></div>
-                  <span className={`text-xs sm:text-sm ${
-                    resolvedTheme === 'dark' ? 'text-gray-300' : 'text-ghl-neutral-600'
-                  }`}>99.8% On-Time</span>
+                  <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-ghl-secondary-400"></div>
+                  <span className="text-xs sm:text-sm text-white drop-shadow-lg">99.8% On-Time</span>
                 </div>
                 <div className="flex items-center space-x-2 sm:space-x-3">
-                  <div className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full ${
-                    resolvedTheme === 'dark' ? 'bg-ghl-primary-400' : 'bg-ghl-primary-500'
-                  }`}></div>
-                  <span className={`text-xs sm:text-sm ${
-                    resolvedTheme === 'dark' ? 'text-gray-300' : 'text-ghl-neutral-600'
-                  }`}>24/7 Support</span>
+                  <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-ghl-primary-300"></div>
+                  <span className="text-xs sm:text-sm text-white drop-shadow-lg">24/7 Support</span>
                 </div>
               </div>
             </div>
@@ -147,32 +131,20 @@ export default function HeroSection() {
       {/* Video Modal */}
       {isVideoPlaying && (
         <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
-          <div className={`rounded-lg p-4 max-w-4xl w-full ${
-            resolvedTheme === 'dark' ? 'bg-gray-800' : 'bg-white'
-          }`}>
+          <div className="rounded-lg p-4 max-w-4xl w-full bg-white">
             <div className="flex justify-between items-center mb-4">
-              <h3 className={`text-lg font-semibold ${
-                resolvedTheme === 'dark' ? 'text-white' : 'text-gray-900'
-              }`}>Our Logistics Process</h3>
+              <h3 className="text-lg font-semibold text-gray-900">Our Logistics Process</h3>
               <button 
                 onClick={() => setIsVideoPlaying(false)}
-                className={`${
-                  resolvedTheme === 'dark' 
-                    ? 'text-gray-400 hover:text-gray-200' 
-                    : 'text-ghl-neutral-500 hover:text-ghl-neutral-700'
-                }`}
+                className="text-ghl-neutral-500 hover:text-ghl-neutral-700"
               >
                 ✕
               </button>
             </div>
-            <div className={`aspect-video rounded-lg flex items-center justify-center ${
-              resolvedTheme === 'dark' ? 'bg-gray-700' : 'bg-ghl-neutral-100'
-            }`}>
+            <div className="aspect-video rounded-lg flex items-center justify-center bg-ghl-neutral-100">
               <div className="text-center">
-                <Play className={`h-16 w-16 mx-auto mb-4 ${
-                  resolvedTheme === 'dark' ? 'text-ghl-primary-400' : 'text-ghl-primary-600'
-                }`} />
-                <p className={resolvedTheme === 'dark' ? 'text-gray-300' : 'text-ghl-neutral-600'}>
+                <Play className="h-16 w-16 mx-auto mb-4 text-ghl-primary-600" />
+                <p className="text-ghl-neutral-600">
                   Video content would be embedded here
                 </p>
               </div>
