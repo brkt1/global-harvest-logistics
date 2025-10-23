@@ -112,7 +112,7 @@ export default function QuotePage() {
                   {/* Contact Information */}
                   <div className="md:col-span-2">
                     <h3 className={`text-lg sm:text-xl font-heading font-semibold mb-3 sm:mb-4 flex items-center ${
-                      text-ghl-neutral-800
+                        'text-ghl-neutral-800'
                     }`}>
                       <Mail className="h-4 w-4 sm:h-5 sm:w-5 text-ghl-primary-600 mr-2" />
                       Contact Information
@@ -121,7 +121,7 @@ export default function QuotePage() {
                   
                   <div>
                     <label className={`block text-xs sm:text-sm font-medium mb-1 sm:mb-2 ${
-                      text-ghl-neutral-700
+                        'text-ghl-neutral-700'
                     }`}>
                       Full Name *
                     </label>
@@ -140,7 +140,7 @@ export default function QuotePage() {
                   
                   <div>
                     <label className={`block text-xs sm:text-sm font-medium mb-1 sm:mb-2 ${
-                      text-ghl-neutral-700
+                        'text-ghl-neutral-700'
                     }`}>
                       Email Address *
                     </label>
@@ -151,7 +151,7 @@ export default function QuotePage() {
                       onChange={handleInputChange}
                       required
                       className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 border rounded-lg sm:rounded-xl focus:ring-2 focus:ring-ghl-primary-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base ${
-border-ghl-neutral-300 bg-white text-gray-900
+                        'border-ghl-neutral-300 bg-white text-gray-900'
                       }`}
                       placeholder="your@email.com"
                     />
@@ -159,7 +159,7 @@ border-ghl-neutral-300 bg-white text-gray-900
                   
                   <div>
                     <label className={`block text-xs sm:text-sm font-medium mb-1 sm:mb-2 ${
-                      text-ghl-neutral-700
+                        'text-ghl-neutral-700'
                     }`}>
                       Phone Number
                     </label>
@@ -169,7 +169,7 @@ border-ghl-neutral-300 bg-white text-gray-900
                       value={formData.phone}
                       onChange={handleInputChange}
                       className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 border rounded-lg sm:rounded-xl focus:ring-2 focus:ring-ghl-primary-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base ${
-border-ghl-neutral-300 bg-white text-gray-900
+                        'border-ghl-neutral-300 bg-white text-gray-900'
                       }`}
                       placeholder="+1 (555) 123-4567"
                     />
@@ -177,7 +177,7 @@ border-ghl-neutral-300 bg-white text-gray-900
                   
                   <div>
                     <label className={`block text-xs sm:text-sm font-medium mb-1 sm:mb-2 ${
-                      text-ghl-neutral-700
+                        'text-ghl-neutral-700'
                     }`}>
                       Company Name
                     </label>
@@ -187,7 +187,7 @@ border-ghl-neutral-300 bg-white text-gray-900
                       value={formData.company}
                       onChange={handleInputChange}
                       className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 border rounded-lg sm:rounded-xl focus:ring-2 focus:ring-ghl-primary-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base ${
-border-ghl-neutral-300 bg-white text-gray-900
+                        'border-ghl-neutral-300 bg-white text-gray-900'
                       }`}
                       placeholder="Your company name"
                     />
@@ -198,7 +198,7 @@ border-ghl-neutral-300 bg-white text-gray-900
                   {/* Shipment Details */}
                   <div className="md:col-span-2">
                     <h3 className={`text-lg sm:text-xl font-heading font-semibold mb-3 sm:mb-4 flex items-center ${
-                      text-ghl-neutral-800
+                        'text-ghl-neutral-800'
                     }`}>
                       <Truck className="h-4 w-4 sm:h-5 sm:w-5 text-ghl-primary-600 mr-2" />
                       Shipment Details
@@ -207,7 +207,7 @@ border-ghl-neutral-300 bg-white text-gray-900
                   
                   <div>
                     <label className={`block text-xs sm:text-sm font-medium mb-1 sm:mb-2 ${
-                      text-ghl-neutral-700
+                        'text-ghl-neutral-700'
                     }`}>
                       Origin *
                     </label>
@@ -218,7 +218,7 @@ border-ghl-neutral-300 bg-white text-gray-900
                       onChange={handleInputChange}
                       required
                       className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 border rounded-lg sm:rounded-xl focus:ring-2 focus:ring-ghl-primary-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base ${
-border-ghl-neutral-300 bg-white text-gray-900
+                        'border-ghl-neutral-300 bg-white text-gray-900'
                       }`}
                       placeholder="City, Country"
                     />
@@ -226,7 +226,7 @@ border-ghl-neutral-300 bg-white text-gray-900
                   
                   <div>
                     <label className={`block text-xs sm:text-sm font-medium mb-1 sm:mb-2 ${
-                      text-ghl-neutral-700
+                        'text-ghl-neutral-700'
                     }`}>
                       Destination *
                     </label>
@@ -237,7 +237,7 @@ border-ghl-neutral-300 bg-white text-gray-900
                       onChange={handleInputChange}
                       required
                       className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 border rounded-lg sm:rounded-xl focus:ring-2 focus:ring-ghl-primary-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base ${
-border-ghl-neutral-300 bg-white text-gray-900
+                        'border-ghl-neutral-300 bg-white text-gray-900'
                       }`}
                       placeholder="City, Country"
                     />
@@ -245,7 +245,7 @@ border-ghl-neutral-300 bg-white text-gray-900
                   
                   <div>
                     <label className={`block text-xs sm:text-sm font-medium mb-1 sm:mb-2 ${
-                      text-ghl-neutral-700
+                        'text-ghl-neutral-700'
                     }`}>
                       Cargo Type *
                     </label>
@@ -255,7 +255,7 @@ border-ghl-neutral-300 bg-white text-gray-900
                       onChange={handleInputChange}
                       required
                       className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 border rounded-lg sm:rounded-xl focus:ring-2 focus:ring-ghl-primary-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base ${
-border-ghl-neutral-300 bg-white text-gray-900
+                        'border-ghl-neutral-300 bg-white text-gray-900'
                       }`}
                     >
                       <option value="">Select cargo type</option>
@@ -269,7 +269,7 @@ border-ghl-neutral-300 bg-white text-gray-900
                   
                   <div>
                     <label className={`block text-xs sm:text-sm font-medium mb-1 sm:mb-2 ${
-                      text-ghl-neutral-700
+                        'text-ghl-neutral-700'
                     }`}>
                       Weight/Volume *
                     </label>
@@ -280,7 +280,7 @@ border-ghl-neutral-300 bg-white text-gray-900
                       onChange={handleInputChange}
                       required
                       className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 border rounded-lg sm:rounded-xl focus:ring-2 focus:ring-ghl-primary-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base ${
-border-ghl-neutral-300 bg-white text-gray-900
+                        'border-ghl-neutral-300 bg-white text-gray-900'
                       }`}
                       placeholder="e.g., 1000 kg, 20 containers"
                     />
@@ -288,7 +288,7 @@ border-ghl-neutral-300 bg-white text-gray-900
                   
                   <div>
                     <label className={`block text-xs sm:text-sm font-medium mb-1 sm:mb-2 ${
-                      text-ghl-neutral-700
+                        'text-ghl-neutral-700'
                     }`}>
                       Temperature Requirements
                     </label>
@@ -298,7 +298,7 @@ border-ghl-neutral-300 bg-white text-gray-900
                       value={formData.temperature}
                       onChange={handleInputChange}
                       className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 border rounded-lg sm:rounded-xl focus:ring-2 focus:ring-ghl-primary-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base ${
-border-ghl-neutral-300 bg-white text-gray-900
+                        'border-ghl-neutral-300 bg-white text-gray-900'
                       }`}
                       placeholder="e.g., 2-8°C, Ambient"
                     />
@@ -306,7 +306,7 @@ border-ghl-neutral-300 bg-white text-gray-900
                   
                   <div>
                     <label className={`block text-xs sm:text-sm font-medium mb-1 sm:mb-2 ${
-                      text-ghl-neutral-700
+                        'text-ghl-neutral-700'
                     }`}>
                       Timeline *
                     </label>
@@ -316,7 +316,7 @@ border-ghl-neutral-300 bg-white text-gray-900
                       onChange={handleInputChange}
                       required
                       className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 border rounded-lg sm:rounded-xl focus:ring-2 focus:ring-ghl-primary-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base ${
-border-ghl-neutral-300 bg-white text-gray-900
+                        'border-ghl-neutral-300 bg-white text-gray-900'
                       }`}
                     >
                       <option value="">Select timeline</option>
@@ -330,7 +330,7 @@ border-ghl-neutral-300 bg-white text-gray-900
 
                 <div className="mb-6 sm:mb-8">
                   <label className={`block text-xs sm:text-sm font-medium mb-1 sm:mb-2 ${
-                    text-ghl-neutral-700
+                    'text-ghl-neutral-700'
                   }`}>
                     Special Requirements
                   </label>
@@ -339,7 +339,7 @@ border-ghl-neutral-300 bg-white text-gray-900
                     value={formData.specialRequirements}
                     onChange={handleInputChange}
                     rows={3}
-                    className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border rounded-lg sm:rounded-xl focus:ring-2 focus:ring-ghl-primary-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base border-ghl-neutral-300 bg-white text-gray-900"
+                    className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border rounded-lg sm:rounded-xl focus:ring-2 focus:ring-ghl-primary-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base                         'border-ghl-neutral-300 bg-white text-gray-900'"
                     placeholder="Any special handling, documentation, or other requirements..."
                   />
                 </div>
