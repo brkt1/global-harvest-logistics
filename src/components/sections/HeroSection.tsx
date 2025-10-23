@@ -9,22 +9,32 @@ export default function HeroSection() {
 
   return (
     <section className="relative overflow-hidden">
-      {/* Background Image */}
+      {/* Soft Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: `url('/hero.jpg')`,
         }}
       />
-      {/* Dark overlay for better text readability */}
-      <div className="absolute inset-0 bg-black/60"></div>
+      {/* Soft overlay to maintain green visibility */}
+      <div className="absolute inset-0 bg-white/85"></div>
+      
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-10" style={{
+        backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+      }}></div>
+      
+      {/* Floating Background Elements */}
+      <div className="absolute top-20 left-10 w-20 h-20 bg-ghl-primary-100 rounded-full blur-xl opacity-60"></div>
+      <div className="absolute bottom-20 right-10 w-32 h-32 bg-ghl-secondary-100 rounded-full blur-2xl opacity-60"></div>
+      <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-ghl-primary-200 rounded-full blur-lg opacity-40"></div>
 
       <div className="container-custom relative">
         <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center min-h-[60vh] sm:min-h-[70vh] lg:min-h-[80vh] py-8 sm:py-12 lg:py-16">
           {/* Left Content - Mobile optimized */}
           <div className="space-y-4 sm:space-y-6 lg:space-y-8">
             <div className="space-y-3 sm:space-y-4 lg:space-y-6">
-              <div className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 backdrop-blur-sm rounded-full text-xs sm:text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 bg-white/80 border-ghl-primary-200/50 text-ghl-primary-700">
+              <div className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 backdrop-blur-sm rounded-full text-xs sm:text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 bg-white/90 border-ghl-primary-200 text-ghl-primary-700">
                 <div className="flex -space-x-1 mr-2 sm:mr-3">
                   <div className="w-4 h-4 sm:w-5 sm:h-5 bg-ghl-primary-600 rounded-full border-2 border-white flex items-center justify-center">
                     <span className="text-xs text-white font-bold">G</span>
@@ -40,14 +50,14 @@ export default function HeroSection() {
               </div>
               
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-heading font-bold leading-tight">
-                <span className="text-white drop-shadow-lg">Welcome to</span>
+                <span className="text-ghl-neutral-900">Welcome to</span>
                 <br />
-                <span className="text-gradient bg-gradient-to-r from-ghl-primary-600 to-ghl-secondary-400 bg-clip-text text-transparent drop-shadow-lg">Excellence in</span>
+                <span className="text-gradient bg-gradient-to-r from-ghl-primary-600 to-ghl-secondary-400 bg-clip-text text-transparent">Excellence in</span>
                 <br />
-                <span className="text-ghl-primary-300 drop-shadow-lg">Global Logistics</span>
+                <span className="text-ghl-primary-600">Global Logistics</span>
               </h1>
               
-              <p className="text-base sm:text-lg lg:text-xl leading-relaxed max-w-2xl text-white drop-shadow-lg">
+              <p className="text-base sm:text-lg lg:text-xl leading-relaxed max-w-2xl text-ghl-neutral-700">
                 We're delighted to have you here! As your trusted partner in temperature-sensitive commodity logistics, 
                 we specialize in coffee, olive oil, and specialty food exports with unmatched expertise, 
                 reliability, and sustainability.
@@ -76,26 +86,26 @@ export default function HeroSection() {
             </div>
             
             {/* Subtle Welcome Message */}
-            <div className="bg-black/20 backdrop-blur-sm rounded-lg p-4 border border-white/30">
-              <p className="text-sm text-white text-center drop-shadow-lg">
+            <div className="bg-gradient-to-r from-ghl-primary-50 to-ghl-secondary-50 backdrop-blur-sm rounded-lg p-4 border border-ghl-primary-200">
+              <p className="text-sm text-ghl-neutral-700 text-center">
                 💚 Every shipment tells a story. Let us help you write yours with care and precision.
               </p>
             </div>
 
             {/* Trust Indicators - Mobile compact */}
-            <div className="pt-4 sm:pt-6 lg:pt-8 border-t border-white/30">
+            <div className="pt-4 sm:pt-6 lg:pt-8 border-t border-ghl-neutral-200">
               <div className="flex flex-wrap items-center justify-between gap-2 sm:gap-4 lg:gap-6">
                 <div className="flex items-center space-x-2 sm:space-x-3">
-                  <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-ghl-primary-400"></div>
-                  <span className="text-xs sm:text-sm text-white drop-shadow-lg">500+ Partners</span>
+                  <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-ghl-primary-600"></div>
+                  <span className="text-xs sm:text-sm text-ghl-neutral-700">500+ Partners</span>
                 </div>
                 <div className="flex items-center space-x-2 sm:space-x-3">
-                  <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-ghl-secondary-400"></div>
-                  <span className="text-xs sm:text-sm text-white drop-shadow-lg">99.8% On-Time</span>
+                  <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-ghl-secondary-500"></div>
+                  <span className="text-xs sm:text-sm text-ghl-neutral-700">99.8% On-Time</span>
                 </div>
                 <div className="flex items-center space-x-2 sm:space-x-3">
-                  <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-ghl-primary-300"></div>
-                  <span className="text-xs sm:text-sm text-white drop-shadow-lg">24/7 Support</span>
+                  <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-ghl-primary-500"></div>
+                  <span className="text-xs sm:text-sm text-ghl-neutral-700">24/7 Support</span>
                 </div>
               </div>
             </div>
