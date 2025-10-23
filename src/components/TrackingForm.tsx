@@ -35,7 +35,7 @@ export default function TrackingForm() {
       if (result.success) {
         setTrackingData(result.data);
       } else {
-        setError(result.error);
+        setError(result.error || 'Failed to track shipment');
         setTrackingData(null);
       }
     } catch (err) {
