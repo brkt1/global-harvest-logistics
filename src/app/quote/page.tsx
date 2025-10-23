@@ -132,7 +132,7 @@ export default function QuotePage() {
                       onChange={handleInputChange}
                       required
                       className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 border rounded-lg sm:rounded-xl focus:ring-2 focus:ring-ghl-primary-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base ${
-border-ghl-neutral-300 bg-white text-gray-900
+                        'border-ghl-neutral-300 bg-white text-gray-900'
                       }`}
                       placeholder="Your full name"
                     />
