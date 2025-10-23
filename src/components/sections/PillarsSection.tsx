@@ -94,8 +94,8 @@ export default function PillarsSection() {
                   className="absolute inset-0 bg-cover bg-center bg-no-repeat"
                   style={{ backgroundImage: `url(${backgroundImages[index]})` }}
                 ></div>
-                {/* Dark overlay for better text readability */}
-                <div className="absolute inset-0 bg-black/50"></div>
+                {/* Light overlay for better text readability */}
+                <div className="absolute inset-0 bg-white/80"></div>
                 
                 {/* Pillar Number */}
                 <div className="relative z-10 mb-4">
@@ -106,24 +106,24 @@ export default function PillarsSection() {
                 
                 {/* Title & Description */}
                 <div className="relative z-10 mb-4">
-                  <h3 className="text-lg font-bold text-white mb-2 group-hover:text-gray-100 transition-colors">
+                  <h3 className="text-lg font-bold text-ghl-neutral-900 mb-2 group-hover:text-ghl-neutral-800 transition-colors">
                     {pillar.title}
                   </h3>
-                  <p className="text-gray-200 text-sm leading-relaxed">
+                  <p className="text-ghl-neutral-700 text-sm leading-relaxed">
                     {pillar.description}
                   </p>
                 </div>
                 
                 {/* Key Features */}
                 <div className="relative z-10">
-                  <h4 className="text-sm font-semibold text-white mb-2 flex items-center">
-                    <div className="w-2 h-2 bg-gradient-to-r from-white to-gray-300 rounded-full mr-2"></div>
+                  <h4 className="text-sm font-semibold text-ghl-neutral-800 mb-2 flex items-center">
+                    <div className="w-2 h-2 bg-gradient-to-r from-ghl-primary-600 to-ghl-secondary-400 rounded-full mr-2"></div>
                     Key Features
                   </h4>
                   <ul className="space-y-1">
                     {pillar.features.slice(0, 3).map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-start text-xs text-gray-200">
-                        <div className="w-1.5 h-1.5 bg-gradient-to-r from-white to-gray-300 rounded-full mr-2 mt-1.5 flex-shrink-0" />
+                      <li key={featureIndex} className="flex items-start text-xs text-ghl-neutral-600">
+                        <div className="w-1.5 h-1.5 bg-gradient-to-r from-ghl-primary-600 to-ghl-secondary-400 rounded-full mr-2 mt-1.5 flex-shrink-0" />
                         {feature}
                       </li>
                     ))}

@@ -453,26 +453,26 @@ export default function ServicesPage() {
                       className="absolute inset-0 bg-cover bg-center bg-no-repeat"
                       style={{ backgroundImage: `url(${backgroundImages[index]})` }}
                     ></div>
-                    {/* Dark overlay for better text readability */}
-                    <div className="absolute inset-0 bg-black/50"></div>
+                    {/* Light overlay for better text readability */}
+                    <div className="absolute inset-0 bg-white/80"></div>
                     
                     {/* Content */}
                     <div className="relative z-10">
                       {/* Title */}
-                      <h3 className="text-2xl lg:text-3xl font-heading font-bold text-white mb-6 text-center lg:text-left group-hover:text-gray-100 transition-colors">
+                      <h3 className="text-2xl lg:text-3xl font-heading font-bold text-ghl-neutral-900 mb-6 text-center lg:text-left group-hover:text-ghl-neutral-800 transition-colors">
                         {process.title}
                       </h3>
                       
                       {/* Description */}
-                      <p className="text-gray-100 leading-relaxed text-center lg:text-left mb-6">
+                      <p className="text-ghl-neutral-700 leading-relaxed text-center lg:text-left mb-6">
                         {process.description}
                       </p>
                       
                       {/* Features List */}
                       <div className="space-y-3">
                         {process.features.map((feature, featureIndex) => (
-                          <div key={featureIndex} className="flex items-center text-sm text-gray-200">
-                            <div className="w-2 h-2 bg-gradient-to-r from-white to-green-300 rounded-full mr-3 flex-shrink-0"></div>
+                          <div key={featureIndex} className="flex items-center text-sm text-ghl-neutral-600">
+                            <div className="w-2 h-2 bg-gradient-to-r from-ghl-primary-600 to-ghl-secondary-400 rounded-full mr-3 flex-shrink-0"></div>
                             {feature}
                           </div>
                         ))}

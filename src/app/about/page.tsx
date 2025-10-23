@@ -29,31 +29,13 @@ export default function About() {
 
   return (
     <div className="relative min-h-screen m-0 p-0">
-      {/* Modern Animated Background */}
-      <div className="hidden md:block fixed inset-0 w-full h-full overflow-hidden -z-10">
-        <div className="video-background">
-          <iframe
-            ref={videoRef}
-            src="https://www.youtube.com/embed/HUozIpTODZQ?autoplay=1&mute=1&start=3&end=12&loop=1&playlist=HUozIpTODZQ&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&fs=0&disablekb=1&playsinline=1&enablejsapi=1&cc_load_policy=0&cc_lang_pref=en&hl=en&origin=*&wmode=opaque&theme=dark&color=white"
-            allow="autoplay; encrypted-media; fullscreen"
-            allowFullScreen
-            title="Background Video"
-            loading="eager"
-            frameBorder="0"
-            sandbox="allow-scripts allow-same-origin allow-presentation"
-          />
-        </div>
-        {/* Enhanced Video Overlay with Glassmorphism */}
-        <div className="absolute inset-0 bg-gradient-to-br from-ghl-primary-600/20 via-ghl-primary-700/10 to-ghl-secondary-500/15 backdrop-blur-[1px]" style={{ zIndex: 2 }}></div>
-      </div>
-      
-      {/* Modern Fallback Background for Mobile */}
-      <div className="md:hidden fixed inset-0 w-full h-full bg-gradient-to-br from-ghl-primary-600 via-ghl-primary-700 to-ghl-secondary-500 -z-10">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1),transparent_50%)]"></div>
+      {/* Light Background */}
+      <div className="fixed inset-0 w-full h-full bg-gradient-to-br from-ghl-primary-50 via-white to-ghl-secondary-50 -z-10">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(30,86,49,0.05),transparent_50%)]"></div>
       </div>
       
       {/* Modern Hero Section with Glassmorphism */}
-      <section className="hero-section relative text-white min-h-screen overflow-hidden m-0 px-4 py-8 sm:px-0 sm:py-0 -mt-16 sm:-mt-20 mb-8 sm:mb-12">
+      <section className="hero-section relative text-ghl-neutral-900 min-h-screen overflow-hidden m-0 px-4 py-8 sm:px-0 sm:py-0 -mt-16 sm:-mt-20 mb-8 sm:mb-12">
         
         {/* Animated Background Pattern */}
         <div className="absolute inset-0 opacity-20" style={{ zIndex: 3 }}>
@@ -63,24 +45,24 @@ export default function About() {
         </div>
         
         {/* Modern Floating Elements with Animation */}
-        <div className="hidden sm:block absolute top-20 left-10 w-20 h-20 bg-white/20 rounded-full blur-xl animate-bounce" style={{ zIndex: 4, animationDuration: '3s' }}></div>
-        <div className="hidden sm:block absolute bottom-20 right-10 w-32 h-32 bg-ghl-secondary-400/30 rounded-full blur-2xl animate-pulse" style={{ zIndex: 4, animationDuration: '4s' }}></div>
-        <div className="hidden lg:block absolute top-1/2 left-1/4 w-16 h-16 bg-white/10 rounded-full blur-lg animate-ping" style={{ zIndex: 4, animationDuration: '2s' }}></div>
+        <div className="hidden sm:block absolute top-20 left-10 w-20 h-20 bg-ghl-primary-100 rounded-full blur-xl animate-bounce" style={{ zIndex: 4, animationDuration: '3s' }}></div>
+        <div className="hidden sm:block absolute bottom-20 right-10 w-32 h-32 bg-ghl-secondary-200 rounded-full blur-2xl animate-pulse" style={{ zIndex: 4, animationDuration: '4s' }}></div>
+        <div className="hidden lg:block absolute top-1/2 left-1/4 w-16 h-16 bg-ghl-primary-200 rounded-full blur-lg animate-ping" style={{ zIndex: 4, animationDuration: '2s' }}></div>
         
         {/* Content Container with Modern Animations */}
         <div className="relative h-full flex items-center justify-center px-0 pt-16 sm:pt-20" style={{ zIndex: 5 }}>
           <div className="max-w-7xl mx-auto text-center w-full">
             {/* Modern Glassmorphism Badge */}
-            <div className={`inline-flex items-center px-4 py-2 sm:px-6 sm:py-3 bg-white/10 backdrop-blur-md border border-white/30 text-white rounded-2xl text-sm sm:text-base font-medium mb-6 sm:mb-8 hover:bg-white/20 hover:scale-105 transition-all duration-500 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
+            <div className={`inline-flex items-center px-4 py-2 sm:px-6 sm:py-3 bg-ghl-primary-100 backdrop-blur-md border border-ghl-primary-200 text-ghl-primary-700 rounded-2xl text-sm sm:text-base font-medium mb-6 sm:mb-8 hover:bg-ghl-primary-200 hover:scale-105 transition-all duration-500 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
               <div className="flex -space-x-2 mr-3 sm:mr-4">
-                <div className="w-5 h-5 sm:w-6 sm:h-6 bg-white/30 rounded-full border-2 border-white/40 flex items-center justify-center backdrop-blur-sm">
-                  <span className="text-xs sm:text-sm text-white font-bold">G</span>
+                <div className="w-5 h-5 sm:w-6 sm:h-6 bg-ghl-primary-200 rounded-full border-2 border-ghl-primary-300 flex items-center justify-center backdrop-blur-sm">
+                  <span className="text-xs sm:text-sm text-ghl-primary-700 font-bold">G</span>
                 </div>
-                <div className="w-5 h-5 sm:w-6 sm:h-6 bg-white/30 rounded-full border-2 border-white/40 flex items-center justify-center backdrop-blur-sm">
-                  <span className="text-xs sm:text-sm text-white font-bold">H</span>
+                <div className="w-5 h-5 sm:w-6 sm:h-6 bg-ghl-primary-200 rounded-full border-2 border-ghl-primary-300 flex items-center justify-center backdrop-blur-sm">
+                  <span className="text-xs sm:text-sm text-ghl-primary-700 font-bold">H</span>
                 </div>
-                <div className="w-5 h-5 sm:w-6 sm:h-6 bg-white/30 rounded-full border-2 border-white/40 flex items-center justify-center backdrop-blur-sm">
-                  <span className="text-xs sm:text-sm text-white font-bold">L</span>
+                <div className="w-5 h-5 sm:w-6 sm:h-6 bg-ghl-primary-200 rounded-full border-2 border-ghl-primary-300 flex items-center justify-center backdrop-blur-sm">
+                  <span className="text-xs sm:text-sm text-ghl-primary-700 font-bold">L</span>
                 </div>
               </div>
               <span className="font-semibold text-sm sm:text-base">Trusted by 500+ Partners Worldwide</span>
@@ -88,35 +70,35 @@ export default function About() {
             
             {/* Modern Typography with Enhanced Gradients */}
             <h1 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-bold mb-4 sm:mb-6 md:mb-8 leading-tight ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '0.2s' }}>
-              <span className="block mb-2">About Global</span>
-              <span className="block bg-gradient-to-r from-white via-ghl-secondary-200 to-ghl-secondary-300 bg-clip-text text-transparent">
+              <span className="block mb-2 text-ghl-neutral-900">About Global</span>
+              <span className="block bg-gradient-to-r from-ghl-primary-600 via-ghl-secondary-500 to-ghl-secondary-600 bg-clip-text text-transparent">
                 Harvest Logistics
               </span>
             </h1>
             
             {/* Enhanced Description */}
-            <p className={`text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 mb-6 sm:mb-8 md:mb-12 max-w-4xl mx-auto leading-relaxed ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '0.4s' }}>
+            <p className={`text-base sm:text-lg md:text-xl lg:text-2xl text-ghl-neutral-700 mb-6 sm:mb-8 md:mb-12 max-w-4xl mx-auto leading-relaxed ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '0.4s' }}>
               Delivering taste, preserving nature. Your trusted partner in temperature-sensitive 
               commodity logistics with a commitment to sustainability and excellence.
             </p>
             
             {/* Modern Stats Grid with Hover Effects */}
             <div className={`grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 mt-8 sm:mt-12 md:mt-16 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '0.6s' }}>
-              <div className="group text-center p-4 sm:p-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:bg-white/10 hover:scale-105 transition-all duration-300">
-                <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2 group-hover:text-ghl-secondary-200 transition-colors duration-300">500+</div>
-                <div className="text-xs sm:text-sm text-white/80 group-hover:text-white transition-colors duration-300">Global Partners</div>
+              <div className="group text-center p-4 sm:p-6 bg-ghl-primary-50 backdrop-blur-sm rounded-2xl border border-ghl-primary-200 hover:bg-ghl-primary-100 hover:scale-105 transition-all duration-300">
+                <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-ghl-primary-700 mb-2 group-hover:text-ghl-primary-800 transition-colors duration-300">500+</div>
+                <div className="text-xs sm:text-sm text-ghl-neutral-600 group-hover:text-ghl-neutral-700 transition-colors duration-300">Global Partners</div>
               </div>
-              <div className="group text-center p-4 sm:p-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:bg-white/10 hover:scale-105 transition-all duration-300">
-                <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2 group-hover:text-ghl-secondary-200 transition-colors duration-300">99.8%</div>
-                <div className="text-xs sm:text-sm text-white/80 group-hover:text-white transition-colors duration-300">On-Time Delivery</div>
+              <div className="group text-center p-4 sm:p-6 bg-ghl-secondary-50 backdrop-blur-sm rounded-2xl border border-ghl-secondary-200 hover:bg-ghl-secondary-100 hover:scale-105 transition-all duration-300">
+                <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-ghl-secondary-700 mb-2 group-hover:text-ghl-secondary-800 transition-colors duration-300">99.8%</div>
+                <div className="text-xs sm:text-sm text-ghl-neutral-600 group-hover:text-ghl-neutral-700 transition-colors duration-300">On-Time Delivery</div>
               </div>
-              <div className="group text-center p-4 sm:p-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:bg-white/10 hover:scale-105 transition-all duration-300">
-                <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2 group-hover:text-ghl-secondary-200 transition-colors duration-300">24/7</div>
-                <div className="text-xs sm:text-sm text-white/80 group-hover:text-white transition-colors duration-300">Support</div>
+              <div className="group text-center p-4 sm:p-6 bg-ghl-primary-50 backdrop-blur-sm rounded-2xl border border-ghl-primary-200 hover:bg-ghl-primary-100 hover:scale-105 transition-all duration-300">
+                <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-ghl-primary-700 mb-2 group-hover:text-ghl-primary-800 transition-colors duration-300">24/7</div>
+                <div className="text-xs sm:text-sm text-ghl-neutral-600 group-hover:text-ghl-neutral-700 transition-colors duration-300">Support</div>
               </div>
-              <div className="group text-center p-4 sm:p-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:bg-white/10 hover:scale-105 transition-all duration-300">
-                <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2 group-hover:text-ghl-secondary-200 transition-colors duration-300">15+</div>
-                <div className="text-xs sm:text-sm text-white/80 group-hover:text-white transition-colors duration-300">Years Experience</div>
+              <div className="group text-center p-4 sm:p-6 bg-ghl-secondary-50 backdrop-blur-sm rounded-2xl border border-ghl-secondary-200 hover:bg-ghl-secondary-100 hover:scale-105 transition-all duration-300">
+                <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-ghl-secondary-700 mb-2 group-hover:text-ghl-secondary-800 transition-colors duration-300">15+</div>
+                <div className="text-xs sm:text-sm text-ghl-neutral-600 group-hover:text-ghl-neutral-700 transition-colors duration-300">Years Experience</div>
               </div>
             </div>
           </div>
