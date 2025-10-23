@@ -1,6 +1,10 @@
 // Example database utilities for Next.js backend
 // You can use any database: PostgreSQL, MongoDB, MySQL, etc.
 
+// Database functions are commented out for deployment
+// Uncomment and install required packages when ready to use
+
+/*
 import { Pool } from 'pg';
 
 // PostgreSQL example
@@ -25,8 +29,8 @@ export async function createQuote(quoteData: {
       `INSERT INTO quotes (name, email, phone, origin, destination, cargo_type, weight, preferred_date, created_at)
        VALUES ($1, $2, $3, $4, $5, $6, $7, $8, NOW())
        RETURNING id, quote_number`,
-      [quoteData.name, quoteData.email, quoteData.phone, quoteData.origin, 
-       quoteData.destination, quoteData.cargoType, quoteData.weight, quoteData.date]
+      [quoteData.name, quoteData.email, quoteData.phone, 
+       quoteData.origin, quoteData.destination, quoteData.cargoType, quoteData.weight, quoteData.date]
     );
     return result.rows[0];
   } finally {
@@ -69,6 +73,7 @@ export async function getTrackingInfo(trackingNumber: string) {
     client.release();
   }
 }
+*/
 
 // MongoDB example (using Mongoose)
 /*
