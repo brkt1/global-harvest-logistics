@@ -58,7 +58,7 @@ export default function HeroSection() {
               </h1>
               
               <p className="text-base sm:text-lg lg:text-xl leading-relaxed max-w-2xl text-ghl-neutral-700">
-                We're delighted to have you here! As your trusted partner in temperature-sensitive commodity logistics, 
+                We&apos;re delighted to have you here! As your trusted partner in temperature-sensitive commodity logistics, 
                 we specialize in coffee, olive oil, and specialty food exports with unmatched expertise, 
                 reliability, and sustainability.
               </p>
@@ -70,7 +70,7 @@ export default function HeroSection() {
                 href="/quote" 
                 className="btn btn-primary text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-4 inline-flex items-center justify-center group"
               >
-                <span className="hidden sm:inline">Let's Start Your Journey</span>
+                <span className="hidden sm:inline">Let&apos;s Start Your Journey</span>
                 <span className="sm:hidden">Start Journey</span>
                 <ArrowRight className="ml-2 h-3 w-3 sm:h-4 sm:w-4 lg:h-5 lg:w-5 group-hover:translate-x-1 transition-transform" />
               </Link>

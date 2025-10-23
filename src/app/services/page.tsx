@@ -274,7 +274,7 @@ export default function ServicesPage() {
                   <div className="relative z-10 mb-6">
                     <h4 className="text-sm font-semibold text-gray-800 mb-3 flex items-center">
                       <CheckCircle className="h-4 w-4 text-green-600 mr-2" />
-                      What's Included
+                      What&apos;s Included
                     </h4>
                     <ul className="space-y-2">
                       {service.features.slice(0, 3).map((feature, featureIndex) => (
