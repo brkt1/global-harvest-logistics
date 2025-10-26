@@ -2,6 +2,7 @@
 
 import { CONTACT_INFO } from '@/lib/constants'
 import { Clock, Mail, MapPin, Phone } from 'lucide-react'
+import EditableText from './EditableText'
 
 interface ContactInfoProps {
   variant?: 'default' | 'compact' | 'minimal'
@@ -57,9 +58,24 @@ export default function ContactInfo({
           <Phone className="h-5 w-5 text-red-600" />
         </div>
         <div>
-          <h3 className={textClasses[variant].title}>Phone</h3>
-          <p className={textClasses[variant].content}>{CONTACT_INFO.phone}</p>
-          <p className={textClasses[variant].subtext}>24/7 Emergency Support</p>
+          <EditableText 
+            content="Phone"
+            contentKey="contact-info-phone-title"
+            tag="h3"
+            className={textClasses[variant].title}
+          />
+          <EditableText 
+            content={CONTACT_INFO.phone}
+            contentKey="contact-info-phone-number"
+            tag="p"
+            className={textClasses[variant].content}
+          />
+          <EditableText 
+            content="24/7 Emergency Support"
+            contentKey="contact-info-phone-subtitle"
+            tag="p"
+            className={textClasses[variant].subtext}
+          />
         </div>
       </div>
       
@@ -68,9 +84,24 @@ export default function ContactInfo({
           <Mail className="h-5 w-5 text-blue-600" />
         </div>
         <div>
-          <h3 className={textClasses[variant].title}>Email</h3>
-          <p className={textClasses[variant].content}>{CONTACT_INFO.email}</p>
-          <p className={textClasses[variant].subtext}>General inquiries</p>
+          <EditableText 
+            content="Email"
+            contentKey="contact-info-email-title"
+            tag="h3"
+            className={textClasses[variant].title}
+          />
+          <EditableText 
+            content={CONTACT_INFO.email}
+            contentKey="contact-info-email-address"
+            tag="p"
+            className={textClasses[variant].content}
+          />
+          <EditableText 
+            content="General inquiries"
+            contentKey="contact-info-email-subtitle"
+            tag="p"
+            className={textClasses[variant].subtext}
+          />
         </div>
       </div>
       
@@ -79,12 +110,31 @@ export default function ContactInfo({
           <MapPin className="h-5 w-5 text-purple-600" />
         </div>
         <div>
-          <h3 className={textClasses[variant].title}>Address</h3>
-          <p className={textClasses[variant].content}>
-            {CONTACT_INFO.address.street}<br />
-            {CONTACT_INFO.address.city}, {CONTACT_INFO.address.state}<br />
-            {CONTACT_INFO.address.country}
-          </p>
+          <EditableText 
+            content="Address"
+            contentKey="contact-info-address-title"
+            tag="h3"
+            className={textClasses[variant].title}
+          />
+          <div className={textClasses[variant].content}>
+            <EditableText 
+              content={CONTACT_INFO.address.street}
+              contentKey="contact-info-address-street"
+              tag="span"
+            />
+            <br />
+            <EditableText 
+              content={`${CONTACT_INFO.address.city}, ${CONTACT_INFO.address.state}`}
+              contentKey="contact-info-address-city-state"
+              tag="span"
+            />
+            <br />
+            <EditableText 
+              content={CONTACT_INFO.address.country}
+              contentKey="contact-info-address-country"
+              tag="span"
+            />
+          </div>
         </div>
       </div>
       
@@ -94,12 +144,31 @@ export default function ContactInfo({
             <Clock className="h-5 w-5 text-orange-600" />
           </div>
           <div>
-            <h3 className={textClasses[variant].title}>Business Hours</h3>
-            <p className={textClasses[variant].content}>
-              {CONTACT_INFO.businessHours.weekdays}<br />
-              {CONTACT_INFO.businessHours.saturday}<br />
-              {CONTACT_INFO.businessHours.sunday}
-            </p>
+            <EditableText 
+              content="Business Hours"
+              contentKey="contact-info-hours-title"
+              tag="h3"
+              className={textClasses[variant].title}
+            />
+            <div className={textClasses[variant].content}>
+              <EditableText 
+                content={CONTACT_INFO.businessHours.weekdays}
+                contentKey="contact-info-hours-weekdays"
+                tag="span"
+              />
+              <br />
+              <EditableText 
+                content={CONTACT_INFO.businessHours.saturday}
+                contentKey="contact-info-hours-saturday"
+                tag="span"
+              />
+              <br />
+              <EditableText 
+                content={CONTACT_INFO.businessHours.sunday}
+                contentKey="contact-info-hours-sunday"
+                tag="span"
+              />
+            </div>
           </div>
         </div>
       )}

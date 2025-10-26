@@ -1,3 +1,6 @@
+'use client'
+
+import EditableText from '@/components/ui/EditableText'
 import { ChevronDown } from 'lucide-react'
 
 export default function FAQ() {
@@ -50,12 +53,18 @@ export default function FAQ() {
       <section className="bg-gradient-to-r from-ghl-primary-600 to-ghl-secondary-400 text-white py-12 sm:py-16 lg:py-20">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4 sm:mb-6">
-              Frequently Asked Questions
-            </h1>
-            <p className="text-base sm:text-lg lg:text-xl text-ghl-neutral-100 mb-6 sm:mb-8">
-              Find answers to common questions about our logistics services and shipping processes.
-            </p>
+            <EditableText 
+              content="Frequently Asked Questions"
+              contentKey="faq-hero-title"
+              tag="h1"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4 sm:mb-6"
+            />
+            <EditableText 
+              content="Find answers to common questions about our logistics services and shipping processes."
+              contentKey="faq-hero-description"
+              tag="p"
+              className="text-base sm:text-lg lg:text-xl text-ghl-neutral-100 mb-6 sm:mb-8"
+            />
           </div>
         </div>
       </section>
@@ -69,15 +78,21 @@ export default function FAQ() {
                 <div key={index} className="bg-white rounded-lg sm:rounded-xl shadow-sm border border-ghl-neutral-200">
                   <details className="group">
                     <summary className="flex items-center justify-between p-4 sm:p-6 cursor-pointer hover:bg-ghl-neutral-50 transition-colors">
-                      <h3 className="text-base sm:text-lg font-semibold text-ghl-neutral-900 pr-3 sm:pr-4">
-                        {faq.question}
-                      </h3>
+                      <EditableText 
+                        content={faq.question}
+                        contentKey={`faq-question-${index}`}
+                        tag="h3"
+                        className="text-base sm:text-lg font-semibold text-ghl-neutral-900 pr-3 sm:pr-4"
+                      />
                       <ChevronDown className="h-4 w-4 sm:h-5 sm:w-5 text-ghl-neutral-500 group-open:rotate-180 transition-transform flex-shrink-0" />
                     </summary>
                     <div className="px-4 sm:px-6 pb-4 sm:pb-6">
-                      <p className="text-sm sm:text-base text-ghl-neutral-600 leading-relaxed">
-                        {faq.answer}
-                      </p>
+                      <EditableText 
+                        content={faq.answer}
+                        contentKey={`faq-answer-${index}`}
+                        tag="p"
+                        className="text-sm sm:text-base text-ghl-neutral-600 leading-relaxed"
+                      />
                     </div>
                   </details>
                 </div>
@@ -91,18 +106,32 @@ export default function FAQ() {
       <section className="py-12 sm:py-16 lg:py-20 bg-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-2xl sm:text-3xl font-heading font-bold text-ghl-neutral-900 mb-3 sm:mb-4">
-              Still Have Questions?
-            </h2>
-            <p className="text-base sm:text-lg text-ghl-neutral-600 mb-6 sm:mb-8">
-              Our logistics experts are here to help. Contact us for personalized assistance with your shipping needs.
-            </p>
+            <EditableText 
+              content="Still Have Questions?"
+              contentKey="faq-cta-title"
+              tag="h2"
+              className="text-2xl sm:text-3xl font-heading font-bold text-ghl-neutral-900 mb-3 sm:mb-4"
+            />
+            <EditableText 
+              content="Our logistics experts are here to help. Contact us for personalized assistance with your shipping needs."
+              contentKey="faq-cta-description"
+              tag="p"
+              className="text-base sm:text-lg text-ghl-neutral-600 mb-6 sm:mb-8"
+            />
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <a href="/contact" className="btn btn-primary text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4">
-                Contact Us
+                <EditableText 
+                  content="Contact Us"
+                  contentKey="faq-contact-button"
+                  tag="span"
+                />
               </a>
               <a href="/quote" className="btn btn-secondary text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4">
-                Get Quote
+                <EditableText 
+                  content="Get Quote"
+                  contentKey="faq-quote-button"
+                  tag="span"
+                />
               </a>
             </div>
           </div>

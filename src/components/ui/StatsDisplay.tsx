@@ -1,5 +1,6 @@
 'use client'
 
+import EditableText from '@/components/ui/EditableText'
 import { COMPANY_STATS } from '@/lib/constants'
 import { Award, Globe, TrendingUp, Users } from 'lucide-react'
 
@@ -66,12 +67,18 @@ export default function StatsDisplay({
                   <IconComponent className="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6 xl:h-8 xl:w-8 text-white" />
                 </div>
               )}
-              <div className={valueClasses[variant]}>
-                {stat.value}
-              </div>
-              <div className={labelClasses[variant]}>
-                {stat.label}
-              </div>
+              <EditableText 
+                content={stat.value}
+                contentKey={`stats-display-${index + 1}-value`}
+                tag="span"
+                className={valueClasses[variant]}
+              />
+              <EditableText 
+                content={stat.label}
+                contentKey={`stats-display-${index + 1}-label`}
+                tag="span"
+                className={labelClasses[variant]}
+              />
             </div>
           </div>
         )

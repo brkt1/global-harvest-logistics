@@ -1,6 +1,7 @@
 'use client'
 
 import TrustedBySection from '@/components/sections/TrustedBySection'
+import EditableText from '@/components/ui/EditableText'
 import { Award, Handshake, Heart, Leaf, Shield, Star, Target, Users, Zap } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 
@@ -65,40 +66,95 @@ export default function About() {
                   <span className="text-xs sm:text-sm text-ghl-primary-700 font-bold">L</span>
                 </div>
               </div>
-              <span className="font-semibold text-sm sm:text-base">Trusted by 500+ Partners Worldwide</span>
+              <EditableText 
+                content="Trusted by 500+ Partners Worldwide"
+                contentKey="about-hero-badge"
+                tag="span"
+                className="font-semibold text-sm sm:text-base"
+              />
             </div>
             
             {/* Modern Typography with Enhanced Gradients */}
             <h1 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-bold mb-4 sm:mb-6 md:mb-8 leading-tight ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '0.2s' }}>
-              <span className="block mb-2 text-ghl-neutral-900">About Global</span>
-              <span className="block bg-gradient-to-r from-ghl-primary-600 via-ghl-secondary-500 to-ghl-secondary-600 bg-clip-text text-transparent">
-                Harvest Logistics
-              </span>
+              <EditableText 
+                content="About Global"
+                contentKey="about-hero-title-1"
+                tag="span"
+                className="block mb-2 text-ghl-neutral-900"
+              />
+              <EditableText 
+                content="Harvest Logistics"
+                contentKey="about-hero-title-2"
+                tag="span"
+                className="block bg-gradient-to-r from-ghl-primary-600 via-ghl-secondary-500 to-ghl-secondary-600 bg-clip-text text-transparent"
+              />
             </h1>
             
             {/* Enhanced Description */}
-            <p className={`text-base sm:text-lg md:text-xl lg:text-2xl text-ghl-neutral-700 mb-6 sm:mb-8 md:mb-12 max-w-4xl mx-auto leading-relaxed ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '0.4s' }}>
-              Delivering taste, preserving nature. Your trusted partner in temperature-sensitive 
-              commodity logistics with a commitment to sustainability and excellence.
-            </p>
+            <EditableText 
+              content="Delivering taste, preserving nature. Your trusted partner in temperature-sensitive commodity logistics with a commitment to sustainability and excellence."
+              contentKey="about-hero-description"
+              tag="p"
+              className={`text-base sm:text-lg md:text-xl lg:text-2xl text-ghl-neutral-700 mb-6 sm:mb-8 md:mb-12 max-w-4xl mx-auto leading-relaxed ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}
+            />
             
             {/* Modern Stats Grid with Hover Effects */}
             <div className={`grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 mt-8 sm:mt-12 md:mt-16 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '0.6s' }}>
               <div className="group text-center p-4 sm:p-6 bg-ghl-primary-50 backdrop-blur-sm rounded-2xl border border-ghl-primary-200 hover:bg-ghl-primary-100 hover:scale-105 transition-all duration-300">
-                <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-ghl-primary-700 mb-2 group-hover:text-ghl-primary-800 transition-colors duration-300">500+</div>
-                <div className="text-xs sm:text-sm text-ghl-neutral-600 group-hover:text-ghl-neutral-700 transition-colors duration-300">Global Partners</div>
+                <EditableText 
+                  content="500+"
+                  contentKey="about-hero-stat-1-value"
+                  tag="span"
+                  className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-ghl-primary-700 mb-2 group-hover:text-ghl-primary-800 transition-colors duration-300"
+                />
+                <EditableText 
+                  content="Global Partners"
+                  contentKey="about-hero-stat-1-label"
+                  tag="span"
+                  className="text-xs sm:text-sm text-ghl-neutral-600 group-hover:text-ghl-neutral-700 transition-colors duration-300"
+                />
               </div>
               <div className="group text-center p-4 sm:p-6 bg-ghl-secondary-50 backdrop-blur-sm rounded-2xl border border-ghl-secondary-200 hover:bg-ghl-secondary-100 hover:scale-105 transition-all duration-300">
-                <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-ghl-secondary-700 mb-2 group-hover:text-ghl-secondary-800 transition-colors duration-300">99.8%</div>
-                <div className="text-xs sm:text-sm text-ghl-neutral-600 group-hover:text-ghl-neutral-700 transition-colors duration-300">On-Time Delivery</div>
+                <EditableText 
+                  content="99.8%"
+                  contentKey="about-hero-stat-2-value"
+                  tag="span"
+                  className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-ghl-secondary-700 mb-2 group-hover:text-ghl-secondary-800 transition-colors duration-300"
+                />
+                <EditableText 
+                  content="On-Time Delivery"
+                  contentKey="about-hero-stat-2-label"
+                  tag="span"
+                  className="text-xs sm:text-sm text-ghl-neutral-600 group-hover:text-ghl-neutral-700 transition-colors duration-300"
+                />
               </div>
               <div className="group text-center p-4 sm:p-6 bg-ghl-primary-50 backdrop-blur-sm rounded-2xl border border-ghl-primary-200 hover:bg-ghl-primary-100 hover:scale-105 transition-all duration-300">
-                <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-ghl-primary-700 mb-2 group-hover:text-ghl-primary-800 transition-colors duration-300">24/7</div>
-                <div className="text-xs sm:text-sm text-ghl-neutral-600 group-hover:text-ghl-neutral-700 transition-colors duration-300">Support</div>
+                <EditableText 
+                  content="24/7"
+                  contentKey="about-hero-stat-3-value"
+                  tag="span"
+                  className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-ghl-primary-700 mb-2 group-hover:text-ghl-primary-800 transition-colors duration-300"
+                />
+                <EditableText 
+                  content="Support"
+                  contentKey="about-hero-stat-3-label"
+                  tag="span"
+                  className="text-xs sm:text-sm text-ghl-neutral-600 group-hover:text-ghl-neutral-700 transition-colors duration-300"
+                />
               </div>
               <div className="group text-center p-4 sm:p-6 bg-ghl-secondary-50 backdrop-blur-sm rounded-2xl border border-ghl-secondary-200 hover:bg-ghl-secondary-100 hover:scale-105 transition-all duration-300">
-                <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-ghl-secondary-700 mb-2 group-hover:text-ghl-secondary-800 transition-colors duration-300">15+</div>
-                <div className="text-xs sm:text-sm text-ghl-neutral-600 group-hover:text-ghl-neutral-700 transition-colors duration-300">Years Experience</div>
+                <EditableText 
+                  content="15+"
+                  contentKey="about-hero-stat-4-value"
+                  tag="span"
+                  className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-ghl-secondary-700 mb-2 group-hover:text-ghl-secondary-800 transition-colors duration-300"
+                />
+                <EditableText 
+                  content="Years Experience"
+                  contentKey="about-hero-stat-4-label"
+                  tag="span"
+                  className="text-xs sm:text-sm text-ghl-neutral-600 group-hover:text-ghl-neutral-700 transition-colors duration-300"
+                />
               </div>
             </div>
           </div>
@@ -118,14 +174,24 @@ export default function About() {
           <div className="text-center mb-16">
             <div className="inline-flex items-center px-4 py-2 bg-ghl-primary-100 text-ghl-primary-700 rounded-full text-sm font-medium mb-6">
               <Target className="w-4 h-4 mr-2" />
-              Our Purpose
+              <EditableText 
+                content="Our Purpose"
+                contentKey="about-mission-badge"
+                tag="span"
+              />
             </div>
-            <h2 className="text-4xl md:text-5xl font-heading font-bold text-ghl-neutral-900 mb-6">
-              Mission & Vision
-            </h2>
-            <p className="text-xl text-ghl-neutral-600 max-w-3xl mx-auto">
-              Driving the future of sustainable logistics with purpose and passion
-            </p>
+            <EditableText 
+              content="Mission & Vision"
+              contentKey="about-mission-title"
+              tag="h2"
+              className="text-4xl md:text-5xl font-heading font-bold text-ghl-neutral-900 mb-6"
+            />
+            <EditableText 
+              content="Driving the future of sustainable logistics with purpose and passion"
+              contentKey="about-mission-description"
+              tag="p"
+              className="text-xl text-ghl-neutral-600 max-w-3xl mx-auto"
+            />
           </div>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -137,17 +203,25 @@ export default function About() {
                   <div className="w-12 h-12 bg-gradient-to-r from-ghl-primary-600 to-ghl-primary-700 rounded-2xl flex items-center justify-center mr-4">
                     <Target className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="text-2xl font-heading font-bold text-ghl-neutral-900">Our Mission</h3>
+                  <EditableText 
+                    content="Our Mission"
+                    contentKey="about-mission-card-title"
+                    tag="h3"
+                    className="text-2xl font-heading font-bold text-ghl-neutral-900"
+                  />
                 </div>
-                <p className="text-lg text-ghl-neutral-700 mb-6 leading-relaxed">
-                  To provide exceptional temperature-controlled logistics solutions that preserve 
-                  the quality and integrity of specialty commodities while maintaining the highest 
-                  standards of sustainability and environmental responsibility.
-                </p>
-                <p className="text-lg text-ghl-neutral-700 leading-relaxed">
-                  We believe that every shipment represents not just cargo, but the hard work of 
-                  farmers, the expectations of consumers, and our commitment to excellence.
-                </p>
+                <EditableText 
+                  content="To provide exceptional temperature-controlled logistics solutions that preserve the quality and integrity of specialty commodities while maintaining the highest standards of sustainability and environmental responsibility."
+                  contentKey="about-mission-card-description-1"
+                  tag="p"
+                  className="text-lg text-ghl-neutral-700 mb-6 leading-relaxed"
+                />
+                <EditableText 
+                  content="We believe that every shipment represents not just cargo, but the hard work of farmers, the expectations of consumers, and our commitment to excellence."
+                  contentKey="about-mission-card-description-2"
+                  tag="p"
+                  className="text-lg text-ghl-neutral-700 leading-relaxed"
+                />
               </div>
             </div>
             
@@ -159,16 +233,27 @@ export default function About() {
                   <div className="w-12 h-12 bg-gradient-to-r from-ghl-secondary-400 to-ghl-secondary-500 rounded-2xl flex items-center justify-center mr-4">
                     <Zap className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="text-2xl font-heading font-bold text-ghl-primary-700">Our Vision</h3>
+                  <EditableText 
+                    content="Our Vision"
+                    contentKey="about-vision-card-title"
+                    tag="h3"
+                    className="text-2xl font-heading font-bold text-ghl-primary-700"
+                  />
                 </div>
-                <p className="text-lg text-ghl-neutral-700 leading-relaxed">
-                  To be the world&apos;s leading provider of sustainable, temperature-controlled logistics 
-                  for specialty commodities, setting the standard for quality, reliability, and 
-                  environmental stewardship in the industry.
-                </p>
+                <EditableText 
+                  content="To be the world's leading provider of sustainable, temperature-controlled logistics for specialty commodities, setting the standard for quality, reliability, and environmental stewardship in the industry."
+                  contentKey="about-vision-card-description"
+                  tag="p"
+                  className="text-lg text-ghl-neutral-700 leading-relaxed"
+                />
                 <div className="mt-6 flex items-center text-ghl-primary-600 font-medium">
                   <Heart className="w-5 h-5 mr-2" />
-                  <span>Building a sustainable future, one shipment at a time</span>
+                  <EditableText 
+                    content="Building a sustainable future, one shipment at a time"
+                    contentKey="about-vision-tagline"
+                    tag="span"
+                    className="text-ghl-primary-600 font-medium"
+                  />
                 </div>
               </div>
             </div>
@@ -187,15 +272,24 @@ export default function About() {
           <div className="text-center mb-20">
             <div className="inline-flex items-center px-4 py-2 bg-ghl-primary-100 text-ghl-primary-700 rounded-full text-sm font-medium mb-6">
               <Users className="w-4 h-4 mr-2" />
-              Meet Our Team
+              <EditableText 
+                content="Meet Our Team"
+                contentKey="about-team-badge"
+                tag="span"
+              />
             </div>
-            <h2 className="text-4xl md:text-5xl font-heading font-bold text-ghl-neutral-900 mb-6">
-              Expert Leadership
-            </h2>
-            <p className="text-xl text-ghl-neutral-600 max-w-3xl mx-auto">
-              Our team of logistics professionals brings decades of experience in temperature-controlled 
-              shipping, commodity handling, and sustainable supply chain management.
-            </p>
+            <EditableText 
+              content="Expert Leadership"
+              contentKey="about-team-title"
+              tag="h2"
+              className="text-4xl md:text-5xl font-heading font-bold text-ghl-neutral-900 mb-6"
+            />
+            <EditableText 
+              content="Our team of logistics professionals brings decades of experience in temperature-controlled shipping, commodity handling, and sustainable supply chain management."
+              contentKey="about-team-description"
+              tag="p"
+              className="text-xl text-ghl-neutral-600 max-w-3xl mx-auto"
+            />
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -211,13 +305,24 @@ export default function About() {
                     <Award className="w-4 h-4 text-white" />
                   </div>
                 </div>
-                <h3 className="text-2xl font-heading font-bold text-ghl-neutral-900 mb-2">
-                  John Davidson
-                </h3>
-                <p className="text-ghl-primary-600 font-semibold mb-4 text-lg">CEO & Founder</p>
-                <p className="text-ghl-neutral-600 leading-relaxed">
-                  20+ years in international logistics and supply chain management with a passion for sustainable practices.
-                </p>
+                <EditableText 
+                  content="John Davidson"
+                  contentKey="about-team-ceo-name"
+                  tag="h3"
+                  className="text-2xl font-heading font-bold text-ghl-neutral-900 mb-2"
+                />
+                <EditableText 
+                  content="CEO & Founder"
+                  contentKey="about-team-ceo-title"
+                  tag="p"
+                  className="text-ghl-primary-600 font-semibold mb-4 text-lg"
+                />
+                <EditableText 
+                  content="20+ years in international logistics and supply chain management with a passion for sustainable practices."
+                  contentKey="about-team-ceo-description"
+                  tag="p"
+                  className="text-ghl-neutral-600 leading-relaxed"
+                />
                 <div className="mt-6 flex justify-center space-x-4">
                   <div className="w-2 h-2 bg-ghl-primary-600 rounded-full"></div>
                   <div className="w-2 h-2 bg-ghl-primary-400 rounded-full"></div>
@@ -238,13 +343,24 @@ export default function About() {
                     <Shield className="w-4 h-4 text-white" />
                   </div>
                 </div>
-                <h3 className="text-2xl font-heading font-bold text-ghl-neutral-900 mb-2">
-                  Sarah Martinez
-                </h3>
-                <p className="text-ghl-secondary-500 font-semibold mb-4 text-lg">Head of Operations</p>
-                <p className="text-ghl-neutral-600 leading-relaxed">
-                  Expert in temperature-controlled logistics and quality assurance with 15+ years of industry experience.
-                </p>
+                <EditableText 
+                  content="Sarah Martinez"
+                  contentKey="about-team-ops-name"
+                  tag="h3"
+                  className="text-2xl font-heading font-bold text-ghl-neutral-900 mb-2"
+                />
+                <EditableText 
+                  content="Head of Operations"
+                  contentKey="about-team-ops-title"
+                  tag="p"
+                  className="text-ghl-secondary-500 font-semibold mb-4 text-lg"
+                />
+                <EditableText 
+                  content="Expert in temperature-controlled logistics and quality assurance with 15+ years of industry experience."
+                  contentKey="about-team-ops-description"
+                  tag="p"
+                  className="text-ghl-neutral-600 leading-relaxed"
+                />
                 <div className="mt-6 flex justify-center space-x-4">
                   <div className="w-2 h-2 bg-ghl-secondary-500 rounded-full"></div>
                   <div className="w-2 h-2 bg-ghl-secondary-400 rounded-full"></div>
@@ -265,13 +381,24 @@ export default function About() {
                     <Leaf className="w-4 h-4 text-white" />
                   </div>
                 </div>
-                <h3 className="text-2xl font-heading font-bold text-ghl-neutral-900 mb-2">
-                  Michael Rodriguez
-                </h3>
-                <p className="text-ghl-primary-600 font-semibold mb-4 text-lg">Sustainability Director</p>
-                <p className="text-ghl-neutral-600 leading-relaxed">
-                  Leading our environmental initiatives and sustainable practices with a focus on carbon-neutral operations.
-                </p>
+                <EditableText 
+                  content="Michael Rodriguez"
+                  contentKey="about-team-sustainability-name"
+                  tag="h3"
+                  className="text-2xl font-heading font-bold text-ghl-neutral-900 mb-2"
+                />
+                <EditableText 
+                  content="Sustainability Director"
+                  contentKey="about-team-sustainability-title"
+                  tag="p"
+                  className="text-ghl-primary-600 font-semibold mb-4 text-lg"
+                />
+                <EditableText 
+                  content="Leading our environmental initiatives and sustainable practices with a focus on carbon-neutral operations."
+                  contentKey="about-team-sustainability-description"
+                  tag="p"
+                  className="text-ghl-neutral-600 leading-relaxed"
+                />
                 <div className="mt-6 flex justify-center space-x-4">
                   <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                   <div className="w-2 h-2 bg-green-400 rounded-full"></div>
@@ -296,15 +423,24 @@ export default function About() {
           <div className="text-center mb-20">
             <div className="inline-flex items-center px-4 py-2 bg-ghl-primary-100 text-ghl-primary-700 rounded-full text-sm font-medium mb-6">
               <Award className="w-4 h-4 mr-2" />
-              Quality Assurance
+              <EditableText 
+                content="Quality Assurance"
+                contentKey="about-certifications-badge"
+                tag="span"
+              />
             </div>
-            <h2 className="text-4xl md:text-5xl font-heading font-bold text-ghl-neutral-900 mb-6">
-              Certifications & Standards
-            </h2>
-            <p className="text-xl text-ghl-neutral-600 max-w-3xl mx-auto">
-              We maintain the highest industry standards and certifications to ensure the quality 
-              and safety of your shipments.
-            </p>
+            <EditableText 
+              content="Certifications & Standards"
+              contentKey="about-certifications-title"
+              tag="h2"
+              className="text-4xl md:text-5xl font-heading font-bold text-ghl-neutral-900 mb-6"
+            />
+            <EditableText 
+              content="We maintain the highest industry standards and certifications to ensure the quality and safety of your shipments."
+              contentKey="about-certifications-description"
+              tag="p"
+              className="text-xl text-ghl-neutral-600 max-w-3xl mx-auto"
+            />
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -315,8 +451,18 @@ export default function About() {
                 <div className="w-16 h-16 bg-gradient-to-br from-ghl-primary-600 to-ghl-primary-700 rounded-2xl mx-auto mb-6 flex items-center justify-center group-hover:rotate-12 transition-transform duration-300">
                   <Shield className="w-8 h-8 text-white" />
                 </div>
-                <div className="text-2xl font-bold text-ghl-primary-600 mb-3 group-hover:text-ghl-primary-700 transition-colors duration-300">ISO 9001</div>
-                <p className="text-sm text-ghl-neutral-600 font-medium">Quality Management</p>
+                <EditableText 
+                  content="ISO 9001"
+                  contentKey="about-cert-iso-title"
+                  tag="span"
+                  className="text-2xl font-bold text-ghl-primary-600 mb-3 group-hover:text-ghl-primary-700 transition-colors duration-300"
+                />
+                <EditableText 
+                  content="Quality Management"
+                  contentKey="about-cert-iso-description"
+                  tag="span"
+                  className="text-sm text-ghl-neutral-600 font-medium"
+                />
                 <div className="mt-4 w-full bg-gray-200 rounded-full h-2">
                   <div className="bg-gradient-to-r from-ghl-primary-600 to-ghl-primary-700 h-2 rounded-full w-4/5"></div>
                 </div>
@@ -330,8 +476,18 @@ export default function About() {
                 <div className="w-16 h-16 bg-gradient-to-br from-ghl-secondary-400 to-ghl-secondary-500 rounded-2xl mx-auto mb-6 flex items-center justify-center group-hover:rotate-12 transition-transform duration-300">
                   <Shield className="w-8 h-8 text-white" />
                 </div>
-                <div className="text-2xl font-bold text-ghl-secondary-500 mb-3 group-hover:text-ghl-secondary-600 transition-colors duration-300">HACCP</div>
-                <p className="text-sm text-ghl-neutral-600 font-medium">Food Safety</p>
+                <EditableText 
+                  content="HACCP"
+                  contentKey="about-cert-haccp-title"
+                  tag="span"
+                  className="text-2xl font-bold text-ghl-secondary-500 mb-3 group-hover:text-ghl-secondary-600 transition-colors duration-300"
+                />
+                <EditableText 
+                  content="Food Safety"
+                  contentKey="about-cert-haccp-description"
+                  tag="span"
+                  className="text-sm text-ghl-neutral-600 font-medium"
+                />
                 <div className="mt-4 w-full bg-gray-200 rounded-full h-2">
                   <div className="bg-gradient-to-r from-ghl-secondary-400 to-ghl-secondary-500 h-2 rounded-full w-full"></div>
                 </div>
@@ -345,8 +501,18 @@ export default function About() {
                 <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl mx-auto mb-6 flex items-center justify-center group-hover:rotate-12 transition-transform duration-300">
                   <Award className="w-8 h-8 text-white" />
                 </div>
-                <div className="text-2xl font-bold text-green-600 mb-3 group-hover:text-green-700 transition-colors duration-300">FDA</div>
-                <p className="text-sm text-ghl-neutral-600 font-medium">FDA Approved</p>
+                <EditableText 
+                  content="FDA"
+                  contentKey="about-cert-fda-title"
+                  tag="span"
+                  className="text-2xl font-bold text-green-600 mb-3 group-hover:text-green-700 transition-colors duration-300"
+                />
+                <EditableText 
+                  content="FDA Approved"
+                  contentKey="about-cert-fda-description"
+                  tag="span"
+                  className="text-sm text-ghl-neutral-600 font-medium"
+                />
                 <div className="mt-4 w-full bg-gray-200 rounded-full h-2">
                   <div className="bg-gradient-to-r from-green-500 to-green-600 h-2 rounded-full w-5/6"></div>
                 </div>
@@ -360,8 +526,18 @@ export default function About() {
                 <div className="w-16 h-16 bg-gradient-to-br from-green-600 to-green-700 rounded-2xl mx-auto mb-6 flex items-center justify-center group-hover:rotate-12 transition-transform duration-300">
                   <Leaf className="w-8 h-8 text-white" />
                 </div>
-                <div className="text-2xl font-bold text-green-700 mb-3 group-hover:text-green-800 transition-colors duration-300">Organic</div>
-                <p className="text-sm text-ghl-neutral-600 font-medium">Certified Organic</p>
+                <EditableText 
+                  content="Organic"
+                  contentKey="about-cert-organic-title"
+                  tag="span"
+                  className="text-2xl font-bold text-green-700 mb-3 group-hover:text-green-800 transition-colors duration-300"
+                />
+                <EditableText 
+                  content="Certified Organic"
+                  contentKey="about-cert-organic-description"
+                  tag="span"
+                  className="text-sm text-ghl-neutral-600 font-medium"
+                />
                 <div className="mt-4 w-full bg-gray-200 rounded-full h-2">
                   <div className="bg-gradient-to-r from-green-600 to-green-700 h-2 rounded-full w-full"></div>
                 </div>
@@ -381,14 +557,24 @@ export default function About() {
           <div className="text-center mb-20">
             <div className="inline-flex items-center px-4 py-2 bg-ghl-primary-100 text-ghl-primary-700 rounded-full text-sm font-medium mb-6">
               <Heart className="w-4 h-4 mr-2" />
-              Our Values
+              <EditableText 
+                content="Our Values"
+                contentKey="about-values-badge"
+                tag="span"
+              />
             </div>
-            <h2 className="text-4xl md:text-5xl font-heading font-bold text-ghl-neutral-900 mb-6">
-              Core Values
-            </h2>
-            <p className="text-xl text-ghl-neutral-600 max-w-3xl mx-auto">
-              The principles that guide everything we do, from daily operations to long-term strategic decisions.
-            </p>
+            <EditableText 
+              content="Core Values"
+              contentKey="about-values-title"
+              tag="h2"
+              className="text-4xl md:text-5xl font-heading font-bold text-ghl-neutral-900 mb-6"
+            />
+            <EditableText 
+              content="The principles that guide everything we do, from daily operations to long-term strategic decisions."
+              contentKey="about-values-description"
+              tag="p"
+              className="text-xl text-ghl-neutral-600 max-w-3xl mx-auto"
+            />
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -399,15 +585,26 @@ export default function About() {
                 <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:rotate-12 transition-transform duration-300">
                   <Leaf className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="text-2xl font-heading font-bold text-ghl-neutral-900 mb-4">
-                  Sustainability
-                </h3>
-                <p className="text-ghl-neutral-600 leading-relaxed mb-6">
-                  Committed to environmentally responsible practices that protect our planet for future generations.
-                </p>
+                <EditableText 
+                  content="Sustainability"
+                  contentKey="about-value-sustainability-title"
+                  tag="h3"
+                  className="text-2xl font-heading font-bold text-ghl-neutral-900 mb-4"
+                />
+                <EditableText 
+                  content="Committed to environmentally responsible practices that protect our planet for future generations."
+                  contentKey="about-value-sustainability-description"
+                  tag="p"
+                  className="text-ghl-neutral-600 leading-relaxed mb-6"
+                />
                 <div className="flex items-center justify-center text-green-600 font-medium">
                   <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
-                  <span>Carbon Neutral Operations</span>
+                  <EditableText 
+                    content="Carbon Neutral Operations"
+                    contentKey="about-value-sustainability-tagline"
+                    tag="span"
+                    className="text-green-600 font-medium"
+                  />
                 </div>
               </div>
             </div>
@@ -419,15 +616,26 @@ export default function About() {
                 <div className="w-20 h-20 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:rotate-12 transition-transform duration-300">
                   <Star className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="text-2xl font-heading font-bold text-ghl-neutral-900 mb-4">
-                  Excellence
-                </h3>
-                <p className="text-ghl-neutral-600 leading-relaxed mb-6">
-                  Delivering exceptional service through continuous improvement and attention to detail.
-                </p>
+                <EditableText 
+                  content="Excellence"
+                  contentKey="about-value-excellence-title"
+                  tag="h3"
+                  className="text-2xl font-heading font-bold text-ghl-neutral-900 mb-4"
+                />
+                <EditableText 
+                  content="Delivering exceptional service through continuous improvement and attention to detail."
+                  contentKey="about-value-excellence-description"
+                  tag="p"
+                  className="text-ghl-neutral-600 leading-relaxed mb-6"
+                />
                 <div className="flex items-center justify-center text-yellow-600 font-medium">
                   <div className="w-2 h-2 bg-yellow-500 rounded-full mr-2"></div>
-                  <span>99.8% Success Rate</span>
+                  <EditableText 
+                    content="99.8% Success Rate"
+                    contentKey="about-value-excellence-tagline"
+                    tag="span"
+                    className="text-yellow-600 font-medium"
+                  />
                 </div>
               </div>
             </div>
@@ -439,15 +647,26 @@ export default function About() {
                 <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:rotate-12 transition-transform duration-300">
                   <Handshake className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="text-2xl font-heading font-bold text-ghl-neutral-900 mb-4">
-                  Partnership
-                </h3>
-                <p className="text-ghl-neutral-600 leading-relaxed mb-6">
-                  Building lasting relationships based on trust, transparency, and mutual success.
-                </p>
+                <EditableText 
+                  content="Partnership"
+                  contentKey="about-value-partnership-title"
+                  tag="h3"
+                  className="text-2xl font-heading font-bold text-ghl-neutral-900 mb-4"
+                />
+                <EditableText 
+                  content="Building lasting relationships based on trust, transparency, and mutual success."
+                  contentKey="about-value-partnership-description"
+                  tag="p"
+                  className="text-ghl-neutral-600 leading-relaxed mb-6"
+                />
                 <div className="flex items-center justify-center text-blue-600 font-medium">
                   <div className="w-2 h-2 bg-blue-500 rounded-full mr-2"></div>
-                  <span>500+ Trusted Partners</span>
+                  <EditableText 
+                    content="500+ Trusted Partners"
+                    contentKey="about-value-partnership-tagline"
+                    tag="span"
+                    className="text-blue-600 font-medium"
+                  />
                 </div>
               </div>
             </div>

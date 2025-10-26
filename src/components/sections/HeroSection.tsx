@@ -1,20 +1,37 @@
 'use client'
 
+import EditableImage from '@/components/ui/EditableImage'
+import EditableText from '@/components/ui/EditableText'
+import YouTubeVideo from '@/components/ui/YouTubeVideo'
+import { useContent } from '@/hooks/useContent'
 import { ArrowRight, Play } from 'lucide-react'
 import Link from 'next/link'
 import { useState } from 'react'
 
 export default function HeroSection() {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false)
+  
+  // Get video content using the useContent hook
+  const { content: videoSrc } = useContent({ 
+    key: 'hero-video', 
+    defaultValue: 'https://www.youtube.com/watch?v=eRaFMlZ1YHA&list=RDvHU6ZRQJ50Q&index=2', 
+    type: 'video' 
+  })
+  const { content: videoTitle } = useContent({ 
+    key: 'hero-video-title', 
+    defaultValue: 'Our Logistics Process', 
+    type: 'text' 
+  })
 
   return (
     <section className="relative overflow-hidden">
       {/* Soft Background Image */}
-      <div 
+      <EditableImage 
+        src="/hero.jpg"
+        alt="Global Harvest Logistics Hero Background"
+        contentKey="hero-background"
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: `url('/hero.jpg')`,
-        }}
+        isBackground={true}
       />
       {/* Soft overlay to maintain green visibility */}
       <div className="absolute inset-0 bg-white/85"></div>
@@ -50,18 +67,34 @@ export default function HeroSection() {
               </div>
               
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-heading font-bold leading-tight">
-                <span className="text-ghl-neutral-900">Welcome to</span>
+                <EditableText 
+                  content="Welcome to"
+                  contentKey="hero-title-1"
+                  tag="span"
+                  className="text-ghl-neutral-900"
+                />
                 <br />
-                <span className="text-gradient bg-gradient-to-r from-ghl-primary-600 to-ghl-secondary-400 bg-clip-text text-transparent">Excellence in</span>
+                <EditableText 
+                  content="Excellence in"
+                  contentKey="hero-title-2"
+                  tag="span"
+                  className="text-gradient bg-gradient-to-r from-ghl-primary-600 to-ghl-secondary-400 bg-clip-text text-transparent"
+                />
                 <br />
-                <span className="text-ghl-primary-600">Global Logistics</span>
+                <EditableText 
+                  content="Global Logistics"
+                  contentKey="hero-title-3"
+                  tag="span"
+                  className="text-ghl-primary-600"
+                />
               </h1>
               
-              <p className="text-base sm:text-lg lg:text-xl leading-relaxed max-w-2xl text-ghl-neutral-700">
-                We&apos;re delighted to have you here! As your trusted partner in temperature-sensitive commodity logistics, 
-                we specialize in coffee, olive oil, and specialty food exports with unmatched expertise, 
-                reliability, and sustainability.
-              </p>
+              <EditableText 
+                content="We're delighted to have you here! As your trusted partner in temperature-sensitive commodity logistics, we specialize in coffee, olive oil, and specialty food exports with unmatched expertise, reliability, and sustainability."
+                contentKey="hero-description"
+                tag="p"
+                className="text-base sm:text-lg lg:text-xl leading-relaxed max-w-2xl text-ghl-neutral-700"
+              />
             </div>
 
             {/* CTA Buttons - Mobile optimized */}
@@ -87,9 +120,12 @@ export default function HeroSection() {
             
             {/* Subtle Welcome Message */}
             <div className="bg-gradient-to-r from-ghl-primary-50 to-ghl-secondary-50 backdrop-blur-sm rounded-lg p-4 border border-ghl-primary-200">
-              <p className="text-sm text-ghl-neutral-700 text-center">
-                💚 Every shipment tells a story. Let us help you write yours with care and precision.
-              </p>
+              <EditableText 
+                content="💚 Every shipment tells a story. Let us help you write yours with care and precision."
+                contentKey="hero-welcome-message"
+                tag="p"
+                className="text-sm text-ghl-neutral-700 text-center"
+              />
             </div>
 
             {/* Trust Indicators - Mobile compact */}
@@ -97,15 +133,30 @@ export default function HeroSection() {
               <div className="flex flex-wrap items-center justify-between gap-2 sm:gap-4 lg:gap-6">
                 <div className="flex items-center space-x-2 sm:space-x-3">
                   <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-ghl-primary-600"></div>
-                  <span className="text-xs sm:text-sm text-ghl-neutral-700">500+ Partners</span>
+                  <EditableText 
+                    content="500+ Partners"
+                    contentKey="hero-trust-partners"
+                    tag="span"
+                    className="text-xs sm:text-sm text-ghl-neutral-700"
+                  />
                 </div>
                 <div className="flex items-center space-x-2 sm:space-x-3">
                   <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-ghl-secondary-500"></div>
-                  <span className="text-xs sm:text-sm text-ghl-neutral-700">99.8% On-Time</span>
+                  <EditableText 
+                    content="99.8% On-Time"
+                    contentKey="hero-trust-ontime"
+                    tag="span"
+                    className="text-xs sm:text-sm text-ghl-neutral-700"
+                  />
                 </div>
                 <div className="flex items-center space-x-2 sm:space-x-3">
                   <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-ghl-primary-500"></div>
-                  <span className="text-xs sm:text-sm text-ghl-neutral-700">24/7 Support</span>
+                  <EditableText 
+                    content="24/7 Support"
+                    contentKey="hero-trust-support"
+                    tag="span"
+                    className="text-xs sm:text-sm text-ghl-neutral-700"
+                  />
                 </div>
               </div>
             </div>
@@ -120,18 +171,38 @@ export default function HeroSection() {
                   <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-2 sm:mb-3 lg:mb-4">
                     <Play className="h-5 w-5 sm:h-6 sm:w-6 lg:h-8 lg:w-8 ml-1" />
                   </div>
-                  <p className="text-sm sm:text-base lg:text-lg font-medium">See Our Process</p>
-                  <p className="text-xs sm:text-sm opacity-80">Temperature-controlled logistics in action</p>
+                  <EditableText 
+                    content="See Our Process"
+                    contentKey="hero-video-placeholder-title"
+                    tag="p"
+                    className="text-sm sm:text-base lg:text-lg font-medium"
+                  />
+                  <EditableText 
+                    content="Temperature-controlled logistics in action"
+                    contentKey="hero-video-placeholder-subtitle"
+                    tag="p"
+                    className="text-xs sm:text-sm opacity-80"
+                  />
                 </div>
               </div>
               
               {/* Floating elements - Mobile optimized */}
               <div className="absolute -top-1 -right-1 sm:-top-2 sm:-right-2 lg:-top-4 lg:-right-4 bg-white text-ghl-primary-600 px-2 py-1 sm:px-3 sm:py-1.5 lg:px-4 lg:py-2 rounded-md sm:rounded-lg shadow-lg">
-                <div className="text-xs sm:text-sm font-medium">ISO 9001</div>
+                <EditableText 
+                  content="ISO 9001"
+                  contentKey="hero-certification"
+                  tag="span"
+                  className="text-xs sm:text-sm font-medium"
+                />
               </div>
               
               <div className="absolute -bottom-1 -left-1 sm:-bottom-2 sm:-left-2 lg:-bottom-4 lg:-left-4 bg-ghl-secondary-400 text-white px-2 py-1 sm:px-3 sm:py-1.5 lg:px-4 lg:py-2 rounded-md sm:rounded-lg shadow-lg">
-                <div className="text-xs sm:text-sm font-medium">Sustainable</div>
+                <EditableText 
+                  content="Sustainable"
+                  contentKey="hero-sustainability"
+                  tag="span"
+                  className="text-xs sm:text-sm font-medium"
+                />
               </div>
             </div>
           </div>
@@ -143,7 +214,12 @@ export default function HeroSection() {
         <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
           <div className="rounded-lg p-4 max-w-4xl w-full bg-white">
             <div className="flex justify-between items-center mb-4">
-              <h3 className="text-lg font-semibold text-gray-900">Our Logistics Process</h3>
+              <EditableText 
+                content="Our Logistics Process"
+                contentKey="hero-video-title"
+                tag="h3"
+                className="text-lg font-semibold text-gray-900"
+              />
               <button 
                 onClick={() => setIsVideoPlaying(false)}
                 className="text-ghl-neutral-500 hover:text-ghl-neutral-700"
@@ -151,14 +227,12 @@ export default function HeroSection() {
                 ✕
               </button>
             </div>
-            <div className="aspect-video rounded-lg flex items-center justify-center bg-ghl-neutral-100">
-              <div className="text-center">
-                <Play className="h-16 w-16 mx-auto mb-4 text-ghl-primary-600" />
-                <p className="text-ghl-neutral-600">
-                  Video content would be embedded here
-                </p>
-              </div>
-            </div>
+            <YouTubeVideo 
+              src={videoSrc}
+              title={videoTitle}
+              contentKey="hero-video"
+              className="aspect-video rounded-lg"
+            />
           </div>
         </div>
       )}

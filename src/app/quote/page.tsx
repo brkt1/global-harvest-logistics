@@ -1,7 +1,7 @@
 'use client'
 
-import { ArrowLeft, Calculator, CheckCircle, Clock, Mail, Phone, Truck } from 'lucide-react'
-import Link from 'next/link'
+import EditableText from '@/components/ui/EditableText'
+import { Calculator, CheckCircle, Clock } from 'lucide-react'
 import { useState } from 'react'
 
 export default function QuotePage() {
@@ -50,20 +50,31 @@ export default function QuotePage() {
               <div className="w-16 h-16 sm:w-20 sm:h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
                 <CheckCircle className="h-8 w-8 sm:h-10 sm:w-10 text-green-600" />
               </div>
-              <h1 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold mb-3 sm:mb-4 text-ghl-neutral-800">
-                Quote Request Submitted!
-              </h1>
-              <p className="text-base sm:text-lg mb-6 sm:mb-8 text-ghl-neutral-600">
-                Thank you for your interest in our logistics services. Our team will review your requirements and get back to you within 24 hours with a detailed quote.
-              </p>
+              <EditableText 
+                content="Quote Request Submitted!"
+                contentKey="quote-success-title"
+                tag="h1"
+                className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold mb-3 sm:mb-4 text-ghl-neutral-800"
+              />
+              <EditableText 
+                content="Thank you for your interest in our logistics services. Our team will review your requirements and get back to you within 24 hours with a detailed quote."
+                contentKey="quote-success-message"
+                tag="p"
+                className="text-base sm:text-lg mb-6 sm:mb-8 text-ghl-neutral-600"
+              />
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-                <Link href="/" className="btn btn-primary text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4">
-                  <ArrowLeft className="h-4 w-4 sm:h-5 sm:w-5 mr-2" />
-                  Back to Home
-                </Link>
-                <Link href="/contact" className="btn btn-secondary text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4">
-                  Contact Us
-                </Link>
+                <EditableText 
+                  content="Back to Home"
+                  contentKey="quote-success-back-button"
+                  tag="span"
+                  className="btn btn-primary text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4"
+                />
+                <EditableText 
+                  content="Contact Us"
+                  contentKey="quote-success-contact-button"
+                  tag="span"
+                  className="btn btn-secondary text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4"
+                />
               </div>
             </div>
           </div>
@@ -81,14 +92,32 @@ export default function QuotePage() {
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center space-x-2 backdrop-blur-sm rounded-full px-3 py-1.5 sm:px-4 sm:py-2 mb-4 sm:mb-6 bg-white/80 border-ghl-primary-200">
               <Calculator className="h-4 w-4 sm:h-5 sm:w-5 text-ghl-primary-600" />
-              <span className="text-xs sm:text-sm font-medium text-ghl-primary-600">Get Your Quote</span>
+              <EditableText 
+                content="Get Your Quote"
+                contentKey="quote-hero-badge"
+                tag="span"
+                className="text-xs sm:text-sm font-medium text-ghl-primary-600"
+              />
             </div>
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-heading font-bold mb-4 sm:mb-6 text-ghl-neutral-800">
-              Request a <span className="bg-gradient-to-r from-ghl-primary-600 to-ghl-secondary-400 bg-clip-text text-transparent">Custom Quote</span>
+              <EditableText 
+                content="Request a"
+                contentKey="quote-hero-title-1"
+                tag="span"
+              />
+              <EditableText 
+                content="Custom Quote"
+                contentKey="quote-hero-title-2"
+                tag="span"
+                className="bg-gradient-to-r from-ghl-primary-600 to-ghl-secondary-400 bg-clip-text text-transparent"
+              />
             </h1>
-            <p className="text-base sm:text-lg lg:text-xl mb-6 sm:mb-8 max-w-2xl mx-auto text-ghl-neutral-600">
-              Get a personalized quote for your logistics needs. Our experts will provide you with competitive pricing and tailored solutions.
-            </p>
+            <EditableText 
+              content="Get a personalized quote for your logistics needs. Our experts will provide you with competitive pricing and tailored solutions."
+              contentKey="quote-hero-description"
+              tag="p"
+              className="text-base sm:text-lg lg:text-xl mb-6 sm:mb-8 max-w-2xl mx-auto text-ghl-neutral-600"
+            />
           </div>
         </div>
       </section>
@@ -99,32 +128,43 @@ export default function QuotePage() {
           <div className="max-w-4xl mx-auto">
             <div className="rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden bg-white">
               <div className="bg-gradient-to-r from-ghl-primary-600 to-ghl-secondary-400 p-6 sm:p-8 text-center">
-                <h2 className="text-xl sm:text-2xl md:text-3xl font-heading font-bold text-white mb-3 sm:mb-4">
-                  Tell Us About Your Shipment
-                </h2>
-                <p className="text-sm sm:text-base text-white/90">
-                  Fill out the form below and we&apos;ll get back to you with a detailed quote
-                </p>
+                <EditableText 
+                  content="Tell Us About Your Shipment"
+                  contentKey="quote-form-title"
+                  tag="h2"
+                  className="text-xl sm:text-2xl md:text-3xl font-heading font-bold text-white mb-3 sm:mb-4"
+                />
+                <EditableText 
+                  content="Fill out the form below and we'll get back to you with a detailed quote"
+                  contentKey="quote-form-subtitle"
+                  tag="p"
+                  className="text-sm sm:text-base text-white/90"
+                />
               </div>
               
               <form onSubmit={handleSubmit} className="p-6 sm:p-8 md:p-10 lg:p-12">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
                   {/* Contact Information */}
                   <div className="md:col-span-2">
-                    <h3 className={`text-lg sm:text-xl font-heading font-semibold mb-3 sm:mb-4 flex items-center ${
-                        'text-ghl-neutral-800'
-                    }`}>
-                      <Mail className="h-4 w-4 sm:h-5 sm:w-5 text-ghl-primary-600 mr-2" />
-                      Contact Information
-                    </h3>
+                    <EditableText 
+                      content="Contact Information"
+                      contentKey="quote-form-contact-title"
+                      tag="h3"
+                      className={`text-lg sm:text-xl font-heading font-semibold mb-3 sm:mb-4 flex items-center ${
+                          'text-ghl-neutral-800'
+                      }`}
+                    />
                   </div>
                   
                   <div>
-                    <label className={`block text-xs sm:text-sm font-medium mb-1 sm:mb-2 ${
-                        'text-ghl-neutral-700'
-                    }`}>
-                      Full Name *
-                    </label>
+                    <EditableText 
+                      content="Full Name *"
+                      contentKey="quote-form-name-label"
+                      tag="span"
+                      className={`block text-xs sm:text-sm font-medium mb-1 sm:mb-2 ${
+                          'text-ghl-neutral-700'
+                      }`}
+                    />
                     <input
                       type="text"
                       name="name"
@@ -139,11 +179,14 @@ export default function QuotePage() {
                   </div>
                   
                   <div>
-                    <label className={`block text-xs sm:text-sm font-medium mb-1 sm:mb-2 ${
-                        'text-ghl-neutral-700'
-                    }`}>
-                      Email Address *
-                    </label>
+                    <EditableText 
+                      content="Email Address *"
+                      contentKey="quote-form-email-label"
+                      tag="span"
+                      className={`block text-xs sm:text-sm font-medium mb-1 sm:mb-2 ${
+                          'text-ghl-neutral-700'
+                      }`}
+                    />
                     <input
                       type="email"
                       name="email"
@@ -158,11 +201,14 @@ export default function QuotePage() {
                   </div>
                   
                   <div>
-                    <label className={`block text-xs sm:text-sm font-medium mb-1 sm:mb-2 ${
-                        'text-ghl-neutral-700'
-                    }`}>
-                      Phone Number
-                    </label>
+                    <EditableText 
+                      content="Phone Number"
+                      contentKey="quote-form-phone-label"
+                      tag="span"
+                      className={`block text-xs sm:text-sm font-medium mb-1 sm:mb-2 ${
+                          'text-ghl-neutral-700'
+                      }`}
+                    />
                     <input
                       type="tel"
                       name="phone"
@@ -176,11 +222,14 @@ export default function QuotePage() {
                   </div>
                   
                   <div>
-                    <label className={`block text-xs sm:text-sm font-medium mb-1 sm:mb-2 ${
-                        'text-ghl-neutral-700'
-                    }`}>
-                      Company Name
-                    </label>
+                    <EditableText 
+                      content="Company Name"
+                      contentKey="quote-form-company-label"
+                      tag="span"
+                      className={`block text-xs sm:text-sm font-medium mb-1 sm:mb-2 ${
+                          'text-ghl-neutral-700'
+                      }`}
+                    />
                     <input
                       type="text"
                       name="company"
@@ -197,20 +246,25 @@ export default function QuotePage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
                   {/* Shipment Details */}
                   <div className="md:col-span-2">
-                    <h3 className={`text-lg sm:text-xl font-heading font-semibold mb-3 sm:mb-4 flex items-center ${
-                        'text-ghl-neutral-800'
-                    }`}>
-                      <Truck className="h-4 w-4 sm:h-5 sm:w-5 text-ghl-primary-600 mr-2" />
-                      Shipment Details
-                    </h3>
+                    <EditableText 
+                      content="Shipment Details"
+                      contentKey="quote-form-shipment-title"
+                      tag="h3"
+                      className={`text-lg sm:text-xl font-heading font-semibold mb-3 sm:mb-4 flex items-center ${
+                          'text-ghl-neutral-800'
+                      }`}
+                    />
                   </div>
                   
                   <div>
-                    <label className={`block text-xs sm:text-sm font-medium mb-1 sm:mb-2 ${
-                        'text-ghl-neutral-700'
-                    }`}>
-                      Origin *
-                    </label>
+                    <EditableText 
+                      content="Origin *"
+                      contentKey="quote-form-origin-label"
+                      tag="span"
+                      className={`block text-xs sm:text-sm font-medium mb-1 sm:mb-2 ${
+                          'text-ghl-neutral-700'
+                      }`}
+                    />
                     <input
                       type="text"
                       name="origin"
@@ -225,11 +279,14 @@ export default function QuotePage() {
                   </div>
                   
                   <div>
-                    <label className={`block text-xs sm:text-sm font-medium mb-1 sm:mb-2 ${
-                        'text-ghl-neutral-700'
-                    }`}>
-                      Destination *
-                    </label>
+                    <EditableText 
+                      content="Destination *"
+                      contentKey="quote-form-destination-label"
+                      tag="span"
+                      className={`block text-xs sm:text-sm font-medium mb-1 sm:mb-2 ${
+                          'text-ghl-neutral-700'
+                      }`}
+                    />
                     <input
                       type="text"
                       name="destination"
@@ -244,11 +301,14 @@ export default function QuotePage() {
                   </div>
                   
                   <div>
-                    <label className={`block text-xs sm:text-sm font-medium mb-1 sm:mb-2 ${
-                        'text-ghl-neutral-700'
-                    }`}>
-                      Cargo Type *
-                    </label>
+                    <EditableText 
+                      content="Cargo Type *"
+                      contentKey="quote-form-cargo-label"
+                      tag="span"
+                      className={`block text-xs sm:text-sm font-medium mb-1 sm:mb-2 ${
+                          'text-ghl-neutral-700'
+                      }`}
+                    />
                     <select
                       name="cargoType"
                       value={formData.cargoType}
@@ -268,11 +328,14 @@ export default function QuotePage() {
                   </div>
                   
                   <div>
-                    <label className={`block text-xs sm:text-sm font-medium mb-1 sm:mb-2 ${
-                        'text-ghl-neutral-700'
-                    }`}>
-                      Weight/Volume *
-                    </label>
+                    <EditableText 
+                      content="Weight/Volume *"
+                      contentKey="quote-form-weight-label"
+                      tag="span"
+                      className={`block text-xs sm:text-sm font-medium mb-1 sm:mb-2 ${
+                          'text-ghl-neutral-700'
+                      }`}
+                    />
                     <input
                       type="text"
                       name="weight"
@@ -287,11 +350,14 @@ export default function QuotePage() {
                   </div>
                   
                   <div>
-                    <label className={`block text-xs sm:text-sm font-medium mb-1 sm:mb-2 ${
-                        'text-ghl-neutral-700'
-                    }`}>
-                      Temperature Requirements
-                    </label>
+                    <EditableText 
+                      content="Temperature Requirements"
+                      contentKey="quote-form-temperature-label"
+                      tag="span"
+                      className={`block text-xs sm:text-sm font-medium mb-1 sm:mb-2 ${
+                          'text-ghl-neutral-700'
+                      }`}
+                    />
                     <input
                       type="text"
                       name="temperature"
@@ -305,11 +371,14 @@ export default function QuotePage() {
                   </div>
                   
                   <div>
-                    <label className={`block text-xs sm:text-sm font-medium mb-1 sm:mb-2 ${
-                        'text-ghl-neutral-700'
-                    }`}>
-                      Timeline *
-                    </label>
+                    <EditableText 
+                      content="Timeline *"
+                      contentKey="quote-form-timeline-label"
+                      tag="span"
+                      className={`block text-xs sm:text-sm font-medium mb-1 sm:mb-2 ${
+                          'text-ghl-neutral-700'
+                      }`}
+                    />
                     <select
                       name="timeline"
                       value={formData.timeline}
@@ -329,11 +398,14 @@ export default function QuotePage() {
                 </div>
 
                 <div className="mb-6 sm:mb-8">
-                  <label className={`block text-xs sm:text-sm font-medium mb-1 sm:mb-2 ${
-                    'text-ghl-neutral-700'
-                  }`}>
-                    Special Requirements
-                  </label>
+                  <EditableText 
+                    content="Special Requirements"
+                    contentKey="quote-form-special-label"
+                    tag="span"
+                    className={`block text-xs sm:text-sm font-medium mb-1 sm:mb-2 ${
+                      'text-ghl-neutral-700'
+                    }`}
+                  />
                   <textarea
                     name="specialRequirements"
                     value={formData.specialRequirements}
@@ -353,19 +425,29 @@ export default function QuotePage() {
                     {isSubmitting ? (
                       <>
                         <Clock className="h-4 w-4 sm:h-5 sm:w-5 mr-2" />
-                        Processing...
+                        <EditableText 
+                          content="Processing..."
+                          contentKey="quote-form-processing"
+                          tag="span"
+                        />
                       </>
                     ) : (
                       <>
                         <Calculator className="h-4 w-4 sm:h-5 sm:w-5 mr-2" />
-                        Get My Quote
+                        <EditableText 
+                          content="Get My Quote"
+                          contentKey="quote-form-submit"
+                          tag="span"
+                        />
                       </>
                     )}
                   </button>
-                  <Link href="/contact" className="btn btn-secondary text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 sm:py-4">
-                    <Phone className="h-4 w-4 sm:h-5 sm:w-5 mr-2" />
-                    Contact Us Instead
-                  </Link>
+                    <EditableText 
+                      content="Contact Us Instead"
+                      contentKey="quote-form-contact-button"
+                      tag="span"
+                      className="btn btn-secondary text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 sm:py-4"
+                    />
                 </div>
               </form>
             </div>

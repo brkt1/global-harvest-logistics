@@ -1,6 +1,7 @@
 'use client'
 
 import ContactInfo from '@/components/ui/ContactInfo'
+import EditableText from '@/components/ui/EditableText'
 import TruckLoading from '@/components/ui/TruckLoading'
 import { useLoading } from '@/contexts/LoadingContext'
 import { CheckCircle, Mail, Phone, Send } from 'lucide-react'
@@ -51,18 +52,24 @@ export default function Contact() {
         <div className="max-w-md mx-auto text-center px-4">
           <div className="bg-white rounded-2xl p-8 shadow-lg">
             <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-6" />
-            <h1 className="text-2xl font-bold text-gray-900 mb-4">
-              Message Sent!
-            </h1>
-            <p className="text-gray-600 mb-8">
-              Thank you for contacting us. We&apos;ll get back to you within 24 hours.
-            </p>
-            <button 
-              onClick={() => setIsSubmitted(false)}
+            <EditableText 
+              content="Message Sent!"
+              contentKey="contact-success-title"
+              tag="h1"
+              className="text-2xl font-bold text-gray-900 mb-4"
+            />
+            <EditableText 
+              content="Thank you for contacting us. We'll get back to you within 24 hours."
+              contentKey="contact-success-message"
+              tag="p"
+              className="text-gray-600 mb-8"
+            />
+            <EditableText 
+              content="Send Another Message"
+              contentKey="contact-success-button"
+              tag="span"
               className="w-full bg-gradient-to-r from-ghl-primary-600 to-ghl-secondary-400 text-white py-3 rounded-xl font-semibold"
-            >
-              Send Another Message
-            </button>
+            />
           </div>
         </div>
       </div>
@@ -71,33 +78,48 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
-      {/* Mobile App Header */}
-      <div className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
-        <div className="px-4 py-4">
-          <div className="flex items-center justify-between">
-            <div>
-              <h1 className="text-xl font-bold text-gray-900">Contact Us</h1>
-              <p className="text-sm text-gray-500">Get in touch with our experts</p>
-            </div>
-            <div className="w-10 h-10 bg-gradient-to-r from-ghl-primary-600 to-ghl-secondary-400 rounded-full flex items-center justify-center">
-              <Phone className="h-5 w-5 text-white" />
-            </div>
+      {/* Page Header Section */}
+      <div className="bg-white shadow-sm border-b border-gray-200">
+        <div className="container-custom py-8">
+          <div className="text-center">
+            <EditableText 
+              content="Contact Us"
+              contentKey="contact-header-title"
+              tag="h1"
+              className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
+            />
+            <EditableText 
+              content="Get in touch with our experts"
+              contentKey="contact-header-subtitle"
+              tag="p"
+              className="text-lg text-gray-600 max-w-2xl mx-auto"
+            />
           </div>
         </div>
       </div>
 
-      {/* Mobile App Contact Cards */}
-      <div className="px-4 py-6 space-y-4">
+      {/* Contact Content */}
+      <div className="container-custom py-8 space-y-8">
         {/* Quick Contact Cards */}
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="bg-white rounded-2xl p-4 shadow-sm border border-gray-100">
             <div className="flex items-center space-x-3">
               <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
                 <Phone className="h-5 w-5 text-green-600" />
               </div>
               <div>
-                <p className="text-xs text-gray-500">Call Now</p>
-                <p className="text-sm font-semibold text-gray-900">+1 (555) 123-4567</p>
+                <EditableText 
+                  content="Call Now"
+                  contentKey="contact-quick-call-label"
+                  tag="p"
+                  className="text-xs text-gray-500"
+                />
+                <EditableText 
+                  content="+1 (555) 123-4567"
+                  contentKey="contact-quick-call-number"
+                  tag="p"
+                  className="text-sm font-semibold text-gray-900"
+                />
               </div>
             </div>
           </div>
@@ -108,8 +130,18 @@ export default function Contact() {
                 <Mail className="h-5 w-5 text-blue-600" />
               </div>
               <div>
-                <p className="text-xs text-gray-500">Email Us</p>
-                <p className="text-sm font-semibold text-gray-900">info@ghl.com</p>
+                <EditableText 
+                  content="Email Us"
+                  contentKey="contact-quick-email-label"
+                  tag="p"
+                  className="text-xs text-gray-500"
+                />
+                <EditableText 
+                  content="info@ghl.com"
+                  contentKey="contact-quick-email-address"
+                  tag="p"
+                  className="text-sm font-semibold text-gray-900"
+                />
               </div>
             </div>
           </div>
@@ -117,20 +149,33 @@ export default function Contact() {
 
         {/* Contact Information Card */}
         <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
-          <h2 className="text-lg font-bold text-gray-900 mb-4">Contact Information</h2>
+          <EditableText 
+            content="Contact Information"
+            contentKey="contact-info-title"
+            tag="h2"
+            className="text-lg font-bold text-gray-900 mb-4"
+          />
           <ContactInfo />
         </div>
 
         {/* Mobile App Contact Form */}
         <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
-          <h2 className="text-lg font-bold text-gray-900 mb-4">Send us a Message</h2>
+          <EditableText 
+            content="Send us a Message"
+            contentKey="contact-form-title"
+            tag="h2"
+            className="text-lg font-bold text-gray-900 mb-4"
+          />
           
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="grid grid-cols-1 gap-4">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                  Full Name *
-                </label>
+                <EditableText 
+                  content="Full Name *"
+                  contentKey="contact-form-name-label"
+                  tag="span"
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                />
                 <input
                   type="text"
                   id="name"
@@ -144,9 +189,12 @@ export default function Contact() {
               </div>
               
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                  Email Address *
-                </label>
+                <EditableText 
+                  content="Email Address *"
+                  contentKey="contact-form-email-label"
+                  tag="span"
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                />
                 <input
                   type="email"
                   id="email"
@@ -160,9 +208,12 @@ export default function Contact() {
               </div>
               
               <div>
-                <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
-                  Company
-                </label>
+                <EditableText 
+                  content="Company"
+                  contentKey="contact-form-company-label"
+                  tag="span"
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                />
                 <input
                   type="text"
                   id="company"
@@ -175,9 +226,12 @@ export default function Contact() {
               </div>
               
               <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                  Phone Number
-                </label>
+                <EditableText 
+                  content="Phone Number"
+                  contentKey="contact-form-phone-label"
+                  tag="span"
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                />
                 <input
                   type="tel"
                   id="phone"
@@ -190,9 +244,12 @@ export default function Contact() {
               </div>
               
               <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
-                  Subject *
-                </label>
+                <EditableText 
+                  content="Subject *"
+                  contentKey="contact-form-subject-label"
+                  tag="span"
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                />
                 <select
                   id="subject"
                   name="subject"
@@ -211,9 +268,12 @@ export default function Contact() {
               </div>
               
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                  Message *
-                </label>
+                <EditableText 
+                  content="Message *"
+                  contentKey="contact-form-message-label"
+                  tag="span"
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                />
                 <textarea
                   id="message"
                   name="message"
@@ -235,12 +295,20 @@ export default function Contact() {
               {isSubmitting ? (
                 <>
                   <TruckLoading size="sm" className="!flex-row" />
-                  <span>Sending...</span>
+                  <EditableText 
+                    content="Sending..."
+                    contentKey="contact-form-submitting"
+                    tag="span"
+                  />
                 </>
               ) : (
                 <>
                   <Send className="h-4 w-4" />
-                  Send Message
+                  <EditableText 
+                    content="Send Message"
+                    contentKey="contact-form-submit"
+                    tag="span"
+                  />
                 </>
               )}
             </button>
@@ -248,29 +316,47 @@ export default function Contact() {
         </div>
       </div>
 
-      {/* Mobile App Emergency Contact */}
-      <div className="px-4 py-6">
+      {/* Emergency Contact */}
+      <div className="container-custom py-8">
         <div className="bg-gradient-to-r from-red-500 to-red-600 rounded-2xl p-6 text-white shadow-lg">
           <div className="flex items-center space-x-3 mb-4">
             <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
               <Phone className="h-6 w-6" />
             </div>
             <div>
-              <h2 className="text-lg font-bold">Emergency Support</h2>
-              <p className="text-sm text-red-100">24/7 Available</p>
+              <EditableText 
+                content="Emergency Support"
+                contentKey="contact-emergency-title"
+                tag="h2"
+                className="text-lg font-bold"
+              />
+              <EditableText 
+                content="24/7 Available"
+                contentKey="contact-emergency-subtitle"
+                tag="p"
+                className="text-sm text-red-100"
+              />
             </div>
           </div>
           
-          <p className="text-sm text-red-100 mb-4">
-            For urgent shipping issues or emergencies, call our 24/7 support line.
-          </p>
+          <EditableText 
+            content="For urgent shipping issues or emergencies, call our 24/7 support line."
+            contentKey="contact-emergency-description"
+            tag="p"
+            className="text-sm text-red-100 mb-4"
+          />
           
           <a 
             href="tel:+15551234567"
             className="w-full bg-white text-red-600 py-3 rounded-xl font-semibold flex items-center justify-center gap-2 shadow-lg"
           >
             <Phone className="h-4 w-4" />
-            Call Emergency Line: +1 (555) 123-4567
+            <EditableText 
+              content="Call Emergency Line: +1 (555) 123-4567"
+              contentKey="contact-emergency-button"
+              tag="span"
+              className="w-full bg-white text-red-600 py-3 rounded-xl font-semibold flex items-center justify-center gap-2 shadow-lg"
+            />
           </a>
         </div>
       </div>

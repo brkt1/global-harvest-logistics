@@ -1,3 +1,7 @@
+'use client'
+
+import EditableText from '@/components/ui/EditableText'
+
 export default function Careers() {
   const positions = [
     {
@@ -47,13 +51,18 @@ export default function Careers() {
       <section className="bg-gradient-to-r from-ghl-primary-600 to-ghl-secondary-400 text-white py-12 sm:py-16 lg:py-20">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4 sm:mb-6">
-              Join Our Team
-            </h1>
-            <p className="text-base sm:text-lg lg:text-xl text-ghl-neutral-100 mb-6 sm:mb-8">
-              Be part of a company that&apos;s revolutionizing sustainable logistics. 
-              We&apos;re looking for passionate individuals to help us deliver excellence.
-            </p>
+            <EditableText 
+              content="Join Our Team"
+              contentKey="careers-hero-title"
+              tag="h1"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4 sm:mb-6"
+            />
+            <EditableText 
+              content="Be part of a company that's revolutionizing sustainable logistics. We're looking for passionate individuals to help us deliver excellence."
+              contentKey="careers-hero-description"
+              tag="p"
+              className="text-base sm:text-lg lg:text-xl text-ghl-neutral-100 mb-6 sm:mb-8"
+            />
           </div>
         </div>
       </section>
@@ -62,13 +71,18 @@ export default function Careers() {
       <section className="py-20">
         <div className="container-custom">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-heading font-bold text-ghl-neutral-900 mb-4">
-              Why Work at Global Harvest Logistics?
-            </h2>
-            <p className="text-lg text-ghl-neutral-600 max-w-3xl mx-auto">
-              We&apos;re building the future of sustainable logistics. Join a team that values innovation, 
-              environmental responsibility, and professional growth.
-            </p>
+            <EditableText 
+              content="Why Work at Global Harvest Logistics?"
+              contentKey="careers-why-title"
+              tag="h2"
+              className="text-3xl font-heading font-bold text-ghl-neutral-900 mb-4"
+            />
+            <EditableText 
+              content="We're building the future of sustainable logistics. Join a team that values innovation, environmental responsibility, and professional growth."
+              contentKey="careers-why-description"
+              tag="p"
+              className="text-lg text-ghl-neutral-600 max-w-3xl mx-auto"
+            />
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -76,48 +90,72 @@ export default function Careers() {
               <div className="w-16 h-16 bg-ghl-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">🌱</span>
               </div>
-              <h3 className="text-xl font-heading font-semibold text-ghl-neutral-900 mb-3">
-                Sustainability Focus
-              </h3>
-              <p className="text-ghl-neutral-600">
-                Work for a company committed to environmental responsibility and sustainable practices.
-              </p>
+              <EditableText 
+                content="Sustainability Focus"
+                contentKey="careers-feature-1-title"
+                tag="h3"
+                className="text-xl font-heading font-semibold text-ghl-neutral-900 mb-3"
+              />
+              <EditableText 
+                content="Work for a company committed to environmental responsibility and sustainable practices."
+                contentKey="careers-feature-1-description"
+                tag="p"
+                className="text-ghl-neutral-600"
+              />
             </div>
             
             <div className="text-center">
               <div className="w-16 h-16 bg-ghl-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">🚀</span>
               </div>
-              <h3 className="text-xl font-heading font-semibold text-ghl-neutral-900 mb-3">
-                Innovation
-              </h3>
-              <p className="text-ghl-neutral-600">
-                Be part of cutting-edge logistics technology and temperature control systems.
-              </p>
+              <EditableText 
+                content="Innovation"
+                contentKey="careers-feature-2-title"
+                tag="h3"
+                className="text-xl font-heading font-semibold text-ghl-neutral-900 mb-3"
+              />
+              <EditableText 
+                content="Be part of cutting-edge logistics technology and temperature control systems."
+                contentKey="careers-feature-2-description"
+                tag="p"
+                className="text-ghl-neutral-600"
+              />
             </div>
             
             <div className="text-center">
               <div className="w-16 h-16 bg-ghl-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">🤝</span>
               </div>
-              <h3 className="text-xl font-heading font-semibold text-ghl-neutral-900 mb-3">
-                Team Culture
-              </h3>
-              <p className="text-ghl-neutral-600">
-                Join a collaborative team that values diversity, inclusion, and mutual support.
-              </p>
+              <EditableText 
+                content="Team Culture"
+                contentKey="careers-feature-3-title"
+                tag="h3"
+                className="text-xl font-heading font-semibold text-ghl-neutral-900 mb-3"
+              />
+              <EditableText 
+                content="Join a collaborative team that values diversity, inclusion, and mutual support."
+                contentKey="careers-feature-3-description"
+                tag="p"
+                className="text-ghl-neutral-600"
+              />
             </div>
             
             <div className="text-center">
               <div className="w-16 h-16 bg-ghl-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">📈</span>
               </div>
-              <h3 className="text-xl font-heading font-semibold text-ghl-neutral-900 mb-3">
-                Growth Opportunities
-              </h3>
-              <p className="text-ghl-neutral-600">
-                Advance your career with professional development and leadership opportunities.
-              </p>
+              <EditableText 
+                content="Growth Opportunities"
+                contentKey="careers-feature-4-title"
+                tag="h3"
+                className="text-xl font-heading font-semibold text-ghl-neutral-900 mb-3"
+              />
+              <EditableText 
+                content="Advance your career with professional development and leadership opportunities."
+                contentKey="careers-feature-4-description"
+                tag="p"
+                className="text-ghl-neutral-600"
+              />
             </div>
           </div>
         </div>
@@ -127,12 +165,18 @@ export default function Careers() {
       <section className="py-20 bg-white">
         <div className="container-custom">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-heading font-bold text-ghl-neutral-900 mb-4">
-              Open Positions
-            </h2>
-            <p className="text-lg text-ghl-neutral-600">
-              Explore current opportunities to join our growing team.
-            </p>
+            <EditableText 
+              content="Open Positions"
+              contentKey="careers-positions-title"
+              tag="h2"
+              className="text-3xl font-heading font-bold text-ghl-neutral-900 mb-4"
+            />
+            <EditableText 
+              content="Explore current opportunities to join our growing team."
+              contentKey="careers-positions-description"
+              tag="p"
+              className="text-lg text-ghl-neutral-600"
+            />
           </div>
           
           <div className="max-w-4xl mx-auto space-y-6">
@@ -140,24 +184,46 @@ export default function Careers() {
               <div key={index} className="bg-ghl-neutral-50 rounded-xl p-6 border border-ghl-neutral-200">
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                   <div>
-                    <h3 className="text-xl font-heading font-semibold text-ghl-neutral-900 mb-2">
-                      {position.title}
-                    </h3>
+                    <EditableText 
+                      content={position.title}
+                      contentKey={`careers-position-${index}-title`}
+                      tag="h3"
+                      className="text-xl font-heading font-semibold text-ghl-neutral-900 mb-2"
+                    />
                     <div className="flex flex-wrap gap-4 text-sm text-ghl-neutral-600">
-                      <span>{position.department}</span>
+                      <EditableText 
+                        content={position.department}
+                        contentKey={`careers-position-${index}-department`}
+                        tag="span"
+                      />
                       <span>•</span>
-                      <span>{position.location}</span>
+                      <EditableText 
+                        content={position.location}
+                        contentKey={`careers-position-${index}-location`}
+                        tag="span"
+                      />
                       <span>•</span>
-                      <span>{position.type}</span>
+                      <EditableText 
+                        content={position.type}
+                        contentKey={`careers-position-${index}-type`}
+                        tag="span"
+                      />
                     </div>
                   </div>
                   <button className="btn btn-primary mt-4 md:mt-0">
-                    Apply Now
+                    <EditableText 
+                      content="Apply Now"
+                      contentKey="careers-apply-button"
+                      tag="span"
+                    />
                   </button>
                 </div>
-                <p className="text-ghl-neutral-600">
-                  {position.description}
-                </p>
+                <EditableText 
+                  content={position.description}
+                  contentKey={`careers-position-${index}-description`}
+                  tag="p"
+                  className="text-ghl-neutral-600"
+                />
               </div>
             ))}
           </div>
@@ -168,12 +234,18 @@ export default function Careers() {
       <section className="py-20">
         <div className="container-custom">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-heading font-bold text-ghl-neutral-900 mb-4">
-              Employee Benefits
-            </h2>
-            <p className="text-lg text-ghl-neutral-600">
-              We offer comprehensive benefits to support our team members and their families.
-            </p>
+            <EditableText 
+              content="Employee Benefits"
+              contentKey="careers-benefits-title"
+              tag="h2"
+              className="text-3xl font-heading font-bold text-ghl-neutral-900 mb-4"
+            />
+            <EditableText 
+              content="We offer comprehensive benefits to support our team members and their families."
+              contentKey="careers-benefits-description"
+              tag="p"
+              className="text-lg text-ghl-neutral-600"
+            />
           </div>
           
           <div className="max-w-4xl mx-auto">
@@ -183,7 +255,12 @@ export default function Careers() {
                   <div className="w-6 h-6 bg-ghl-primary-100 rounded-full flex items-center justify-center flex-shrink-0">
                     <span className="text-ghl-primary-600 text-sm">✓</span>
                   </div>
-                  <span className="text-ghl-neutral-700">{benefit}</span>
+                  <EditableText 
+                    content={benefit}
+                    contentKey={`careers-benefit-${index}`}
+                    tag="span"
+                    className="text-ghl-neutral-700"
+                  />
                 </div>
               ))}
             </div>
@@ -195,12 +272,18 @@ export default function Careers() {
       <section className="py-20 bg-white">
         <div className="container-custom">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-heading font-bold text-ghl-neutral-900 mb-4">
-              How to Apply
-            </h2>
-            <p className="text-lg text-ghl-neutral-600">
-              Ready to join our team? Here&apos;s how to get started.
-            </p>
+            <EditableText 
+              content="How to Apply"
+              contentKey="careers-apply-title"
+              tag="h2"
+              className="text-3xl font-heading font-bold text-ghl-neutral-900 mb-4"
+            />
+            <EditableText 
+              content="Ready to join our team? Here's how to get started."
+              contentKey="careers-apply-description"
+              tag="p"
+              className="text-lg text-ghl-neutral-600"
+            />
           </div>
           
           <div className="max-w-4xl mx-auto">
@@ -209,36 +292,54 @@ export default function Careers() {
                 <div className="w-16 h-16 bg-ghl-primary-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
                   1
                 </div>
-                <h3 className="text-xl font-heading font-semibold text-ghl-neutral-900 mb-3">
-                  Browse Positions
-                </h3>
-                <p className="text-ghl-neutral-600">
-                  Explore our open positions and find the role that matches your skills and interests.
-                </p>
+                <EditableText 
+                  content="Browse Positions"
+                  contentKey="careers-step-1-title"
+                  tag="h3"
+                  className="text-xl font-heading font-semibold text-ghl-neutral-900 mb-3"
+                />
+                <EditableText 
+                  content="Explore our open positions and find the role that matches your skills and interests."
+                  contentKey="careers-step-1-description"
+                  tag="p"
+                  className="text-ghl-neutral-600"
+                />
               </div>
               
               <div className="text-center">
                 <div className="w-16 h-16 bg-ghl-primary-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
                   2
                 </div>
-                <h3 className="text-xl font-heading font-semibold text-ghl-neutral-900 mb-3">
-                  Submit Application
-                </h3>
-                <p className="text-ghl-neutral-600">
-                  Complete our online application form and upload your resume and cover letter.
-                </p>
+                <EditableText 
+                  content="Submit Application"
+                  contentKey="careers-step-2-title"
+                  tag="h3"
+                  className="text-xl font-heading font-semibold text-ghl-neutral-900 mb-3"
+                />
+                <EditableText 
+                  content="Complete our online application form and upload your resume and cover letter."
+                  contentKey="careers-step-2-description"
+                  tag="p"
+                  className="text-ghl-neutral-600"
+                />
               </div>
               
               <div className="text-center">
                 <div className="w-16 h-16 bg-ghl-primary-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
                   3
                 </div>
-                <h3 className="text-xl font-heading font-semibold text-ghl-neutral-900 mb-3">
-                  Interview Process
-                </h3>
-                <p className="text-ghl-neutral-600">
-                  Our team will review your application and contact you to schedule an interview.
-                </p>
+                <EditableText 
+                  content="Interview Process"
+                  contentKey="careers-step-3-title"
+                  tag="h3"
+                  className="text-xl font-heading font-semibold text-ghl-neutral-900 mb-3"
+                />
+                <EditableText 
+                  content="Our team will review your application and contact you to schedule an interview."
+                  contentKey="careers-step-3-description"
+                  tag="p"
+                  className="text-ghl-neutral-600"
+                />
               </div>
             </div>
           </div>
@@ -249,14 +350,24 @@ export default function Careers() {
       <section className="py-20 bg-ghl-primary-600 text-white">
         <div className="container-custom">
           <div className="text-center">
-            <h2 className="text-3xl font-heading font-bold mb-4">
-              Don&apos;t See the Right Position?
-            </h2>
-            <p className="text-xl text-ghl-neutral-100 mb-8">
-              We&apos;re always looking for talented individuals. Send us your resume and we&apos;ll keep you in mind for future opportunities.
-            </p>
+            <EditableText 
+              content="Don't See the Right Position?"
+              contentKey="careers-cta-title"
+              tag="h2"
+              className="text-3xl font-heading font-bold mb-4"
+            />
+            <EditableText 
+              content="We're always looking for talented individuals. Send us your resume and we'll keep you in mind for future opportunities."
+              contentKey="careers-cta-description"
+              tag="p"
+              className="text-xl text-ghl-neutral-100 mb-8"
+            />
             <a href="/contact" className="btn btn-secondary">
-              Send Your Resume
+              <EditableText 
+                content="Send Your Resume"
+                contentKey="careers-cta-button"
+                tag="span"
+              />
             </a>
           </div>
         </div>

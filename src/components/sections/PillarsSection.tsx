@@ -1,5 +1,7 @@
 'use client'
 
+import EditableImage from '@/components/ui/EditableImage'
+import EditableText from '@/components/ui/EditableText'
 import { Award, Globe, Leaf, Shield, TrendingUp, Users } from 'lucide-react'
 
 export default function PillarsSection() {
@@ -64,15 +66,24 @@ export default function PillarsSection() {
         <div className="text-center mb-12">
           <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-ghl-primary-600 to-ghl-secondary-400 text-white rounded-full text-sm font-semibold mb-6 shadow-lg">
             <Award className="w-4 h-4 mr-2" />
-            Our Foundation
+            <EditableText 
+              content="Our Foundation"
+              contentKey="pillars-badge"
+              tag="span"
+            />
           </div>
-          <h2 className="text-2xl sm:text-3xl font-heading font-bold text-gray-900 mb-4">
-            Built on Three Pillars of Excellence
-          </h2>
-          <p className="text-gray-600 max-w-3xl mx-auto">
-            Our commitment to expertise, reliability, and sustainability ensures your 
-            temperature-sensitive commodities reach their destination in perfect condition.
-          </p>
+          <EditableText 
+            content="Built on Three Pillars of Excellence"
+            contentKey="pillars-title"
+            tag="h2"
+            className="text-2xl sm:text-3xl font-heading font-bold text-gray-900 mb-4"
+          />
+          <EditableText 
+            content="Our commitment to expertise, reliability, and sustainability ensures your temperature-sensitive commodities reach their destination in perfect condition."
+            contentKey="pillars-description"
+            tag="p"
+            className="text-gray-600 max-w-3xl mx-auto"
+          />
         </div>
 
         {/* Compact Pillars Grid with Background Images */}
@@ -90,10 +101,13 @@ export default function PillarsSection() {
               {/* Pillar Card with Background Image */}
               <div className="relative bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 overflow-hidden h-80">
                 {/* Background Image */}
-                <div 
+                <EditableImage 
+                  src={backgroundImages[index]}
+                  alt={`${pillar.title} background`}
+                  contentKey={`pillar-${index + 1}-background`}
                   className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-                  style={{ backgroundImage: `url(${backgroundImages[index]})` }}
-                ></div>
+                  isBackground={true}
+                />
                 {/* Light overlay for better text readability */}
                 <div className="absolute inset-0 bg-white/80"></div>
                 
@@ -106,25 +120,39 @@ export default function PillarsSection() {
                 
                 {/* Title & Description */}
                 <div className="relative z-10 mb-4">
-                  <h3 className="text-lg font-bold text-ghl-neutral-900 mb-2 group-hover:text-ghl-neutral-800 transition-colors">
-                    {pillar.title}
-                  </h3>
-                  <p className="text-ghl-neutral-700 text-sm leading-relaxed">
-                    {pillar.description}
-                  </p>
+                  <EditableText 
+                    content={pillar.title}
+                    contentKey={`pillar-${index + 1}-title`}
+                    tag="h3"
+                    className="text-lg font-bold text-ghl-neutral-900 mb-2 group-hover:text-ghl-neutral-800 transition-colors"
+                  />
+                  <EditableText 
+                    content={pillar.description}
+                    contentKey={`pillar-${index + 1}-description`}
+                    tag="p"
+                    className="text-ghl-neutral-700 text-sm leading-relaxed"
+                  />
                 </div>
                 
                 {/* Key Features */}
                 <div className="relative z-10">
                   <h4 className="text-sm font-semibold text-ghl-neutral-800 mb-2 flex items-center">
                     <div className="w-2 h-2 bg-gradient-to-r from-ghl-primary-600 to-ghl-secondary-400 rounded-full mr-2"></div>
-                    Key Features
+                    <EditableText 
+                      content="Key Features"
+                      contentKey={`pillar-${index + 1}-features-title`}
+                      tag="span"
+                    />
                   </h4>
                   <ul className="space-y-1">
                     {pillar.features.slice(0, 3).map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-start text-xs text-ghl-neutral-600">
                         <div className="w-1.5 h-1.5 bg-gradient-to-r from-ghl-primary-600 to-ghl-secondary-400 rounded-full mr-2 mt-1.5 flex-shrink-0" />
-                        {feature}
+                        <EditableText 
+                          content={feature}
+                          contentKey={`pillar-${index + 1}-feature-${featureIndex + 1}`}
+                          tag="span"
+                        />
                       </li>
                     ))}
                   </ul>
@@ -141,10 +169,18 @@ export default function PillarsSection() {
         {/* Compact Stats Section */}
         <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl p-6 shadow-lg border border-gray-200">
           <div className="text-center mb-6">
-            <h3 className="text-xl font-bold text-gray-900 mb-2">Our Track Record</h3>
-            <p className="text-gray-600 text-sm">
-              Delivering excellence across the globe with proven results.
-            </p>
+            <EditableText 
+              content="Our Track Record"
+              contentKey="stats-title"
+              tag="h3"
+              className="text-xl font-bold text-gray-900 mb-2"
+            />
+            <EditableText 
+              content="Delivering excellence across the globe with proven results."
+              contentKey="stats-description"
+              tag="p"
+              className="text-gray-600 text-sm"
+            />
           </div>
           
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
@@ -153,8 +189,18 @@ export default function PillarsSection() {
                 <div className="inline-flex items-center justify-center w-10 h-10 bg-gradient-to-r from-ghl-primary-600 to-ghl-secondary-400 rounded-lg mb-3 shadow-md group-hover:scale-110 transition-transform duration-300">
                   <stat.icon className="h-5 w-5 text-white" />
                 </div>
-                <div className="text-lg font-bold text-gray-900 mb-1 group-hover:scale-105 transition-transform duration-300">{stat.value}</div>
-                <div className="text-xs text-gray-600 font-medium">{stat.label}</div>
+                <EditableText 
+                  content={stat.value}
+                  contentKey={`stat-${index + 1}-value`}
+                  tag="span"
+                  className="text-lg font-bold text-gray-900 mb-1 group-hover:scale-105 transition-transform duration-300 block"
+                />
+                <EditableText 
+                  content={stat.label}
+                  contentKey={`stat-${index + 1}-label`}
+                  tag="span"
+                  className="text-xs text-gray-600 font-medium block"
+                />
               </div>
             ))}
           </div>

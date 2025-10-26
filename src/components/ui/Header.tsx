@@ -1,12 +1,14 @@
 'use client';
 
-import { Mail, Menu, Phone, Sparkles, Truck, X } from 'lucide-react';
+import { useAdmin } from '@/contexts/AdminContext';
+import { Edit3, LogOut, Mail, Menu, Phone, Save, Sparkles, Truck, X } from 'lucide-react';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const { isAdmin, isEditing, toggleEditing, logout } = useAdmin();
 
   const navigation = [
     { name: 'Home', href: '/' },
@@ -111,6 +113,40 @@ const Header: React.FC = () => {
                   </Link>
                 ))}
               </div>
+              
+              {/* Admin Controls - Only show when logged in */}
+              {isAdmin && (
+                <div className="flex items-center space-x-2 bg-white/40 backdrop-blur-sm rounded-full px-4 py-2 border border-white/50 shadow-lg">
+                  <button
+                    onClick={toggleEditing}
+                    className={`px-3 py-2 rounded-full transition-all duration-300 flex items-center gap-2 font-semibold ${
+                      isEditing 
+                        ? 'bg-green-600 text-white hover:bg-green-700' 
+                        : 'bg-blue-600 text-white hover:bg-blue-700'
+                    }`}
+                  >
+                    {isEditing ? (
+                      <>
+                        <Save className="h-4 w-4" />
+                        Exit Edit
+                      </>
+                    ) : (
+                      <>
+                        <Edit3 className="h-4 w-4" />
+                        Edit Mode
+                      </>
+                    )}
+                  </button>
+                  
+                  <button
+                    onClick={logout}
+                    className="px-3 py-2 bg-red-600 text-white rounded-full hover:bg-red-700 transition-all duration-300 flex items-center gap-2 font-semibold"
+                  >
+                    <LogOut className="h-4 w-4" />
+                    Logout
+                  </button>
+                </div>
+              )}
             </div>
 
             {/* Mobile controls */}
@@ -159,6 +195,54 @@ const Header: React.FC = () => {
                     <div className="absolute inset-0 bg-gradient-to-r from-ghl-primary-600/20 to-ghl-secondary-400/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </Link>
                 ))}
+                
+                {/* Mobile Admin Controls - Only show when logged in */}
+                {isAdmin && (
+                  <>
+                    <button
+                      onClick={() => {
+                        toggleEditing();
+                        setIsMenuOpen(false);
+                      }}
+                      className={`w-full px-3 py-2.5 sm:px-4 sm:py-3 rounded-xl transition-all duration-300 flex items-center gap-2 font-semibold text-sm sm:text-base ${
+                        isEditing 
+                          ? 'bg-green-600 text-white hover:bg-green-700' 
+                          : 'bg-blue-600 text-white hover:bg-blue-700'
+                      }`}
+                      style={{
+                        animationDelay: `${navigation.length * 100}ms`,
+                        animation: isMenuOpen ? 'slideInLeft 0.4s ease-out forwards' : 'none'
+                      }}
+                    >
+                      {isEditing ? (
+                        <>
+                          <Save className="h-4 w-4" />
+                          Exit Edit
+                        </>
+                      ) : (
+                        <>
+                          <Edit3 className="h-4 w-4" />
+                          Edit Mode
+                        </>
+                      )}
+                    </button>
+                    
+                    <button
+                      onClick={() => {
+                        logout();
+                        setIsMenuOpen(false);
+                      }}
+                      className="w-full px-3 py-2.5 sm:px-4 sm:py-3 bg-red-600 text-white rounded-xl hover:bg-red-700 transition-all duration-300 flex items-center gap-2 font-semibold text-sm sm:text-base"
+                      style={{
+                        animationDelay: `${(navigation.length + 1) * 100}ms`,
+                        animation: isMenuOpen ? 'slideInLeft 0.4s ease-out forwards' : 'none'
+                      }}
+                    >
+                      <LogOut className="h-4 w-4" />
+                      Logout
+                    </button>
+                  </>
+                )}
                 
                 {/* Mobile contact info with glass effect */}
                 <div className="mt-4 sm:mt-6 p-3 sm:p-4 bg-white/30 backdrop-blur-sm rounded-xl border border-white/40 shadow-lg">

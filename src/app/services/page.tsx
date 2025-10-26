@@ -1,12 +1,8 @@
-import { ArrowRight, CheckCircle, Clock, Coffee, Droplets, Globe, Leaf, Package, Shield, Star, Thermometer, Truck, Zap } from 'lucide-react'
-import { Metadata } from 'next'
-import Link from 'next/link'
+'use client'
 
-export const metadata: Metadata = {
-  title: 'Logistics Services - Coffee, Oil & Specialty Products | Global Harvest Logistics',
-  description: 'Specialized logistics services for temperature-sensitive commodities. Coffee export logistics, olive oil transportation, and specialty food shipping with advanced temperature control.',
-  keywords: 'coffee logistics, olive oil shipping, temperature controlled transport, specialty food logistics, flexitank technology',
-}
+import EditableText from '@/components/ui/EditableText'
+import { ArrowRight, CheckCircle, Clock, Coffee, Droplets, Globe, Leaf, Package, Shield, Star, Thermometer, Truck, Zap } from 'lucide-react'
+import Link from 'next/link'
 
 export default function ServicesPage() {
   const services = [
@@ -161,21 +157,38 @@ export default function ServicesPage() {
                 {/* Badge */}
                 <div className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 bg-ghl-primary-100 backdrop-blur-sm rounded-full text-xs sm:text-sm font-medium mb-4 sm:mb-6 text-ghl-primary-700">
                   <Star className="w-3 h-3 sm:w-4 sm:h-4 mr-1.5 sm:mr-2" />
-                  Trusted by 500+ Companies
+                  <EditableText 
+                    content="Trusted by 500+ Companies"
+                    contentKey="services-hero-badge"
+                    tag="span"
+                  />
                 </div>
                 
                 {/* Main Heading */}
                 <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-heading font-bold mb-4 sm:mb-6 leading-tight">
-                  <span className="block text-ghl-neutral-900">Specialized</span>
+                  <span className="block text-ghl-neutral-900">
+                    <EditableText 
+                      content="Specialized"
+                      contentKey="services-hero-title-1"
+                      tag="span"
+                    />
+                  </span>
                   <span className="block bg-gradient-to-r from-ghl-primary-600 to-ghl-secondary-400 bg-clip-text text-transparent">
-                    Logistics Solutions
+                    <EditableText 
+                      content="Logistics Solutions"
+                      contentKey="services-hero-title-2"
+                      tag="span"
+                    />
                   </span>
                 </h1>
                 
                 {/* Subtitle */}
                 <p className="text-base sm:text-lg lg:text-xl xl:text-2xl text-ghl-neutral-700 mb-6 sm:mb-8 max-w-4xl mx-auto leading-relaxed">
-                  Expert temperature-controlled logistics for Ethiopian coffee, specialty oils, and traditional commodities. 
-                  <span className="block sm:inline"> Preserving heritage with modern reliability.</span>
+                  <EditableText 
+                    content="Expert temperature-controlled logistics for Ethiopian coffee, specialty oils, and traditional commodities. Preserving heritage with modern reliability."
+                    contentKey="services-hero-description"
+                    tag="span"
+                  />
                 </p>
                 
                 {/* CTA Buttons - Mobile Optimized */}
@@ -184,14 +197,22 @@ export default function ServicesPage() {
                     href="/quote" 
                     className="w-full sm:w-auto btn bg-ghl-primary-600 text-white hover:bg-ghl-primary-700 hover:scale-105 transition-all duration-300 text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold shadow-lg"
                   >
-                    Get Custom Quote
+                    <EditableText 
+                      content="Get Custom Quote"
+                      contentKey="services-hero-primary-button-text"
+                      tag="span"
+                    />
                     <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
                   </Link>
                   <Link 
                     href="/track" 
                     className="w-full sm:w-auto btn border-2 border-ghl-primary-600 text-ghl-primary-600 hover:bg-ghl-primary-600 hover:text-white backdrop-blur-sm text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold transition-all duration-300"
                   >
-                    Track Shipment
+                    <EditableText 
+                      content="Track Shipment"
+                      contentKey="services-hero-secondary-button-text"
+                      tag="span"
+                    />
                   </Link>
                 </div>
                 
@@ -223,17 +244,34 @@ export default function ServicesPage() {
           <div className="text-center mb-16">
             <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-ghl-primary-600 to-ghl-secondary-400 text-white rounded-full text-sm font-semibold mb-8 shadow-lg">
               <Package className="w-5 h-5 mr-3" />
-              Our Premium Services
+              <EditableText 
+                content="Our Premium Services"
+                contentKey="services-section-badge"
+                tag="span"
+              />
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-gray-900 mb-6">
-              <span className="block">Why People Choose</span>
+              <span className="block">
+                <EditableText 
+                  content="Why People Choose"
+                  contentKey="services-section-title-1"
+                  tag="span"
+                />
+              </span>
               <span className="block bg-gradient-to-r from-ghl-primary-600 to-ghl-secondary-400 bg-clip-text text-transparent">
-                Our Services
+                <EditableText 
+                  content="Our Services"
+                  contentKey="services-section-title-2"
+                  tag="span"
+                />
               </span>
             </h2>
             <p className="text-lg sm:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Experience the difference with our specialized logistics solutions. 
-              <span className="font-semibold text-gray-800"> Trusted by 500+ companies worldwide.</span>
+              <EditableText 
+                content="Experience the difference with our specialized logistics solutions. Trusted by 500+ companies worldwide."
+                contentKey="services-section-description"
+                tag="span"
+              />
             </p>
           </div>
 
@@ -256,17 +294,29 @@ export default function ServicesPage() {
                   {/* Service Badge */}
                   <div className="relative z-10 mb-4">
                     <span className={`inline-flex items-center px-3 py-1.5 bg-gradient-to-r ${service.gradient} text-white rounded-full text-xs font-semibold`}>
-                      {service.subtitle}
+                      <EditableText 
+                        content={service.subtitle}
+                        contentKey={`service-${service.id}-subtitle`}
+                        tag="span"
+                      />
                     </span>
                   </div>
                   
                   {/* Title & Description */}
                   <div className="relative z-10 mb-6">
                     <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-ghl-primary-600 transition-colors">
-                      {service.title}
+                      <EditableText 
+                        content={service.title}
+                        contentKey={`service-${service.id}-title`}
+                        tag="span"
+                      />
                     </h3>
                     <p className="text-gray-600 leading-relaxed">
-                      {service.description}
+                      <EditableText 
+                        content={service.description}
+                        contentKey={`service-${service.id}-description`}
+                        tag="span"
+                      />
                     </p>
                   </div>
                   
@@ -274,13 +324,21 @@ export default function ServicesPage() {
                   <div className="relative z-10 mb-6">
                     <h4 className="text-sm font-semibold text-gray-800 mb-3 flex items-center">
                       <CheckCircle className="h-4 w-4 text-green-600 mr-2" />
-                      What&apos;s Included
+                      <EditableText 
+                        content="What's Included"
+                        contentKey={`service-${service.id}-features-title`}
+                        tag="span"
+                      />
                     </h4>
                     <ul className="space-y-2">
                       {service.features.slice(0, 3).map((feature, featureIndex) => (
                         <li key={featureIndex} className="flex items-start text-sm text-gray-600">
                           <div className="w-1.5 h-1.5 bg-gradient-to-r from-green-500 to-green-600 rounded-full mr-3 mt-2 flex-shrink-0" />
-                          {feature}
+                          <EditableText 
+                            content={feature}
+                            contentKey={`service-${service.id}-feature-${featureIndex + 1}`}
+                            tag="span"
+                          />
                         </li>
                       ))}
                     </ul>
@@ -291,10 +349,19 @@ export default function ServicesPage() {
                     <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl p-4">
                       <div className="flex items-center mb-2">
                         <Star className="h-4 w-4 text-yellow-500 mr-2" />
-                        <span className="text-sm font-semibold text-gray-800">Key Benefits</span>
+                        <EditableText 
+                          content="Key Benefits"
+                          contentKey={`service-${service.id}-benefits-title`}
+                          tag="span"
+                          className="text-sm font-semibold text-gray-800"
+                        />
                       </div>
                       <p className="text-sm text-gray-600">
-                        {service.benefits[0]}
+                        <EditableText 
+                          content={service.benefits[0]}
+                          contentKey={`service-${service.id}-benefit-1`}
+                          tag="span"
+                        />
                       </p>
                     </div>
                   </div>
@@ -324,35 +391,80 @@ export default function ServicesPage() {
           {/* Trust Indicators */}
           <div className="mt-16 text-center">
             <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
-              <h3 className="text-xl font-bold text-gray-900 mb-6">Why People Love Our Services</h3>
+              <EditableText 
+                content="Why People Love Our Services"
+                contentKey="services-trust-title"
+                tag="h3"
+                className="text-xl font-bold text-gray-900 mb-6"
+              />
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                 <div className="text-center">
                   <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
                     <CheckCircle className="h-6 w-6 text-green-600" />
                   </div>
-                  <div className="text-2xl font-bold text-gray-900 mb-1">99.8%</div>
-                  <div className="text-sm text-gray-600">Success Rate</div>
+                  <EditableText 
+                    content="99.8%"
+                    contentKey="services-trust-success-rate"
+                    tag="span"
+                    className="text-2xl font-bold text-gray-900 mb-1"
+                  />
+                  <EditableText 
+                    content="Success Rate"
+                    contentKey="services-trust-success-label"
+                    tag="span"
+                    className="text-sm text-gray-600"
+                  />
                 </div>
                 <div className="text-center">
                   <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
                     <Clock className="h-6 w-6 text-blue-600" />
                   </div>
-                  <div className="text-2xl font-bold text-gray-900 mb-1">24/7</div>
-                  <div className="text-sm text-gray-600">Support</div>
+                  <EditableText 
+                    content="24/7"
+                    contentKey="services-trust-support-value"
+                    tag="span"
+                    className="text-2xl font-bold text-gray-900 mb-1"
+                  />
+                  <EditableText 
+                    content="Support"
+                    contentKey="services-trust-support-label"
+                    tag="span"
+                    className="text-sm text-gray-600"
+                  />
                 </div>
                 <div className="text-center">
                   <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-3">
                     <Globe className="h-6 w-6 text-purple-600" />
                   </div>
-                  <div className="text-2xl font-bold text-gray-900 mb-1">50+</div>
-                  <div className="text-sm text-gray-600">Countries</div>
+                  <EditableText 
+                    content="50+"
+                    contentKey="services-trust-countries-value"
+                    tag="span"
+                    className="text-2xl font-bold text-gray-900 mb-1"
+                  />
+                  <EditableText 
+                    content="Countries"
+                    contentKey="services-trust-countries-label"
+                    tag="span"
+                    className="text-sm text-gray-600"
+                  />
                 </div>
                 <div className="text-center">
                   <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-3">
                     <Star className="h-6 w-6 text-orange-600" />
                   </div>
-                  <div className="text-2xl font-bold text-gray-900 mb-1">500+</div>
-                  <div className="text-sm text-gray-600">Happy Clients</div>
+                  <EditableText 
+                    content="500+"
+                    contentKey="services-trust-clients-value"
+                    tag="span"
+                    className="text-2xl font-bold text-gray-900 mb-1"
+                  />
+                  <EditableText 
+                    content="Happy Clients"
+                    contentKey="services-trust-clients-label"
+                    tag="span"
+                    className="text-sm text-gray-600"
+                  />
                 </div>
               </div>
             </div>
@@ -370,18 +482,32 @@ export default function ServicesPage() {
           <div className="text-center mb-20">
             <div className="inline-flex items-center px-6 py-3 bg-gray-100 text-gray-800 rounded-full text-sm font-semibold mb-8 shadow-lg border border-gray-200">
               <Clock className="w-5 h-5 mr-3" />
-              Our Proven Process
+              <EditableText 
+                content="Our Proven Process"
+                contentKey="services-process-badge"
+                tag="span"
+              />
             </div>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-black mb-8 leading-tight">
-              <span className="block">How We Deliver</span>
-              <span className="block bg-gradient-to-r from-gray-800 to-green-800 bg-clip-text text-transparent">
-                Excellence
-              </span>
+              <EditableText 
+                content="How We Deliver"
+                contentKey="services-process-title-1"
+                tag="span"
+                className="block"
+              />
+              <EditableText 
+                content="Excellence"
+                contentKey="services-process-title-2"
+                tag="span"
+                className="block bg-gradient-to-r from-gray-800 to-green-800 bg-clip-text text-transparent"
+              />
             </h2>
-            <p className="text-xl sm:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              From initial consultation to final delivery, our systematic approach ensures 
-              your temperature-sensitive commodities are handled with precision and care.
-            </p>
+            <EditableText 
+              content="From initial consultation to final delivery, our systematic approach ensures your temperature-sensitive commodities are handled with precision and care."
+              contentKey="services-process-description"
+              tag="p"
+              className="text-xl sm:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed"
+            />
           </div>
 
           {/* Enhanced Process Steps */}
@@ -460,12 +586,20 @@ export default function ServicesPage() {
                     <div className="relative z-10">
                       {/* Title */}
                       <h3 className="text-2xl lg:text-3xl font-heading font-bold text-ghl-neutral-900 mb-6 text-center lg:text-left group-hover:text-ghl-neutral-800 transition-colors">
-                        {process.title}
+                        <EditableText 
+                          content={process.title}
+                          contentKey={`services-process-step-${process.step}-title`}
+                          tag="span"
+                        />
                       </h3>
                       
                       {/* Description */}
                       <p className="text-ghl-neutral-700 leading-relaxed text-center lg:text-left mb-6">
-                        {process.description}
+                        <EditableText 
+                          content={process.description}
+                          contentKey={`services-process-step-${process.step}-description`}
+                          tag="span"
+                        />
                       </p>
                       
                       {/* Features List */}
@@ -473,7 +607,11 @@ export default function ServicesPage() {
                         {process.features.map((feature, featureIndex) => (
                           <div key={featureIndex} className="flex items-center text-sm text-ghl-neutral-600">
                             <div className="w-2 h-2 bg-gradient-to-r from-ghl-primary-600 to-ghl-secondary-400 rounded-full mr-3 flex-shrink-0"></div>
-                            {feature}
+                            <EditableText 
+                              content={feature}
+                              contentKey={`services-process-step-${process.step}-feature-${featureIndex + 1}`}
+                              tag="span"
+                            />
                           </div>
                         ))}
                       </div>
@@ -500,10 +638,18 @@ export default function ServicesPage() {
             <div className="bg-white rounded-2xl p-6 lg:p-8 shadow-lg border border-gray-200">
               <div className="text-center mb-8">
                 <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                  Why Choose Our Process?
+                  <EditableText 
+                    content="Why Choose Our Process?"
+                    contentKey="services-process-benefits-title"
+                    tag="span"
+                  />
                 </h3>
                 <p className="text-gray-600 max-w-xl mx-auto">
-                  Our systematic approach delivers consistent results and exceptional value.
+                  <EditableText 
+                    content="Our systematic approach delivers consistent results and exceptional value."
+                    contentKey="services-process-benefits-description"
+                    tag="span"
+                  />
                 </p>
               </div>
               
@@ -512,24 +658,60 @@ export default function ServicesPage() {
                   <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-r from-gray-800 to-black rounded-xl mb-4 shadow-md group-hover:scale-110 transition-transform duration-300">
                     <Shield className="w-6 h-6 text-white" />
                   </div>
-                  <h4 className="text-lg font-semibold text-gray-900 mb-2">Quality Guaranteed</h4>
-                  <p className="text-sm text-gray-600">ISO 9001 certification with monitored processes</p>
+                  <h4 className="text-lg font-semibold text-gray-900 mb-2">
+                    <EditableText 
+                      content="Quality Guaranteed"
+                      contentKey="services-process-benefit-1-title"
+                      tag="span"
+                    />
+                  </h4>
+                  <p className="text-sm text-gray-600">
+                    <EditableText 
+                      content="ISO 9001 certification with monitored processes"
+                      contentKey="services-process-benefit-1-description"
+                      tag="span"
+                    />
+                  </p>
                 </div>
                 
                 <div className="text-center group">
                   <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-r from-green-800 to-gray-800 rounded-xl mb-4 shadow-md group-hover:scale-110 transition-transform duration-300">
                     <Clock className="w-6 h-6 text-white" />
                   </div>
-                  <h4 className="text-lg font-semibold text-gray-900 mb-2">On-Time Delivery</h4>
-                  <p className="text-sm text-gray-600">99.8% success rate with real-time tracking</p>
+                  <h4 className="text-lg font-semibold text-gray-900 mb-2">
+                    <EditableText 
+                      content="On-Time Delivery"
+                      contentKey="services-process-benefit-2-title"
+                      tag="span"
+                    />
+                  </h4>
+                  <p className="text-sm text-gray-600">
+                    <EditableText 
+                      content="99.8% success rate with real-time tracking"
+                      contentKey="services-process-benefit-2-description"
+                      tag="span"
+                    />
+                  </p>
                 </div>
                 
                 <div className="text-center group">
                   <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-r from-green-800 to-green-600 rounded-xl mb-4 shadow-md group-hover:scale-110 transition-transform duration-300">
                     <Star className="w-6 h-6 text-white" />
                   </div>
-                  <h4 className="text-lg font-semibold text-gray-900 mb-2">Expert Support</h4>
-                  <p className="text-sm text-gray-600">24/7 customer service with specialists</p>
+                  <h4 className="text-lg font-semibold text-gray-900 mb-2">
+                    <EditableText 
+                      content="Expert Support"
+                      contentKey="services-process-benefit-3-title"
+                      tag="span"
+                    />
+                  </h4>
+                  <p className="text-sm text-gray-600">
+                    <EditableText 
+                      content="24/7 customer service with specialists"
+                      contentKey="services-process-benefit-3-description"
+                      tag="span"
+                    />
+                  </p>
                 </div>
               </div>
             </div>
@@ -543,18 +725,34 @@ export default function ServicesPage() {
           <div className="text-center mb-16">
             <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-ghl-primary-600 to-ghl-secondary-400 text-white rounded-full text-sm font-semibold mb-8 shadow-lg">
               <Shield className="w-5 h-5 mr-3" />
-              Our Advanced Capabilities
+              <EditableText 
+                content="Our Advanced Capabilities"
+                contentKey="services-capabilities-badge"
+                tag="span"
+              />
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-gray-900 mb-6">
-              <span className="block">Technology That</span>
+              <span className="block">
+                <EditableText 
+                  content="Technology That"
+                  contentKey="services-capabilities-title-1"
+                  tag="span"
+                />
+              </span>
               <span className="block bg-gradient-to-r from-ghl-primary-600 to-ghl-secondary-400 bg-clip-text text-transparent">
-                Delivers Excellence
+                <EditableText 
+                  content="Delivers Excellence"
+                  contentKey="services-capabilities-title-2"
+                  tag="span"
+                />
               </span>
             </h2>
             <p className="text-lg sm:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Cutting-edge technology and decades of expertise ensure your temperature-sensitive 
-              commodities reach their destination in perfect condition.
-              <span className="font-semibold text-gray-800"> Trusted by industry leaders worldwide.</span>
+              <EditableText 
+                content="Cutting-edge technology and decades of expertise ensure your temperature-sensitive commodities reach their destination in perfect condition. Trusted by industry leaders worldwide."
+                contentKey="services-capabilities-description"
+                tag="span"
+              />
             </p>
           </div>
 
@@ -574,10 +772,18 @@ export default function ServicesPage() {
                   {/* Title & Description */}
                   <div className="mb-4 flex-grow">
                     <h3 className="text-lg font-bold text-gray-900 mb-2">
-                      {capability.title}
+                      <EditableText 
+                        content={capability.title}
+                        contentKey={`services-capability-${index + 1}-title`}
+                        tag="span"
+                      />
                     </h3>
                     <p className="text-gray-600 text-sm leading-relaxed">
-                      {capability.description}
+                      <EditableText 
+                        content={capability.description}
+                        contentKey={`services-capability-${index + 1}-description`}
+                        tag="span"
+                      />
                     </p>
                   </div>
                   
@@ -589,7 +795,11 @@ export default function ServicesPage() {
                         <span className="text-xs font-semibold text-gray-700">Technical Details</span>
                       </div>
                       <p className="text-xs text-gray-600 leading-relaxed">
-                        {capability.details}
+                        <EditableText 
+                          content={capability.details}
+                          contentKey={`services-capability-${index + 1}-details`}
+                          tag="span"
+                        />
                       </p>
                     </div>
                   </div>
@@ -602,9 +812,19 @@ export default function ServicesPage() {
           <div className="mt-16">
             <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
               <div className="text-center mb-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">Our Technology Advantage</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                  <EditableText 
+                    content="Our Technology Advantage"
+                    contentKey="services-tech-title"
+                    tag="span"
+                  />
+                </h3>
                 <p className="text-gray-600 max-w-2xl mx-auto">
-                  Advanced monitoring systems and cutting-edge logistics technology ensure optimal results.
+                  <EditableText 
+                    content="Advanced monitoring systems and cutting-edge logistics technology ensure optimal results."
+                    contentKey="services-tech-description"
+                    tag="span"
+                  />
                 </p>
               </div>
               
@@ -613,29 +833,77 @@ export default function ServicesPage() {
                   <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
                     <Thermometer className="h-6 w-6 text-green-600" />
                   </div>
-                  <div className="text-lg font-bold text-gray-900 mb-1">Real-time</div>
-                  <div className="text-sm text-gray-600">Temperature Monitoring</div>
+                  <div className="text-lg font-bold text-gray-900 mb-1">
+                    <EditableText 
+                      content="Real-time"
+                      contentKey="services-tech-stat-1-value"
+                      tag="span"
+                    />
+                  </div>
+                  <div className="text-sm text-gray-600">
+                    <EditableText 
+                      content="Temperature Monitoring"
+                      contentKey="services-tech-stat-1-label"
+                      tag="span"
+                    />
+                  </div>
                 </div>
                 <div className="text-center p-4 rounded-lg bg-gray-50 hover:bg-gray-100 transition-colors duration-200">
                   <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
                     <Shield className="h-6 w-6 text-blue-600" />
                   </div>
-                  <div className="text-lg font-bold text-gray-900 mb-1">ISO 9001</div>
-                  <div className="text-sm text-gray-600">Quality Certified</div>
+                  <div className="text-lg font-bold text-gray-900 mb-1">
+                    <EditableText 
+                      content="ISO 9001"
+                      contentKey="services-tech-stat-2-value"
+                      tag="span"
+                    />
+                  </div>
+                  <div className="text-sm text-gray-600">
+                    <EditableText 
+                      content="Quality Certified"
+                      contentKey="services-tech-stat-2-label"
+                      tag="span"
+                    />
+                  </div>
                 </div>
                 <div className="text-center p-4 rounded-lg bg-gray-50 hover:bg-gray-100 transition-colors duration-200">
                   <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-3">
                     <Leaf className="h-6 w-6 text-purple-600" />
                   </div>
-                  <div className="text-lg font-bold text-gray-900 mb-1">Eco-Friendly</div>
-                  <div className="text-sm text-gray-600">Sustainable Practices</div>
+                  <div className="text-lg font-bold text-gray-900 mb-1">
+                    <EditableText 
+                      content="Eco-Friendly"
+                      contentKey="services-tech-stat-3-value"
+                      tag="span"
+                    />
+                  </div>
+                  <div className="text-sm text-gray-600">
+                    <EditableText 
+                      content="Sustainable Practices"
+                      contentKey="services-tech-stat-3-label"
+                      tag="span"
+                    />
+                  </div>
                 </div>
                 <div className="text-center p-4 rounded-lg bg-gray-50 hover:bg-gray-100 transition-colors duration-200">
                   <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-3">
                     <Clock className="h-6 w-6 text-orange-600" />
                   </div>
-                  <div className="text-lg font-bold text-gray-900 mb-1">24/7</div>
-                  <div className="text-sm text-gray-600">Monitoring</div>
+                  <div className="text-lg font-bold text-gray-900 mb-1">
+                    <EditableText 
+                      content="24/7"
+                      contentKey="services-tech-stat-4-value"
+                      tag="span"
+                    />
+                  </div>
+                  <div className="text-sm text-gray-600">
+                    <EditableText 
+                      content="Monitoring"
+                      contentKey="services-tech-stat-4-label"
+                      tag="span"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -654,18 +922,27 @@ export default function ServicesPage() {
               {/* Badge */}
               <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium mb-6">
                 <Truck className="w-4 h-4 mr-2" />
-                Ready to Ship?
+                <EditableText 
+                  content="Ready to Ship?"
+                  contentKey="services-cta-badge"
+                  tag="span"
+                />
               </div>
               
               {/* Main Content */}
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-6 leading-tight">
-                Ready to Ship Your Commodities?
-              </h2>
+              <EditableText 
+                content="Ready to Ship Your Commodities?"
+                contentKey="services-cta-title"
+                tag="h2"
+                className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-6 leading-tight"
+              />
               
-              <p className="text-lg sm:text-xl lg:text-2xl opacity-90 mb-12 max-w-3xl mx-auto leading-relaxed">
-                Get a custom quote for your temperature-sensitive logistics needs. 
-                Our experts are ready to design the perfect solution for your business.
-              </p>
+              <EditableText 
+                content="Get a custom quote for your temperature-sensitive logistics needs. Our experts are ready to design the perfect solution for your business."
+                contentKey="services-cta-description"
+                tag="p"
+                className="text-lg sm:text-xl lg:text-2xl opacity-90 mb-12 max-w-3xl mx-auto leading-relaxed"
+              />
               
               {/* CTA Buttons - Mobile Optimized */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
@@ -673,34 +950,82 @@ export default function ServicesPage() {
                   href="/quote" 
                   className="w-full sm:w-auto bg-white text-black hover:bg-gray-100 hover:scale-105 transition-all duration-300 text-lg px-8 py-4 rounded-xl font-semibold shadow-lg inline-flex items-center justify-center"
                 >
-                  Request Custom Quote
+                  <EditableText 
+                    content="Request Custom Quote"
+                    contentKey="services-cta-primary-button-text"
+                    tag="span"
+                  />
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
                 <Link 
                   href="/contact" 
                   className="w-full sm:w-auto border-2 border-white/30 text-white hover:bg-white hover:text-black backdrop-blur-sm text-lg px-8 py-4 rounded-xl font-semibold transition-all duration-300 inline-flex items-center justify-center"
                 >
-                  Contact Our Experts
+                  <EditableText 
+                    content="Contact Our Experts"
+                    contentKey="services-cta-button-text"
+                    tag="span"
+                  />
                 </Link>
               </div>
               
               {/* Trust Indicators */}
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-3xl mx-auto">
                 <div className="text-center">
-                  <div className="text-2xl lg:text-3xl font-bold mb-1">99.8%</div>
-                  <div className="text-sm opacity-80">On-Time Delivery</div>
+                  <EditableText 
+                    content="99.8%"
+                    contentKey="services-cta-stat-1-value"
+                    tag="span"
+                    className="text-2xl lg:text-3xl font-bold mb-1"
+                  />
+                  <EditableText 
+                    content="On-Time Delivery"
+                    contentKey="services-cta-stat-1-label"
+                    tag="span"
+                    className="text-sm opacity-80"
+                  />
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl lg:text-3xl font-bold mb-1">24/7</div>
-                  <div className="text-sm opacity-80">Support</div>
+                  <EditableText 
+                    content="24/7"
+                    contentKey="services-cta-stat-2-value"
+                    tag="span"
+                    className="text-2xl lg:text-3xl font-bold mb-1"
+                  />
+                  <EditableText 
+                    content="Support"
+                    contentKey="services-cta-stat-2-label"
+                    tag="span"
+                    className="text-sm opacity-80"
+                  />
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl lg:text-3xl font-bold mb-1">50+</div>
-                  <div className="text-sm opacity-80">Countries</div>
+                  <EditableText 
+                    content="50+"
+                    contentKey="services-cta-stat-3-value"
+                    tag="span"
+                    className="text-2xl lg:text-3xl font-bold mb-1"
+                  />
+                  <EditableText 
+                    content="Countries"
+                    contentKey="services-cta-stat-3-label"
+                    tag="span"
+                    className="text-sm opacity-80"
+                  />
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl lg:text-3xl font-bold mb-1">15+</div>
-                  <div className="text-sm opacity-80">Years Experience</div>
+                  <EditableText 
+                    content="15+"
+                    contentKey="services-cta-stat-4-value"
+                    tag="span"
+                    className="text-2xl lg:text-3xl font-bold mb-1"
+                  />
+                  <EditableText 
+                    content="Years Experience"
+                    contentKey="services-cta-stat-4-label"
+                    tag="span"
+                    className="text-sm opacity-80"
+                  />
                 </div>
               </div>
             </div>

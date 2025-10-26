@@ -1,5 +1,6 @@
 'use client'
 
+import EditableText from '@/components/ui/EditableText'
 import { Leaf, MapPin, Shield, Thermometer } from 'lucide-react'
 
 export default function ProvenProcessSection() {
@@ -43,12 +44,18 @@ export default function ProvenProcessSection() {
       <div className="container-custom relative">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-6xl font-heading font-bold text-white mb-4">
-            Our Proven Process
-          </h2>
-          <p className="text-xl text-ghl-neutral-300 max-w-3xl mx-auto">
-            Four key steps that ensure your commodities arrive in perfect condition
-          </p>
+          <EditableText 
+            content="Our Proven Process"
+            contentKey="process-title"
+            tag="h2"
+            className="text-4xl lg:text-6xl font-heading font-bold text-white mb-4"
+          />
+          <EditableText 
+            content="Four key steps that ensure your commodities arrive in perfect condition"
+            contentKey="process-description"
+            tag="p"
+            className="text-xl text-ghl-neutral-300 max-w-3xl mx-auto"
+          />
         </div>
 
         {/* Horizontal Progress Timeline */}
@@ -92,20 +99,24 @@ export default function ProvenProcessSection() {
                   </div>
 
                   {/* Step Title */}
-                  <h3 className={`
-                    text-center mb-2 font-semibold
-                    ${isActive 
-                      ? 'text-white text-lg' 
-                      : 'text-ghl-neutral-300'
-                    }
-                  `}>
-                    {step.title}
-                  </h3>
+                  <EditableText 
+                    content={step.title}
+                    contentKey={`process-step-${step.id}-title`}
+                    tag="h3"
+                    className={`text-center mb-2 font-semibold ${
+                      isActive 
+                        ? 'text-white text-lg' 
+                        : 'text-ghl-neutral-300'
+                    }`}
+                  />
 
                   {/* Step Description - Hidden on mobile screens */}
-                  <p className="hidden md:block text-sm text-ghl-neutral-400 text-center max-w-48 leading-relaxed">
-                    {step.description}
-                  </p>
+                  <EditableText 
+                    content={step.description}
+                    contentKey={`process-step-${step.id}-description`}
+                    tag="p"
+                    className="hidden md:block text-sm text-ghl-neutral-400 text-center max-w-48 leading-relaxed"
+                  />
                 </div>
               )
             })}
@@ -115,9 +126,17 @@ export default function ProvenProcessSection() {
         {/* Bottom CTA */}
         <div className="text-center mt-16">
           <div className="inline-flex items-center space-x-2 text-ghl-primary-400 font-semibold">
-            <span>Trusted by 500+ Global Partners</span>
+            <EditableText 
+              content="Trusted by 500+ Global Partners"
+              contentKey="process-trusted-partners"
+              tag="span"
+            />
             <div className="w-2 h-2 bg-ghl-primary-400 rounded-full"></div>
-            <span>99.8% On-Time Delivery</span>
+            <EditableText 
+              content="99.8% On-Time Delivery"
+              contentKey="process-delivery-rate"
+              tag="span"
+            />
           </div>
         </div>
       </div>

@@ -1,5 +1,7 @@
 'use client'
 
+import EditableImage from '@/components/ui/EditableImage'
+import EditableText from '@/components/ui/EditableText'
 import StatsDisplay from '@/components/ui/StatsDisplay'
 import { Star } from 'lucide-react'
 
@@ -28,9 +30,12 @@ export default function TestimonialSection() {
       <div className="container-custom relative">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-6xl font-heading font-bold text-ghl-neutral-900 mb-8">
-            What our Customers Say
-          </h2>
+          <EditableText 
+            content="What our Customers Say"
+            contentKey="testimonials-title"
+            tag="h2"
+            className="text-4xl lg:text-6xl font-heading font-bold text-ghl-neutral-900 mb-8"
+          />
         </div>
 
         {/* Testimonials Grid */}
@@ -41,15 +46,24 @@ export default function TestimonialSection() {
               <div className="relative bg-ghl-primary-600 rounded-lg p-6 mb-4 shadow-lg">
                 <div className="flex justify-between items-start">
                   <div className="text-white">
-                    <h3 className="text-lg font-bold uppercase tracking-wide mb-1">
-                      {testimonial.name}
-                    </h3>
-                    <p className="text-sm font-medium mb-1">
-                      {testimonial.title}
-                    </p>
-                    <p className="text-sm font-medium">
-                      {testimonial.handle}
-                    </p>
+                    <EditableText 
+                      content={testimonial.name}
+                      contentKey={`testimonial-${index + 1}-name`}
+                      tag="h3"
+                      className="text-lg font-bold uppercase tracking-wide mb-1"
+                    />
+                    <EditableText 
+                      content={testimonial.title}
+                      contentKey={`testimonial-${index + 1}-title`}
+                      tag="p"
+                      className="text-sm font-medium mb-1"
+                    />
+                    <EditableText 
+                      content={testimonial.handle}
+                      contentKey={`testimonial-${index + 1}-handle`}
+                      tag="p"
+                      className="text-sm font-medium"
+                    />
                   </div>
                   <div className="flex space-x-1">
                     {[...Array(testimonial.rating)].map((_, i) => (
@@ -65,15 +79,19 @@ export default function TestimonialSection() {
               <div className="relative bg-white rounded-lg p-6 shadow-lg ml-8">
                 <div className="flex items-start space-x-4">
                   <div className="flex-1">
-                    <p className="text-ghl-neutral-800 leading-relaxed">
-                      {testimonial.quote}
-                    </p>
+                    <EditableText 
+                      content={testimonial.quote}
+                      contentKey={`testimonial-${index + 1}-quote`}
+                      tag="p"
+                      className="text-ghl-neutral-800 leading-relaxed"
+                    />
                   </div>
                   <div className="flex-shrink-0">
                     <div className="w-16 h-16 bg-white rounded-full border-4 border-white shadow-lg overflow-hidden">
-                      <img 
+                      <EditableImage 
                         src={testimonial.image} 
                         alt={testimonial.name}
+                        contentKey={`testimonial-${index + 1}-image`}
                         className="w-full h-full object-cover"
                       />
                     </div>

@@ -1,7 +1,9 @@
+import AdminToolbar from "@/components/ui/AdminToolbar";
 import Footer from "@/components/ui/Footer";
 import Header from "@/components/ui/Header";
 import LoadingOverlay from "@/components/ui/LoadingOverlay";
 import NavigationLoading from "@/components/ui/NavigationLoading";
+import { AdminProvider } from "@/contexts/AdminContext";
 import { LoadingProvider } from "@/contexts/LoadingContext";
 import type { Metadata } from "next";
 import "./globals.css";
@@ -11,7 +13,6 @@ export const metadata: Metadata = {
   description: "Leading B2B logistics company specializing in temperature-sensitive commodity exports including coffee, olive oil, and specialty food products. Expert, reliable, and sustainable logistics solutions.",
   keywords: "coffee export logistics, temperature controlled shipping, sustainable freight forwarder, olive oil transportation, specialty food logistics",
   authors: [{ name: "Global Harvest Logistics" }],
-  viewport: "width=device-width, initial-scale=1",
   openGraph: {
     title: "Global Harvest Logistics - Delivering Taste, Preserving Nature",
     description: "Leading B2B logistics company specializing in temperature-sensitive commodity exports",
@@ -24,6 +25,11 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -33,11 +39,14 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className="antialiased">
         <LoadingProvider>
-          <NavigationLoading />
-          <Header />
-          <main>{children}</main>
-          <Footer />
-          <LoadingOverlay />
+          <AdminProvider>
+            <NavigationLoading />
+            <Header />
+            <main>{children}</main>
+            <Footer />
+            <LoadingOverlay />
+            <AdminToolbar />
+          </AdminProvider>
         </LoadingProvider>
       </body>
     </html>
