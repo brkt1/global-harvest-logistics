@@ -67,7 +67,7 @@ export default function About() {
                 </div>
               </div>
               <EditableText 
-                content="Trusted by 500+ Partners Worldwide"
+                content="Trusted by 100+ Partners Worldwide"
                 contentKey="about-hero-badge"
                 tag="span"
                 className="font-semibold text-sm sm:text-base"
@@ -102,7 +102,7 @@ export default function About() {
             <div className={`grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 mt-8 sm:mt-12 md:mt-16 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '0.6s' }}>
               <div className="group text-center p-4 sm:p-6 bg-ghl-primary-50 backdrop-blur-sm rounded-2xl border border-ghl-primary-200 hover:bg-ghl-primary-100 hover:scale-105 transition-all duration-300">
                 <EditableText 
-                  content="500+"
+                  content="100+"
                   contentKey="about-hero-stat-1-value"
                   tag="span"
                   className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-ghl-primary-700 mb-2 group-hover:text-ghl-primary-800 transition-colors duration-300"
@@ -662,7 +662,7 @@ export default function About() {
                 <div className="flex items-center justify-center text-blue-600 font-medium">
                   <div className="w-2 h-2 bg-blue-500 rounded-full mr-2"></div>
                   <EditableText 
-                    content="500+ Trusted Partners"
+                    content="100+ Trusted Partners"
                     contentKey="about-value-partnership-tagline"
                     tag="span"
                     className="text-blue-600 font-medium"

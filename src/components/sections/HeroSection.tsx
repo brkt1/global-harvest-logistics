@@ -63,7 +63,7 @@ export default function HeroSection() {
                     <span className="text-xs text-white font-bold">L</span>
                   </div>
                 </div>
-                <span className="font-semibold text-xs sm:text-sm">Trusted by 500+ Global Partners</span>
+                <span className="font-semibold text-xs sm:text-sm">Trusted by 100+ Global Partners</span>
               </div>
               
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-heading font-bold leading-tight">
@@ -134,7 +134,7 @@ export default function HeroSection() {
                 <div className="flex items-center space-x-2 sm:space-x-3">
                   <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-ghl-primary-600"></div>
                   <EditableText 
-                    content="500+ Partners"
+                    content="100+ Partners"
                     contentKey="hero-trust-partners"
                     tag="span"
                     className="text-xs sm:text-sm text-ghl-neutral-700"

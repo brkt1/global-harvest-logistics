@@ -127,7 +127,7 @@ export default function ProvenProcessSection() {
         <div className="text-center mt-16">
           <div className="inline-flex items-center space-x-2 text-ghl-primary-400 font-semibold">
             <EditableText 
-              content="Trusted by 500+ Global Partners"
+              content="Trusted by 100+ Global Partners"
               contentKey="process-trusted-partners"
               tag="span"
             />

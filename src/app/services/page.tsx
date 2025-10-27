@@ -137,9 +137,9 @@ export default function ServicesPage() {
 
   const stats = [
     { number: '99.8%', label: 'On-Time Delivery', icon: Clock },
-    { number: '50+', label: 'Countries Served', icon: Globe },
+    { number: '15+', label: 'Countries Served', icon: Globe },
     { number: '24/7', label: 'Customer Support', icon: Star },
-    { number: '15+', label: 'Years Experience', icon: Zap }
+    { number: '12+', label: 'Years Experience', icon: Zap }
   ]
 
   return (
@@ -158,7 +158,7 @@ export default function ServicesPage() {
                 <div className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 bg-ghl-primary-100 backdrop-blur-sm rounded-full text-xs sm:text-sm font-medium mb-4 sm:mb-6 text-ghl-primary-700">
                   <Star className="w-3 h-3 sm:w-4 sm:h-4 mr-1.5 sm:mr-2" />
                   <EditableText 
-                    content="Trusted by 500+ Companies"
+                    content="Trusted by 100+ Companies"
                     contentKey="services-hero-badge"
                     tag="span"
                   />
@@ -268,7 +268,7 @@ export default function ServicesPage() {
             </h2>
             <p className="text-lg sm:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               <EditableText 
-                content="Experience the difference with our specialized logistics solutions. Trusted by 500+ companies worldwide."
+                content="Experience the difference with our specialized logistics solutions. Trusted by 100+ companies worldwide."
                 contentKey="services-section-description"
                 tag="span"
               />
@@ -437,7 +437,7 @@ export default function ServicesPage() {
                     <Globe className="h-6 w-6 text-purple-600" />
                   </div>
                   <EditableText 
-                    content="50+"
+                    content="15+"
                     contentKey="services-trust-countries-value"
                     tag="span"
                     className="text-2xl font-bold text-gray-900 mb-1"
@@ -454,7 +454,7 @@ export default function ServicesPage() {
                     <Star className="h-6 w-6 text-orange-600" />
                   </div>
                   <EditableText 
-                    content="500+"
+                    content="100+"
                     contentKey="services-trust-clients-value"
                     tag="span"
                     className="text-2xl font-bold text-gray-900 mb-1"
@@ -1001,7 +1001,7 @@ export default function ServicesPage() {
                 </div>
                 <div className="text-center">
                   <EditableText 
-                    content="50+"
+                    content="15+"
                     contentKey="services-cta-stat-3-value"
                     tag="span"
                     className="text-2xl lg:text-3xl font-bold mb-1"

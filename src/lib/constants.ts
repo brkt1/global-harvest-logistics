@@ -1,10 +1,10 @@
 // Shared constants and data to eliminate duplication across the website
 
 export const COMPANY_STATS = [
-  { value: '500+', label: 'Global Partners', icon: 'Users' },
+  { value: '100+', label: 'Global Partners', icon: 'Users' },
   { value: '99.8%', label: 'On-Time Delivery', icon: 'TrendingUp' },
-  { value: '50+', label: 'Countries Served', icon: 'Globe' },
-  { value: '15+', label: 'Years Experience', icon: 'Award' }
+  { value: '15+', label: 'Countries Served', icon: 'Globe' },
+  { value: '12+', label: 'Years Experience', icon: 'Award' }
 ] as const;
 
 export const CONTACT_INFO = {

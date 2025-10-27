@@ -1,7 +1,8 @@
 'use client';
 
 import { useAdmin } from '@/contexts/AdminContext';
-import { Edit3, LogOut, Mail, Menu, Phone, Save, Sparkles, Truck, X } from 'lucide-react';
+import { Edit3, LogOut, Mail, Menu, Phone, Save, Sparkles, X } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 
@@ -83,20 +84,16 @@ const Header: React.FC = () => {
         {/* Main navigation */}
         <nav className="container-custom relative">
           <div className="flex justify-between items-center py-3 md:py-4">
-            {/* Logo with glass effect */}
-            <Link href="/" className="flex items-center space-x-2 sm:space-x-3 group">
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-ghl-primary-600 to-ghl-secondary-400 rounded-xl blur-sm opacity-75 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="relative bg-gradient-to-br from-ghl-primary-600 to-ghl-secondary-400 p-2 sm:p-2.5 rounded-xl shadow-lg">
-                  <Truck className="h-5 w-5 sm:h-6 sm:w-6 md:h-8 md:w-8 text-white" />
-                </div>
-              </div>
-              <div>
-                <h1 className="text-base sm:text-lg md:text-xl font-heading font-bold bg-gradient-to-r from-ghl-primary-600 to-ghl-secondary-400 bg-clip-text text-transparent">
-                  Global Harvest
-                </h1>
-                <p className="text-xs sm:text-xs md:text-sm text-ghl-neutral-600 font-medium">Logistics</p>
-              </div>
+            {/* Logo */}
+            <Link href="/" className="flex items-center group">
+              <Image
+                src="/logo.png"
+                alt="Global Harvest Logistics Logo"
+                width={200}
+                height={60}
+                className="h-12 w-auto sm:h-16 md:h-20 object-contain"
+                priority
+              />
             </Link>
 
             {/* Desktop Navigation with glass effect */}

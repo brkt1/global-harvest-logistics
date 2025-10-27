@@ -8,47 +8,47 @@ export default function PillarsSection() {
   const pillars = [
     {
       icon: Award,
-      title: 'Expertise',
-      description: 'Deep knowledge in temperature-sensitive commodity logistics with specialized handling for coffee, olive oil, and specialty foods.',
+      title: 'Agricultural Expertise',
+      description: 'Deep understanding of Ethiopian sesame, pulses, and beans from soil selection to international market requirements.',
       features: [
-        'Temperature & humidity control',
-        'Origin logistics expertise',
-        'Fumigation compliance',
-        'Custom packaging solutions'
+        'Humera sesame quality specialization',
+        'Pulse variety identification & grading',
+        'International quality standards knowledge',
+        'Ethiopian growing region expertise'
       ],
       color: 'ghl-primary-600'
     },
     {
       icon: Shield,
-      title: 'Reliability',
-      description: '99.8% on-time delivery rate with 24/7 monitoring and real-time tracking for complete peace of mind.',
+      title: 'Supply Chain Reliability',
+      description: 'Seamless logistics, ensuring product integrity and timely deliveries.',
       features: [
-        'Real-time shipment tracking',
-        '24/7 global support',
-        'Insurance coverage',
-        'Quality guarantees'
+        'Warehouse quality control',
+        'Djibouti shipping coordination',
+        'Documentation accuracy',
+        'Shipment timeline adherence'
       ],
       color: 'ghl-secondary-400'
     },
     {
       icon: Leaf,
-      title: 'Sustainability',
-      description: 'Committed to environmental responsibility through optimized routes, carbon offset programs, and eco-friendly packaging.',
+      title: 'Ethical Partnership',
+      description: 'Building sustainable relationships between Ethiopian farmers and international buyers through fair practices and quality focus.',
       features: [
-        'Carbon-neutral shipping options',
-        'Recyclable packaging materials',
-        'Fuel-efficient routes',
-        'Environmental impact reporting'
+        'Direct farmer engagement',
+        'Quality-based pricing',
+        'Long-term supply assurance',
+        'Transparent business practices'
       ],
       color: 'ghl-secondary-500'
     }
   ]
 
   const stats = [
-    { icon: TrendingUp, value: '500+', label: 'Global Partners' },
-    { icon: Users, value: '50+', label: 'Countries Served' },
+    { icon: TrendingUp, value: '100+', label: 'Global Partners' },
+    { icon: Users, value: '15+', label: 'Countries Served' },
     { icon: Globe, value: '99.8%', label: 'On-Time Delivery' },
-    { icon: Award, value: '15+', label: 'Years Experience' }
+    { icon: Award, value: '12+', label: 'Years Experience' }
   ]
 
   return (
@@ -79,7 +79,7 @@ export default function PillarsSection() {
             className="text-2xl sm:text-3xl font-heading font-bold text-gray-900 mb-4"
           />
           <EditableText 
-            content="Our commitment to expertise, reliability, and sustainability ensures your temperature-sensitive commodities reach their destination in perfect condition."
+            content="Our commitment to agricultural expertise, supply chain reliability, and ethical partnerships ensures excellence in every shipment from Ethiopia."
             contentKey="pillars-description"
             tag="p"
             className="text-gray-600 max-w-3xl mx-auto"
@@ -89,11 +89,11 @@ export default function PillarsSection() {
         {/* Compact Pillars Grid with Background Images */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
           {pillars.map((pillar, index) => {
-            // Define background images for each pillar
+            // Define background images matching the Ethiopian agricultural export theme
             const backgroundImages = [
-              'https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80', // Expertise - Business/Professional
-              'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80', // Reliability - Quality Control
-              'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80'  // Sustainability - Eco-friendly
+              'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&q=80', // Agricultural Expertise - Sesame/pulses/beans field
+              'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80', // Supply Chain Reliability - Warehouses and logistics
+              'https://images.unsplash.com/photo-1560493676-04071c5f467b?w=800&q=80'  // Ethical Partnership - Hands harvesting crops/sustainable farming
             ];
 
             return (
