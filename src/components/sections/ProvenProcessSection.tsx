@@ -1,40 +1,40 @@
 'use client'
 
 import EditableText from '@/components/ui/EditableText'
-import { Leaf, MapPin, Shield, Thermometer } from 'lucide-react'
+import { Leaf, MapPin, Search, Shield } from 'lucide-react'
 
 export default function ProvenProcessSection() {
   const processSteps = [
     {
       id: 1,
       number: '01',
-      title: 'Temperature Control',
-      description: 'Advanced monitoring systems ensure optimal conditions.',
-      icon: Thermometer,
+      title: 'Careful Sourcing',
+      description: 'We begin by partnering directly with trusted farmers and cooperatives in Ethiopia\'s top growing regions. Every batch of sesame, pulses, and beans is selected for purity, size, and moisture consistency before entering our export pipeline.',
+      icon: Search,
       status: 'completed'
     },
     {
       id: 2,
       number: '02',
-      title: 'Quality Assurance',
-      description: 'Rigorous quality checks and compliance standards.',
+      title: 'Precision Preparation',
+      description: 'At our Addis Ababa warehouse, products are cleaned, graded, and packed under controlled conditions. Using ECX-aligned procedures, we verify moisture levels, remove impurities, and prepare export-grade packaging to meet international standards.',
       icon: Shield,
       status: 'active'
     },
     {
       id: 3,
       number: '03',
-      title: 'Sustainable Shipping',
-      description: 'Eco-friendly practices and carbon-neutral options.',
-      icon: Leaf,
+      title: 'Reliable Logistics',
+      description: 'Each shipment is transported safely through the Addis–Djibouti trade corridor, Ethiopia\'s main export route. We coordinate documentation, customs clearance, and freight forwarding to guarantee secure and timely arrival at destination ports worldwide.',
+      icon: MapPin,
       status: 'pending'
     },
     {
       id: 4,
       number: '04',
-      title: 'Real-time Tracking',
-      description: '24/7 monitoring with delivery guarantees.',
-      icon: MapPin,
+      title: 'Transparent Tracking',
+      description: 'From warehouse to port, every container is tracked in real time. Our export team provides continuous updates, ensuring clients have full visibility and confidence in every delivery.',
+      icon: Leaf,
       status: 'pending'
     }
   ]
@@ -51,7 +51,7 @@ export default function ProvenProcessSection() {
             className="text-4xl lg:text-6xl font-heading font-bold text-white mb-4"
           />
           <EditableText 
-            content="Four key steps that ensure your commodities arrive in perfect condition"
+            content="Four key steps that ensure every shipment from Ethiopia arrives in perfect condition"
             contentKey="process-description"
             tag="p"
             className="text-xl text-ghl-neutral-300 max-w-3xl mx-auto"
