@@ -1,106 +1,210 @@
 'use client'
 
 import EditableText from '@/components/ui/EditableText'
-import { ArrowRight, CheckCircle, Clock, Coffee, Droplets, Globe, Leaf, Package, Shield, Star, Thermometer, Truck, Zap } from 'lucide-react'
+import { ArrowRight, CheckCircle, Circle, Clock, Globe, Leaf, Shield, Star, Thermometer, Truck, Zap } from 'lucide-react'
 import Link from 'next/link'
 
 export default function ServicesPage() {
   const services = [
     {
-      id: 'coffee',
-      icon: Coffee,
-      title: 'Coffee Logistics',
-      subtitle: 'From Ethiopian Highlands',
-      description: 'Specialized temperature and humidity control for premium Ethiopian coffee beans from highland farms to global markets.',
+      id: 'humera-sesame',
+      icon: Leaf,
+      title: 'Humera Sesame',
+      subtitle: 'Premium Ethiopian Sesame',
+      imageURL: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8wrHHqlc0BU7cnzS1MVE_MyV-wy4udmZklQ&s',
+      description: 'The crown jewel of Ethiopian sesame exports, known for its large white seeds, high oil content, and distinctive sweet aroma. Grown in the fertile Humera region, this variety commands premium prices in international markets.',
       features: [
-        'Temperature-controlled storage (15-25°C)',
-        'Humidity monitoring (50-60% RH)',
-        'Specialized bagging expertise',
-        'Origin logistics coordination',
-        'Fumigation compliance',
-        'Quality preservation protocols'
+        'Large white seeds with high oil content',
+        'Distinctive sweet aroma and flavor profile',
+        'Excellent for both culinary and oil extraction purposes',
+        'Grown in Ethiopia\'s prime sesame region',
+        'Commands premium prices in international markets',
+        'Superior quality from fertile Humera region'
       ],
       process: [
-        'Origin assessment and quality control',
-        'Temperature-controlled container loading',
-        'Real-time monitoring during transit',
-        'Destination warehouse coordination',
-        'Final delivery to roaster'
+        'Origin assessment and quality control from fertile Humera region',
+        'Careful harvesting from prime growing areas',
+        'Quality grading and size classification',
+        'Testing for oil content and aroma profile',
+        'International export compliance verification',
+        'Delivery to premium global markets'
       ],
       benefits: [
-        'Preserves coffee bean quality and flavor',
-        'Reduces spoilage and waste',
-        'Maintains optimal moisture content',
-        'Ensures consistent product quality'
+        'Commands premium prices in international markets',
+        'Superior oil content and distinctive sweet aroma',
+        'Excellent for both culinary and oil extraction purposes',
+        'Grown in Ethiopia\'s prime fertile Humera region'
+      ],
+      color: 'ghl-primary-600',
+      gradient: 'from-ghl-primary-600 to-ghl-secondary-400',
+      bgColor: 'bg-ghl-primary-50',
+      accentColor: 'text-ghl-primary-600'
+    },
+    {
+      id: 'wollega-sesame',
+      icon: Leaf,
+      title: 'Wollega Sesame',
+      subtitle: 'Premium Ethiopian Sesame',
+      imageURL: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNVh-2gQq9ZdJ7BVG5PgaN2qOwPwpC86baQA&s',
+      description: 'Premium quality sesame from the Wollega region, available in both white and brown seed varieties. Known for excellent purity, consistent quality, and versatile applications across food industries.',
+      features: [
+        'Available in white and brown seed varieties',
+        'Consistent size and quality for industrial use',
+        'Excellent purity and quality standards',
+        'Versatile applications across food industries',
+        'Grown in Ethiopia\'s Wollega region',
+        'Known for exceptional quality consistency'
+      ],
+      process: [
+        'Selection from Wollega region\'s prime growing areas',
+        'Separate processing for white and brown varieties',
+        'Quality grading and size classification',
+        'Testing for purity and consistency',
+        'International export compliance',
+        'Delivery to global food industry markets'
+      ],
+      benefits: [
+        'Consistent size and quality for industrial use',
+        'Versatile applications across food industries',
+        'Available in multiple seed varieties',
+        'Excellent purity and quality standards'
+      ],
+      color: 'ghl-secondary-600',
+      gradient: 'from-ghl-secondary-600 to-ghl-secondary-800',
+      bgColor: 'bg-ghl-secondary-50',
+      accentColor: 'text-ghl-secondary-600'
+    },
+    {
+      id: 'red-kidney-bean',
+      icon: Circle,
+      title: 'Red Kidney Bean',
+      subtitle: 'ቀይ ቦሎቄ',
+      imageURL: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFX9Sz6NabTtlfBAITBMBYjOqL-x4TSc5xZA&s',
+      description: 'Characterized by its deep red color and excellent cooking quality, our Red Kidney Beans are rich in protein, fiber, and essential nutrients. They maintain their shape and texture well in various culinary applications.',
+      features: [
+        'Deep red color with glossy appearance',
+        'Excellent cooking quality and texture retention',
+        'High protein and fiber content',
+        'Preferred by European and Middle Eastern markets',
+        'Consistent size and quality grading'
+      ],
+      process: [
+        'Quality selection from Ethiopia\'s prime regions',
+        'Cultivation in ideal climatic conditions',
+        'Thorough cleaning and grading',
+        'Quality testing and certification',
+        'Export to global markets',
+        'Delivery to European and Middle Eastern markets'
+      ],
+      benefits: [
+        'Maintains shape and texture in culinary applications',
+        'High nutritional value with essential nutrients',
+        'Preferred by international markets',
+        'Consistent quality for commercial use'
+      ],
+      color: 'ghl-secondary-600',
+      gradient: 'from-red-600 to-red-800',
+      bgColor: 'bg-red-50',
+      accentColor: 'text-red-600'
+    },
+    {
+      id: 'white-pea-bean',
+      icon: Circle,
+      title: 'White Pea Bean',
+      subtitle: 'ነ ቦሎቄ',
+      imageURL: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_XZ0g4a51YWg6Ce8ih_XCcvwUKMqiPuUauA&s',
+      description: 'Featuring a creamy white color and uniform size, White Pea Beans are versatile legumes ideal for traditional dishes, soups, and various food processing applications. Known for their mild flavor and smooth texture.',
+      features: [
+        'Creamy white color with uniform size',
+        'Mild flavor and smooth texture',
+        'Quick cooking time with good water absorption',
+        'Popular in European and Turkish cuisine',
+        'Excellent for canning and food processing'
+      ],
+      process: [
+        'Selection from prime Ethiopian growing regions',
+        'Careful cultivation for uniform size',
+        'Thorough cleaning and processing',
+        'Quality grading for commercial use',
+        'Export packaging and certification',
+        'Delivery to European and Turkish markets'
+      ],
+      benefits: [
+        'Versatile for traditional dishes and soups',
+        'Smooth texture ideal for food processing',
+        'Popular in European and Turkish cuisine',
+        'Excellent for commercial canning operations'
+      ],
+      color: 'ghl-primary-600',
+      gradient: 'from-ghl-primary-600 to-ghl-primary-800',
+      bgColor: 'bg-ghl-primary-50',
+      accentColor: 'text-ghl-primary-600'
+    },
+    {
+      id: 'red-speckled-beans',
+      icon: Circle,
+      title: 'Red Speckled Beans',
+      subtitle: 'ቀይ ዥንጉርጉር ቦሎቄ',
+      imageURL: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQV9F0kit9WFBA1nnat48GBz4cYTtVMQpu4_Q&s',
+      description: 'Distinguished by their unique speckled appearance and firm texture, these beans offer excellent nutritional value and visual appeal. Their robust flavor makes them ideal for hearty dishes and traditional recipes.',
+      features: [
+        'Distinctive red speckled appearance',
+        'Firm texture that holds shape when cooked',
+        'Rich, robust flavor profile',
+        'High nutritional value with essential minerals',
+        'Growing demand in Middle Eastern and African markets'
+      ],
+      process: [
+        'Selection from Ethiopia\'s ideal growing conditions',
+        'Careful cultivation for unique speckled pattern',
+        'Thorough cleaning maintaining visual appeal',
+        'Quality grading and mineral testing',
+        'Export certification and packaging',
+        'Delivery to Middle Eastern and African markets'
+      ],
+      benefits: [
+        'Excellent for hearty dishes and traditional recipes',
+        'High nutritional value with essential minerals',
+        'Growing demand in international markets',
+        'Unique visual appeal and robust flavor'
+      ],
+      color: 'ghl-secondary-600',
+      gradient: 'from-ghl-secondary-600 to-ghl-secondary-800',
+      bgColor: 'bg-ghl-secondary-50',
+      accentColor: 'text-ghl-secondary-600'
+    },
+    {
+      id: 'soya-beans',
+      icon: Circle,
+      title: 'Soya Beans',
+      subtitle: 'አኩሪ አተር',
+      imageURL: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThs75vmtjYnGcylA6TPcHPbW9Ab3ufi9y6dQ&s',
+      description: 'High-protein soya beans suitable for both food consumption and industrial applications. Our soya beans meet quality standards for tofu production, animal feed, and various processed food products.',
+      features: [
+        'High protein content',
+        'Versatile for food and industrial applications',
+        'Consistent quality for tofu and soy milk production',
+        'Strong demand from Chinese and Southeast Asian markets',
+        'Competitive pricing with reliable supply'
+      ],
+      process: [
+        'Premium selection for high protein content',
+        'Ideal cultivation in Ethiopia\'s climate',
+        'Quality testing for industrial standards',
+        'Processing for tofu and soy milk production',
+        'Export certification for international markets',
+        'Delivery to Chinese and Southeast Asian markets'
+      ],
+      benefits: [
+        'Meets quality standards for tofu production',
+        'Suitable for animal feed and food processing',
+        'Strong demand from Asian markets',
+        'Competitive pricing with reliable supply'
       ],
       color: 'ghl-primary-600',
       gradient: 'from-ghl-primary-500 to-ghl-primary-700',
       bgColor: 'bg-ghl-primary-50',
       accentColor: 'text-ghl-primary-600'
-    },
-    {
-      id: 'oil',
-      icon: Droplets,
-      title: 'Oil Transportation',
-      subtitle: 'Traditional Oil Heritage',
-      description: 'State-of-the-art flexitank systems for traditional Ethiopian oils and specialty liquids with cultural preservation.',
-      features: [
-        'Flexitank expertise for bulk liquids',
-        'Bottling line integration',
-        'Quality preservation systems',
-        'Custom loading procedures',
-        'Temperature monitoring',
-        'Contamination prevention'
-      ],
-      process: [
-        'Flexitank installation and testing',
-        'Bulk liquid loading procedures',
-        'Temperature-controlled transport',
-        'Destination unloading coordination',
-        'Bottling line integration'
-      ],
-      benefits: [
-        'Eliminates cross-contamination risks',
-        'Reduces packaging waste',
-        'Maintains oil quality and freshness',
-        'Streamlines bottling operations'
-      ],
-      color: 'ghl-secondary-400',
-      gradient: 'from-ghl-secondary-400 to-ghl-secondary-600',
-      bgColor: 'bg-ghl-secondary-50',
-      accentColor: 'text-ghl-secondary-600'
-    },
-    {
-      id: 'specialty',
-      icon: Package,
-      title: 'Specialty Products',
-      subtitle: 'Cultural Commodities',
-      description: 'Comprehensive logistics for traditional Ethiopian goods, spices, and other temperature-sensitive cultural commodities.',
-      features: [
-        'Custom packaging solutions',
-        'Multi-modal transport options',
-        'Cold chain management',
-        'Documentation support',
-        'Quality assurance protocols',
-        'Flexible handling requirements'
-      ],
-      process: [
-        'Product assessment and requirements',
-        'Custom packaging design',
-        'Multi-modal transport planning',
-        'Quality monitoring during transit',
-        'Final delivery coordination'
-      ],
-      benefits: [
-        'Tailored solutions for unique products',
-        'Flexible transport options',
-        'Comprehensive quality control',
-        'Expert handling of delicate items'
-      ],
-      color: 'ghl-secondary-500',
-      gradient: 'from-ghl-secondary-500 to-ghl-primary-600',
-      bgColor: 'bg-ghl-neutral-50',
-      accentColor: 'text-ghl-secondary-600'
     }
   ]
 
@@ -158,7 +262,7 @@ export default function ServicesPage() {
                 <div className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 bg-ghl-primary-100 backdrop-blur-sm rounded-full text-xs sm:text-sm font-medium mb-4 sm:mb-6 text-ghl-primary-700">
                   <Star className="w-3 h-3 sm:w-4 sm:h-4 mr-1.5 sm:mr-2" />
                   <EditableText 
-                    content="Trusted by 100+ Companies"
+                    content="Our Products"
                     contentKey="services-hero-badge"
                     tag="span"
                   />
@@ -168,14 +272,14 @@ export default function ServicesPage() {
                 <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-heading font-bold mb-4 sm:mb-6 leading-tight">
                   <span className="block text-ghl-neutral-900">
                     <EditableText 
-                      content="Specialized"
+                      content="Premium Ethiopian"
                       contentKey="services-hero-title-1"
                       tag="span"
                     />
                   </span>
                   <span className="block bg-gradient-to-r from-ghl-primary-600 to-ghl-secondary-400 bg-clip-text text-transparent">
                     <EditableText 
-                      content="Logistics Solutions"
+                      content="Agricultural Exports"
                       contentKey="services-hero-title-2"
                       tag="span"
                     />
@@ -185,7 +289,7 @@ export default function ServicesPage() {
                 {/* Subtitle */}
                 <p className="text-base sm:text-lg lg:text-xl xl:text-2xl text-ghl-neutral-700 mb-6 sm:mb-8 max-w-4xl mx-auto leading-relaxed">
                   <EditableText 
-                    content="Expert temperature-controlled logistics for Ethiopian coffee, specialty oils, and traditional commodities. Preserving heritage with modern reliability."
+                    content="Sourced from Ethiopia's richest regions, prepared to global standards. Discover our range of premium sesame, pulses, and beans each carefully selected and processed to meet international quality requirements."
                     contentKey="services-hero-description"
                     tag="span"
                   />
@@ -243,7 +347,7 @@ export default function ServicesPage() {
         <div className="container-custom">
           <div className="text-center mb-16">
             <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-ghl-primary-600 to-ghl-secondary-400 text-white rounded-full text-sm font-semibold mb-8 shadow-lg">
-              <Package className="w-5 h-5 mr-3" />
+              <Leaf className="w-5 h-5 mr-3" />
               <EditableText 
                 content="Our Premium Services"
                 contentKey="services-section-badge"
@@ -280,38 +384,50 @@ export default function ServicesPage() {
             {services.map((service, index) => (
               <div key={service.id} className="group relative">
                 {/* Service Card */}
-                <div className="relative bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 overflow-hidden">
-                  {/* Background Gradient */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-5 group-hover:opacity-10 transition-opacity duration-500`}></div>
-                  
-                  {/* Service Icon */}
-                  <div className="relative z-10 mb-6">
-                    <div className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r ${service.gradient} rounded-2xl shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                      <service.icon className="h-8 w-8 text-white" />
-                    </div>
-                  </div>
-                  
-                  {/* Service Badge */}
-                  <div className="relative z-10 mb-4">
-                    <span className={`inline-flex items-center px-3 py-1.5 bg-gradient-to-r ${service.gradient} text-white rounded-full text-xs font-semibold`}>
-                      <EditableText 
-                        content={service.subtitle}
-                        contentKey={`service-${service.id}-subtitle`}
-                        tag="span"
+                <div className="relative bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 overflow-hidden group">
+                  {/* Hero Image Section */}
+                  {service.imageURL && (
+                    <div className="relative h-48 overflow-hidden">
+                      <img 
+                        src={service.imageURL} 
+                        alt={service.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                       />
-                    </span>
-                  </div>
+                      <div className={`absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent`}></div>
+                      
+                      {/* Badge Overlay */}
+                      <div className="absolute top-4 left-4">
+                        <span className={`inline-flex items-center px-4 py-2 bg-white/90 backdrop-blur-sm text-white rounded-full text-xs font-semibold shadow-lg`}>
+                          <service.icon className="h-4 w-4 mr-2 text-gray-800" />
+                          <EditableText 
+                            content={service.subtitle}
+                            contentKey={`service-${service.id}-subtitle`}
+                            tag="span"
+                            className="text-gray-800"
+                          />
+                        </span>
+                      </div>
+                      
+                      {/* Icon Badge */}
+                      <div className="absolute bottom-4 right-4">
+                        <div className={`w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full shadow-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                          <service.icon className={`h-6 w-6`} style={{ color: '#059669' }} />
+                        </div>
+                      </div>
+                    </div>
+                  )}
                   
+                  <div className="p-6 relative z-10">
                   {/* Title & Description */}
-                  <div className="relative z-10 mb-6">
-                    <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-ghl-primary-600 transition-colors">
+                  <div className="relative z-10 mb-4">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-ghl-primary-600 transition-colors">
                       <EditableText 
                         content={service.title}
                         contentKey={`service-${service.id}-title`}
                         tag="span"
                       />
                     </h3>
-                    <p className="text-gray-600 leading-relaxed">
+                    <p className="text-gray-600 leading-relaxed text-sm line-clamp-3">
                       <EditableText 
                         content={service.description}
                         contentKey={`service-${service.id}-description`}
@@ -321,42 +437,44 @@ export default function ServicesPage() {
                   </div>
                   
                   {/* Key Features */}
-                  <div className="relative z-10 mb-6">
-                    <h4 className="text-sm font-semibold text-gray-800 mb-3 flex items-center">
-                      <CheckCircle className="h-4 w-4 text-green-600 mr-2" />
+                  <div className="relative z-10 mb-4">
+                    <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">
                       <EditableText 
-                        content="What's Included"
+                        content="Key Features"
                         contentKey={`service-${service.id}-features-title`}
                         tag="span"
                       />
                     </h4>
                     <ul className="space-y-2">
                       {service.features.slice(0, 3).map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-start text-sm text-gray-600">
-                          <div className="w-1.5 h-1.5 bg-gradient-to-r from-green-500 to-green-600 rounded-full mr-3 mt-2 flex-shrink-0" />
-                          <EditableText 
-                            content={feature}
-                            contentKey={`service-${service.id}-feature-${featureIndex + 1}`}
-                            tag="span"
-                          />
+                        <li key={featureIndex} className="flex items-start text-xs text-gray-600">
+                          <CheckCircle className="h-3 w-3 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
+                          <span className="line-clamp-1">
+                            <EditableText 
+                              content={feature}
+                              contentKey={`service-${service.id}-feature-${featureIndex + 1}`}
+                              tag="span"
+                            />
+                          </span>
                         </li>
                       ))}
                     </ul>
                   </div>
                   
                   {/* Benefits Highlight */}
-                  <div className="relative z-10 mb-6">
-                    <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl p-4">
+                  <div className="relative z-10">
+                    <div className={`bg-gradient-to-r ${service.gradient} rounded-xl p-4 text-white`}>
                       <div className="flex items-center mb-2">
-                        <Star className="h-4 w-4 text-yellow-500 mr-2" />
-                        <EditableText 
-                          content="Key Benefits"
-                          contentKey={`service-${service.id}-benefits-title`}
-                          tag="span"
-                          className="text-sm font-semibold text-gray-800"
-                        />
+                        <Star className="h-4 w-4 text-yellow-300 mr-2" />
+                        <span className="text-xs font-semibold uppercase tracking-wide">
+                          <EditableText 
+                            content="Why Choose"
+                            contentKey={`service-${service.id}-benefits-title`}
+                            tag="span"
+                          />
+                        </span>
                       </div>
-                      <p className="text-sm text-gray-600">
+                      <p className="text-xs leading-relaxed">
                         <EditableText 
                           content={service.benefits[0]}
                           contentKey={`service-${service.id}-benefit-1`}
@@ -367,14 +485,15 @@ export default function ServicesPage() {
                   </div>
                   
                   {/* CTA Button */}
-                  <div className="relative z-10">
+                  <div className="relative z-10 mt-4">
                     <Link 
                       href="/quote"
-                      className={`w-full bg-gradient-to-r ${service.gradient} text-white py-3 rounded-xl font-semibold flex items-center justify-center gap-2 hover:scale-105 transition-all duration-300 shadow-lg group`}
+                      className={`w-full bg-white border-2 border-gray-300 text-gray-900 py-3 rounded-xl font-semibold flex items-center justify-center gap-2 hover:scale-105 hover:border-ghl-primary-600 hover:text-ghl-primary-600 transition-all duration-300 shadow-md hover:shadow-xl group`}
                     >
                       Get Quote
                       <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                     </Link>
+                  </div>
                   </div>
                   
                   {/* Hover Overlay */}
@@ -496,14 +615,14 @@ export default function ServicesPage() {
                 className="block"
               />
               <EditableText 
-                content="Excellence"
+                content="Ethiopia to the World"
                 contentKey="services-process-title-2"
                 tag="span"
                 className="block bg-gradient-to-r from-gray-800 to-green-800 bg-clip-text text-transparent"
               />
             </h2>
             <EditableText 
-              content="From initial consultation to final delivery, our systematic approach ensures your temperature-sensitive commodities are handled with precision and care."
+              content="At Sam Commodities, we manage the full export journey with precision and care. Through long-standing partnerships with logistics providers and port authorities, we guarantee that every container leaves Ethiopia swiftly, safely, and with complete traceability."
               contentKey="services-process-description"
               tag="p"
               className="text-xl sm:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed"
@@ -516,51 +635,61 @@ export default function ServicesPage() {
             <div className="hidden lg:block absolute top-32 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-gray-200 to-transparent rounded-full"></div>
             <div className="hidden lg:block absolute top-32 left-0 right-0 h-0.5 bg-gradient-to-r from-gray-300 via-green-800 to-gray-300 rounded-full"></div>
             
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-6">
               {[
                 {
                   step: '01',
-                  title: 'Consultation & Planning',
-                  description: 'We assess your specific requirements and design a customized logistics solution tailored to your needs.',
-                  icon: '☕',
-                  gradient: 'from-ghl-primary-500 to-ghl-primary-700',
-                  bgGradient: 'from-ghl-primary-50 to-ghl-primary-100',
-                  features: ['Requirements Analysis', 'Custom Solution Design', 'Risk Assessment']
+                  title: 'Products Sourced',
+                  description: 'Products sourced from top Ethiopian growing regions',
+                  icon: '🌾',
+                  gradient: 'from-green-600 to-green-800',
+                  bgGradient: 'from-green-50 to-green-100',
+                  features: ['Premium Growing Regions', 'Direct from Farmers', 'Ethiopian Origin']
                 },
                 {
                   step: '02', 
-                  title: 'Quality Assessment',
-                  description: 'Thorough inspection and quality control to ensure product integrity throughout the process.',
-                  icon: '🌾',
-                  gradient: 'from-ghl-secondary-400 to-ghl-secondary-600',
-                  bgGradient: 'from-ghl-secondary-50 to-ghl-secondary-100',
-                  features: ['Product Inspection', 'Quality Testing', 'Compliance Check']
+                  title: 'Cleaned & Packed',
+                  description: 'Cleaned, sorted, and packed at our Addis Ababa warehouse',
+                  icon: '📦',
+                  gradient: 'from-ghl-primary-500 to-ghl-primary-700',
+                  bgGradient: 'from-ghl-primary-50 to-ghl-primary-100',
+                  features: ['Thorough Cleaning', 'Quality Sorting', 'Addis Ababa Warehouse']
                 },
                 {
                   step: '03',
-                  title: 'Temperature Control',
-                  description: 'Advanced monitoring systems maintain optimal conditions throughout the entire transit journey.',
-                  icon: '🌡️',
-                  gradient: 'from-green-800 to-green-600',
-                  bgGradient: 'from-green-50 to-green-100',
-                  features: ['Real-time Monitoring', 'Climate Control', 'Backup Systems']
+                  title: 'Quality Checked',
+                  description: 'Quality-checked per ECX and buyer specifications',
+                  icon: '✓',
+                  gradient: 'from-green-500 to-emerald-600',
+                  bgGradient: 'from-green-50 to-emerald-50',
+                  features: ['ECX Standards', 'Buyer Specifications', 'Quality Certification']
                 },
                 {
                   step: '04',
-                  title: 'Delivery & Support',
-                  description: 'Final delivery with comprehensive tracking and ongoing customer support services.',
-                  icon: '🏛️',
-                  gradient: 'from-green-500 to-emerald-600',
-                  bgGradient: 'from-green-50 to-emerald-50',
-                  features: ['Final Delivery', 'Tracking Updates', 'Customer Support']
+                  title: 'Transported to Port',
+                  description: 'Loaded and transported via road to Djibouti port',
+                  icon: '🚚',
+                  gradient: 'from-blue-600 to-blue-800',
+                  bgGradient: 'from-blue-50 to-blue-100',
+                  features: ['Road Transport', 'Djibouti Port', 'Secure Loading']
+                },
+                {
+                  step: '05',
+                  title: 'Shipped Globally',
+                  description: 'Customs-cleared, documented, and shipped to international buyers',
+                  icon: '🌍',
+                  gradient: 'from-ghl-secondary-600 to-ghl-secondary-800',
+                  bgGradient: 'from-ghl-secondary-50 to-ghl-secondary-100',
+                  features: ['Customs Clearance', 'Complete Documentation', 'International Shipping']
                 }
               ].map((process, index) => {
-                // Define Ethiopian-themed background images for each process step
+                // Background images based on each step's title
                 const backgroundImages = [
-                  'https://images.unsplash.com/photo-1559056199-641a0ac8b55e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80', // Consultation/Planning - Ethiopian coffee ceremony
-                  'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80', // Quality Assessment - Ethiopian coffee beans
-                  'https://images.unsplash.com/photo-1559056199-641a0ac8b55e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80', // Temperature Control - Ethiopian coffee processing
-                  'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80'  // Delivery & Support - Ethiopian coffee export
+                  'https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80', // Step 1 - Products Sourced - farming fields
+                  'https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80', // Step 2 - Cleaned & Packed - warehouse
+                  'https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80', // Step 3 - Quality Checked - quality control
+                  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThs75vmtjYnGcylA6TPcHPbW9Ab3ufi9y6dQ&s', // Step 4 - Transported to Port - trucks
+                  'https://images.unsplash.com/photo-1560179707-f14e90ef3623?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80'  // Step 5 - Shipped Globally - cargo ships
                 ];
 
                 return (
@@ -911,6 +1040,651 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      {/* Import Services Section - Enhanced Modern Design */}
+      <section className="relative py-20 sm:py-24 lg:py-32 bg-gradient-to-br from-ghl-primary-50 via-white to-ghl-secondary-50 overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(34,197,94,0.03),transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(59,130,246,0.03),transparent_50%)]"></div>
+        
+        <div className="container-custom relative z-10">
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-ghl-primary-600 to-ghl-secondary-400 text-white rounded-full text-sm font-semibold mb-8 shadow-lg">
+              <Truck className="w-5 h-5 mr-3" />
+              <EditableText 
+                content="Our Import Services"
+                contentKey="imports-badge"
+                tag="span"
+              />
+            </div>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-gray-900 mb-6">
+              <span className="block">
+                <EditableText 
+                  content="Our Import Services"
+                  contentKey="imports-title-1"
+                  tag="span"
+                />
+              </span>
+              <span className="block bg-gradient-to-r from-ghl-primary-600 to-ghl-secondary-400 bg-clip-text text-transparent">
+                <EditableText 
+                  content="Connecting Ethiopia to Trusted Global Suppliers"
+                  contentKey="imports-title-2"
+                  tag="span"
+                />
+              </span>
+            </h2>
+            <p className="text-lg sm:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              <EditableText 
+                content="At Sam Commodities, our import division focuses on sourcing high-quality products from international manufacturers and delivering them efficiently to Ethiopian businesses. With a deep understanding of customs regulations, logistics, and supplier management, we make importing into Ethiopia seamless and dependable."
+                contentKey="imports-description"
+                tag="span"
+              />
+            </p>
+          </div>
+
+          {/* Product Categories - Modern Card Design */}
+          <div className="mb-20">
+            <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-12 text-center">
+              <EditableText 
+                content="Product Categories We Import"
+                contentKey="imports-categories-title"
+                tag="span"
+              />
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {/* Bathroom Accessories */}
+              <div className="group relative bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 overflow-hidden">
+                {/* Background Image */}
+                <div className="relative h-56 overflow-hidden">
+                  <img 
+                    src="https://images.unsplash.com/photo-1620626011761-996317b8d101?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+                    alt="Bathroom Accessories"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-blue-600/90 via-blue-500/50 to-transparent"></div>
+                  
+                  {/* Icon Badge Overlay */}
+                  <div className="absolute top-4 left-4">
+                    <div className="w-16 h-16 bg-white/95 backdrop-blur-sm rounded-2xl flex items-center justify-center shadow-xl border-2 border-white/50 group-hover:scale-110 transition-transform duration-300">
+                      <span className="text-4xl">🚿</span>
+                    </div>
+                  </div>
+                  
+                  {/* Category Badge */}
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <div className="bg-white/90 backdrop-blur-sm rounded-xl px-4 py-2 shadow-lg">
+                      <h4 className="text-lg font-bold text-gray-900">
+                        <EditableText 
+                          content="Bathroom Accessories & Elements"
+                          contentKey="imports-category-1-title"
+                          tag="span"
+                        />
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <p className="text-gray-600 leading-relaxed text-sm">
+                    <EditableText 
+                      content="Modern, durable, and design-driven products sourced from reputable manufacturers in China and Turkey, ideal for construction and interior projects."
+                      contentKey="imports-category-1-description"
+                      tag="span"
+                    />
+                  </p>
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-r from-ghl-primary-500/5 to-ghl-secondary-400/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+              </div>
+              
+              {/* Electric Automobiles */}
+              <div className="group relative bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 overflow-hidden">
+                {/* Background Image */}
+                <div className="relative h-56 overflow-hidden">
+                  <img 
+                    src="https://www.e-spincorp.com/wp-content/uploads/2021/09/electric-vehicle-car-ev.jpeg"
+                    alt="Electric Automobiles"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-green-600/90 via-green-500/50 to-transparent"></div>
+                  
+                  {/* Icon Badge Overlay */}
+                  <div className="absolute top-4 left-4">
+                    <div className="w-16 h-16 bg-white/95 backdrop-blur-sm rounded-2xl flex items-center justify-center shadow-xl border-2 border-white/50 group-hover:scale-110 transition-transform duration-300">
+                      <span className="text-4xl">⚡</span>
+                    </div>
+                  </div>
+                  
+                  {/* Category Badge */}
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <div className="bg-white/90 backdrop-blur-sm rounded-xl px-4 py-2 shadow-lg">
+                      <h4 className="text-lg font-bold text-gray-900">
+                        <EditableText 
+                          content="Electric Automobiles"
+                          contentKey="imports-category-2-title"
+                          tag="span"
+                        />
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <p className="text-gray-600 leading-relaxed text-sm">
+                    <EditableText 
+                      content="Sustainable mobility solutions — compact electric vehicles and charging components — supporting Ethiopia's transition to clean energy."
+                      contentKey="imports-category-2-description"
+                      tag="span"
+                    />
+                  </p>
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-r from-ghl-primary-500/5 to-ghl-secondary-400/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+              </div>
+              
+              {/* Industrial Chemicals */}
+              <div className="group relative bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 overflow-hidden">
+                {/* Background Image */}
+                <div className="relative h-56 overflow-hidden">
+                  <img 
+                    src="https://images.unsplash.com/photo-1628595351029-c2bf17511435?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+                    alt="Industrial Chemicals"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-purple-600/90 via-purple-500/50 to-transparent"></div>
+                  
+                  {/* Icon Badge Overlay */}
+                  <div className="absolute top-4 left-4">
+                    <div className="w-16 h-16 bg-white/95 backdrop-blur-sm rounded-2xl flex items-center justify-center shadow-xl border-2 border-white/50 group-hover:scale-110 transition-transform duration-300">
+                      <span className="text-4xl">⚗️</span>
+                    </div>
+                  </div>
+                  
+                  {/* Category Badge */}
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <div className="bg-white/90 backdrop-blur-sm rounded-xl px-4 py-2 shadow-lg">
+                      <h4 className="text-lg font-bold text-gray-900">
+                        <EditableText 
+                          content="Industrial Chemicals"
+                          contentKey="imports-category-3-title"
+                          tag="span"
+                        />
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <p className="text-gray-600 leading-relaxed text-sm">
+                    <EditableText 
+                      content="Reliable imports of essential industrial and agricultural chemicals that meet global safety and performance standards."
+                      contentKey="imports-category-3-description"
+                      tag="span"
+                    />
+                  </p>
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-r from-ghl-primary-500/5 to-ghl-secondary-400/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+              </div>
+            </div>
+          </div>
+
+          {/* How We Work - Enhanced Modern Cards */}
+          <div className="mb-20">
+            <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-12 text-center">
+              <EditableText 
+                content="How We Work"
+                contentKey="imports-how-we-work-title"
+                tag="span"
+              />
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {/* Step 1 */}
+              <div className="group relative bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-200">
+                {/* Step Number Badge */}
+                <div className="relative flex items-center justify-center w-16 h-16 bg-gradient-to-r from-ghl-primary-600 to-ghl-secondary-400 rounded-2xl mb-6 mx-auto lg:mx-0 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-white font-bold text-2xl">01</span>
+                </div>
+                <h4 className="text-lg font-bold text-gray-900 mb-4 text-center lg:text-left group-hover:text-ghl-primary-600 transition-colors">
+                  <EditableText 
+                    content="Supplier Sourcing & Verification"
+                    contentKey="imports-step-1-title"
+                    tag="span"
+                  />
+                </h4>
+                <p className="text-gray-600 text-sm leading-relaxed text-center lg:text-left">
+                  <EditableText 
+                    content="We identify trusted international manufacturers, verify quality certifications, and negotiate competitive terms for our clients."
+                    contentKey="imports-step-1-description"
+                    tag="span"
+                  />
+                </p>
+                <div className="absolute inset-0 bg-gradient-to-r from-ghl-primary-500/5 to-ghl-secondary-400/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+              </div>
+              
+              {/* Step 2 */}
+              <div className="group relative bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-200">
+                <div className="relative flex items-center justify-center w-16 h-16 bg-gradient-to-r from-ghl-primary-600 to-ghl-secondary-400 rounded-2xl mb-6 mx-auto lg:mx-0 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-white font-bold text-2xl">02</span>
+                </div>
+                <h4 className="text-lg font-bold text-gray-900 mb-4 text-center lg:text-left group-hover:text-ghl-primary-600 transition-colors">
+                  <EditableText 
+                    content="Import Documentation & Compliance"
+                    contentKey="imports-step-2-title"
+                    tag="span"
+                  />
+                </h4>
+                <p className="text-gray-600 text-sm leading-relaxed text-center lg:text-left">
+                  <EditableText 
+                    content="Our logistics team manages all necessary documentation, including import permits, certificates of conformity, and customs declarations."
+                    contentKey="imports-step-2-description"
+                    tag="span"
+                  />
+                </p>
+                <div className="absolute inset-0 bg-gradient-to-r from-ghl-primary-500/5 to-ghl-secondary-400/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+              </div>
+              
+              {/* Step 3 */}
+              <div className="group relative bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-200">
+                <div className="relative flex items-center justify-center w-16 h-16 bg-gradient-to-r from-ghl-primary-600 to-ghl-secondary-400 rounded-2xl mb-6 mx-auto lg:mx-0 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-white font-bold text-2xl">03</span>
+                </div>
+                <h4 className="text-lg font-bold text-gray-900 mb-4 text-center lg:text-left group-hover:text-ghl-primary-600 transition-colors">
+                  <EditableText 
+                    content="Freight & Delivery Coordination"
+                    contentKey="imports-step-3-title"
+                    tag="span"
+                  />
+                </h4>
+                <p className="text-gray-600 text-sm leading-relaxed text-center lg:text-left">
+                  <EditableText 
+                    content="We handle shipping, insurance, and customs clearance to ensure products reach Ethiopia quickly and safely."
+                    contentKey="imports-step-3-description"
+                    tag="span"
+                  />
+                </p>
+                <div className="absolute inset-0 bg-gradient-to-r from-ghl-primary-500/5 to-ghl-secondary-400/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+              </div>
+              
+              {/* Step 4 */}
+              <div className="group relative bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-200">
+                <div className="relative flex items-center justify-center w-16 h-16 bg-gradient-to-r from-ghl-primary-600 to-ghl-secondary-400 rounded-2xl mb-6 mx-auto lg:mx-0 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-white font-bold text-2xl">04</span>
+                </div>
+                <h4 className="text-lg font-bold text-gray-900 mb-4 text-center lg:text-left group-hover:text-ghl-primary-600 transition-colors">
+                  <EditableText 
+                    content="Local Distribution Support"
+                    contentKey="imports-step-4-title"
+                    tag="span"
+                  />
+                </h4>
+                <p className="text-gray-600 text-sm leading-relaxed text-center lg:text-left">
+                  <EditableText 
+                    content="Upon arrival, we provide end-to-end support from warehouse handling to delivery at your business or project site."
+                    contentKey="imports-step-4-description"
+                    tag="span"
+                  />
+                </p>
+                <div className="absolute inset-0 bg-gradient-to-r from-ghl-primary-500/5 to-ghl-secondary-400/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+              </div>
+            </div>
+          </div>
+
+          {/* Why Choose - Enhanced Modern Design */}
+          <div className="relative bg-gradient-to-br from-ghl-primary-50 to-ghl-secondary-50 rounded-3xl p-8 md:p-12 shadow-2xl border-2 border-gradient-to-r from-ghl-primary-200 to-ghl-secondary-200 overflow-hidden">
+            {/* Background Pattern */}
+            <div className="absolute inset-0 opacity-10" style={{backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.08'%3E%3Cpath d='M30 30c0-8.3-6.7-15-15-15s-15 6.7-15 15 6.7 15 15 15 15-6.7 15-15zm15 0c0-8.3-6.7-15-15-15s-15 6.7-15 15 6.7 15 15 15 15-6.7 15-15z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`}}></div>
+            
+            <div className="relative z-10">
+              <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-12 text-center">
+                <EditableText 
+                  content="Why Choose Sam Commodities for Imports"
+                  contentKey="imports-why-title"
+                  tag="span"
+                />
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="flex items-start group bg-white/50 backdrop-blur-sm rounded-2xl p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                  <div className="flex-shrink-0">
+                    <div className="w-14 h-14 bg-gradient-to-r from-green-500 to-green-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                      <CheckCircle className="h-7 w-7 text-white" />
+                    </div>
+                  </div>
+                  <div className="ml-4">
+                    <h4 className="font-bold text-gray-900 mb-2 text-lg">
+                      <EditableText 
+                        content="Trusted Global Network"
+                        contentKey="imports-why-1-title"
+                        tag="span"
+                      />
+                    </h4>
+                    <p className="text-gray-700 text-sm leading-relaxed">
+                      <EditableText 
+                        content="Strong partnerships with certified suppliers in Asia, Europe, and the Middle East."
+                        contentKey="imports-why-1-description"
+                        tag="span"
+                      />
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start group bg-white/50 backdrop-blur-sm rounded-2xl p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                  <div className="flex-shrink-0">
+                    <div className="w-14 h-14 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                      <Shield className="h-7 w-7 text-white" />
+                    </div>
+                  </div>
+                  <div className="ml-4">
+                    <h4 className="font-bold text-gray-900 mb-2 text-lg">
+                      <EditableText 
+                        content="Compliance Expertise"
+                        contentKey="imports-why-2-title"
+                        tag="span"
+                      />
+                    </h4>
+                    <p className="text-gray-700 text-sm leading-relaxed">
+                      <EditableText 
+                        content="Full adherence to Ethiopian import laws and standards."
+                        contentKey="imports-why-2-description"
+                        tag="span"
+                      />
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start group bg-white/50 backdrop-blur-sm rounded-2xl p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                  <div className="flex-shrink-0">
+                    <div className="w-14 h-14 bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                      <Star className="h-7 w-7 text-white" />
+                    </div>
+                  </div>
+                  <div className="ml-4">
+                    <h4 className="font-bold text-gray-900 mb-2 text-lg">
+                      <EditableText 
+                        content="Competitive Pricing"
+                        contentKey="imports-why-3-title"
+                        tag="span"
+                      />
+                    </h4>
+                    <p className="text-gray-700 text-sm leading-relaxed">
+                      <EditableText 
+                        content="Leveraging bulk procurement and efficient shipping for cost advantages."
+                        contentKey="imports-why-3-description"
+                        tag="span"
+                      />
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start group bg-white/50 backdrop-blur-sm rounded-2xl p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                  <div className="flex-shrink-0">
+                    <div className="w-14 h-14 bg-gradient-to-r from-orange-500 to-orange-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                      <Clock className="h-7 w-7 text-white" />
+                    </div>
+                  </div>
+                  <div className="ml-4">
+                    <h4 className="font-bold text-gray-900 mb-2 text-lg">
+                      <EditableText 
+                        content="Reliability"
+                        contentKey="imports-why-4-title"
+                        tag="span"
+                      />
+                    </h4>
+                    <p className="text-gray-700 text-sm leading-relaxed">
+                      <EditableText 
+                        content="Transparent updates from order confirmation to local delivery."
+                        contentKey="imports-why-4-description"
+                        tag="span"
+                      />
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        {/* Floating Elements */}
+        <div className="absolute top-20 left-10 w-20 h-20 bg-ghl-primary-500/10 rounded-full blur-xl"></div>
+        <div className="absolute bottom-20 right-10 w-32 h-32 bg-ghl-secondary-400/10 rounded-full blur-2xl"></div>
+      </section>
+
+      {/* Shipping Information Section */}
+      <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-gray-50 via-white to-gray-100">
+        <div className="container-custom">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-green-600 to-green-800 text-white rounded-full text-sm font-semibold mb-8 shadow-lg">
+              <Truck className="w-5 h-5 mr-3" />
+              <EditableText 
+                content="Shipping Information"
+                contentKey="shipping-badge"
+                tag="span"
+              />
+            </div>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-gray-900 mb-6">
+              <span className="block bg-gradient-to-r from-green-600 to-green-800 bg-clip-text text-transparent">
+                <EditableText 
+                  content="Reliable Export Logistics"
+                  contentKey="shipping-title"
+                  tag="span"
+                />
+              </span>
+            </h2>
+            <p className="text-lg sm:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              <EditableText 
+                content="All products are prepared in our Addis Ababa warehouse and shipped via Djibouti port with complete documentation and quality assurance."
+                contentKey="shipping-description"
+                tag="span"
+              />
+            </p>
+          </div>
+
+          {/* Markets Grid - Enhanced Modern Design */}
+          <div className="mb-16">
+            <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 text-center">
+              <EditableText 
+                content="International Markets"
+                contentKey="shipping-markets-title"
+                tag="span"
+              />
+            </h3>
+            <p className="text-lg text-gray-700 max-w-4xl mx-auto mb-12 text-center leading-relaxed">
+              <EditableText 
+                content="Sam Commodities serves a wide range of international buyers. Our exports reach customers across Asia, the Middle East, Africa, and Europe."
+                contentKey="shipping-markets-intro"
+                tag="span"
+              />
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {/* Asia */}
+              <div className="group relative bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 overflow-hidden">
+                {/* Background Image */}
+                <div className="relative h-48 overflow-hidden">
+                  <img 
+                    src="https://images.unsplash.com/photo-1508804185872-d7badad00f7d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+                    alt="Asia"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+                  {/* Flag Emoji Overlay */}
+                  <div className="absolute top-4 right-4">
+                    <div className="w-14 h-14 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg">
+                      <span className="text-3xl">🌏</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h4 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-ghl-primary-600 transition-colors">
+                    <EditableText 
+                      content="Asia"
+                      contentKey="shipping-market-asia-title"
+                      tag="span"
+                    />
+                  </h4>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    <EditableText 
+                      content="China and Southeast Asian markets that highly value our sesame and soya beans."
+                      contentKey="shipping-market-asia-description"
+                      tag="span"
+                    />
+                  </p>
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-r from-ghl-primary-500/5 to-ghl-secondary-400/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+              </div>
+
+              {/* Middle East & North Africa */}
+              <div className="group relative bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 overflow-hidden">
+                {/* Background Image */}
+                <div className="relative h-48 overflow-hidden">
+                  <img 
+                    src="https://images.unsplash.com/photo-1526392060635-9d6019884377?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+                    alt="Middle East & Africa"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+                  {/* Flag Emoji Overlay */}
+                  <div className="absolute top-4 right-4">
+                    <div className="w-14 h-14 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg">
+                      <span className="text-3xl">🏜️</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h4 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-ghl-primary-600 transition-colors">
+                    <EditableText 
+                      content="Middle East & Africa"
+                      contentKey="shipping-market-mena-title"
+                      tag="span"
+                    />
+                  </h4>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    <EditableText 
+                      content="Key destinations for our grains, pulses, and agricultural products."
+                      contentKey="shipping-market-mena-description"
+                      tag="span"
+                    />
+                  </p>
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-r from-ghl-primary-500/5 to-ghl-secondary-400/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+              </div>
+
+              {/* Europe */}
+              <div className="group relative bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 overflow-hidden">
+                {/* Background Image */}
+                <div className="relative h-48 overflow-hidden">
+                  <img 
+                    src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+                    alt="Europe"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+                  {/* Flag Emoji Overlay */}
+                  <div className="absolute top-4 right-4">
+                    <div className="w-14 h-14 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg">
+                      <span className="text-3xl">🇪🇺</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h4 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-ghl-primary-600 transition-colors">
+                    <EditableText 
+                      content="Europe"
+                      contentKey="shipping-market-europe-title"
+                      tag="span"
+                    />
+                  </h4>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    <EditableText 
+                      content="EU and Turkey markets prefer Wollega sesame. Our white pea beans and kidney beans supply European food industries."
+                      contentKey="shipping-market-europe-description"
+                      tag="span"
+                    />
+                  </p>
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-r from-ghl-primary-500/5 to-ghl-secondary-400/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+              </div>
+
+              {/* Global Reach */}
+              <div className="group relative bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 overflow-hidden">
+                {/* Background Image */}
+                <div className="relative h-48 overflow-hidden">
+                  <img 
+                    src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+                    alt="Global Reach"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+                  {/* Flag Emoji Overlay */}
+                  <div className="absolute top-4 right-4">
+                    <div className="w-14 h-14 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg">
+                      <span className="text-3xl">🌍</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h4 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-ghl-primary-600 transition-colors">
+                    <EditableText 
+                      content="Global Reach"
+                      contentKey="shipping-market-global-title"
+                      tag="span"
+                    />
+                  </h4>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    <EditableText 
+                      content="We tailor shipments to meet each region's quality and labeling requirements. No matter where you are, Sam Commodities positions Ethiopia's finest pulses and sesame within reach."
+                      contentKey="shipping-market-global-description"
+                      tag="span"
+                    />
+                  </p>
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-r from-ghl-primary-500/5 to-ghl-secondary-400/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+              </div>
+            </div>
+          </div>
+
+          {/* Quality Assurance */}
+          <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-3xl p-8 md:p-12 border-2 border-green-200">
+            <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+              <EditableText 
+                content="Quality You Can Trust"
+                contentKey="shipping-quality-title"
+                tag="span"
+              />
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
+                <h4 className="text-xl font-semibold text-gray-900 mb-4 flex items-center">
+                  <CheckCircle className="h-6 w-6 text-green-600 mr-3" />
+                  <EditableText 
+                    content="Strict Quality Control"
+                    contentKey="shipping-quality-1-title"
+                    tag="span"
+                  />
+                </h4>
+                <p className="text-gray-700 leading-relaxed">
+                  <EditableText 
+                    content="Every shipment undergoes strict quality control from farm to port. We combine local agricultural excellence with international trade precision to deliver the finest Ethiopian pulses and sesame to the world."
+                    contentKey="shipping-quality-1-description"
+                    tag="span"
+                  />
+                </p>
+              </div>
+              <div>
+                <h4 className="text-xl font-semibold text-gray-900 mb-4 flex items-center">
+                  <Shield className="h-6 w-6 text-green-600 mr-3" />
+                  <EditableText 
+                    content="Complete Documentation"
+                    contentKey="shipping-quality-2-title"
+                    tag="span"
+                  />
+                </h4>
+                <p className="text-gray-700 leading-relaxed">
+                  <EditableText 
+                    content="All products are prepared in our Addis Ababa warehouse and shipped via Djibouti port with complete documentation, quality assurance, and full traceability for your peace of mind."
+                    contentKey="shipping-quality-2-description"
+                    tag="span"
+                  />
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Modern CTA Section - Mobile First */}
       <section className="relative overflow-hidden bg-gradient-to-br from-ghl-primary-600 via-ghl-primary-700 to-ghl-secondary-500 text-white">
         {/* Background Pattern */}
@@ -923,7 +1697,7 @@ export default function ServicesPage() {
               <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium mb-6">
                 <Truck className="w-4 h-4 mr-2" />
                 <EditableText 
-                  content="Ready to Ship?"
+                  content="Interested in Our Premium Ethiopian Products?"
                   contentKey="services-cta-badge"
                   tag="span"
                 />
@@ -931,14 +1705,14 @@ export default function ServicesPage() {
               
               {/* Main Content */}
               <EditableText 
-                content="Ready to Ship Your Commodities?"
+                content="Interested in Our Premium Ethiopian Products?"
                 contentKey="services-cta-title"
                 tag="h2"
                 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-6 leading-tight"
               />
               
               <EditableText 
-                content="Get a custom quote for your temperature-sensitive logistics needs. Our experts are ready to design the perfect solution for your business."
+                content="Contact us for detailed specifications, current pricing, and samples."
                 contentKey="services-cta-description"
                 tag="p"
                 className="text-lg sm:text-xl lg:text-2xl opacity-90 mb-12 max-w-3xl mx-auto leading-relaxed"
@@ -951,19 +1725,19 @@ export default function ServicesPage() {
                   className="w-full sm:w-auto bg-white text-black hover:bg-gray-100 hover:scale-105 transition-all duration-300 text-lg px-8 py-4 rounded-xl font-semibold shadow-lg inline-flex items-center justify-center"
                 >
                   <EditableText 
-                    content="Request Custom Quote"
+                    content="Request Product Catalog"
                     contentKey="services-cta-primary-button-text"
                     tag="span"
                   />
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
                 <Link 
-                  href="/contact" 
+                  href="/quote" 
                   className="w-full sm:w-auto border-2 border-white/30 text-white hover:bg-white hover:text-black backdrop-blur-sm text-lg px-8 py-4 rounded-xl font-semibold transition-all duration-300 inline-flex items-center justify-center"
                 >
                   <EditableText 
-                    content="Contact Our Experts"
-                    contentKey="services-cta-button-text"
+                    content="Get Quote"
+                    contentKey="services-cta-secondary-button-text"
                     tag="span"
                   />
                 </Link>

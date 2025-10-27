@@ -9,13 +9,13 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Global Harvest Logistics - Delivering Taste, Preserving Nature",
-  description: "Leading B2B logistics company specializing in temperature-sensitive commodity exports including coffee, olive oil, and specialty food products. Expert, reliable, and sustainable logistics solutions.",
-  keywords: "coffee export logistics, temperature controlled shipping, sustainable freight forwarder, olive oil transportation, specialty food logistics",
-  authors: [{ name: "Global Harvest Logistics" }],
+  title: "Sam Commodities - Premium Ethiopian Agricultural Exports",
+  description: "Quality you can trust. We combine local agricultural excellence with international trade precision to deliver the finest Ethiopian pulses and sesame to the world.",
+  keywords: "Ethiopian sesame, pulses, beans, agricultural exports, Ethiopian commodities, Humera sesame, Wollega sesame, kidney beans, pea beans",
+  authors: [{ name: "Sam Commodities" }],
   openGraph: {
-    title: "Global Harvest Logistics - Delivering Taste, Preserving Nature",
-    description: "Leading B2B logistics company specializing in temperature-sensitive commodity exports",
+    title: "Sam Commodities - Premium Ethiopian Agricultural Exports",
+    description: "Quality Ethiopian agricultural products from farm to port",
     type: "website",
     locale: "en_US",
   },

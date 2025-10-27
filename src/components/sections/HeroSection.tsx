@@ -66,7 +66,7 @@ export default function HeroSection() {
                 <span className="font-semibold text-xs sm:text-sm">Trusted by 100+ Global Partners</span>
               </div>
               
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-heading font-bold leading-tight">
+              <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-heading font-bold leading-tight">
                 <EditableText 
                   content="Welcome to"
                   contentKey="hero-title-1"

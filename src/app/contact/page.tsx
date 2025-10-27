@@ -4,7 +4,7 @@ import ContactInfo from '@/components/ui/ContactInfo'
 import EditableText from '@/components/ui/EditableText'
 import TruckLoading from '@/components/ui/TruckLoading'
 import { useLoading } from '@/contexts/LoadingContext'
-import { CheckCircle, Mail, Phone, Send } from 'lucide-react'
+import { CheckCircle, Send } from 'lucide-react'
 import { useState } from 'react'
 
 export default function Contact() {
@@ -14,7 +14,8 @@ export default function Contact() {
     email: '',
     company: '',
     phone: '',
-    subject: '',
+    productInterest: '',
+    targetMarket: '',
     message: ''
   })
 
@@ -83,16 +84,16 @@ export default function Contact() {
         <div className="container-custom py-8">
           <div className="text-center">
             <EditableText 
-              content="Contact Us"
+              content="Quality You Can Trust"
               contentKey="contact-header-title"
               tag="h1"
               className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
             />
             <EditableText 
-              content="Get in touch with our experts"
+              content="Every shipment undergoes strict quality control from farm to port. We combine local agricultural excellence with international trade precision to deliver the finest Ethiopian pulses and sesame to the world."
               contentKey="contact-header-subtitle"
               tag="p"
-              className="text-lg text-gray-600 max-w-2xl mx-auto"
+              className="text-lg text-gray-600 max-w-3xl mx-auto"
             />
           </div>
         </div>
@@ -100,71 +101,61 @@ export default function Contact() {
 
       {/* Contact Content */}
       <div className="container-custom py-8 space-y-8">
-        {/* Quick Contact Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="bg-white rounded-2xl p-4 shadow-sm border border-gray-100">
-            <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
-                <Phone className="h-5 w-5 text-green-600" />
-              </div>
-              <div>
-                <EditableText 
-                  content="Call Now"
-                  contentKey="contact-quick-call-label"
-                  tag="p"
-                  className="text-xs text-gray-500"
-                />
-                <EditableText 
-                  content="+1 (555) 123-4567"
-                  contentKey="contact-quick-call-number"
-                  tag="p"
-                  className="text-sm font-semibold text-gray-900"
-                />
-              </div>
-            </div>
-          </div>
-          
-          <div className="bg-white rounded-2xl p-4 shadow-sm border border-gray-100">
-            <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
-                <Mail className="h-5 w-5 text-blue-600" />
-              </div>
-              <div>
-                <EditableText 
-                  content="Email Us"
-                  contentKey="contact-quick-email-label"
-                  tag="p"
-                  className="text-xs text-gray-500"
-                />
-                <EditableText 
-                  content="info@ghl.com"
-                  contentKey="contact-quick-email-address"
-                  tag="p"
-                  className="text-sm font-semibold text-gray-900"
-                />
-              </div>
-            </div>
+        {/* Get In Touch Section */}
+        <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+          <EditableText 
+            content="Get In Touch"
+            contentKey="contact-section-title"
+            tag="h2"
+            className="text-2xl font-bold text-gray-900 mb-2"
+          />
+          <EditableText 
+            content="Your Gateway to Premium Ethiopian Agricultural Exports"
+            contentKey="contact-section-subtitle"
+            tag="p"
+            className="text-gray-600 mb-6"
+          />
+          <EditableText 
+            content="Ready to source premium Ethiopian sesame, pulses, and beans? Contact our export specialists in Addis Ababa for quotes, samples, and partnership opportunities."
+            contentKey="contact-section-description"
+            tag="p"
+            className="text-gray-700 mb-4"
+          />
+          <div className="flex items-center space-x-2 mb-6">
+            <CheckCircle className="h-5 w-5 text-green-600" />
+            <EditableText 
+              content="Based in the heart of Ethiopia's commercial capital"
+              contentKey="contact-section-benefit"
+              tag="p"
+              className="text-sm text-gray-700"
+            />
           </div>
         </div>
 
         {/* Contact Information Card */}
         <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
           <EditableText 
-            content="Contact Information"
+            content="Contact Details"
             contentKey="contact-info-title"
             tag="h2"
-            className="text-lg font-bold text-gray-900 mb-4"
+            className="text-2xl font-bold text-gray-900 mb-4"
           />
           <ContactInfo />
         </div>
 
-        {/* Mobile App Contact Form */}
+        {/* Contact Form */}
         <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
           <EditableText 
-            content="Send us a Message"
+            content="Send Us a Message"
             contentKey="contact-form-title"
             tag="h2"
-            className="text-lg font-bold text-gray-900 mb-4"
+            className="text-2xl font-bold text-gray-900 mb-2"
+          />
+          <EditableText 
+            content="We typically respond within 24 hours"
+            contentKey="contact-form-response-time"
+            tag="p"
+            className="text-sm text-gray-600 mb-6"
           />
           
           <form onSubmit={handleSubmit} className="space-y-4">
@@ -209,7 +200,7 @@ export default function Contact() {
               
               <div>
                 <EditableText 
-                  content="Company"
+                  content="Company Name *"
                   contentKey="contact-form-company-label"
                   tag="span"
                   className="block text-sm font-medium text-gray-700 mb-2"
@@ -218,6 +209,7 @@ export default function Contact() {
                   type="text"
                   id="company"
                   name="company"
+                  required
                   value={formData.company}
                   onChange={handleChange}
                   className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-ghl-primary-500 focus:border-transparent text-sm bg-gray-50"
@@ -239,32 +231,54 @@ export default function Contact() {
                   value={formData.phone}
                   onChange={handleChange}
                   className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-ghl-primary-500 focus:border-transparent text-sm bg-gray-50"
-                  placeholder="+1 (555) 123-4567"
+                  placeholder="+251 911 156 824"
                 />
               </div>
               
               <div>
                 <EditableText 
-                  content="Subject *"
-                  contentKey="contact-form-subject-label"
+                  content="Product Interest *"
+                  contentKey="contact-form-product-label"
                   tag="span"
                   className="block text-sm font-medium text-gray-700 mb-2"
                 />
                 <select
-                  id="subject"
-                  name="subject"
+                  id="productInterest"
+                  name="productInterest"
                   required
-                  value={formData.subject}
+                  value={formData.productInterest}
                   onChange={handleChange}
                   className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-ghl-primary-500 focus:border-transparent text-sm bg-gray-50"
                 >
-                  <option value="">Select a subject</option>
-                  <option value="quote">Request Quote</option>
-                  <option value="tracking">Track Shipment</option>
-                  <option value="support">Customer Support</option>
-                  <option value="partnership">Partnership Inquiry</option>
+                  <option value="">Please Select</option>
+                  <option value="humera-sesame">Humera Sesame</option>
+                  <option value="wollega-sesame">Wollega Sesame</option>
+                  <option value="red-kidney-beans">Red Kidney Beans</option>
+                  <option value="white-pea-beans">White Pea Beans</option>
+                  <option value="red-speckled-beans">Red Speckled Beans</option>
+                  <option value="soya-beans">Soya Beans</option>
+                  <option value="multiple">Multiple Products</option>
                   <option value="other">Other</option>
                 </select>
+              </div>
+              
+              <div>
+                <EditableText 
+                  content="Target Market/Country *"
+                  contentKey="contact-form-market-label"
+                  tag="span"
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                />
+                <input
+                  type="text"
+                  id="targetMarket"
+                  name="targetMarket"
+                  required
+                  value={formData.targetMarket}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-ghl-primary-500 focus:border-transparent text-sm bg-gray-50"
+                  placeholder="Enter your target market or country"
+                />
               </div>
               
               <div>
@@ -277,12 +291,12 @@ export default function Contact() {
                 <textarea
                   id="message"
                   name="message"
-                  rows={4}
+                  rows={5}
                   required
                   value={formData.message}
                   onChange={handleChange}
                   className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-ghl-primary-500 focus:border-transparent text-sm bg-gray-50"
-                  placeholder="Tell us how we can help you..."
+                  placeholder="Please include quantity requirements, quality specifications, and any other details..."
                 />
               </div>
             </div>
@@ -316,50 +330,6 @@ export default function Contact() {
         </div>
       </div>
 
-      {/* Emergency Contact */}
-      <div className="container-custom py-8">
-        <div className="bg-gradient-to-r from-red-500 to-red-600 rounded-2xl p-6 text-white shadow-lg">
-          <div className="flex items-center space-x-3 mb-4">
-            <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
-              <Phone className="h-6 w-6" />
-            </div>
-            <div>
-              <EditableText 
-                content="Emergency Support"
-                contentKey="contact-emergency-title"
-                tag="h2"
-                className="text-lg font-bold"
-              />
-              <EditableText 
-                content="24/7 Available"
-                contentKey="contact-emergency-subtitle"
-                tag="p"
-                className="text-sm text-red-100"
-              />
-            </div>
-          </div>
-          
-          <EditableText 
-            content="For urgent shipping issues or emergencies, call our 24/7 support line."
-            contentKey="contact-emergency-description"
-            tag="p"
-            className="text-sm text-red-100 mb-4"
-          />
-          
-          <a 
-            href="tel:+15551234567"
-            className="w-full bg-white text-red-600 py-3 rounded-xl font-semibold flex items-center justify-center gap-2 shadow-lg"
-          >
-            <Phone className="h-4 w-4" />
-            <EditableText 
-              content="Call Emergency Line: +1 (555) 123-4567"
-              contentKey="contact-emergency-button"
-              tag="span"
-              className="w-full bg-white text-red-600 py-3 rounded-xl font-semibold flex items-center justify-center gap-2 shadow-lg"
-            />
-          </a>
-        </div>
-      </div>
     </div>
   )
 }

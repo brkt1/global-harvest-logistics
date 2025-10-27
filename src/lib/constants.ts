@@ -8,18 +8,20 @@ export const COMPANY_STATS = [
 ] as const;
 
 export const CONTACT_INFO = {
-  phone: '+1 (555) 123-4567',
-  email: 'info@globalharvestlogistics.com',
+  phone: '+251 911 156 824',
+  email: 'samagricomm@gmail.com',
+  wechat: 'Ktnany',
+  website: 'samcommodities.org',
   address: {
-    street: '123 Logistics Drive',
-    city: 'Port City',
-    state: 'PC 12345',
-    country: 'United States'
+    street: 'Office 22, Ribka Bldg, 1st Floor, Office #12A',
+    city: 'Addis Ababa',
+    state: '',
+    country: 'Ethiopia'
   },
   businessHours: {
-    weekdays: 'Monday - Friday: 8:00 AM - 6:00 PM',
-    saturday: 'Saturday: 9:00 AM - 2:00 PM',
-    sunday: 'Sunday: Emergency Support Only'
+    weekdays: 'Monday - Friday: 8:30 AM - 5:30 PM',
+    saturday: 'Saturday: 9:00 AM - 1:00 PM',
+    sunday: 'Sunday: Closed'
   }
 } as const;
 

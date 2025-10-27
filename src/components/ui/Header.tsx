@@ -1,15 +1,18 @@
 'use client';
 
 import { useAdmin } from '@/contexts/AdminContext';
+import { CONTACT_INFO } from '@/lib/constants';
 import { Edit3, LogOut, Mail, Menu, Phone, Save, Sparkles, X } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const { isAdmin, isEditing, toggleEditing, logout } = useAdmin();
+  const pathname = usePathname();
 
   const navigation = [
     { name: 'Home', href: '/' },
@@ -62,16 +65,16 @@ const Header: React.FC = () => {
                 <div className="flex items-center space-x-6">
                   <div className="flex items-center space-x-2 text-white/90">
                     <Phone className="h-4 w-4" />
-                    <span>+1 (555) 123-4567</span>
+                    <span>{CONTACT_INFO.phone}</span>
                   </div>
                   <div className="flex items-center space-x-2 text-white/90">
                     <Mail className="h-4 w-4" />
-                    <span>info@globalharvestlogistics.com</span>
+                    <span>{CONTACT_INFO.email}</span>
                   </div>
                 </div>
                 <div className="flex items-center space-x-2 text-white/90">
                   <Sparkles className="h-4 w-4" />
-                  <span>24/7 Global Logistics Support</span>
+                  <span>Premium Ethiopian Agricultural Exports</span>
                 </div>
               </div>
             </div>
@@ -96,16 +99,25 @@ const Header: React.FC = () => {
             {/* Desktop Navigation with glass effect */}
             <div className="hidden md:flex items-center space-x-2">
               <div className="flex items-center space-x-1 bg-white rounded-full px-4 py-2 border border-ghl-neutral-300 shadow-lg">
-                {navigation.map((item) => (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    className="px-4 py-2 text-ghl-neutral-800 hover:text-ghl-primary-600 font-semibold transition-all duration-300 rounded-full hover:bg-white/50 relative group"
-                  >
-                    {item.name}
-                    <span className="absolute inset-0 bg-gradient-to-r from-ghl-primary-600/30 to-ghl-secondary-400/30 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  </Link>
-                ))}
+                {navigation.map((item) => {
+                  const isActive = pathname === item.href;
+                  return (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      className={`px-4 py-2 font-semibold transition-all duration-300 rounded-full relative group ${
+                        isActive 
+                          ? 'text-ghl-primary-600 bg-ghl-primary-50 border border-ghl-primary-200' 
+                          : 'text-ghl-neutral-800 hover:text-ghl-primary-600 hover:bg-white/50'
+                      }`}
+                    >
+                      {item.name}
+                      {!isActive && (
+                        <span className="absolute inset-0 bg-gradient-to-r from-ghl-primary-600/30 to-ghl-secondary-400/30 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      )}
+                    </Link>
+                  );
+                })}
               </div>
               
               {/* Admin Controls - Only show when logged in */}
@@ -174,21 +186,30 @@ const Header: React.FC = () => {
           }`}>
             <div className="bg-white rounded-2xl border border-ghl-neutral-300 shadow-2xl shadow-ghl-primary-600/10 p-4 sm:p-6 mb-4">
               <div className="space-y-1 sm:space-y-2">
-                {navigation.map((item, index) => (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    className="block px-3 py-2.5 sm:px-4 sm:py-3 text-ghl-neutral-800 hover:text-ghl-primary-600 font-semibold transition-all duration-300 rounded-xl hover:bg-white/50 relative group text-sm sm:text-base"
-                    onClick={() => setIsMenuOpen(false)}
-                    style={{
-                      animationDelay: `${index * 100}ms`,
-                      animation: isMenuOpen ? 'slideInLeft 0.4s ease-out forwards' : 'none'
-                    }}
-                  >
-                    <span className="relative z-10">{item.name}</span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-ghl-primary-600/20 to-ghl-secondary-400/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  </Link>
-                ))}
+                {navigation.map((item, index) => {
+                  const isActive = pathname === item.href;
+                  return (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      className={`block px-3 py-2.5 sm:px-4 sm:py-3 font-semibold transition-all duration-300 rounded-xl relative group text-sm sm:text-base ${
+                        isActive 
+                          ? 'text-ghl-primary-600 bg-ghl-primary-50 border border-ghl-primary-200' 
+                          : 'text-ghl-neutral-800 hover:text-ghl-primary-600 hover:bg-white/50'
+                      }`}
+                      onClick={() => setIsMenuOpen(false)}
+                      style={{
+                        animationDelay: `${index * 100}ms`,
+                        animation: isMenuOpen ? 'slideInLeft 0.4s ease-out forwards' : 'none'
+                      }}
+                    >
+                      <span className="relative z-10">{item.name}</span>
+                      {!isActive && (
+                        <div className="absolute inset-0 bg-gradient-to-r from-ghl-primary-600/20 to-ghl-secondary-400/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      )}
+                    </Link>
+                  );
+                })}
                 
                 {/* Mobile Admin Controls - Only show when logged in */}
                 {isAdmin && (
@@ -243,14 +264,14 @@ const Header: React.FC = () => {
                   <div className="space-y-2 sm:space-y-3 text-xs sm:text-sm">
                     <div className="flex items-center space-x-2 sm:space-x-3 text-ghl-neutral-700">
                       <Phone className="h-3 w-3 sm:h-4 sm:w-4 text-ghl-primary-600 flex-shrink-0" />
-                      <a href="tel:+15551234567" className="hover:text-ghl-primary-600 transition-colors font-medium">
-                        +1 (555) 123-4567
+                      <a href={`tel:${CONTACT_INFO.phone}`} className="hover:text-ghl-primary-600 transition-colors font-medium">
+                        {CONTACT_INFO.phone}
                       </a>
                     </div>
                     <div className="flex items-center space-x-2 sm:space-x-3 text-ghl-neutral-700">
                       <Mail className="h-3 w-3 sm:h-4 sm:w-4 text-ghl-primary-600 flex-shrink-0" />
-                      <a href="mailto:info@globalharvestlogistics.com" className="hover:text-ghl-primary-600 transition-colors break-all font-medium">
-                        info@globalharvestlogistics.com
+                      <a href={`mailto:${CONTACT_INFO.email}`} className="hover:text-ghl-primary-600 transition-colors break-all font-medium">
+                        {CONTACT_INFO.email}
                       </a>
                     </div>
                   </div>

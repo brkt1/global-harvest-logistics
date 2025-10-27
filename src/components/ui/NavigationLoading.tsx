@@ -38,11 +38,11 @@ const NavigationLoading: React.FC = () => {
     if (previousPathname.current !== pathname) {
       handleShowLoading('Loading page...');
       
-      // Hide loading after a short delay
+      // Hide loading after a very short delay for better UX
       loadingTimeoutRef.current = setTimeout(() => {
         handleHideLoading();
         loadingTimeoutRef.current = null;
-      }, 800);
+      }, 200);
 
       previousPathname.current = pathname;
     }

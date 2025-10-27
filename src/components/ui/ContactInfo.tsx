@@ -1,7 +1,7 @@
 'use client'
 
 import { CONTACT_INFO } from '@/lib/constants'
-import { Clock, Mail, MapPin, Phone } from 'lucide-react'
+import { Clock, Globe, Mail, MapPin, MessageCircle, Phone } from 'lucide-react'
 import EditableText from './EditableText'
 
 interface ContactInfoProps {
@@ -70,12 +70,6 @@ export default function ContactInfo({
             tag="p"
             className={textClasses[variant].content}
           />
-          <EditableText 
-            content="24/7 Emergency Support"
-            contentKey="contact-info-phone-subtitle"
-            tag="p"
-            className={textClasses[variant].subtext}
-          />
         </div>
       </div>
       
@@ -106,6 +100,46 @@ export default function ContactInfo({
       </div>
       
       <div className={itemClasses[variant]}>
+        <div className={iconClasses[variant]}>
+          <MessageCircle className="h-5 w-5 text-green-600" />
+        </div>
+        <div>
+          <EditableText 
+            content="WeChat"
+            contentKey="contact-info-wechat-title"
+            tag="h3"
+            className={textClasses[variant].title}
+          />
+          <EditableText 
+            content={CONTACT_INFO.wechat}
+            contentKey="contact-info-wechat-id"
+            tag="p"
+            className={textClasses[variant].content}
+          />
+        </div>
+      </div>
+      
+      <div className={itemClasses[variant]}>
+        <div className="w-10 h-10 bg-cyan-100 rounded-full flex items-center justify-center flex-shrink-0">
+          <Globe className="h-5 w-5 text-cyan-600" />
+        </div>
+        <div>
+          <EditableText 
+            content="Website"
+            contentKey="contact-info-website-title"
+            tag="h3"
+            className={textClasses[variant].title}
+          />
+          <EditableText 
+            content={CONTACT_INFO.website}
+            contentKey="contact-info-website-url"
+            tag="p"
+            className={textClasses[variant].content}
+          />
+        </div>
+      </div>
+      
+      <div className={itemClasses[variant]}>
         <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
           <MapPin className="h-5 w-5 text-purple-600" />
         </div>
@@ -124,8 +158,8 @@ export default function ContactInfo({
             />
             <br />
             <EditableText 
-              content={`${CONTACT_INFO.address.city}, ${CONTACT_INFO.address.state}`}
-              contentKey="contact-info-address-city-state"
+              content={CONTACT_INFO.address.city}
+              contentKey="contact-info-address-city"
               tag="span"
             />
             <br />

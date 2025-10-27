@@ -2,7 +2,9 @@
 
 import EditableText from '@/components/ui/EditableText'
 import { useAdmin } from '@/contexts/AdminContext'
-import { ChevronDown, Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Truck, Twitter, X } from 'lucide-react'
+import { CONTACT_INFO } from '@/lib/constants'
+import { ChevronDown, Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Twitter, X } from 'lucide-react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 
@@ -72,26 +74,17 @@ export default function Footer() {
               {/* Company Info - Full width on mobile, spans 2 cols on tablet */}
               <div className="sm:col-span-2 lg:col-span-1">
                 <Link href="/" className="flex items-center space-x-2 sm:space-x-3 mb-4 sm:mb-6 md:mb-8 group">
-                  <div className="bg-gradient-to-br from-ghl-secondary-400 to-ghl-secondary-600 p-2 sm:p-3 rounded-lg sm:rounded-xl group-hover:from-ghl-secondary-500 group-hover:to-ghl-secondary-700 transition-all duration-300 shadow-lg group-hover:shadow-xl group-hover:scale-105">
-                    <Truck className="h-5 w-5 sm:h-6 sm:w-6 md:h-8 md:w-8 text-white" />
-                  </div>
-                  <div>
-                    <EditableText 
-                      content="Global Harvest"
-                      contentKey="footer-company-name"
-                      tag="h3"
-                      className="text-lg sm:text-xl md:text-2xl font-heading font-bold text-white"
-                    />
-                    <EditableText 
-                      content="Logistics"
-                      contentKey="footer-company-subtitle"
-                      tag="p"
-                      className="text-xs sm:text-sm text-white/70 font-medium"
-                    />
-                  </div>
+                  <Image
+                    src="/logo.png"
+                    alt="Sam Commodities Logo"
+                    width={200}
+                    height={60}
+                    className="h-12 w-auto sm:h-16 md:h-20 object-contain"
+                    priority
+                  />
                 </Link>
                 <EditableText 
-                  content="Delivering taste, preserving nature. Your trusted partner in temperature-sensitive commodity logistics with a commitment to sustainability and excellence."
+                  content="Premium Ethiopian agricultural exports. We combine local agricultural excellence with international trade precision to deliver the finest Ethiopian pulses and sesame to the world."
                   contentKey="footer-company-description"
                   tag="p"
                   className="text-white/80 mb-4 sm:mb-6 md:mb-8 text-xs sm:text-sm md:text-base leading-relaxed"
@@ -191,7 +184,7 @@ export default function Footer() {
                     </div>
                     <div>
                       <EditableText 
-                        content="123 Logistics Drive<br />Port City, PC 12345<br />United States"
+                        content={`${CONTACT_INFO.address.street}<br />${CONTACT_INFO.address.city}<br />${CONTACT_INFO.address.country}`}
                         contentKey="footer-address"
                         tag="p"
                         className="text-white/80 text-xs sm:text-sm md:text-base leading-relaxed"
@@ -203,7 +196,7 @@ export default function Footer() {
                       <Phone className="h-4 w-4 sm:h-5 sm:w-5 text-ghl-secondary-400" />
                     </div>
                     <EditableText 
-                      content="+1 (555) 123-4567"
+                      content={CONTACT_INFO.phone}
                       contentKey="footer-phone"
                       tag="span"
                       className="text-white/80 hover:text-white transition-colors text-xs sm:text-sm md:text-base"
@@ -214,7 +207,7 @@ export default function Footer() {
                       <Mail className="h-4 w-4 sm:h-5 sm:w-5 text-ghl-secondary-400" />
                     </div>
                     <EditableText 
-                      content="info@globalharvestlogistics.com"
+                      content={CONTACT_INFO.email}
                       contentKey="footer-email"
                       tag="span"
                       className="text-white/80 hover:text-white transition-colors text-xs sm:text-sm md:text-base break-all"
@@ -267,45 +260,65 @@ export default function Footer() {
           <div className="border-t border-white/10 py-4 sm:py-6 md:py-8">
             <div className="flex flex-col space-y-3 sm:space-y-4 md:space-y-0 md:flex-row md:justify-between md:items-center">
               <EditableText 
-                content={`© ${currentYear} Global Harvest Logistics. All rights reserved.`}
+                content={`© ${currentYear} Sam Commodities. All rights reserved.`}
                 contentKey="footer-copyright"
                 tag="p"
                 className="text-white/60 text-xs sm:text-sm text-center md:text-left"
               />
               <div className="flex flex-col sm:flex-row space-y-1.5 sm:space-y-0 sm:space-x-6 md:space-x-8 text-xs sm:text-sm">
-                <EditableText 
-                  content="Privacy Policy"
-                  contentKey="footer-privacy-link"
-                  tag="span"
+                <Link 
+                  href="/privacy"
                   className="text-white/60 hover:text-white transition-colors text-center sm:text-left hover:underline"
-                />
-                <EditableText 
-                  content="Terms of Service"
-                  contentKey="footer-terms-link"
-                  tag="span"
+                >
+                  <EditableText 
+                    content="Privacy Policy"
+                    contentKey="footer-privacy-link"
+                    tag="span"
+                  />
+                </Link>
+                <Link 
+                  href="/terms"
                   className="text-white/60 hover:text-white transition-colors text-center sm:text-left hover:underline"
-                />
-                <EditableText 
-                  content="Cookie Policy"
-                  contentKey="footer-cookies-link"
-                  tag="span"
+                >
+                  <EditableText 
+                    content="Terms of Service"
+                    contentKey="footer-terms-link"
+                    tag="span"
+                  />
+                </Link>
+                <Link 
+                  href="/cookies"
                   className="text-white/60 hover:text-white transition-colors text-center sm:text-left hover:underline"
-                />
+                >
+                  <EditableText 
+                    content="Cookie Policy"
+                    contentKey="footer-cookies-link"
+                    tag="span"
+                  />
+                </Link>
                 {/* Admin Section */}
                 {isAdmin ? (
-                  <EditableText 
-                    content="Admin"
-                    contentKey="footer-admin-link"
-                    tag="span"
+                  <Link 
+                    href="/admin/dashboard"
                     className="text-white/60 hover:text-white transition-colors text-center sm:text-left hover:underline flex items-center gap-1"
-                  />
+                  >
+                    <EditableText 
+                      content="Admin"
+                      contentKey="footer-admin-link"
+                      tag="span"
+                    />
+                  </Link>
                 ) : (
-                  <EditableText 
-                    content="Admin Login"
-                    contentKey="footer-admin-login"
-                    tag="span"
+                  <button
+                    onClick={() => setShowLogin(true)}
                     className="text-white/60 hover:text-white transition-colors text-center sm:text-left hover:underline flex items-center gap-1"
-                  />
+                  >
+                    <EditableText 
+                      content="Admin Login"
+                      contentKey="footer-admin-login"
+                      tag="span"
+                    />
+                  </button>
                 )}
               </div>
             </div>
@@ -355,18 +368,27 @@ export default function Footer() {
               )}
               
               <div className="flex gap-2">
+                <button
+                  type="submit"
+                  className="flex-1 bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors"
+                >
                   <EditableText 
                     content="Login"
                     contentKey="footer-login-button"
                     tag="span"
-                    className="flex-1 bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors"
                   />
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setShowLogin(false)}
+                  className="px-4 py-2 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors"
+                >
                   <EditableText 
                     content="Cancel"
                     contentKey="footer-login-cancel"
                     tag="span"
-                    className="px-4 py-2 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors"
                   />
+                </button>
               </div>
             </form>
           </div>
