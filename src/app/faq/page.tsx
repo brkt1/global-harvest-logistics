@@ -7,11 +7,11 @@ export default function FAQ() {
   const faqs = [
     {
       question: "What types of commodities do you handle?",
-      answer: "We specialize in temperature-sensitive commodities including coffee beans, olive oil, specialty foods, and other perishable goods that require controlled temperature shipping."
+      answer: "We specialize in premium Ethiopian agricultural exports including sesame seeds (Humera and Wollega varieties), pulses, and beans (red kidney beans, white pea beans, red speckled beans, soya beans). We ensure quality control and proper handling throughout the export process."
     },
     {
-      question: "How do you ensure temperature control during shipping?",
-      answer: "We use state-of-the-art refrigerated containers and temperature monitoring systems that provide real-time tracking and alerts. Our facilities are equipped with climate-controlled storage and our team is trained in proper handling procedures."
+      question: "How do you ensure quality control during shipping?",
+      answer: "We implement rigorous quality checks at every stage of the export process. Our Addis Ababa warehouse operations include thorough cleaning, sorting, and grading according to ECX and buyer specifications. All products are quality-checked before shipment via Djibouti port with complete documentation and traceability."
     },
     {
       question: "What certifications do you have?",

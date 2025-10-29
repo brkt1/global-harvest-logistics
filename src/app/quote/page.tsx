@@ -292,9 +292,8 @@ export default function QuotePage() {
                       }`}
                     >
                       <option value="">Select cargo type</option>
-                      <option value="coffee">Coffee Beans</option>
-                      <option value="oil">Edible Oils</option>
-                      <option value="temperature-controlled">Temperature Controlled</option>
+                      <option value="sesame">Sesame</option>
+                      <option value="beans">Beans & Pulses</option>
                       <option value="general">General Cargo</option>
                       <option value="other">Other</option>
                     </select>

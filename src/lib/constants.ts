@@ -31,59 +31,7 @@ export const COMMON_GRADIENTS = {
   secondary: 'bg-gradient-to-r from-ghl-secondary-400 to-ghl-primary-600'
 } as const;
 
-export const SERVICES_DATA = [
-  {
-    id: 'coffee',
-    icon: 'Coffee',
-    title: 'Coffee Logistics',
-    subtitle: 'From Ethiopian Highlands',
-    description: 'Specialized temperature and humidity control for premium Ethiopian coffee beans from highland farms to global markets.',
-    features: [
-      'Temperature-controlled storage (15-25°C)',
-      'Humidity monitoring (50-60% RH)',
-      'Specialized bagging expertise',
-      'Origin logistics coordination',
-      'Fumigation compliance',
-      'Quality preservation protocols'
-    ],
-    color: 'ghl-primary-600',
-    gradient: 'from-ghl-primary-500 to-ghl-primary-700'
-  },
-  {
-    id: 'oil',
-    icon: 'Droplets',
-    title: 'Oil Transportation',
-    subtitle: 'Traditional Oil Heritage',
-    description: 'State-of-the-art flexitank systems for traditional Ethiopian oils and specialty liquids with cultural preservation.',
-    features: [
-      'Flexitank expertise for bulk liquids',
-      'Bottling line integration',
-      'Quality preservation systems',
-      'Custom loading procedures',
-      'Temperature monitoring',
-      'Contamination prevention'
-    ],
-    color: 'ghl-secondary-400',
-    gradient: 'from-ghl-secondary-400 to-ghl-secondary-600'
-  },
-  {
-    id: 'specialty',
-    icon: 'Package',
-    title: 'Specialty Products',
-    subtitle: 'Cultural Commodities',
-    description: 'Comprehensive logistics for traditional Ethiopian goods, spices, and other temperature-sensitive cultural commodities.',
-    features: [
-      'Custom packaging solutions',
-      'Multi-modal transport options',
-      'Cold chain management',
-      'Documentation support',
-      'Quality assurance protocols',
-      'Flexible handling requirements'
-    ],
-    color: 'ghl-secondary-500',
-    gradient: 'from-ghl-secondary-500 to-ghl-primary-600'
-  }
-] as const;
+// Removed SERVICES_DATA - services are now defined directly in components
 
 export const PROVEN_PROCESS_STEPS = [
   {
