@@ -1,7 +1,7 @@
 'use client'
 
 import EditableText from '@/components/ui/EditableText'
-import { Calculator, CheckCircle, Clock } from 'lucide-react'
+import { Calculator, MessageCircle } from 'lucide-react'
 import { useState } from 'react'
 
 export default function QuotePage() {
@@ -19,9 +19,6 @@ export default function QuotePage() {
     specialRequirements: ''
   })
 
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [isSubmitted, setIsSubmitted] = useState(false)
-
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target
     setFormData(prev => ({
@@ -30,57 +27,33 @@ export default function QuotePage() {
     }))
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000))
-    
-    setIsSubmitted(true)
-    setIsSubmitting(false)
+  const formatWhatsAppMessage = () => {
+    const lines = [
+      `Hello! I would like to request a quote for logistics services.`,
+      '',
+      `*Contact Information:*`,
+      `Name: ${formData.name}`,
+      `Email: ${formData.email}`,
+      ...(formData.phone ? [`Phone: ${formData.phone}`] : []),
+      ...(formData.company ? [`Company: ${formData.company}`] : []),
+      '',
+      `*Shipment Details:*`,
+      `Origin: ${formData.origin}`,
+      `Destination: ${formData.destination}`,
+      `Cargo Type: ${formData.cargoType}`,
+      `Weight/Volume: ${formData.weight}`,
+      ...(formData.temperature ? [`Temperature: ${formData.temperature}`] : []),
+      `Timeline: ${formData.timeline}`,
+      ...(formData.specialRequirements ? [`\n*Special Requirements:*\n${formData.specialRequirements}`] : [])
+    ]
+    return encodeURIComponent(lines.join('\n'))
   }
 
-  if (isSubmitted) {
-    return (
-      <div className="min-h-screen bg-gradient-to-br from-ghl-primary-50 via-white to-ghl-secondary-50">
-        <div className="container-custom py-12 sm:py-16">
-          <div className="max-w-2xl mx-auto text-center">
-            <div className="rounded-2xl sm:rounded-3xl shadow-2xl p-6 sm:p-8 md:p-10 lg:p-12 bg-white">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
-                <CheckCircle className="h-8 w-8 sm:h-10 sm:w-10 text-green-600" />
-              </div>
-              <EditableText 
-                content="Quote Request Submitted!"
-                contentKey="quote-success-title"
-                tag="h1"
-                className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold mb-3 sm:mb-4 text-ghl-neutral-800"
-              />
-              <EditableText 
-                content="Thank you for your interest in our logistics services. Our team will review your requirements and get back to you within 24 hours with a detailed quote."
-                contentKey="quote-success-message"
-                tag="p"
-                className="text-base sm:text-lg mb-6 sm:mb-8 text-ghl-neutral-600"
-              />
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-                <EditableText 
-                  content="Back to Home"
-                  contentKey="quote-success-back-button"
-                  tag="span"
-                  className="btn btn-primary text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4"
-                />
-                <EditableText 
-                  content="Contact Us"
-                  contentKey="quote-success-contact-button"
-                  tag="span"
-                  className="btn btn-secondary text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    )
+  const sendToWhatsApp = () => {
+    const phoneNumber = '+251912422031'
+    const message = formatWhatsAppMessage()
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`
+    window.open(whatsappUrl, '_blank')
   }
 
   return (
@@ -142,7 +115,7 @@ export default function QuotePage() {
                 />
               </div>
               
-              <form onSubmit={handleSubmit} className="p-6 sm:p-8 md:p-10 lg:p-12">
+              <form onSubmit={(e) => e.preventDefault()} className="p-6 sm:p-8 md:p-10 lg:p-12">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
                   {/* Contact Information */}
                   <div className="md:col-span-2">
@@ -416,39 +389,19 @@ export default function QuotePage() {
                   />
                 </div>
 
-                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="btn btn-primary text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 sm:py-4 disabled:opacity-50 disabled:cursor-not-allowed"
-                  >
-                    {isSubmitting ? (
-                      <>
-                        <Clock className="h-4 w-4 sm:h-5 sm:w-5 mr-2" />
-                        <EditableText 
-                          content="Processing..."
-                          contentKey="quote-form-processing"
-                          tag="span"
-                        />
-                      </>
-                    ) : (
-                      <>
-                        <Calculator className="h-4 w-4 sm:h-5 sm:w-5 mr-2" />
-                        <EditableText 
-                          content="Get My Quote"
-                          contentKey="quote-form-submit"
-                          tag="span"
-                        />
-                      </>
-                    )}
-                  </button>
-                    <EditableText 
-                      content="Contact Us Instead"
-                      contentKey="quote-form-contact-button"
-                      tag="span"
-                      className="btn btn-secondary text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 sm:py-4"
-                    />
-                </div>
+                <button
+                  type="button"
+                  onClick={sendToWhatsApp}
+                  disabled={!formData.name || !formData.email || !formData.origin || !formData.destination || !formData.cargoType || !formData.weight || !formData.timeline}
+                  className="w-full bg-[#25D366] hover:bg-[#20BA5A] active:bg-[#1DA851] text-white py-3 sm:py-4 lg:py-4 px-4 sm:px-6 rounded-lg sm:rounded-xl font-semibold text-sm sm:text-base lg:text-lg flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98]"
+                >
+                  <MessageCircle className="h-4 w-4 sm:h-5 sm:w-5" />
+                  <EditableText 
+                    content="Send Quote Request via WhatsApp"
+                    contentKey="quote-form-whatsapp"
+                    tag="span"
+                  />
+                </button>
               </form>
             </div>
           </div>
