@@ -2,8 +2,8 @@ import AdminToolbar from "@/components/ui/AdminToolbar";
 import Footer from "@/components/ui/Footer";
 import Header from "@/components/ui/Header";
 import LoadingOverlay from "@/components/ui/LoadingOverlay";
-import NavigationLoading from "@/components/ui/NavigationLoading";
 import { AdminProvider } from "@/contexts/AdminContext";
+import { ContentProvider } from "@/contexts/ContentContext";
 import { LoadingProvider } from "@/contexts/LoadingContext";
 import type { Metadata } from "next";
 import "./globals.css";
@@ -39,14 +39,15 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className="antialiased">
         <LoadingProvider>
-          <AdminProvider>
-            <NavigationLoading />
-            <Header />
-            <main>{children}</main>
-            <Footer />
-            <LoadingOverlay />
-            <AdminToolbar />
-          </AdminProvider>
+          <ContentProvider>
+            <AdminProvider>
+              <Header />
+              <main>{children}</main>
+              <Footer />
+              <LoadingOverlay />
+              <AdminToolbar />
+            </AdminProvider>
+          </ContentProvider>
         </LoadingProvider>
       </body>
     </html>

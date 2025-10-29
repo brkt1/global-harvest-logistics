@@ -85,7 +85,7 @@ const Header: React.FC = () => {
         <nav className="container-custom relative">
           <div className="flex justify-between items-center py-3 md:py-4">
             {/* Logo */}
-            <Link href="/" className="flex items-center group">
+            <Link href="/" prefetch={true} className="flex items-center group">
               <Image
                 src="/SAM COMMODITIES B card-09.png"
                 alt="Global Harvest Logistics Logo"
@@ -105,6 +105,7 @@ const Header: React.FC = () => {
                     <Link
                       key={item.name}
                       href={item.href}
+                      prefetch={true}
                       className={`px-4 py-2 font-semibold transition-all duration-300 rounded-full relative group ${
                         isActive 
                           ? 'text-ghl-primary-600 bg-ghl-primary-50 border border-ghl-primary-200' 
@@ -192,6 +193,7 @@ const Header: React.FC = () => {
                     <Link
                       key={item.name}
                       href={item.href}
+                      prefetch={true}
                       className={`block px-3 py-2.5 sm:px-4 sm:py-3 font-semibold transition-all duration-300 rounded-xl relative group text-sm sm:text-base ${
                         isActive 
                           ? 'text-ghl-primary-600 bg-ghl-primary-50 border border-ghl-primary-200' 

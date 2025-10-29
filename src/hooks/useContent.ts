@@ -1,6 +1,7 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useContentContext } from '@/contexts/ContentContext'
+import { useEffect, useMemo } from 'react'
 
 interface UseContentOptions {
   key: string
@@ -9,58 +10,43 @@ interface UseContentOptions {
 }
 
 export function useContent({ key, defaultValue, type = 'text' }: UseContentOptions) {
-  const [content, setContent] = useState(defaultValue)
-  const [isLoading, setIsLoading] = useState(true)
-
+  const { cache, loadingKeys, getContent, isLoading: isLoadingKey, registerContentKey, setContent: setContentContext } = useContentContext()
+  
+  // Register this content key for batch fetching
   useEffect(() => {
-    // Only fetch on client side
-    if (typeof window === 'undefined') {
-      setIsLoading(false)
-      return
+    if (typeof window !== 'undefined') {
+      registerContentKey(key, type, defaultValue)
     }
+  }, [key, type, defaultValue, registerContentKey])
 
-    const loadContent = async () => {
-      try {
-        const url = `/api/content/${type}?key=${encodeURIComponent(key)}`
-        const response = await fetch(url, {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        })
-        
-        if (response.ok) {
-          const data = await response.json()
-          if (type === 'text') {
-            setContent(data.content || defaultValue)
-          } else if (type === 'image') {
-            setContent(data.src || defaultValue)
-          } else if (type === 'video') {
-            setContent(data.src || defaultValue)
-          }
-        } else if (response.status === 404) {
-          // Content doesn't exist yet, use default value
-          setContent(defaultValue)
-        } else {
-          // Other error statuses - use default value
-          console.warn(`Content API returned status ${response.status} for key: ${key}`)
-          setContent(defaultValue)
-        }
-      } catch (error) {
-        // Network errors or other fetch failures
-        if (error instanceof TypeError && error.message === 'Failed to fetch') {
-          console.warn(`Failed to fetch content for key "${key}". Using default value. This may indicate the API route is not available.`)
-        } else {
-          console.error('Error loading content:', error)
-        }
-        setContent(defaultValue)
-      } finally {
-        setIsLoading(false)
-      }
+  // Get content from cache - this will automatically update when cache changes
+  const cachedContent = useMemo(() => getContent(key, type, defaultValue), [key, type, defaultValue, cache, getContent])
+  
+  // Determine the actual content value based on type
+  const content = useMemo(() => {
+    if (type === 'text') {
+      return cachedContent || defaultValue
+    } else if (type === 'image') {
+      return cachedContent?.src || defaultValue
+    } else if (type === 'video') {
+      return cachedContent?.src || defaultValue
     }
+    return defaultValue
+  }, [cachedContent, type, defaultValue])
 
-    loadContent()
-  }, [key, defaultValue, type])
+  // Check loading state
+  const isLoading = isLoadingKey(key, type)
+
+  const setContent = (value: string | { src: string; alt?: string; title?: string }) => {
+    // Update context cache
+    if (type === 'text') {
+      setContentContext(key, type, value)
+    } else if (type === 'image') {
+      setContentContext(key, type, typeof value === 'string' ? { src: value, alt: '' } : value)
+    } else if (type === 'video') {
+      setContentContext(key, type, typeof value === 'string' ? { src: value, title: '' } : value)
+    }
+  }
 
   return { content, isLoading, setContent }
 }
