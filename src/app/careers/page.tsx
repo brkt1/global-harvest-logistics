@@ -1,6 +1,7 @@
 'use client'
 
 import EditableText from '@/components/ui/EditableText'
+import { MessageCircle } from 'lucide-react'
 
 export default function Careers() {
   const positions = [
@@ -44,6 +45,38 @@ export default function Careers() {
     "Employee wellness programs",
     "Career advancement opportunities"
   ]
+
+  const formatJobApplicationMessage = (position: typeof positions[0]) => {
+    const lines = [
+      `Hello! I'm interested in applying for the ${position.title} position.`,
+      '',
+      `*Position Details:*`,
+      `Title: ${position.title}`,
+      `Department: ${position.department}`,
+      `Location: ${position.location}`,
+      `Type: ${position.type}`,
+      '',
+      `Please let me know the next steps in the application process.`,
+      `I'm ready to share my resume and cover letter.`
+    ]
+    return encodeURIComponent(lines.join('\n'))
+  }
+
+  const sendJobApplicationToWhatsApp = (position: typeof positions[0]) => {
+    const phoneNumber = '+251912422031'
+    const message = formatJobApplicationMessage(position)
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`
+    window.open(whatsappUrl, '_blank')
+  }
+
+  const sendResumeToWhatsApp = () => {
+    const phoneNumber = '+251912422031'
+    const message = encodeURIComponent(
+      `Hello! I'm interested in working with Global Harvest Logistics. I don't see a specific position that matches my profile, but I'd like to send my resume for future opportunities.\n\nPlease let me know how I can proceed with my application.`
+    )
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`
+    window.open(whatsappUrl, '_blank')
+  }
 
   return (
     <div className="min-h-screen bg-ghl-neutral-50">
@@ -210,9 +243,13 @@ export default function Careers() {
                       />
                     </div>
                   </div>
-                  <button className="btn btn-primary mt-4 md:mt-0">
+                  <button 
+                    onClick={() => sendJobApplicationToWhatsApp(position)}
+                    className="btn btn-primary mt-4 md:mt-0 flex items-center justify-center gap-2"
+                  >
+                    <MessageCircle className="h-4 w-4" />
                     <EditableText 
-                      content="Apply Now"
+                      content="Apply Now via WhatsApp"
                       contentKey="careers-apply-button"
                       tag="span"
                     />
@@ -362,13 +399,17 @@ export default function Careers() {
               tag="p"
               className="text-xl text-ghl-neutral-100 mb-8"
             />
-            <a href="/contact" className="btn btn-secondary">
+            <button 
+              onClick={sendResumeToWhatsApp}
+              className="btn btn-secondary flex items-center justify-center gap-2 mx-auto"
+            >
+              <MessageCircle className="h-4 w-4" />
               <EditableText 
-                content="Send Your Resume"
+                content="Send Your Resume via WhatsApp"
                 contentKey="careers-cta-button"
                 tag="span"
               />
-            </a>
+            </button>
           </div>
         </div>
       </section>
