@@ -87,11 +87,11 @@ const Header: React.FC = () => {
             {/* Logo */}
             <Link href="/" className="flex items-center group">
               <Image
-                src="/logo.png"
+                src="/SAM COMMODITIES B card-09.png"
                 alt="Global Harvest Logistics Logo"
                 width={200}
                 height={60}
-                className="h-12 w-auto sm:h-16 md:h-20 object-contain"
+                className="h-12 w-auto sm:h-16 md:h-12 object-contain"
                 priority
               />
             </Link>

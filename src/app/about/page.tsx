@@ -1,6 +1,5 @@
 'use client'
 
-import TrustedBySection from '@/components/sections/TrustedBySection'
 import EditableText from '@/components/ui/EditableText'
 import { Award, BookOpen, Globe, Handshake, Heart, Leaf, MapPin, Shield, Star, Target, Zap } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
@@ -773,8 +772,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* Trusted By Section */}
-      <TrustedBySection />
     </div>
   )
 }

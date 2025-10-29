@@ -210,13 +210,6 @@ export default function ServicesPage() {
 
   const capabilities = [
     {
-      icon: Thermometer,
-      title: 'Temperature Control',
-      description: 'Advanced monitoring systems ensure optimal conditions throughout the journey.',
-      details: 'Real-time temperature and humidity monitoring with automated alerts and backup systems.',
-      gradient: 'from-green-800 to-green-600'
-    },
-    {
       icon: Shield,
       title: 'Quality Assurance',
       description: 'Rigorous quality checks and compliance with international standards.',

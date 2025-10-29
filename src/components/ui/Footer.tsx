@@ -16,12 +16,7 @@ export default function Footer() {
   const [loginError, setLoginError] = useState('')
   const { isAdmin, login } = useAdmin()
 
-  const services = [
-    { name: 'Coffee Logistics', href: '/services#coffee' },
-    { name: 'Oil Transportation', href: '/services#oil' },
-    { name: 'Temperature Control', href: '/services#temperature' },
-    { name: 'Custom Solutions', href: '/services#custom' },
-  ]
+  const services = []
 
   const company = [
     { name: 'About Us', href: '/about' },
@@ -70,7 +65,7 @@ export default function Footer() {
           {/* Main footer content */}
           <div className="py-8 md:py-16 lg:py-20">
             {/* Mobile-first responsive grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-12">
               {/* Company Info - Full width on mobile, spans 2 cols on tablet */}
               <div className="sm:col-span-2 lg:col-span-1">
                 <Link href="/" className="flex items-center space-x-2 sm:space-x-3 mb-4 sm:mb-6 md:mb-8 group">
@@ -105,37 +100,6 @@ export default function Footer() {
                 </div>
               </div>
 
-              {/* Services - Collapsible on mobile */}
-              <div className="lg:col-span-1">
-                <button 
-                  onClick={() => toggleSection('services')}
-                  className="flex items-center justify-between w-full lg:justify-start lg:mb-8 mb-4 sm:mb-6 group"
-                >
-                  <EditableText 
-                    content="Services"
-                    contentKey="footer-services-title"
-                    tag="h4"
-                    className="text-base sm:text-lg font-heading font-semibold text-white group-hover:text-ghl-secondary-400 transition-colors"
-                  />
-                  <ChevronDown className={`h-4 w-4 sm:h-5 sm:w-5 lg:hidden transition-transform duration-300 text-white ${
-                    expandedSections.services ? 'rotate-180' : ''
-                  }`} />
-                </button>
-                <ul className={`space-y-2 sm:space-y-4 transition-all duration-300 ${
-                  expandedSections.services ? 'block' : 'hidden lg:block'
-                }`}>
-                  {services.map((service) => (
-                    <li key={service.name}>
-                      <Link 
-                        href={service.href}
-                        className="text-white/70 hover:text-white hover:bg-white/5 transition-all duration-300 text-xs sm:text-sm md:text-base block py-1.5 sm:py-2 px-2 sm:px-3 rounded-md sm:rounded-lg hover:backdrop-blur-sm hover:border hover:border-white/10"
-                      >
-                        {service.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
 
               {/* Company - Collapsible on mobile */}
               <div className="lg:col-span-1">

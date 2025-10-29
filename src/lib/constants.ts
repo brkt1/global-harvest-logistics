@@ -87,16 +87,8 @@ export const SERVICES_DATA = [
 
 export const PROVEN_PROCESS_STEPS = [
   {
-    id: 1,
-    number: '01',
-    title: 'Temperature Control',
-    description: 'Advanced monitoring systems ensure optimal conditions.',
-    icon: 'Thermometer',
-    position: 'bottom'
-  },
-  {
     id: 2,
-    number: '02',
+    number: '01',
     title: 'Quality Assurance',
     description: 'Rigorous quality checks and compliance standards.',
     icon: 'Shield',
@@ -104,7 +96,7 @@ export const PROVEN_PROCESS_STEPS = [
   },
   {
     id: 3,
-    number: '03',
+    number: '02',
     title: 'Sustainable Shipping',
     description: 'Eco-friendly practices and carbon-neutral options.',
     icon: 'Leaf',
@@ -112,7 +104,7 @@ export const PROVEN_PROCESS_STEPS = [
   },
   {
     id: 4,
-    number: '04',
+    number: '03',
     title: 'Real-time Tracking',
     description: '24/7 monitoring with delivery guarantees.',
     icon: 'MapPin',

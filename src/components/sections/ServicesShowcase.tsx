@@ -1,32 +1,10 @@
 'use client'
 
-import { ArrowRight, Coffee, Droplets, Package } from 'lucide-react'
+import { ArrowRight, Package } from 'lucide-react'
 import Link from 'next/link'
 
 export default function ServicesShowcase() {
   const services = [
-    {
-      icon: Coffee,
-      title: 'Coffee Logistics',
-      description: 'Specialized temperature and humidity control for premium coffee beans from origin to roaster.',
-      features: [
-        'Temperature-controlled storage',
-        'Origin logistics expertise'
-      ],
-      color: 'ghl-primary-600',
-      href: '/services#coffee'
-    },
-    {
-      icon: Droplets,
-      title: 'Oil Transportation',
-      description: 'Advanced flexitank technology for bulk liquid transport with bottling line integration.',
-      features: [
-        'Flexitank expertise',
-        'Quality preservation'
-      ],
-      color: 'ghl-secondary-400',
-      href: '/services#oil'
-    },
     {
       icon: Package,
       title: 'Specialty Products',
@@ -50,13 +28,13 @@ export default function ServicesShowcase() {
             Specialized Logistics Solutions
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            From coffee beans to olive oil, we understand the unique requirements 
-            of temperature-sensitive commodities and deliver excellence every step of the way.
+            We understand the unique requirements of temperature-sensitive commodities 
+            and deliver excellence every step of the way.
           </p>
         </div>
 
         {/* Compact Services Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-1 gap-4 mb-8">
           {services.map((service) => (
             <div 
               key={service.title}
