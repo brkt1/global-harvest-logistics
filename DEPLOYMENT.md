@@ -10,12 +10,12 @@ This guide will help you deploy your Global Harvest Logistics website for free u
 ## Step 1: Push to GitHub
 
 1. **Initialize Git Repository** (if not already done):
-   ```bash
+   \`\`\`bash
    cd "/home/becky/Desktop/logistic web/global-harvest-logistics"
    git init
    git add .
    git commit -m "Initial commit: Global Harvest Logistics website"
-   ```
+   \`\`\`
 
 2. **Create a GitHub Repository**:
    - Go to [GitHub.com](https://github.com)
@@ -26,11 +26,11 @@ This guide will help you deploy your Global Harvest Logistics website for free u
    - Click "Create repository"
 
 3. **Push to GitHub**:
-   ```bash
+   \`\`\`bash
    git remote add origin https://github.com/YOUR_USERNAME/global-harvest-logistics.git
    git branch -M main
    git push -u origin main
-   ```
+   \`\`\`
 
 ## Step 2: Deploy to Vercel
 

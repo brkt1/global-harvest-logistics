@@ -11,7 +11,7 @@ Your Next.js application can serve as a full-stack application with built-in bac
 ## 2. Database Setup
 
 ### Option A: PostgreSQL (Recommended)
-```bash
+\`\`\`bash
 # Install PostgreSQL dependencies
 npm install pg @types/pg
 
@@ -20,29 +20,29 @@ createdb logistics_db
 
 # Add to .env.local
 DATABASE_URL=postgresql://username:password@localhost:5432/logistics_db
-```
+\`\`\`
 
 ### Option B: MongoDB
-```bash
+\`\`\`bash
 # Install MongoDB dependencies
 npm install mongoose
 
 # Add to .env.local
 MONGODB_URI=mongodb://localhost:27017/logistics
-```
+\`\`\`
 
 ### Option C: SQLite (Development)
-```bash
+\`\`\`bash
 # Install SQLite dependencies
 npm install sqlite3 better-sqlite3
 
 # Add to .env.local
 DATABASE_URL=file:./dev.db
-```
+\`\`\`
 
 ## 3. Environment Variables
 Create `.env.local` file:
-```env
+\`\`\`env
 # Database
 DATABASE_URL=your_database_url
 
@@ -58,10 +58,10 @@ FEDEX_API_KEY=your-fedex-api-key
 
 # Application
 NEXT_PUBLIC_BASE_URL=http://localhost:3000
-```
+\`\`\`
 
 ## 4. Database Schema (PostgreSQL Example)
-```sql
+\`\`\`sql
 -- Quotes table
 CREATE TABLE quotes (
   id SERIAL PRIMARY KEY,
@@ -113,20 +113,20 @@ CREATE TABLE shipment_history (
   event_date TIMESTAMP NOT NULL,
   created_at TIMESTAMP DEFAULT NOW()
 );
-```
+\`\`\`
 
 ## 5. Running the Backend
 
 ### Development
-```bash
+\`\`\`bash
 npm run dev
-```
+\`\`\`
 
 ### Production
-```bash
+\`\`\`bash
 npm run build
 npm start
-```
+\`\`\`
 
 ## 6. API Endpoints
 
@@ -161,7 +161,7 @@ The `middleware.ts` file handles:
 - Environment variables management
 
 ### Docker
-```dockerfile
+\`\`\`dockerfile
 FROM node:18-alpine
 WORKDIR /app
 COPY package*.json ./
@@ -170,7 +170,7 @@ COPY . .
 RUN npm run build
 EXPOSE 3000
 CMD ["npm", "start"]
-```
+\`\`\`
 
 ### Traditional VPS
 - Install Node.js and PostgreSQL
@@ -180,7 +180,7 @@ CMD ["npm", "start"]
 ## 10. Testing the Backend
 
 ### Test API Routes
-```bash
+\`\`\`bash
 # Test quote API
 curl -X POST http://localhost:3000/api/quote \
   -H "Content-Type: application/json" \
@@ -193,29 +193,29 @@ curl http://localhost:3000/api/track?trackingNumber=TRK-123456
 curl -X POST http://localhost:3000/api/contact \
   -H "Content-Type: application/json" \
   -d '{"name":"Jane Doe","email":"jane@example.com","message":"Hello"}'
-```
+\`\`\`
 
 ## 11. Advanced Features
 
 ### Authentication
-```bash
+\`\`\`bash
 npm install next-auth
-```
+\`\`\`
 
 ### File Uploads
-```bash
+\`\`\`bash
 npm install multer
-```
+\`\`\`
 
 ### Real-time Updates
-```bash
+\`\`\`bash
 npm install socket.io
-```
+\`\`\`
 
 ### Caching
-```bash
+\`\`\`bash
 npm install redis
-```
+\`\`\`
 
 ## 12. Monitoring and Logging
 - Use Vercel Analytics for production monitoring

@@ -10,9 +10,9 @@
 ## 🔧 How to Test Edit Mode
 
 1. **Start the development server**:
-   ```bash
+   \`\`\`bash
    npm run dev
-   ```
+   \`\`\`
 
 2. **Navigate to services page**: http://localhost:3000/services
 
