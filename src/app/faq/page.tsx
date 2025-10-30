@@ -49,25 +49,7 @@ export default function FAQ() {
 
   return (
     <div className="min-h-screen bg-ghl-neutral-50">
-      {/* Hero Section - Mobile optimized */}
-      <section className="bg-gradient-to-r from-ghl-primary-600 to-ghl-secondary-400 text-white py-12 sm:py-16 lg:py-20">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <EditableText 
-              content="Frequently Asked Questions"
-              contentKey="faq-hero-title"
-              tag="h1"
-              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4 sm:mb-6"
-            />
-            <EditableText 
-              content="Find answers to common questions about our logistics services and shipping processes."
-              contentKey="faq-hero-description"
-              tag="p"
-              className="text-base sm:text-lg lg:text-xl text-ghl-neutral-100 mb-6 sm:mb-8"
-            />
-          </div>
-        </div>
-      </section>
+      {/* Hero section removed per request */}
 
       {/* FAQ Section - Mobile optimized */}
       <section className="py-12 sm:py-16 lg:py-20">

@@ -46,6 +46,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Improve mobile text rendering and scaling */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Poppins', system-ui, sans-serif;
   font-weight: 600;
@@ -131,6 +137,20 @@ h1, h2, h3, h4, h5, h6 {
 
 .mobile-margin {
   @apply m-4 sm:m-6 lg:m-8;
+}
+
+/* Safe area utilities for devices with notches (iOS, etc.) */
+.safe-top {
+  padding-top: env(safe-area-inset-top);
+}
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* Ensure media are responsive by default */
+img, video {
+  max-width: 100%;
+  height: auto;
 }
 
 /* Truck Loading Animation */

@@ -49,25 +49,7 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
-      {/* Page Header Section */}
-      <div className="bg-white shadow-sm border-b border-gray-200">
-        <div className="container-custom py-6 sm:py-8 md:py-10 lg:py-12">
-          <div className="text-center px-2 sm:px-0">
-            <EditableText 
-              content="Quality You Can Trust"
-              contentKey="contact-header-title"
-              tag="h1"
-              className="text-2xl xs:text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 sm:mb-4 lg:mb-6"
-            />
-            <EditableText 
-              content="Every shipment undergoes strict quality control from farm to port. We combine local agricultural excellence with international trade precision to deliver the finest Ethiopian pulses and sesame to the world."
-              contentKey="contact-header-subtitle"
-              tag="p"
-              className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-2"
-            />
-          </div>
-        </div>
-      </div>
+      {/* Page header removed per request */}
 
       {/* Contact Content */}
       <div className="container-custom py-6 sm:py-8 lg:py-12">

@@ -41,10 +41,10 @@ export default function HeroSection() {
         backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
       }}></div>
       
-      {/* Floating Background Elements */}
-      <div className="absolute top-20 left-10 w-20 h-20 bg-ghl-primary-100 rounded-full blur-xl opacity-60"></div>
-      <div className="absolute bottom-20 right-10 w-32 h-32 bg-ghl-secondary-100 rounded-full blur-2xl opacity-60"></div>
-      <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-ghl-primary-200 rounded-full blur-lg opacity-40"></div>
+      {/* Floating Background Elements (hidden on small screens to avoid overlap) */}
+      <div className="hidden sm:block absolute top-20 left-10 w-20 h-20 bg-ghl-primary-100 rounded-full blur-xl opacity-60"></div>
+      <div className="hidden sm:block absolute bottom-20 right-10 w-32 h-32 bg-ghl-secondary-100 rounded-full blur-2xl opacity-60"></div>
+      <div className="hidden sm:block absolute top-1/2 left-1/4 w-16 h-16 bg-ghl-primary-200 rounded-full blur-lg opacity-40"></div>
 
       <div className="container-custom relative">
         <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center min-h-[60vh] sm:min-h-[70vh] lg:min-h-[80vh] py-8 sm:py-12 lg:py-16">

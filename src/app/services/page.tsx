@@ -4,8 +4,11 @@ import EditableText from '@/components/ui/EditableText'
 import { ArrowRight, CheckCircle, Circle, Clock, Globe, Leaf, Shield, Star, Thermometer, Truck, Zap } from 'lucide-react'
 import Link from 'next/link'
 
+
 export default function ServicesPage() {
-  const services = [
+  
+  // Organize products into sections
+  const sesameProducts = [
     {
       id: 'humera-sesame',
       icon: Leaf,
@@ -73,12 +76,15 @@ export default function ServicesPage() {
       gradient: 'from-ghl-secondary-600 to-ghl-secondary-800',
       bgColor: 'bg-ghl-secondary-50',
       accentColor: 'text-ghl-secondary-600'
-    },
+    }
+  ]
+
+  const pulsesAndBeans = [
     {
       id: 'red-kidney-bean',
       icon: Circle,
       title: 'Red Kidney Bean',
-      subtitle: 'ቀይ ቦሎቄ',
+      subtitle: 'Premium Ethiopian Pulses',
       imageURL: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFX9Sz6NabTtlfBAITBMBYjOqL-x4TSc5xZA&s',
       description: 'Characterized by its deep red color and excellent cooking quality, our Red Kidney Beans are rich in protein, fiber, and essential nutrients. They maintain their shape and texture well in various culinary applications.',
       features: [
@@ -111,7 +117,7 @@ export default function ServicesPage() {
       id: 'white-pea-bean',
       icon: Circle,
       title: 'White Pea Bean',
-      subtitle: 'ነ ቦሎቄ',
+      subtitle: 'Premium Ethiopian Pulses',
       imageURL: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_XZ0g4a51YWg6Ce8ih_XCcvwUKMqiPuUauA&s',
       description: 'Featuring a creamy white color and uniform size, White Pea Beans are versatile legumes ideal for traditional dishes, soups, and various food processing applications. Known for their mild flavor and smooth texture.',
       features: [
@@ -144,7 +150,7 @@ export default function ServicesPage() {
       id: 'red-speckled-beans',
       icon: Circle,
       title: 'Red Speckled Beans',
-      subtitle: 'ቀይ ዥንጉርጉር ቦሎቄ',
+      subtitle: 'Premium Ethiopian Pulses',
       imageURL: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQV9F0kit9WFBA1nnat48GBz4cYTtVMQpu4_Q&s',
       description: 'Distinguished by their unique speckled appearance and firm texture, these beans offer excellent nutritional value and visual appeal. Their robust flavor makes them ideal for hearty dishes and traditional recipes.',
       features: [
@@ -177,7 +183,7 @@ export default function ServicesPage() {
       id: 'soya-beans',
       icon: Circle,
       title: 'Soya Beans',
-      subtitle: 'አኩሪ አተር',
+      subtitle: 'Premium Ethiopian Pulses',
       imageURL: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThs75vmtjYnGcylA6TPcHPbW9Ab3ufi9y6dQ&s',
       description: 'High-protein soya beans suitable for both food consumption and industrial applications. Our soya beans meet quality standards for tofu production, animal feed, and various processed food products.',
       features: [
@@ -207,6 +213,9 @@ export default function ServicesPage() {
       accentColor: 'text-ghl-primary-600'
     }
   ]
+
+  // All services combined for backward compatibility
+  const services = [...sesameProducts, ...pulsesAndBeans]
 
   const capabilities = [
     {
@@ -241,99 +250,7 @@ export default function ServicesPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Modern Hero Section - Mobile First */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-ghl-primary-50 via-white to-ghl-secondary-50 text-ghl-neutral-900">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-20" style={{backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.08'%3E%3Cpath d='M40 40c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20zm20 0c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20z'/%3E%3Cpath d='M40 20l-4 8h8l-4-8zm0 40l-4-8h8l-4 8zm20-20l-8-4v8l8-4zm-40 0l8-4v8l-8-4z'/%3E%3Cpath d='M40 10c-5.5 0-10 4.5-10 10s4.5 10 10 10 10-4.5 10-10-4.5-10-10-10zm0 20c-5.5 0-10 4.5-10 10s4.5 10 10 10 10-4.5 10-10-4.5-10-10-10z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`}}></div>
-        
-        <div className="container-custom relative z-10">
-          <div className="max-w-6xl mx-auto">
-            {/* Mobile-first layout - Enhanced */}
-            <div className="pt-12 pb-16 sm:pt-16 sm:pb-20 lg:pt-20 lg:pb-24 xl:pt-24 xl:pb-32">
-              <div className="text-center">
-                {/* Badge */}
-                <div className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 bg-ghl-primary-100 backdrop-blur-sm rounded-full text-xs sm:text-sm font-medium mb-4 sm:mb-6 text-ghl-primary-700">
-                  <Star className="w-3 h-3 sm:w-4 sm:h-4 mr-1.5 sm:mr-2" />
-                  <EditableText 
-                    content="Our Products"
-                    contentKey="services-hero-badge"
-                    tag="span"
-                  />
-                </div>
-                
-                {/* Main Heading */}
-                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-heading font-bold mb-4 sm:mb-6 leading-tight">
-                  <span className="block text-ghl-neutral-900">
-                    <EditableText 
-                      content="Premium Ethiopian"
-                      contentKey="services-hero-title-1"
-                      tag="span"
-                    />
-                  </span>
-                  <span className="block bg-gradient-to-r from-ghl-primary-600 to-ghl-secondary-400 bg-clip-text text-transparent">
-                    <EditableText 
-                      content="Agricultural Exports"
-                      contentKey="services-hero-title-2"
-                      tag="span"
-                    />
-                  </span>
-                </h1>
-                
-                {/* Subtitle */}
-                <p className="text-base sm:text-lg lg:text-xl xl:text-2xl text-ghl-neutral-700 mb-6 sm:mb-8 max-w-4xl mx-auto leading-relaxed">
-                  <EditableText 
-                    content="Sourced from Ethiopia's richest regions, prepared to global standards. Discover our range of premium sesame, pulses, and beans each carefully selected and processed to meet international quality requirements."
-                    contentKey="services-hero-description"
-                    tag="span"
-                  />
-                </p>
-                
-                {/* CTA Buttons - Mobile Optimized */}
-                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-8 sm:mb-12">
-                  <Link 
-                    href="/quote" 
-                    className="w-full sm:w-auto btn bg-ghl-primary-600 text-white hover:bg-ghl-primary-700 hover:scale-105 transition-all duration-300 text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold shadow-lg"
-                  >
-                    <EditableText 
-                      content="Get Custom Quote"
-                      contentKey="services-hero-primary-button-text"
-                      tag="span"
-                    />
-                    <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
-                  </Link>
-                  <Link 
-                    href="/track" 
-                    className="w-full sm:w-auto btn border-2 border-ghl-primary-600 text-ghl-primary-600 hover:bg-ghl-primary-600 hover:text-white backdrop-blur-sm text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold transition-all duration-300"
-                  >
-                    <EditableText 
-                      content="Track Shipment"
-                      contentKey="services-hero-secondary-button-text"
-                      tag="span"
-                    />
-                  </Link>
-                </div>
-                
-                {/* Stats - Mobile Responsive */}
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 max-w-4xl mx-auto">
-                  {stats.map((stat, index) => (
-                    <div key={index} className="text-center">
-                      <div className="inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-ghl-primary-100 backdrop-blur-sm rounded-lg sm:rounded-xl mb-2 sm:mb-3">
-                        <stat.icon className="w-5 h-5 sm:w-6 sm:h-6 text-ghl-primary-600" />
-                      </div>
-                      <div className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold mb-1 text-ghl-neutral-900">{stat.number}</div>
-                      <div className="text-xs sm:text-sm text-ghl-neutral-600">{stat.label}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        {/* Floating Elements */}
-        <div className="absolute top-20 left-10 w-20 h-20 bg-white/5 rounded-full blur-xl"></div>
-        <div className="absolute bottom-20 right-10 w-32 h-32 bg-green-800/20 rounded-full blur-2xl"></div>
-      </section>
+      {/* Hero section removed per request */}
 
       {/* Attractive Services Section - Mobile First */}
       <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-gray-50 via-white to-gray-100">
@@ -375,9 +292,11 @@ export default function ServicesPage() {
           {/* Attractive Services Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <div key={service.id} className="group relative">
+              <Link key={service.id} href={`/services/${service.id}`} className="group relative block">
                 {/* Service Card */}
-                <div className="relative bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 overflow-hidden group">
+                <div 
+                  className="relative bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 overflow-hidden group"
+                >
                   {/* Hero Image Section */}
                   {service.imageURL && (
                     <div className="relative h-48 overflow-hidden">
@@ -477,15 +396,14 @@ export default function ServicesPage() {
                     </div>
                   </div>
                   
-                  {/* CTA Button */}
+                  {/* View Details Button (links to full page) */}
                   <div className="relative z-10 mt-4">
-                    <Link 
-                      href="/quote"
-                      className={`w-full bg-white border-2 border-gray-300 text-gray-900 py-3 rounded-xl font-semibold flex items-center justify-center gap-2 hover:scale-105 hover:border-ghl-primary-600 hover:text-ghl-primary-600 transition-all duration-300 shadow-md hover:shadow-xl group`}
+                    <div
+                      className={`w-full bg-white border-2 border-gray-300 text-gray-900 py-3 rounded-xl font-semibold flex items-center justify-center gap-2 group-hover:scale-105 group-hover:border-ghl-primary-600 group-hover:text-ghl-primary-600 transition-all duration-300 shadow-md group-hover:shadow-xl`}
                     >
-                      Get Quote
+                      View Details
                       <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                    </Link>
+                    </div>
                   </div>
                   </div>
                   
@@ -496,7 +414,7 @@ export default function ServicesPage() {
                 {/* Floating Decorative Elements */}
                 <div className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r from-ghl-primary-500 to-ghl-secondary-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 "></div>
                 <div className="absolute -bottom-2 -left-2 w-4 h-4 bg-gradient-to-r from-ghl-secondary-400 to-ghl-primary-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 " style={{ animationDelay: '0.5s' }}></div>
-              </div>
+              </Link>
             ))}
           </div>
           
@@ -1803,6 +1721,8 @@ export default function ServicesPage() {
         <div className="absolute top-10 left-10 w-16 h-16 bg-white/5 rounded-full blur-xl "></div>
         <div className="absolute bottom-10 right-10 w-24 h-24 bg-green-500/20 rounded-full blur-2xl"></div>
       </section>
+
+      {/* Using full-page product details; modal removed */}
     </div>
   )
 }

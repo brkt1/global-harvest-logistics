@@ -58,8 +58,8 @@ export default function ProvenProcessSection() {
           />
         </div>
 
-        {/* Horizontal Progress Timeline */}
-        <div className="relative max-w-5xl mx-auto">
+        {/* Horizontal Progress Timeline (desktop/tablet) */}
+        <div className="relative max-w-5xl mx-auto hidden md:block">
           {/* Progress Line */}
           <div className="absolute top-8 left-0 right-0 h-1 bg-ghl-neutral-600 rounded-full">
             <div className="h-full bg-gradient-to-r from-ghl-primary-600 to-ghl-secondary-400 rounded-full w-1/2"></div>
@@ -67,60 +67,73 @@ export default function ProvenProcessSection() {
 
           {/* Process Steps */}
           <div className="relative flex justify-between items-start">
-            {processSteps.map((step, index) => {
+            {processSteps.map((step) => {
               const IconComponent = step.icon
               const isCompleted = step.status === 'completed'
               const isActive = step.status === 'active'
-              const isPending = step.status === 'pending'
-              
               return (
                 <div key={step.id} className="flex flex-col items-center relative">
-                  {/* Step Circle */}
-                  <div className={`
-                    relative w-16 h-16 rounded-full flex items-center justify-center mb-4
-                    ${isCompleted || isActive 
-                      ? 'bg-ghl-primary-600 text-white' 
-                      : 'bg-ghl-neutral-600 text-ghl-neutral-400'
-                    }
-                    ${isActive ? 'ring-4 ring-ghl-primary-300 ring-opacity-50' : ''}
-                  `}>
+                  <div className={`relative w-16 h-16 rounded-full flex items-center justify-center mb-4 ${
+                    isCompleted || isActive ? 'bg-ghl-primary-600 text-white' : 'bg-ghl-neutral-600 text-ghl-neutral-400'
+                  } ${isActive ? 'ring-4 ring-ghl-primary-300 ring-opacity-50' : ''}`}>
                     <IconComponent className="w-6 h-6" />
                   </div>
-
-                  {/* Step Number */}
-                  <div className={`
-                    absolute -top-2 -right-2 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold
-                    ${isCompleted || isActive 
-                      ? 'bg-ghl-primary-600 text-white' 
-                      : 'bg-ghl-neutral-500 text-ghl-neutral-300'
-                    }
-                  `}>
+                  <div className={`absolute -top-2 -right-2 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${
+                    isCompleted || isActive ? 'bg-ghl-primary-600 text-white' : 'bg-ghl-neutral-500 text-ghl-neutral-300'
+                  }`}>
                     {step.number}
                   </div>
-
-                  {/* Step Title */}
                   <EditableText 
                     content={step.title}
                     contentKey={`process-step-${step.id}-title`}
                     tag="h3"
-                    className={`text-center mb-2 font-semibold ${
-                      isActive 
-                        ? 'text-white text-lg' 
-                        : 'text-ghl-neutral-300'
-                    }`}
+                    className={`text-center mb-2 font-semibold ${isActive ? 'text-white text-lg' : 'text-ghl-neutral-300'}`}
                   />
-
-                  {/* Step Description - Hidden on mobile screens */}
                   <EditableText 
                     content={step.description}
                     contentKey={`process-step-${step.id}-description`}
                     tag="p"
-                    className="hidden md:block text-sm text-ghl-neutral-400 text-center max-w-48 leading-relaxed"
+                    className="text-sm text-ghl-neutral-400 text-center max-w-48 leading-relaxed"
                   />
                 </div>
               )
             })}
           </div>
+        </div>
+
+        {/* Vertical Steps (mobile) */}
+        <div className="md:hidden space-y-6">
+          {processSteps.map((step) => {
+            const IconComponent = step.icon
+            const isCompleted = step.status === 'completed'
+            const isActive = step.status === 'active'
+            return (
+              <div key={step.id} className="flex items-start gap-4 bg-ghl-neutral-700/50 border border-ghl-neutral-600 rounded-xl p-4">
+                <div className={`shrink-0 w-12 h-12 rounded-full flex items-center justify-center ${
+                  isCompleted || isActive ? 'bg-ghl-primary-600 text-white' : 'bg-ghl-neutral-600 text-ghl-neutral-400'
+                }`}>
+                  <IconComponent className="w-5 h-5" />
+                </div>
+                <div className="flex-1">
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="text-xs font-bold text-ghl-neutral-300">{step.number}</span>
+                    <EditableText 
+                      content={step.title}
+                      contentKey={`process-step-${step.id}-title`}
+                      tag="h3"
+                      className={`font-semibold ${isActive ? 'text-white' : 'text-ghl-neutral-200'}`}
+                    />
+                  </div>
+                  <EditableText 
+                    content={step.description}
+                    contentKey={`process-step-${step.id}-description`}
+                    tag="p"
+                    className="text-sm text-ghl-neutral-300"
+                  />
+                </div>
+              </div>
+            )
+          })}
         </div>
 
         {/* Bottom CTA */}

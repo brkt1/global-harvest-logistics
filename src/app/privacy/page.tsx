@@ -5,25 +5,7 @@ import EditableText from '@/components/ui/EditableText'
 export default function Privacy() {
   return (
     <div className="min-h-screen bg-ghl-neutral-50">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-ghl-primary-600 to-ghl-secondary-400 text-white py-20">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <EditableText 
-              content="Privacy Policy"
-              contentKey="privacy-hero-title"
-              tag="h1"
-              className="text-4xl md:text-5xl font-heading font-bold mb-6"
-            />
-            <EditableText 
-              content="Last updated: January 2024"
-              contentKey="privacy-hero-date"
-              tag="p"
-              className="text-xl text-ghl-neutral-100 mb-8"
-            />
-          </div>
-        </div>
-      </section>
+      {/* Hero section removed per request */}
 
       {/* Privacy Policy Content */}
       <section className="py-20">
