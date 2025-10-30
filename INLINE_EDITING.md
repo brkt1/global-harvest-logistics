@@ -35,17 +35,17 @@ This system allows admin users to edit website content directly on the pages wit
 ## Components
 
 ### EditableText
-```tsx
+\`\`\`tsx
 <EditableText 
   content="Default text"
   contentKey="unique-key"
   tag="h1"
   className="text-2xl font-bold"
 />
-```
+\`\`\`
 
 ### EditableImage
-```tsx
+\`\`\`tsx
 <EditableImage 
   src="/image.jpg"
   alt="Image description"
@@ -53,17 +53,17 @@ This system allows admin users to edit website content directly on the pages wit
   className="w-full h-48 object-cover"
   isBackground={false}
 />
-```
+\`\`\`
 
 ### EditableVideo
-```tsx
+\`\`\`tsx
 <EditableVideo 
   src="/video.mp4"
   title="Video title"
   contentKey="unique-key"
   className="w-full"
 />
-```
+\`\`\`
 
 ## API Endpoints
 

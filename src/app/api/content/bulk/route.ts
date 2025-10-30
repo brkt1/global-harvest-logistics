@@ -76,4 +76,3 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: 'Failed to load bulk content' }, { status: 500 })
   }
 }
-

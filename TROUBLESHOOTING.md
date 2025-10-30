@@ -21,12 +21,12 @@
 **Problem**: Next.js warning about viewport configuration in metadata.
 
 **Solution**: Moved viewport to separate export in layout.tsx:
-```tsx
+\`\`\`tsx
 export const viewport = {
   width: "device-width",
   initialScale: 1,
 };
-```
+\`\`\`
 
 ### 4. Content Not Loading
 **Problem**: Editable components showing default content instead of saved content.
@@ -53,7 +53,7 @@ export const viewport = {
 5. **Test Demo Page**: Visit `/editable-demo` to see all features
 
 ## File Structure
-```
+\`\`\`
 src/
 ├── contexts/
 │   └── AdminContext.tsx          # Admin authentication
@@ -71,7 +71,7 @@ src/
 └── app/
     ├── editable-demo/page.tsx  # Demo page
     └── api-test/page.tsx        # API test page
-```
+\`\`\`
 
 ## Default Admin Password
 - Password: `admin123`

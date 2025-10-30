@@ -16,7 +16,7 @@ The loading system includes:
 
 A customizable loading component with animated truck.
 
-```tsx
+\`\`\`tsx
 import TruckLoading from '@/components/ui/TruckLoading';
 
 // Basic usage
@@ -28,7 +28,7 @@ import TruckLoading from '@/components/ui/TruckLoading';
   text="Loading your shipment..." 
   className="my-custom-class"
 />
-```
+\`\`\`
 
 **Props:**
 - `size`: 'sm' | 'md' | 'lg' | 'xl' (default: 'md')
@@ -39,7 +39,7 @@ import TruckLoading from '@/components/ui/TruckLoading';
 
 Global state management for loading states across your app.
 
-```tsx
+\`\`\`tsx
 import { useLoading } from '@/contexts/LoadingContext';
 
 function MyComponent() {
@@ -54,7 +54,7 @@ function MyComponent() {
     }
   };
 }
-```
+\`\`\`
 
 **Methods:**
 - `showLoading(text?)`: Show global loading overlay
@@ -71,7 +71,7 @@ Automatically shows/hides based on loading context state.
 
 ### Global Loading (Full Screen Overlay)
 
-```tsx
+\`\`\`tsx
 'use client';
 import { useLoading } from '@/contexts/LoadingContext';
 
@@ -93,11 +93,11 @@ export default function MyPage() {
     </button>
   );
 }
-```
+\`\`\`
 
 ### Local Loading (Inline Component)
 
-```tsx
+\`\`\`tsx
 'use client';
 import { useState } from 'react';
 import TruckLoading from '@/components/ui/TruckLoading';
@@ -126,18 +126,18 @@ export default function MyComponent() {
     </div>
   );
 }
-```
+\`\`\`
 
 ### Different Sizes
 
-```tsx
+\`\`\`tsx
 <div className="flex space-x-4">
   <TruckLoading size="sm" text="Small" />
   <TruckLoading size="md" text="Medium" />
   <TruckLoading size="lg" text="Large" />
   <TruckLoading size="xl" text="Extra Large" />
 </div>
-```
+\`\`\`
 
 ## Demo Page
 
